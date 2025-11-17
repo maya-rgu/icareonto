@@ -1,0 +1,88 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix icare-core:    <http://maya-project.eu/icareonto/core#> .
+@prefix icare-user:    <http://maya-project.eu/icareonto/user#> .
+@prefix icare-dialogue:<http://maya-project.eu/icareonto/dialogue#> .
+
+icare-dialogue: a owl:Ontology ;
+  rdfs:label "iCARE Ontology - Dialogue module"@en ;
+  owl:imports <http://maya-project.eu/icareonto/core> ,
+              <http://maya-project.eu/icareonto/user> .
+
+### Dialogue classes
+
+icare-dialogue:Intent a owl:Class ;
+  rdfs:subClassOf icare-core:Entity ;
+  rdfs:label "Intent"@en .
+
+icare-dialogue:DialogueAct a owl:Class ;
+  rdfs:subClassOf icare-core:Entity ;
+  rdfs:label "Dialogue act"@en .
+
+icare-dialogue:Utterance a owl:Class ;
+  rdfs:subClassOf icare-core:Event ;
+  rdfs:label "Utterance"@en .
+
+icare-dialogue:DialogueState a owl:Class ;
+  rdfs:subClassOf icare-core:Entity ;
+  rdfs:label "Dialogue state"@en .
+
+icare-dialogue:Topic a owl:Class ;
+  rdfs:subClassOf icare-core:Entity ;
+  rdfs:label "Topic"@en .
+
+icare-dialogue:ContentItem a owl:Class ;
+  rdfs:subClassOf icare-core:Entity ;
+  rdfs:label "Content item"@en .
+
+icare-dialogue:ReadingLevel a owl:Class ;
+  rdfs:subClassOf icare-core:Entity ;
+  rdfs:label "Reading level"@en .
+
+icare-dialogue:Language a owl:Class ;
+  rdfs:subClassOf icare-core:Entity ;
+  rdfs:label "Language"@en .
+
+icare-dialogue:CommunicationPreference a owl:Class ;
+  rdfs:subClassOf icare-core:Entity ;
+  rdfs:label "Communication preference"@en .
+
+### Dialogue object properties
+
+icare-dialogue:hasIntent a owl:ObjectProperty ;
+  rdfs:domain icare-dialogue:Utterance ;
+  rdfs:range  icare-dialogue:Intent ;
+  rdfs:label "has intent"@en .
+
+icare-dialogue:hasDialogueAct a owl:ObjectProperty ;
+  rdfs:domain icare-dialogue:Utterance ;
+  rdfs:range  icare-dialogue:DialogueAct ;
+  rdfs:label "has dialogue act"@en .
+
+icare-dialogue:hasTopic a owl:ObjectProperty ;
+  rdfs:domain icare-dialogue:DialogueState ;
+  rdfs:range  icare-dialogue:Topic ;
+  rdfs:label "has topic"@en .
+
+icare-dialogue:usesContentItem a owl:ObjectProperty ;
+  rdfs:domain icare-dialogue:DialogueAct ;
+  rdfs:range  icare-dialogue:ContentItem ;
+  rdfs:label "uses content item"@en .
+
+icare-dialogue:hasReadingLevel a owl:ObjectProperty ;
+  rdfs:domain icare-dialogue:ContentItem ;
+  rdfs:range  icare-dialogue:ReadingLevel ;
+  rdfs:label "has reading level"@en .
+
+icare-dialogue:preferredLanguage a owl:ObjectProperty ;
+  rdfs:domain icare-user:User ;
+  rdfs:range  icare-dialogue:Language ;
+  rdfs:label "preferred language"@en .
+
+icare-dialogue:hasCommunicationPreference a owl:ObjectProperty ;
+  rdfs:domain icare-user:User ;
+  rdfs:range  icare-dialogue:CommunicationPreference ;
+  rdfs:label "has communication preference"@en .

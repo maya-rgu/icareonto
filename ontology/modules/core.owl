@@ -1,0 +1,89 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix icare-core: <http://maya-project.eu/icareonto/core#> .
+
+icare-core: a owl:Ontology ;
+  rdfs:label "iCARE Ontology - Core module"@en .
+
+### Core classes
+
+icare-core:Entity a owl:Class ;
+  rdfs:label "Entity"@en .
+
+icare-core:Person a owl:Class ;
+  rdfs:subClassOf icare-core:Entity ;
+  rdfs:label "Person"@en .
+
+icare-core:Role a owl:Class ;
+  rdfs:subClassOf icare-core:Entity ;
+  rdfs:label "Role"@en .
+
+icare-core:Event a owl:Class ;
+  rdfs:subClassOf icare-core:Entity ;
+  rdfs:label "Event"@en .
+
+icare-core:TimeInterval a owl:Class ;
+  rdfs:subClassOf icare-core:Entity ;
+  rdfs:label "Time interval"@en .
+
+icare-core:Measurement a owl:Class ;
+  rdfs:subClassOf icare-core:Event ;
+  rdfs:label "Measurement"@en .
+
+icare-core:Location a owl:Class ;
+  rdfs:subClassOf icare-core:Entity ;
+  rdfs:label "Location"@en .
+
+icare-core:Organisation a owl:Class ;
+  rdfs:subClassOf icare-core:Entity ;
+  rdfs:label "Organisation"@en .
+
+icare-core:Context a owl:Class ;
+  rdfs:subClassOf icare-core:Entity ;
+  rdfs:label "Context"@en .
+
+icare-core:Identifier a owl:Class ;
+  rdfs:subClassOf icare-core:Entity ;
+  rdfs:label "Identifier"@en .
+
+### Core object properties
+
+icare-core:hasRole a owl:ObjectProperty ;
+  rdfs:domain icare-core:Person ;
+  rdfs:range  icare-core:Role ;
+  rdfs:label "has role"@en .
+
+icare-core:occursInContext a owl:ObjectProperty ;
+  rdfs:domain icare-core:Event ;
+  rdfs:range  icare-core:Context ;
+  rdfs:label "occurs in context"@en .
+
+icare-core:hasLocation a owl:ObjectProperty ;
+  rdfs:domain icare-core:Entity ;
+  rdfs:range  icare-core:Location ;
+  rdfs:label "has location"@en .
+
+icare-core:hasTimeInterval a owl:ObjectProperty ;
+  rdfs:domain icare-core:Event ;
+  rdfs:range  icare-core:TimeInterval ;
+  rdfs:label "has time interval"@en .
+
+icare-core:belongsToOrganisation a owl:ObjectProperty ;
+  rdfs:domain icare-core:Person ;
+  rdfs:range  icare-core:Organisation ;
+  rdfs:label "belongs to organisation"@en .
+
+### Core data properties
+
+icare-core:hasIdentifierValue a owl:DatatypeProperty ;
+  rdfs:domain icare-core:Identifier ;
+  rdfs:range  xsd:string ;
+  rdfs:label "has identifier value"@en .
+
+icare-core:hasLabel a owl:DatatypeProperty ;
+  rdfs:domain icare-core:Entity ;
+  rdfs:range  xsd:string ;
+  rdfs:label "has label"@en .

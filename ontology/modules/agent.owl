@@ -1,0 +1,117 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix icare-core:    <http://maya-project.eu/icareonto/core#> .
+@prefix icare-user:    <http://maya-project.eu/icareonto/user#> .
+@prefix icare-dialogue:<http://maya-project.eu/icareonto/dialogue#> .
+@prefix icare-agent:   <http://maya-project.eu/icareonto/agent#> .
+
+icare-agent: a owl:Ontology ;
+  rdfs:label "iCARE Ontology - Agent module"@en ;
+  owl:imports <http://maya-project.eu/icareonto/core> ,
+              <http://maya-project.eu/icareonto/user> ,
+              <http://maya-project.eu/icareonto/dialogue> .
+
+### Agent classes
+
+icare-agent:Agent a owl:Class ;
+  rdfs:subClassOf icare-core:Entity ;
+  rdfs:label "Agent"@en .
+
+icare-agent:AgentRole a owl:Class ;
+  rdfs:subClassOf icare-core:Role ;
+  rdfs:label "Agent role"@en .
+
+icare-agent:AgentProfile a owl:Class ;
+  rdfs:subClassOf icare-core:Entity ;
+  rdfs:label "Agent profile"@en .
+
+icare-agent:AgentCapability a owl:Class ;
+  rdfs:subClassOf icare-core:Entity ;
+  rdfs:label "Agent capability"@en .
+
+icare-agent:PromptTemplate a owl:Class ;
+  rdfs:subClassOf icare-core:Entity ;
+  rdfs:label "Prompt template"@en .
+
+icare-agent:Tool a owl:Class ;
+  rdfs:subClassOf icare-core:Entity ;
+  rdfs:label "Tool"@en .
+
+icare-agent:SafetyPolicy a owl:Class ;
+  rdfs:subClassOf icare-core:Entity ;
+  rdfs:label "Safety policy"@en .
+
+icare-agent:Guardrail a owl:Class ;
+  rdfs:subClassOf icare-core:Entity ;
+  rdfs:label "Guardrail"@en .
+
+icare-agent:AgentScope a owl:Class ;
+  rdfs:subClassOf icare-core:Entity ;
+  rdfs:label "Agent scope"@en .
+
+icare-agent:AgentPermission a owl:Class ;
+  rdfs:subClassOf icare-core:Entity ;
+  rdfs:label "Agent permission"@en .
+
+icare-agent:DataDomain a owl:Class ;
+  rdfs:subClassOf icare-core:Entity ;
+  rdfs:label "Data domain"@en .
+
+icare-agent:RoutingRule a owl:Class ;
+  rdfs:subClassOf icare-core:Entity ;
+  rdfs:label "Routing rule"@en .
+
+### Agent object properties
+
+icare-agent:hasAgentRole a owl:ObjectProperty ;
+  rdfs:domain icare-agent:Agent ;
+  rdfs:range  icare-agent:AgentRole ;
+  rdfs:label "has agent role"@en .
+
+icare-agent:hasCapability a owl:ObjectProperty ;
+  rdfs:domain icare-agent:Agent ;
+  rdfs:range  icare-agent:AgentCapability ;
+  rdfs:label "has capability"@en .
+
+icare-agent:usesTool a owl:ObjectProperty ;
+  rdfs:domain icare-agent:Agent ;
+  rdfs:range  icare-agent:Tool ;
+  rdfs:label "uses tool"@en .
+
+icare-agent:hasPromptTemplate a owl:ObjectProperty ;
+  rdfs:domain icare-agent:Agent ;
+  rdfs:range  icare-agent:PromptTemplate ;
+  rdfs:label "has prompt template"@en .
+
+icare-agent:hasSafetyPolicy a owl:ObjectProperty ;
+  rdfs:domain icare-agent:Agent ;
+  rdfs:range  icare-agent:SafetyPolicy ;
+  rdfs:label "has safety policy"@en .
+
+icare-agent:hasGuardrail a owl:ObjectProperty ;
+  rdfs:domain icare-agent:Agent ;
+  rdfs:range  icare-agent:Guardrail ;
+  rdfs:label "has guardrail"@en .
+
+icare-agent:servesUserType a owl:ObjectProperty ;
+  rdfs:domain icare-agent:Agent ;
+  rdfs:range  icare-user:User ;
+  rdfs:label "serves user type"@en .
+
+icare-agent:allowedOnDomain a owl:ObjectProperty ;
+  rdfs:domain icare-agent:Agent ;
+  rdfs:range  icare-agent:DataDomain ;
+  rdfs:label "allowed on data domain"@en .
+
+icare-agent:hasScope a owl:ObjectProperty ;
+  rdfs:domain icare-agent:Agent ;
+  rdfs:range  icare-agent:AgentScope ;
+  rdfs:label "has scope"@en .
+
+icare-agent:hasRoutingRule a owl:ObjectProperty ;
+  rdfs:domain icare-agent:Agent ;
+  rdfs:range  icare-agent:RoutingRule ;
+  rdfs:label "has routing rule"@en .

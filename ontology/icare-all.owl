@@ -1,0 +1,18 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dc:  <http://purl.org/dc/elements/1.1/> .
+
+<https://maya-project.eu/icareonto/all>
+    a owl:Ontology ;
+    dc:title "iCARE Onto – All Modules (meta-import)" ;
+    dc:creator "MAYA Consortium" ;
+    dc:license "CC BY 4.0" ;
+    dc:description "Convenience ontology that imports core + all modules, so the full iCARE Onto can be viewed and queried together." ;
+
+    owl:imports <http://maya-project.eu/icareonto/core> ,
+				<http://maya-project.eu/icareonto/user> ,
+                <http://maya-project.eu/icareonto/clinical> ,
+                <http://maya-project.eu/icareonto/lifestyle> ,
+                <http://maya-project.eu/icareonto/intervention> ,
+                <http://maya-project.eu/icareonto/devices> ,
+                <http://maya-project.eu/icareonto/dialogue> ,
+                <http://maya-project.eu/icareonto/agent> .

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE catalog PUBLIC "-//OASIS//DTD Entity Resolution XML Catalog V1.0//EN"
+    "http://www.oasis-open.org/committees/entity/release/1.0/catalog.dtd">
+
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog"
+         prefer="public" xml:base="">
+
+    <!-- Core ontology -->
+    <uri id="icare-core"
+         name="http://maya-project.eu/icareonto/core"
+         uri="modules/core.owl"/>
+
+    <!-- Modules -->
+	<uri id="icare-user"
+         name="http://maya-project.eu/icareonto/user"
+         uri="modules/user.owl"/>
+		 
+    <uri id="icare-clinical"
+         name="http://maya-project.eu/icareonto/clinical"
+         uri="modules/clinical.owl"/>
+
+    <uri id="icare-lifestyle"
+         name="http://maya-project.eu/icareonto/lifestyle"
+         uri="modules/lifestyle.owl"/>
+
+    <uri id="icare-intervention"
+         name="http://maya-project.eu/icareonto/intervention"
+         uri="modules/intervention.owl"/>
+
+    <uri id="icare-devices"
+         name="http://maya-project.eu/icareonto/devices"
+         uri="modules/devices.owl"/>
+
+    <uri id="icare-dialogue"
+         name="http://maya-project.eu/icareonto/dialogue"
+         uri="modules/dialogue.owl"/>
+
+    <uri id="icare-agent"
+         name="http://maya-project.eu/icareonto/agent"
+         uri="modules/agent.owl"/>
+	
+	<!-- Meta-import ontology -->
+    <uri id="icare-all"
+         name="http://maya-project.eu/icareonto/all"
+         uri="icare-all.owl"/>
+
+</catalog>

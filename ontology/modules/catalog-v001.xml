@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xml:base="" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="User Entered Import Resolution" name="http://maya-project.eu/icareonto/core" uri="core.owl"/>
+    <uri id="icare-core" name="http://maya-project.eu/icareonto/core" uri="core.owl"/>
+    <uri id="icare-user" name="http://maya-project.eu/icareonto/user" uri="user.owl"/>
+    <uri id="icare-clinical" name="http://maya-project.eu/icareonto/clinical" uri="clinical.owl"/>
+    <uri id="icare-lifestyle" name="http://maya-project.eu/icareonto/lifestyle" uri="lifestyle.owl"/>
+    <uri id="icare-intervention" name="http://maya-project.eu/icareonto/intervention" uri="intervention.owl"/>
+    <uri id="icare-devices" name="http://maya-project.eu/icareonto/devices" uri="devices.owl"/>
+    <uri id="icare-dialogue" name="http://maya-project.eu/icareonto/dialogue" uri="dialogue.owl"/>
+    <uri id="icare-agent" name="http://maya-project.eu/icareonto/agent" uri="agent.owl"/>
+</catalog>

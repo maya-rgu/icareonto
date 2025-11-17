@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE catalog PUBLIC "-//OASIS//DTD Entity Resolution XML Catalog V1.0//EN"
+    "http://www.oasis-open.org/committees/entity/release/1.0/catalog.dtd">
+
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog"
+         prefer="public" xml:base="">
+
+    <!-- Core ontology -->
+    <uri id="icare-core"
+         name="https://maya-project.eu/icareonto/core"
+         uri="ontology/core/icare-core.owl"/>
+
+    <!-- Modules -->
+    <uri id="icare-clinical"
+         name="https://maya-project.eu/icareonto/clinical"
+         uri="ontology/modules/icare-clinical.owl"/>
+
+    <uri id="icare-lifestyle"
+         name="https://maya-project.eu/icareonto/lifestyle"
+         uri="ontology/modules/icare-lifestyle.owl"/>
+
+    <uri id="icare-psychosocial"
+         name="https://maya-project.eu/icareonto/psychosocial"
+         uri="ontology/modules/icare-psychosocial.owl"/>
+
+    <uri id="icare-devices"
+         name="https://maya-project.eu/icareonto/devices"
+         uri="ontology/modules/icare-devices.owl"/>
+
+    <uri id="icare-impact"
+         name="https://maya-project.eu/icareonto/impact"
+         uri="ontology/modules/icare-impact.owl"/>
+
+    <uri id="icare-policy"
+         name="https://maya-project.eu/icareonto/policy"
+         uri="ontology/modules/icare-policy.owl"/>
+
+</catalog>

@@ -1,0 +1,71 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix icare-core: <http://maya-project.eu/icareonto/core#> .
+@prefix icare-user: <http://maya-project.eu/icareonto/user#> .
+
+icare-user: a owl:Ontology ;
+  rdfs:label "iCARE Ontology - User module"@en ;
+  owl:imports <http://maya-project.eu/icareonto/core> .
+
+### User classes
+
+icare-user:User a owl:Class ;
+  rdfs:subClassOf icare-core:Person ;
+  rdfs:label "User"@en .
+
+icare-user:AYASurvivor a owl:Class ;
+  rdfs:subClassOf icare-user:User ;
+  rdfs:label "AYA cancer survivor"@en .
+
+icare-user:Caregiver a owl:Class ;
+  rdfs:subClassOf icare-user:User ;
+  rdfs:label "Caregiver"@en .
+
+icare-user:Clinician a owl:Class ;
+  rdfs:subClassOf icare-user:User ;
+  rdfs:label "Clinician"@en .
+
+icare-user:Oncologist a owl:Class ;
+  rdfs:subClassOf icare-user:Clinician ;
+  rdfs:label "Oncologist"@en .
+
+icare-user:Cardiologist a owl:Class ;
+  rdfs:subClassOf icare-user:Clinician ;
+  rdfs:label "Cardiologist"@en .
+
+icare-user:Psychologist a owl:Class ;
+  rdfs:subClassOf icare-user:Clinician ;
+  rdfs:label "Psychologist"@en .
+
+icare-user:Nurse a owl:Class ;
+  rdfs:subClassOf icare-user:Clinician ;
+  rdfs:label "Nurse"@en .
+
+icare-user:PatientAssociation a owl:Class ;
+  rdfs:subClassOf icare-core:Organisation ;
+  rdfs:label "Patient association"@en .
+
+### User object properties
+
+icare-user:hasCaregiver a owl:ObjectProperty ;
+  rdfs:domain icare-user:AYASurvivor ;
+  rdfs:range  icare-user:Caregiver ;
+  rdfs:label "has caregiver"@en .
+
+icare-user:isUnderCareOf a owl:ObjectProperty ;
+  rdfs:domain icare-user:AYASurvivor ;
+  rdfs:range  icare-user:Clinician ;
+  rdfs:label "is under care of"@en .
+
+icare-user:memberOfHousehold a owl:ObjectProperty ;
+  rdfs:domain icare-user:User ;
+  rdfs:range  icare-user:User ;
+  rdfs:label "member of same household"@en .
+
+icare-user:affiliatedWithAssociation a owl:ObjectProperty ;
+  rdfs:domain icare-user:AYASurvivor ;
+  rdfs:range  icare-user:PatientAssociation ;
+  rdfs:label "affiliated with patient association"@en .
