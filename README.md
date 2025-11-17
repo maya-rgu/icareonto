@@ -20,5 +20,5 @@
 
 1. **Clone the repo**:
    ```bash
-   git clone https://github.com/<org>/icare-onto.git
+   git clone https://github.com/maya-rgu/icareonto.git
    cd icare-onto
