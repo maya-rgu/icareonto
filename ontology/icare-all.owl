@@ -3,10 +3,14 @@
 
 <https://maya-project.eu/icareonto/all>
     a owl:Ontology ;
-    dc:title "iCARE Onto – All Modules (meta-import)" ;
+    dc:title "iCARE Onto - All Modules (meta-import)" ;
     dc:creator "MAYA Consortium" ;
     dc:license "CC BY 4.0" ;
     dc:description "Convenience ontology that imports core + all modules, so the full iCARE Onto can be viewed and queried together." ;
+
+    owl:versionInfo "0.1.0 (DRAFT)" ;
+    owl:versionIRI <https://maya-project.eu/icareonto/0.1.0/all> ;
+    dcterms:issued "2025-12-22"^^<http://www.w3.org/2001/XMLSchema#date> ;
 
     owl:imports <http://maya-project.eu/icareonto/core> ,
 				<http://maya-project.eu/icareonto/user> ,
