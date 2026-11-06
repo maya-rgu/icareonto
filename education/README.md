@@ -80,7 +80,7 @@ These are metadata-matched candidate signposts. Free-text applicability conditio
 From a Python backend running from the project root:
 
 ```python
-from KG.education.scripts.education_resources import build_release, load_release, select_resources
+from education.scripts.education_resources import build_release, load_release, select_resources
 
 # Run after a saved curation update; use a single publisher.
 report = build_release(workbook="/path/to/reviewed-resources.xlsx", sheet="Release resources")
