@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.1",
+  "pilot_id": "<site-id-matching-pilot-setup>",
+  "study_id": "<study-id-matching-pilot-setup>",
+  "language": "en",
+  "status": "operational",
+  "owner": "<responsible pilot team or role>",
+  "source": "<description of the original requirement documents>",
+  "requirements": [
+    {"id": "KR001", "text": "<English description of the pilot knowledge need>", "source_refs": ["<original requirement identifier or document section>"]}
+  ]
+}

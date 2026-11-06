@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0",
+  "recorded_at": "2026-10-27T11:00:00+01:00",
+  "source": "Fictional enrolment record; language preference supplied independently of the site locale",
+  "participant_id": "es-demo-aya-002", "study_id": "maya-demo", "site_id": "es-demo-01",
+  "enrolment": {"id": "enrolment-002", "enrolled_at": "2026-10-27T11:00:00+01:00", "status": "enrolled", "phase_id": "feasibility", "arm_id": "comparison"},
+  "preferences": {"language_tag": "en-GB", "detail_level": "detailed"}
+}

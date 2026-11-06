@@ -1,0 +1,88 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix edu: <http://maya-project.eu/icareonto/education/metadata#> .
+@prefix icare: <http://maya-project.eu/icareonto/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://maya-project.eu/icareonto/education/demo/care-plan> a icare:CarePlan,
+        owl:NamedIndividual ;
+    rdfs:label "Draft demonstration education plan" ;
+    icare:carePlanHasGoal <http://maya-project.eu/icareonto/education/demo/goal> ;
+    icare:carePlanHasStatus icare:DraftCarePlan ;
+    icare:carePlanIncludesActivity <http://maya-project.eu/icareonto/education/demo/intervention> ;
+    icare:carePlanIntendedFor <http://maya-project.eu/icareonto/education/demo/participant> .
+
+<http://maya-project.eu/icareonto/education/demo/graph> a owl:Ontology ;
+    rdfs:label "Fictional participant education example using real resource metadata"@en ;
+    edu:isSynthetic true ;
+    owl:imports <http://maya-project.eu/icareonto/education/dataset> .
+
+edu:accessConditions a owl:AnnotationProperty .
+
+edu:applicabilityNotes a owl:AnnotationProperty .
+
+edu:completionStatus a owl:AnnotationProperty .
+
+edu:curationStatus a owl:AnnotationProperty .
+
+edu:identificationMethod a owl:AnnotationProperty .
+
+edu:isSynthetic a owl:AnnotationProperty .
+
+edu:journeyStage a owl:AnnotationProperty .
+
+edu:learningObjective a owl:AnnotationProperty .
+
+edu:learningStep a owl:AnnotationProperty .
+
+edu:reflectionPrompt a owl:AnnotationProperty .
+
+edu:resourceDateText a owl:AnnotationProperty .
+
+edu:resourceRole a owl:AnnotationProperty .
+
+edu:reviewedBy a owl:AnnotationProperty .
+
+edu:reviewedOn a owl:AnnotationProperty .
+
+edu:templateStatus a owl:AnnotationProperty .
+
+<http://maya-project.eu/icareonto/education/demo/intervention> a icare:EducationActivity,
+        icare:HealthLiteracyIntervention,
+        owl:NamedIndividual ;
+    rdfs:label "Understanding cardiovascular follow-up" ;
+    icare:activityContributesToGoal <http://maya-project.eu/icareonto/education/demo/goal> ;
+    edu:templateStatus "Draft" ;
+    icare:healthLiteracyInterventionAddressesNeed icare:InformationComprehensionSupportNeed ;
+    icare:healthLiteracyInterventionUsesResource <http://maya-project.eu/icareonto/education/resources/MAYA-EDU-0004> ;
+    dcterms:source <http://maya-project.eu/icareonto/education/activity-templates/EDU-CV-FOLLOWUP> .
+
+<http://maya-project.eu/icareonto/education/demo/language> a icare:LanguagePreference,
+        owl:NamedIndividual ;
+    rdfs:label "Supplied demonstration language preference" ;
+    icare:preferredLanguageTag "es-es"^^xsd:language .
+
+<http://maya-project.eu/icareonto/education/demo/needs-identification> a icare:MeasurementEvent,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional support-needs identification" ;
+    edu:identificationMethod "Discussion" ;
+    icare:measurementEventHasOutput <http://maya-project.eu/icareonto/education/demo/needs-result> .
+
+<http://maya-project.eu/icareonto/education/demo/needs-result> a icare:ObservationResult,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional identified support needs" ;
+    icare:healthLiteracyResultIdentifiesNeed icare:InformationComprehensionSupportNeed ;
+    dcterms:description "Fictional participant requests help understanding cardiovascular follow-up information. No licensed questionnaire or measured outcome is claimed." .
+
+<http://maya-project.eu/icareonto/education/demo/participant> a icare:Person,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional AYA survivor" ;
+    icare:personHasPreference <http://maya-project.eu/icareonto/education/demo/language> ;
+    icare:personParticipatesInMeasurement <http://maya-project.eu/icareonto/education/demo/needs-identification> .
+
+<http://maya-project.eu/icareonto/education/demo/goal> a icare:Goal,
+        owl:NamedIndividual ;
+    rdfs:label "Identify the purpose of cardiovascular follow-up and formulate a question for the care team about the participant's own follow-up." ;
+    icare:goalDescriptionText "Identify the purpose of cardiovascular follow-up and formulate a question for the care team about the participant's own follow-up."^^xsd:string .
+

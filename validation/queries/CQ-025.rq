@@ -1,0 +1,5 @@
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX demo: <https://example.org/maya/demo/es/>
+SELECT ?language WHERE {
+  demo:resource-late-effects-es dcterms:language ?language .
+}

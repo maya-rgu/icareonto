@@ -1,0 +1,11 @@
+PREFIX i: <http://maya-project.eu/icareonto/>
+SELECT ?cancer ?agent ?dose ?unit WHERE {
+  VALUES ?requestedId { "es-demo-aya-full" }
+  ?person i:personIdentifier ?identifier ; i:personHasCancerTreatmentHistory ?history .
+  FILTER(STR(?identifier) = ?requestedId)
+  ?history i:cancerTreatmentHistoryHasRecord ?record .
+  ?record i:treatmentRecordTreatsDiagnosis ?diagnosis ; i:treatmentRecordIndicatesExposure ?exposure .
+  ?diagnosis i:cancerTypeName ?cancer .
+  ?exposure i:treatmentExposureHasAgent/i:treatmentAgentName ?agent .
+  OPTIONAL { ?exposure i:cumulativeDrugDose ?dose ; i:cumulativeDrugDoseUnit ?unit }
+}

@@ -1,0 +1,7 @@
+PREFIX icare: <http://maya-project.eu/icareonto/>
+PREFIX demo: <https://example.org/maya/demo/es/>
+SELECT ?activity WHERE {
+  ?activity icare:activityHasTrigger demo:symptom-trigger .
+  VALUES ?type { icare:ReferralActivity icare:EscalationActivity }
+  ?activity a ?type .
+}

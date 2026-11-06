@@ -1,0 +1,21 @@
+{
+  "dataset": "https://example.org/maya/demo/es",
+  "fictional": true,
+  "participant_count": 1,
+  "participant_age_at_enrolment": 27,
+  "country": "ES",
+  "language": "es-ES",
+  "time_zone": "Europe/Madrid",
+  "site": "ES-DEMO-01, Castilla-La Mancha (fictional; not an assertion of an actual MAYA pilot site)",
+  "ontology_entry": "../serialisation/icareonto.ttl",
+  "triples": 905,
+  "named_individuals": 144,
+  "source_ontology_sha256": "d017c0038b4884837fb5be6b5bbb77eadf008d610aa8509044fd41f5b59aef29",
+  "limitations": [
+    "All clinical history, scores, activities and resources are fictional technical examples.",
+    "No official diagnosis or measurement terminology mappings are claimed; parameter codes use a demonstration namespace.",
+    "Risk score is authored, uncalibrated and not a probability; the risk category remains UnknownRisk.",
+    "Consent and verification records are illustrative and do not implement access control.",
+    "Selected CQ smoke tests exercise a subset of the consolidated CQ set, not all 78 CQs."
+  ]
+}

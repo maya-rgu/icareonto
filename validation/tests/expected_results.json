@@ -1,0 +1,22 @@
+{
+  "comparison": "Exact unordered result sets, with value equality for declared numeric datatypes; no inference during SPARQL execution",
+  "cases": [
+    {"id": "CQ-007", "expected": [{"diagnosis": "https://example.org/maya/demo/es/cancer-diagnosis"}]},
+    {"id": "CQ-009", "expected": [{"exposure": "https://example.org/maya/demo/es/anthracycline-exposure"}]},
+    {"id": "CQ-014", "expected": [{"resource": "https://example.org/maya/demo/es/resource-walking-es"}]},
+    {"id": "CQ-020", "expected": [{"need": "http://maya-project.eu/icareonto/InformationComprehensionSupportNeed"}]},
+    {"id": "CQ-021", "expected": [{"resource": "https://example.org/maya/demo/es/resource-late-effects-es"}]},
+    {"id": "CQ-025", "expected": [{"language": "es-ES"}]},
+    {"id": "CQ-026", "expected": [{"recommendation": "https://example.org/maya/demo/es/symptom-recommendation"}]},
+    {"id": "CQ-042", "expected": [{"time": "https://example.org/maya/demo/es/time-baseline", "datetime": "2026-10-20T08:30:00+02:00"}]},
+    {"id": "CQ-048", "expected": [{"instrument": "https://example.org/maya/demo/es/blood-pressure-monitor"}]},
+    {"id": "CQ-062", "expected": [{"activity": "https://example.org/maya/demo/es/walking-activity"}]},
+    {"id": "CQ-064", "numeric_datatypes": {"minutes": "http://www.w3.org/2001/XMLSchema#decimal"}, "expected": [{"activity": "https://example.org/maya/demo/es/performed-walking-activity", "minutes": "18"}]},
+    {"id": "CQ-068", "expected": [{"planned": "https://example.org/maya/demo/es/planned-walking-session"}]},
+    {"id": "CQ-070", "expected": [{"resource": "https://example.org/maya/demo/es/resource-walking-es"}]},
+    {"id": "CQ-075", "expected": [{"record": "https://example.org/maya/demo/es/symptom-record"}]},
+    {"id": "CQ-078", "expected": [{"activity": "https://example.org/maya/demo/es/referral"}]},
+    {"id": "ES-LOCALE", "expected": [{"country": "ES", "language": "es-ES", "timezone": "Europe/Madrid"}]},
+    {"id": "ES-RESOURCE-SELECTION", "expected": [{"resource": "https://example.org/maya/demo/es/resource-late-effects-es"}]}
+  ]
+}

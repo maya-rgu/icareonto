@@ -1,0 +1,13 @@
+PREFIX icare: <http://maya-project.eu/icareonto/>
+PREFIX edu: <http://maya-project.eu/icareonto/education/metadata#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+
+# Query the catalogue graph, or its explicit union with the ontology.
+SELECT DISTINCT ?id ?title ?url ?language ?topic ?need ?stage WHERE {
+  ?resource a icare:HealthLiteracyResource ;
+      dcterms:identifier ?id ; dcterms:title ?title ;
+      dcterms:source ?url ; dcterms:language ?language ;
+      icare:knowledgeResourceHasTopic ?topic ;
+      icare:healthLiteracyResourceAddressesNeed ?need ; edu:journeyStage ?stage .
+}
+ORDER BY ?id ?topic ?need

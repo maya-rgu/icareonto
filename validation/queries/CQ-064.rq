@@ -1,0 +1,6 @@
+PREFIX icare: <http://maya-project.eu/icareonto/>
+PREFIX demo: <https://example.org/maya/demo/es/>
+SELECT ?activity ?minutes WHERE {
+  demo:performed-walking-session icare:performedSessionIncludesActivity ?activity .
+  ?activity icare:durationMinutes ?minutes .
+}

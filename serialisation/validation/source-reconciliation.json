@@ -1,0 +1,12 @@
+{
+  "checks_passed": 4254,
+  "source_schema_counts": {
+    "Class": 283,
+    "ObjectProperty": 284,
+    "DatatypeProperty": 137
+  },
+  "controlled_values_checked": 304,
+  "module_count": 17,
+  "catalogue_targets_checked": 44,
+  "result": "PASS"
+}

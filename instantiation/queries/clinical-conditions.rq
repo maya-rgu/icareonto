@@ -1,0 +1,11 @@
+# Bind the requested participant identifier in the consuming application.
+PREFIX i: <http://maya-project.eu/icareonto/>
+SELECT ?conditionName ?status WHERE {
+  VALUES ?requestedId { "es-demo-aya-full" }
+  ?person i:personIdentifier ?identifier ; i:personHasClinicalProfile ?profile .
+  FILTER(STR(?identifier) = ?requestedId)
+  ?profile i:clinicalProfileIncludesRecord ?record .
+  ?record i:conditionRecordRecordsCondition ?condition .
+  ?condition i:conditionName ?conditionName .
+  OPTIONAL { ?record i:conditionRecordHasClinicalStatus ?status }
+}

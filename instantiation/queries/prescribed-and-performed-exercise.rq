@@ -1,0 +1,14 @@
+PREFIX i: <http://maya-project.eu/icareonto/>
+SELECT ?prescriptionId ?prescribedMinutes ?performedMinutes WHERE {
+  VALUES ?requestedId { "es-demo-aya-full" }
+  ?person i:personIdentifier ?identifier . FILTER(STR(?identifier) = ?requestedId)
+  ?plan i:carePlanIntendedFor ?person ; i:carePlanIncludesActivity ?intervention .
+  ?intervention i:exerciseInterventionHasPrescription ?prescription .
+  ?prescription i:prescriptionIdentifier ?prescriptionId ;
+    i:exercisePrescriptionIncludesActivity/i:durationMinutes ?prescribedMinutes .
+  OPTIONAL {
+    ?intervention i:activityRealisedBy ?performedSession .
+    ?performedSession i:performedSessionRealises/i:plannedSessionFollowsPrescription ?prescription ;
+      i:performedSessionIncludesActivity/i:durationMinutes ?performedMinutes .
+  }
+}

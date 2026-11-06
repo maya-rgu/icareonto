@@ -1,0 +1,14 @@
+{
+  "schema_version": "1.0",
+  "recorded_at": "2026-10-14T09:00:00+02:00",
+  "source": "Fictional site coordinator setup for a technical demonstration",
+  "study": {
+    "id": "maya-demo", "name": "Fictional MAYA instantiation study",
+    "phases": [{"id": "feasibility", "name": "Fictional feasibility phase"}],
+    "arms": [{"id": "intervention", "name": "Fictional intervention arm"}, {"id": "comparison", "name": "Fictional comparison arm"}]
+  },
+  "site": {
+    "id": "es-demo-01", "name": "Fictional Spanish demonstration site",
+    "locale": {"language_tag": "es-ES", "country_code": "ES", "time_zone": "Europe/Madrid"}
+  }
+}

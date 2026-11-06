@@ -1,0 +1,292 @@
+{
+  "cases": [
+    {
+      "baseline_best_reference_rank": 25,
+      "baseline_reference_ranks": {
+        "http://maya-project.eu/icareonto/LanguagePreference": 25
+      },
+      "best_reference_rank": 2,
+      "rationale": "Individual preference, not a site's Locale.",
+      "reference_classes": [
+        "http://maya-project.eu/icareonto/LanguagePreference"
+      ],
+      "reference_ranks": {
+        "http://maya-project.eu/icareonto/LanguagePreference": 2
+      },
+      "requirement_id": "DEMO-KR01",
+      "text": "Remember which language each survivor wants to use for conversations and educational information, independently of the site's usual language.",
+      "top_class": "http://maya-project.eu/icareonto/LanguageProficiencyLevelValue",
+      "top_score": 0.445847978229151
+    },
+    {
+      "baseline_best_reference_rank": 3,
+      "baseline_reference_ranks": {
+        "http://maya-project.eu/icareonto/InformationPreference": 3
+      },
+      "best_reference_rank": 82,
+      "rationale": "Desired level of detail.",
+      "reference_classes": [
+        "http://maya-project.eu/icareonto/InformationPreference"
+      ],
+      "reference_ranks": {
+        "http://maya-project.eu/icareonto/InformationPreference": 82
+      },
+      "requirement_id": "DEMO-KR02",
+      "text": "Record whether a person wants short explanations or more detailed information when receiving support.",
+      "top_class": "http://maya-project.eu/icareonto/ResponseStatus",
+      "top_score": 0.534127696659174
+    },
+    {
+      "baseline_best_reference_rank": 1,
+      "baseline_reference_ranks": {
+        "http://maya-project.eu/icareonto/ParticipantEnrolment": 1
+      },
+      "best_reference_rank": 2,
+      "rationale": "Contextual participation record.",
+      "reference_classes": [
+        "http://maya-project.eu/icareonto/ParticipantEnrolment"
+      ],
+      "reference_ranks": {
+        "http://maya-project.eu/icareonto/ParticipantEnrolment": 2
+      },
+      "requirement_id": "DEMO-KR03",
+      "text": "Keep the registration linking a participant to the study site, study phase, assigned arm and participation period.",
+      "top_class": "http://maya-project.eu/icareonto/StudyArm",
+      "top_score": 0.566767039197386
+    },
+    {
+      "baseline_best_reference_rank": 2,
+      "baseline_reference_ranks": {
+        "http://maya-project.eu/icareonto/BloodPressureMeasurementProtocol": 2
+      },
+      "best_reference_rank": 1,
+      "rationale": "Specific blood-pressure procedure.",
+      "reference_classes": [
+        "http://maya-project.eu/icareonto/BloodPressureMeasurementProtocol"
+      ],
+      "reference_ranks": {
+        "http://maya-project.eu/icareonto/BloodPressureMeasurementProtocol": 1
+      },
+      "requirement_id": "DEMO-KR04",
+      "text": "Specify a consistent procedure for obtaining systolic and diastolic blood pressure readings at home.",
+      "top_class": "http://maya-project.eu/icareonto/BloodPressureMeasurementProtocol",
+      "top_score": 0.5116500706395157
+    },
+    {
+      "baseline_best_reference_rank": 6,
+      "baseline_reference_ranks": {
+        "http://maya-project.eu/icareonto/Questionnaire": 6
+      },
+      "best_reference_rank": 1,
+      "rationale": "Question-based instrument.",
+      "reference_classes": [
+        "http://maya-project.eu/icareonto/Questionnaire"
+      ],
+      "reference_ranks": {
+        "http://maya-project.eu/icareonto/Questionnaire": 1
+      },
+      "requirement_id": "DEMO-KR05",
+      "text": "Identify the instrument made up of questions that a participant answers to obtain an assessment score.",
+      "top_class": "http://maya-project.eu/icareonto/Questionnaire",
+      "top_score": 0.651231727343833
+    },
+    {
+      "baseline_best_reference_rank": 11,
+      "baseline_reference_ranks": {
+        "http://maya-project.eu/icareonto/HealthLiteracyNeedType": 11
+      },
+      "best_reference_rank": 8,
+      "rationale": "An identified need, rather than a resource or intervention addressing it.",
+      "reference_classes": [
+        "http://maya-project.eu/icareonto/HealthLiteracyNeedType"
+      ],
+      "reference_ranks": {
+        "http://maya-project.eu/icareonto/HealthLiteracyNeedType": 8
+      },
+      "requirement_id": "DEMO-KR06",
+      "text": "Represent the particular support a survivor needs to access or understand health information.",
+      "top_class": "http://maya-project.eu/icareonto/CancerSurvivorRole",
+      "top_score": 0.5733310402028714
+    },
+    {
+      "baseline_best_reference_rank": 72,
+      "baseline_reference_ranks": {
+        "http://maya-project.eu/icareonto/AccessibilityFeature": 72
+      },
+      "best_reference_rank": 1,
+      "rationale": "Content accessibility characteristics.",
+      "reference_classes": [
+        "http://maya-project.eu/icareonto/AccessibilityFeature"
+      ],
+      "reference_ranks": {
+        "http://maya-project.eu/icareonto/AccessibilityFeature": 1
+      },
+      "requirement_id": "DEMO-KR07",
+      "text": "Describe features such as captions or an audio alternative that make educational content accessible.",
+      "top_class": "http://maya-project.eu/icareonto/AccessibilityFeature",
+      "top_score": 0.4998182482781146
+    },
+    {
+      "baseline_best_reference_rank": 3,
+      "baseline_reference_ranks": {
+        "http://maya-project.eu/icareonto/PerformedExerciseSession": 3
+      },
+      "best_reference_rank": 2,
+      "rationale": "Actual rather than planned session.",
+      "reference_classes": [
+        "http://maya-project.eu/icareonto/PerformedExerciseSession"
+      ],
+      "reference_ranks": {
+        "http://maya-project.eu/icareonto/PerformedExerciseSession": 2
+      },
+      "requirement_id": "DEMO-KR08",
+      "text": "Keep a record of the exercise session that actually took place, distinct from the session scheduled in advance.",
+      "top_class": "http://maya-project.eu/icareonto/PlannedExerciseSession",
+      "top_score": 0.6256485833904192
+    },
+    {
+      "baseline_best_reference_rank": 1,
+      "baseline_reference_ranks": {
+        "http://maya-project.eu/icareonto/ExercisePrescription": 1
+      },
+      "best_reference_rank": 1,
+      "rationale": "Prescribed exercise specification.",
+      "reference_classes": [
+        "http://maya-project.eu/icareonto/ExercisePrescription"
+      ],
+      "reference_ranks": {
+        "http://maya-project.eu/icareonto/ExercisePrescription": 1
+      },
+      "requirement_id": "DEMO-KR09",
+      "text": "Represent the prescribed exercise activities, duration and intensity that a participant is asked to follow.",
+      "top_class": "http://maya-project.eu/icareonto/ExercisePrescription",
+      "top_score": 0.7190424399322731
+    },
+    {
+      "baseline_best_reference_rank": 8,
+      "baseline_reference_ranks": {
+        "http://maya-project.eu/icareonto/CancerTreatmentHistory": 8
+      },
+      "best_reference_rank": 1,
+      "rationale": "Collection of treatment records.",
+      "reference_classes": [
+        "http://maya-project.eu/icareonto/CancerTreatmentHistory"
+      ],
+      "reference_ranks": {
+        "http://maya-project.eu/icareonto/CancerTreatmentHistory": 1
+      },
+      "requirement_id": "DEMO-KR10",
+      "text": "Maintain an organised history of the oncology treatments received by a survivor.",
+      "top_class": "http://maya-project.eu/icareonto/CancerTreatmentHistory",
+      "top_score": 0.6751299039616528
+    },
+    {
+      "baseline_best_reference_rank": 1,
+      "baseline_reference_ranks": {
+        "http://maya-project.eu/icareonto/ConsentRecord": 1
+      },
+      "best_reference_rank": 1,
+      "rationale": "Recorded decision and validity context.",
+      "reference_classes": [
+        "http://maya-project.eu/icareonto/ConsentRecord"
+      ],
+      "reference_ranks": {
+        "http://maya-project.eu/icareonto/ConsentRecord": 1
+      },
+      "requirement_id": "DEMO-KR11",
+      "text": "Keep the participant's consent decision, its current status and the period during which that record applies.",
+      "top_class": "http://maya-project.eu/icareonto/ConsentRecord",
+      "top_score": 0.5690816308915508
+    },
+    {
+      "baseline_best_reference_rank": 1,
+      "baseline_reference_ranks": {
+        "http://maya-project.eu/icareonto/EvidenceSource": 1
+      },
+      "best_reference_rank": 1,
+      "rationale": "Underlying evidence source.",
+      "reference_classes": [
+        "http://maya-project.eu/icareonto/EvidenceSource"
+      ],
+      "reference_ranks": {
+        "http://maya-project.eu/icareonto/EvidenceSource": 1
+      },
+      "requirement_id": "DEMO-KR12",
+      "text": "Identify the publication or study that provides evidence supporting health information.",
+      "top_class": "http://maya-project.eu/icareonto/EvidenceSource",
+      "top_score": 0.560795161542188
+    },
+    {
+      "baseline_best_reference_rank": 2,
+      "baseline_reference_ranks": {
+        "http://maya-project.eu/icareonto/NutritionInstruction": 2
+      },
+      "best_reference_rank": 1,
+      "rationale": "Structured dietary instruction.",
+      "reference_classes": [
+        "http://maya-project.eu/icareonto/NutritionInstruction"
+      ],
+      "reference_ranks": {
+        "http://maya-project.eu/icareonto/NutritionInstruction": 1
+      },
+      "requirement_id": "DEMO-KR13",
+      "text": "Represent an instruction to change intake of a particular food component, including its target amount and unit.",
+      "top_class": "http://maya-project.eu/icareonto/NutritionInstruction",
+      "top_score": 0.5939244788035232
+    },
+    {
+      "baseline_best_reference_rank": 5,
+      "baseline_reference_ranks": {
+        "http://maya-project.eu/icareonto/Locale": 5
+      },
+      "best_reference_rank": 1,
+      "rationale": "Shared regional context, not a participant preference.",
+      "reference_classes": [
+        "http://maya-project.eu/icareonto/Locale"
+      ],
+      "reference_ranks": {
+        "http://maya-project.eu/icareonto/Locale": 1
+      },
+      "requirement_id": "DEMO-KR14",
+      "text": "Describe the site's regional language setting, country and time zone.",
+      "top_class": "http://maya-project.eu/icareonto/Locale",
+      "top_score": 0.41384616373559097
+    },
+    {
+      "actual_review": "needs_review",
+      "baseline_reference_ranks": {},
+      "expected_review": "needs_review",
+      "rationale": "The earlier CQ-051 representation gap is resolved by measurementInstrumentHasValidationEvidence. This case remains outside the original 14 positive retrieval references and retains its pending mapping decision until separately reviewed; no new target is inferred from returned ranks.",
+      "reference_classes": [],
+      "reference_ranks": {},
+      "requirement_id": "DEMO-KR16",
+      "review_matches_reference": true,
+      "text": "Distinguish publications that validate an assessment instrument from publications that merely provide background information about it.",
+      "top_class": "http://maya-project.eu/icareonto/ClinicalAssessment",
+      "top_score": 0.4661513841171173
+    }
+  ],
+  "lexical_baseline": {
+    "hit_at_1": 0.2857142857142857,
+    "hit_at_10": 0.7857142857142857,
+    "hit_at_5": 0.6428571428571429,
+    "mean_reciprocal_rank": 0.45022366522366525,
+    "positive_cases": 14
+  },
+  "nonmapping_cases": {
+    "count": 1,
+    "decision_matches": 1,
+    "interpretation": "Checks of supplied demonstration decisions, not automatic no-match detection by the scorer"
+  },
+  "ranking_sha256": "c2f41ed2395f76e938b84bb8d24156f8a0162ff182099fe3492154118bfa88fd",
+  "reference_sha256": "da934c516d2d1326c9aa2a2b6fa22b94ea1e4627893134e007b8ae7a168330ce",
+  "reference_status": "demonstration_reference_not_expert_gold_standard",
+  "semantic_cosine": {
+    "hit_at_1": 0.6428571428571429,
+    "hit_at_10": 0.9285714285714286,
+    "hit_at_5": 0.8571428571428571,
+    "mean_reciprocal_rank": 0.7597996515679443,
+    "positive_cases": 14
+  },
+  "status": "EVALUATED_DEMONSTRATION_NOT_PILOT_VALIDATION"
+}

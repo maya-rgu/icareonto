@@ -1,8 +1,0 @@
-Base IRI (stable, lowercase):
-https://maya-project.eu/icareonto/ (prefix icare:)
-
-License: CC BY 4.0 (or as required); note SNOMED CT has licensing constraints—prefer NCIt/HPO/LOINC/FHIR first; add SNOMED later if allowed.
-
-Naming style: Classes = UpperCamelCase, properties = lowerCamelCase, individuals = lowerCamelCase. Singular nouns.
-
-Annotations: use rdfs:label, skos:prefLabel, IAO:0000115 (definition), dc:creator, dc:date, dc:license.

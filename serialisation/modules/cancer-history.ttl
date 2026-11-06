@@ -1,0 +1,704 @@
+@prefix icare: <http://maya-project.eu/icareonto/> .
+@prefix meta: <http://maya-project.eu/icareonto/metadata#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+icare:AnthracyclineExposure a owl:Class ;
+    rdfs:label "Anthracycline Exposure"@en ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    rdfs:subClassOf icare:ChemotherapyExposure ;
+    skos:definition "Exposure to anthracycline chemotherapy, represented because cumulative anthracycline dose is a key factor in cardiovascular late-effect risk."@en .
+
+icare:ChemotherapyTreatment a icare:CancerTreatmentType,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Chemotherapy treatment"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    skos:broader icare:SystemicTreatment ;
+    skos:definition "A cancer-treatment type involving cytotoxic medicines intended to destroy or inhibit cancer cells."@en ;
+    skos:inScheme icare:CancerTreatmentTypeScheme ;
+    skos:prefLabel "Chemotherapy treatment"@en .
+
+icare:ChestRadiotherapyExposure a owl:Class ;
+    rdfs:label "Chest Radiotherapy Exposure"@en ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    rdfs:subClassOf icare:RadiotherapyExposure ;
+    skos:definition "Radiotherapy exposure involving the chest, mediastinum, heart region, or adjacent structures, represented because of its relevance to cardiovascular late-effect risk."@en .
+
+icare:ImmunotherapyExposure a owl:Class ;
+    rdfs:label "Immunotherapy Exposure"@en ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    rdfs:subClassOf icare:SystemicTherapyExposure ;
+    skos:definition "Exposure to cancer immunotherapy, such as checkpoint inhibitors or immune-modulating treatments, with potential relevance to later clinical monitoring."@en .
+
+icare:ImmunotherapyTreatment a icare:CancerTreatmentType,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Immunotherapy treatment"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    skos:broader icare:SystemicTreatment ;
+    skos:definition "A cancer-treatment type that modifies or uses immune-system activity to act against cancer."@en ;
+    skos:inScheme icare:CancerTreatmentTypeScheme ;
+    skos:prefLabel "Immunotherapy treatment"@en .
+
+icare:StemCellTransplantTreatment a icare:CancerTreatmentType,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Stem cell transplant treatment"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    skos:broader icare:SystemicTreatment ;
+    skos:definition "A cancer-treatment type involving transplantation of blood-forming stem cells as part of cancer treatment."@en ;
+    skos:inScheme icare:CancerTreatmentTypeScheme ;
+    skos:prefLabel "Stem cell transplant treatment"@en .
+
+icare:TargetedTherapyExposure a owl:Class ;
+    rdfs:label "Targeted Therapy Exposure"@en ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    rdfs:subClassOf icare:SystemicTherapyExposure ;
+    skos:definition "Exposure to targeted anti-cancer therapy, such as kinase inhibitors or monoclonal antibodies, that may be relevant to survivorship monitoring or late-effect assessment."@en .
+
+icare:TargetedTherapyTreatment a icare:CancerTreatmentType,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Targeted therapy treatment"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    skos:broader icare:SystemicTreatment ;
+    skos:definition "A cancer-treatment type directed at specific molecular targets involved in cancer growth or survival."@en ;
+    skos:inScheme icare:CancerTreatmentTypeScheme ;
+    skos:prefLabel "Targeted therapy treatment"@en .
+
+icare:ageAtCancerDiagnosis a owl:DatatypeProperty ;
+    rdfs:label "age at cancer diagnosis"@en ;
+    rdfs:domain icare:CancerDiagnosis ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    rdfs:range xsd:decimal ;
+    skos:definition "Records the person's age in years at the time of the cancer diagnosis."@en .
+
+icare:cancerDiagnosisHasSource a owl:ObjectProperty ;
+    rdfs:label "diagnosis has source"@en ;
+    rdfs:domain icare:CancerDiagnosis ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    rdfs:range icare:DataSource ;
+    skos:definition "Identifies the record, report or other information source supporting the cancer diagnosis."@en .
+
+icare:cancerDiagnosisRecordedAt a owl:ObjectProperty ;
+    rdfs:label "recorded diagnosis at"@en ;
+    rdfs:domain icare:CancerDiagnosis ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    rdfs:range icare:Timepoint ;
+    skos:definition "Relates a cancer diagnosis to the time it was recorded or diagnosed."@en .
+
+icare:cancerStageAssessedAt a owl:ObjectProperty ;
+    rdfs:label "stage assessed at"@en ;
+    rdfs:domain icare:CancerStage ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    rdfs:range icare:Timepoint ;
+    skos:definition "Identifies when the cancer-stage assessment was made."@en .
+
+icare:cancerStageHasSource a owl:ObjectProperty ;
+    rdfs:label "stage has source"@en ;
+    rdfs:domain icare:CancerStage ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    rdfs:range icare:DataSource ;
+    skos:definition "Identifies the record, report or other information source supporting the cancer-stage assessment."@en .
+
+icare:cancerStageHasType a owl:ObjectProperty ;
+    rdfs:label "has stage type"@en ;
+    rdfs:domain icare:CancerStage ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    rdfs:range icare:CancerStageType ;
+    skos:definition "Identifies whether a cancer-stage assessment is clinical, pathological or another recognised stage type."@en .
+
+icare:cancerStageHasValue a owl:ObjectProperty ;
+    rdfs:label "has stage value"@en ;
+    rdfs:domain icare:CancerStage ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    rdfs:range icare:CancerStageValue ;
+    skos:definition "Associates a cancer-stage assessment with one or more structured stage-component values."@en .
+
+icare:cancerStageSummary a owl:DatatypeProperty ;
+    rdfs:label "cancer stage summary"@en ;
+    rdfs:domain icare:CancerStage ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    rdfs:range xsd:string ;
+    skos:definition "The cancer-stage statement as recorded or communicated, such as \"Stage II\" or \"pT2N1M0\"."@en .
+
+icare:cancerStageSystemVersion a owl:DatatypeProperty ;
+    rdfs:label "cancer stage system version"@en ;
+    rdfs:domain icare:CancerStage ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    rdfs:range xsd:string ;
+    skos:definition "Identifies the version or edition of the staging system used for the assessment, such as TNM edition 8."@en .
+
+icare:cancerStageUsesSystem a owl:ObjectProperty ;
+    rdfs:label "uses staging system"@en ;
+    rdfs:domain icare:CancerStage ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    rdfs:range icare:CancerStagingSystem ;
+    skos:definition "Identifies the staging classification system used to express a cancer-stage assessment."@en .
+
+icare:cancerTreatmentHistoryHasRecord a owl:ObjectProperty ;
+    rdfs:label "history treatment record"@en ;
+    rdfs:domain icare:CancerTreatmentHistory ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    rdfs:range icare:CancerTreatmentRecord ;
+    skos:definition "Relates Cancer Treatment History to Cancer Treatment Record."@en .
+
+icare:cancerType a owl:DatatypeProperty ;
+    rdfs:label "cancer type"@en ;
+    rdfs:domain icare:CancerDiagnosis ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    rdfs:range xsd:string ;
+    skos:definition "Records the type or name of the diagnosed cancer."@en .
+
+icare:cancerTypeName a owl:DatatypeProperty ;
+    rdfs:label "cancer type name"@en ;
+    rdfs:domain icare:CancerDiagnosis ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    rdfs:range xsd:string ;
+    skos:definition "Records the cancer type or diagnosis name."@en .
+
+icare:cardiotoxicityRiskValue a owl:DatatypeProperty ;
+    rdfs:label "cardiotoxicity risk value"@en ;
+    rdfs:domain icare:CardiotoxicityRisk ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    rdfs:range xsd:string ;
+    skos:definition "Records a qualitative cardiotoxicity risk value, such as low, moderate, high, or unknown."@en .
+
+icare:cumulativeDrugDose a owl:DatatypeProperty ;
+    rdfs:label "cumulative drug dose"@en ;
+    rdfs:domain icare:SystemicTherapyExposure ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    rdfs:range xsd:decimal ;
+    skos:definition "Records the cumulative drug dose for Systemic Therapy Exposure."@en .
+
+icare:cumulativeDrugDoseUnit a owl:DatatypeProperty ;
+    rdfs:label "cumulative drug dose unit"@en ;
+    rdfs:domain icare:SystemicTherapyExposure ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    rdfs:range xsd:string ;
+    skos:definition "Records the unit for cumulative drug dose, such as mg/m2."@en .
+
+icare:diagnosisDate a owl:DatatypeProperty ;
+    rdfs:label "diagnosis date"@en ;
+    rdfs:domain icare:CancerDiagnosis ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    rdfs:range xsd:date ;
+    skos:definition "Records the date of cancer diagnosis when known."@en .
+
+icare:hasCancerDiagnosis a owl:ObjectProperty ;
+    rdfs:label "has cancer diagnosis"@en ;
+    rdfs:domain icare:Person ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    rdfs:range icare:CancerDiagnosis ;
+    skos:definition "Associates a person with a recorded cancer diagnosis, whether current or historical."@en .
+
+icare:hasStage a owl:ObjectProperty ;
+    rdfs:label "diagnosis has stage"@en ;
+    rdfs:domain icare:CancerDiagnosis ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    rdfs:range icare:CancerStage ;
+    skos:definition "Associates a cancer diagnosis with a cancer-stage assessment."@en .
+
+icare:personHasCancerTreatmentHistory a owl:ObjectProperty ;
+    rdfs:label "has cancer treatment history"@en ;
+    rdfs:domain icare:Person ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    rdfs:range icare:CancerTreatmentHistory ;
+    skos:definition "Relates Person to Cancer Treatment History."@en .
+
+icare:radiationDoseGy a owl:DatatypeProperty ;
+    rdfs:label "radiation dose in Gy"@en ;
+    rdfs:domain icare:RadiotherapyExposure ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    rdfs:range xsd:decimal ;
+    skos:definition "Records the radiation dose in Gy for Radiotherapy Exposure."@en .
+
+icare:radiotherapyBodySiteName a owl:DatatypeProperty ;
+    rdfs:label "radiotherapy body site name"@en ;
+    rdfs:domain icare:RadiotherapyBodySite ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    rdfs:range xsd:string ;
+    skos:definition "Records the name of the radiotherapy body site or field."@en .
+
+icare:radiotherapyExposureHasBodySite a owl:ObjectProperty ;
+    rdfs:label "has exposure to site"@en ;
+    rdfs:domain icare:RadiotherapyExposure ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    rdfs:range icare:RadiotherapyBodySite ;
+    skos:definition "Relates radiotherapy exposure to the treated anatomical site or field."@en .
+
+icare:stageValueCode a owl:DatatypeProperty ;
+    rdfs:label "stage value code"@en ;
+    rdfs:domain icare:CancerStageValue ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    rdfs:range xsd:string ;
+    skos:definition "Records the stage-component value within the specified staging system, such as IIIA, T2, N1 or M0."@en .
+
+icare:stageValueHasComponentType a owl:ObjectProperty ;
+    rdfs:label "has stage value component"@en ;
+    rdfs:domain icare:CancerStageValue ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    rdfs:range icare:CancerStageComponentType ;
+    skos:definition "Identifies whether the value represents the overall stage group or a T, N or M component."@en .
+
+icare:stageValueText a owl:DatatypeProperty ;
+    rdfs:label "stage value text"@en ;
+    rdfs:domain icare:CancerStageValue ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    rdfs:range xsd:string ;
+    skos:definition "Records optional human-readable wording for the stage-component value."@en .
+
+icare:treatmentAgentName a owl:DatatypeProperty ;
+    rdfs:label "treatment agent name"@en ;
+    rdfs:domain icare:TreatmentAgent ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    rdfs:range xsd:string ;
+    skos:definition "Records the name of a treatment agent, drug, or modality."@en .
+
+icare:treatmentExposureHasAgent a owl:ObjectProperty ;
+    rdfs:label "has exposure to"@en ;
+    rdfs:domain icare:TreatmentExposure ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    rdfs:range icare:TreatmentAgent ;
+    skos:definition "Relates an exposure to the treatment agent involved."@en .
+
+icare:treatmentExposureHasPeriod a owl:ObjectProperty ;
+    rdfs:label "has exposure period"@en ;
+    rdfs:domain icare:TreatmentExposure ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    rdfs:range icare:TimeInterval ;
+    skos:definition "Relates an exposure to the interval during which the exposure occurred."@en .
+
+icare:treatmentExposureIsRiskFactorOf a owl:ObjectProperty ;
+    rdfs:label "exposure is risk factor of"@en ;
+    rdfs:domain icare:TreatmentExposure ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    rdfs:range icare:CardiotoxicityRisk ;
+    skos:definition "Relates Treatment Exposure to Cardiotoxicity Risk."@en .
+
+icare:treatmentRecordHasIntent a owl:ObjectProperty ;
+    rdfs:label "has treatment intent"@en ;
+    rdfs:domain icare:CancerTreatmentRecord ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    rdfs:range icare:CancerTreatmentIntent ;
+    skos:definition "Identifies the therapeutic intent of the recorded cancer treatment."@en .
+
+icare:treatmentRecordHasRegimen a owl:ObjectProperty ;
+    rdfs:label "has treatment regimen"@en ;
+    rdfs:domain icare:CancerTreatmentRecord ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    rdfs:range icare:TreatmentRegimen ;
+    skos:definition "Relates a treatment record to the regimen or protocol used."@en .
+
+icare:treatmentRecordHasSetting a owl:ObjectProperty ;
+    rdfs:label "has treatment setting"@en ;
+    rdfs:domain icare:CancerTreatmentRecord ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    rdfs:range icare:CancerTreatmentSetting ;
+    skos:definition "Identifies the timing or strategic relationship of the recorded treatment to other cancer treatments."@en .
+
+icare:treatmentRecordHasSource a owl:ObjectProperty ;
+    rdfs:label "has treatment source"@en ;
+    rdfs:domain icare:CancerTreatmentRecord ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    rdfs:range icare:DataSource ;
+    skos:definition "Relates a treatment record to its data source."@en .
+
+icare:treatmentRecordHasTreatmentPeriod a owl:ObjectProperty ;
+    rdfs:label "record has treatment period"@en ;
+    rdfs:domain icare:CancerTreatmentRecord ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    rdfs:range icare:TimeInterval ;
+    skos:definition "Relates Cancer Treatment Record to Time Interval. A treatment record may cover a broader episode than one exposure."@en .
+
+icare:treatmentRecordIndicatesExposure a owl:ObjectProperty ;
+    rdfs:label "record indicates exposure"@en ;
+    rdfs:domain icare:CancerTreatmentRecord ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    rdfs:range icare:TreatmentExposure ;
+    skos:definition "Relates Cancer Treatment Record to Treatment Exposure."@en .
+
+icare:treatmentRecordRecordedAt a owl:ObjectProperty ;
+    rdfs:label "recorded treatment at"@en ;
+    rdfs:domain icare:CancerTreatmentRecord ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    rdfs:range icare:Timepoint ;
+    skos:definition "Relates a treatment record to the time it was recorded or asserted."@en .
+
+icare:treatmentRecordRecordsTreatmentType a owl:ObjectProperty ;
+    rdfs:label "records treatment type"@en ;
+    rdfs:domain icare:CancerTreatmentRecord ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    rdfs:range icare:CancerTreatmentType ;
+    skos:definition "Relates Cancer Treatment Record to Cancer Treatment Type."@en .
+
+icare:treatmentRecordTreatsDiagnosis a owl:ObjectProperty ;
+    rdfs:label "treats diagnosis"@en ;
+    rdfs:domain icare:CancerTreatmentRecord ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    rdfs:range icare:CancerDiagnosis ;
+    skos:definition "Identifies the cancer diagnosis for which the recorded treatment was delivered."@en .
+
+icare:treatmentRegimenName a owl:DatatypeProperty ;
+    rdfs:label "treatment regimen name"@en ;
+    rdfs:domain icare:TreatmentRegimen ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    rdfs:range xsd:string ;
+    skos:definition "Records the name of a treatment regimen."@en .
+
+icare:AdjuvantTreatmentSetting a icare:CancerTreatmentSetting,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Adjuvant treatment setting"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    skos:definition "A cancer-treatment setting in which treatment is delivered after the principal definitive treatment to reduce recurrence risk."@en ;
+    skos:inScheme icare:CancerTreatmentSettingScheme ;
+    skos:prefLabel "Adjuvant treatment setting"@en ;
+    skos:topConceptOf icare:CancerTreatmentSettingScheme .
+
+icare:ChemotherapyExposure a owl:Class ;
+    rdfs:label "Chemotherapy Exposure"@en ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    rdfs:subClassOf icare:SystemicTherapyExposure ;
+    skos:definition "Exposure to cytotoxic chemotherapy as part of cancer treatment, including drug class, cumulative dose, regimen, and treatment period where available."@en .
+
+icare:ClinicalStageType a icare:CancerStageType,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Clinical stage"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    skos:definition "A cancer-stage type based on information available before definitive treatment, including clinical examination, imaging or biopsy findings."@en ;
+    skos:inScheme icare:CancerStageTypeScheme ;
+    skos:prefLabel "Clinical stage"@en ;
+    skos:topConceptOf icare:CancerStageTypeScheme .
+
+icare:ConcomitantTreatmentSetting a icare:CancerTreatmentSetting,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Concomitant treatment setting"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    skos:definition "A cancer-treatment setting in which two or more treatments are delivered during the same treatment period."@en ;
+    skos:inScheme icare:CancerTreatmentSettingScheme ;
+    skos:prefLabel "Concomitant treatment setting"@en ;
+    skos:topConceptOf icare:CancerTreatmentSettingScheme .
+
+icare:CurativeTreatmentIntent a icare:CancerTreatmentIntent,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Curative treatment intent"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    skos:definition "A cancer-treatment intent in which treatment is delivered with the aim of curing the cancer."@en ;
+    skos:inScheme icare:CancerTreatmentIntentScheme ;
+    skos:prefLabel "Curative treatment intent"@en ;
+    skos:topConceptOf icare:CancerTreatmentIntentScheme .
+
+icare:DistantMetastasisCategoryComponent a icare:CancerStageComponentType,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Distant metastasis category"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    skos:definition "Indicates that the value represents the TNM distant-metastasis category, such as M0."@en ;
+    skos:inScheme icare:CancerStageComponentTypeScheme ;
+    skos:prefLabel "Distant metastasis category"@en ;
+    skos:topConceptOf icare:CancerStageComponentTypeScheme .
+
+icare:FIGOStagingSystem a icare:CancerStagingSystem,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "FIGO staging system"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    skos:definition "The cancer-staging system maintained by the International Federation of Gynecology and Obstetrics for relevant gynaecological cancers."@en ;
+    skos:inScheme icare:CancerStagingSystemScheme ;
+    skos:prefLabel "FIGO staging system"@en ;
+    skos:topConceptOf icare:CancerStagingSystemScheme .
+
+icare:NeoadjuvantTreatmentSetting a icare:CancerTreatmentSetting,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Neoadjuvant treatment setting"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    skos:definition "A cancer-treatment setting in which treatment is delivered before the principal definitive treatment."@en ;
+    skos:inScheme icare:CancerTreatmentSettingScheme ;
+    skos:prefLabel "Neoadjuvant treatment setting"@en ;
+    skos:topConceptOf icare:CancerTreatmentSettingScheme .
+
+icare:PalliativeTreatmentIntent a icare:CancerTreatmentIntent,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Palliative treatment intent"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    skos:definition "A cancer-treatment intent focused on relieving symptoms, slowing disease or improving quality of life rather than achieving cure."@en ;
+    skos:inScheme icare:CancerTreatmentIntentScheme ;
+    skos:prefLabel "Palliative treatment intent"@en ;
+    skos:topConceptOf icare:CancerTreatmentIntentScheme .
+
+icare:PathologicalStageType a icare:CancerStageType,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Pathological stage"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    skos:definition "A cancer-stage type based on pathological examination of tissue obtained during surgery or another procedure."@en ;
+    skos:inScheme icare:CancerStageTypeScheme ;
+    skos:prefLabel "Pathological stage"@en ;
+    skos:topConceptOf icare:CancerStageTypeScheme .
+
+icare:RadiotherapyTreatment a icare:CancerTreatmentType,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Radiotherapy treatment"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    skos:definition "A cancer-treatment type using ionising radiation to treat cancer."@en ;
+    skos:inScheme icare:CancerTreatmentTypeScheme ;
+    skos:prefLabel "Radiotherapy treatment"@en ;
+    skos:topConceptOf icare:CancerTreatmentTypeScheme .
+
+icare:RegionalNodeCategoryComponent a icare:CancerStageComponentType,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Regional node category"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    skos:definition "Indicates that the value represents the TNM regional-lymph-node category, such as N1."@en ;
+    skos:inScheme icare:CancerStageComponentTypeScheme ;
+    skos:prefLabel "Regional node category"@en ;
+    skos:topConceptOf icare:CancerStageComponentTypeScheme .
+
+icare:StageGroupComponent a icare:CancerStageComponentType,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Stage group"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    skos:definition "Indicates that the value represents an overall cancer-stage group, such as stage IIIA."@en ;
+    skos:inScheme icare:CancerStageComponentTypeScheme ;
+    skos:prefLabel "Stage group"@en ;
+    skos:topConceptOf icare:CancerStageComponentTypeScheme .
+
+icare:SurgeryTreatment a icare:CancerTreatmentType,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Surgery treatment"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    skos:definition "A cancer-treatment type involving an operative procedure to remove, reduce or otherwise manage cancer."@en ;
+    skos:inScheme icare:CancerTreatmentTypeScheme ;
+    skos:prefLabel "Surgery treatment"@en ;
+    skos:topConceptOf icare:CancerTreatmentTypeScheme .
+
+icare:TNMStagingSystem a icare:CancerStagingSystem,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "TNM staging system"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    skos:definition "The tumour-node-metastasis staging system used to describe the anatomical extent of cancer."@en ;
+    skos:inScheme icare:CancerStagingSystemScheme ;
+    skos:prefLabel "TNM staging system"@en ;
+    skos:topConceptOf icare:CancerStagingSystemScheme .
+
+icare:TreatmentAloneSetting a icare:CancerTreatmentSetting,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Treatment alone setting"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    skos:definition "A cancer-treatment setting in which the treatment is not classified as neoadjuvant, adjuvant or concomitant treatment."@en ;
+    skos:inScheme icare:CancerTreatmentSettingScheme ;
+    skos:prefLabel "Treatment alone setting"@en ;
+    skos:topConceptOf icare:CancerTreatmentSettingScheme .
+
+icare:TumourCategoryComponent a icare:CancerStageComponentType,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Tumour category"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    skos:definition "Indicates that the value represents the TNM primary-tumour category, such as T2."@en ;
+    skos:inScheme icare:CancerStageComponentTypeScheme ;
+    skos:prefLabel "Tumour category"@en ;
+    skos:topConceptOf icare:CancerStageComponentTypeScheme .
+
+icare:CancerTreatmentHistory a owl:Class ;
+    rdfs:label "Cancer Treatment History"@en ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    skos:definition "A longitudinal summary of a person’s cancer diagnosis and treatment records, used to represent survivorship history and treatment exposures relevant to late-effect risk."@en .
+
+icare:CardiotoxicTreatmentExposure a owl:Class ;
+    rdfs:label "Cardiotoxic Treatment Exposure"@en ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    rdfs:subClassOf icare:TreatmentExposure ;
+    skos:definition "A treatment exposure with known or suspected relevance to cardiovascular late effects, such as anthracycline therapy, chest radiotherapy, or other cardiotoxic regimens."@en .
+
+icare:CardiotoxicityRisk a owl:Class ;
+    rdfs:label "Cardiotoxicity Risk"@en ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    skos:definition "A cancer-treatment-related risk concept describing potential cardiotoxic late effects associated with treatment exposure."@en .
+
+icare:RadiotherapyBodySite a owl:Class ;
+    rdfs:label "Radiotherapy Body Site"@en ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    skos:definition "An anatomical site or treatment field involved in radiotherapy exposure."@en .
+
+icare:TreatmentAgent a owl:Class ;
+    rdfs:label "Treatment Agent"@en ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    skos:definition "A drug, radiation modality, biological agent, or other therapeutic agent used in a cancer treatment."@en .
+
+icare:TreatmentRegimen a owl:Class ;
+    rdfs:label "Treatment Regimen"@en ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    skos:definition "A named treatment regimen or protocol used during a cancer treatment record."@en .
+
+icare:CancerStageType a owl:Class ;
+    rdfs:label "Cancer Stage Type"@en ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    rdfs:subClassOf skos:Concept ;
+    skos:definition "A controlled concept classifying a cancer-stage assessment as clinical, pathological or another recognised stage type."@en .
+
+icare:CancerStagingSystem a owl:Class ;
+    rdfs:label "Cancer Staging System"@en ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    rdfs:subClassOf skos:Concept ;
+    skos:definition "A controlled concept identifying the classification system used to express a cancer-stage assessment."@en .
+
+icare:CancerTreatmentIntent a owl:Class ;
+    rdfs:label "Cancer Treatment Intent"@en ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    rdfs:subClassOf skos:Concept ;
+    skos:definition "A controlled concept representing the therapeutic purpose of a cancer treatment."@en .
+
+icare:RadiotherapyExposure a owl:Class ;
+    rdfs:label "Radiotherapy Exposure"@en ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    rdfs:subClassOf icare:CardiotoxicTreatmentExposure ;
+    skos:definition "Exposure to radiotherapy, including dose, treatment field, anatomical site, and timing where available."@en .
+
+icare:CancerStageTypeScheme a owl:NamedIndividual,
+        skos:ConceptScheme ;
+    rdfs:label "Cancer Stage Type scheme"@en ;
+    skos:hasTopConcept icare:ClinicalStageType,
+        icare:PathologicalStageType .
+
+icare:CancerStageValue a owl:Class ;
+    rdfs:label "Cancer Stage Value"@en ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    skos:definition "A structured component of a cancer-stage assessment that records the component being represented and its coded value."@en .
+
+icare:CancerStagingSystemScheme a owl:NamedIndividual,
+        skos:ConceptScheme ;
+    rdfs:label "Cancer Staging System scheme"@en ;
+    skos:hasTopConcept icare:FIGOStagingSystem,
+        icare:TNMStagingSystem .
+
+icare:CancerTreatmentIntentScheme a owl:NamedIndividual,
+        skos:ConceptScheme ;
+    rdfs:label "Cancer Treatment Intent scheme"@en ;
+    skos:hasTopConcept icare:CurativeTreatmentIntent,
+        icare:PalliativeTreatmentIntent .
+
+icare:CancerStageComponentType a owl:Class ;
+    rdfs:label "Cancer Stage Component Type"@en ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    rdfs:subClassOf skos:Concept ;
+    skos:definition "A controlled concept identifying the component represented by a cancer-stage value, such as the overall stage group or a TNM T, N or M category."@en .
+
+icare:CancerTreatmentSetting a owl:Class ;
+    rdfs:label "Cancer Treatment Setting"@en ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    rdfs:subClassOf skos:Concept ;
+    skos:definition "A controlled concept representing the timing or strategic relationship of a cancer treatment to other treatments."@en .
+
+icare:SystemicTherapyExposure a owl:Class ;
+    rdfs:label "Systemic Therapy Exposure"@en ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    rdfs:subClassOf icare:CardiotoxicTreatmentExposure ;
+    skos:definition "Exposure to a systemic anti-cancer therapy delivered through the body, including chemotherapy, targeted therapy, immunotherapy, hormonal therapy, or transplant-related conditioning."@en .
+
+icare:SystemicTreatment a icare:CancerTreatmentType,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Systemic treatment"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    skos:definition "A cancer-treatment type that acts throughout the body, including chemotherapy, immunotherapy, targeted therapy and relevant stem-cell transplantation."@en ;
+    skos:inScheme icare:CancerTreatmentTypeScheme ;
+    skos:prefLabel "Systemic treatment"@en ;
+    skos:topConceptOf icare:CancerTreatmentTypeScheme .
+
+icare:TreatmentExposure a owl:Class ;
+    rdfs:label "Treatment Exposure"@en ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    skos:definition "A representation of a person’s exposure to a cancer treatment or treatment-related factor, modelled separately so it can be reused in risk prediction and survivorship assessment."@en .
+
+icare:CancerStage a owl:Class ;
+    rdfs:label "Cancer Stage"@en ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    skos:definition "An assessment of the extent of a cancer at a particular time, characterised by its stage type, staging system and one or more stage values or components."@en .
+
+icare:CancerStageComponentTypeScheme a owl:NamedIndividual,
+        skos:ConceptScheme ;
+    rdfs:label "Cancer Stage Component Type scheme"@en ;
+    skos:hasTopConcept icare:DistantMetastasisCategoryComponent,
+        icare:RegionalNodeCategoryComponent,
+        icare:StageGroupComponent,
+        icare:TumourCategoryComponent .
+
+icare:CancerTreatmentSettingScheme a owl:NamedIndividual,
+        skos:ConceptScheme ;
+    rdfs:label "Cancer Treatment Setting scheme"@en ;
+    skos:hasTopConcept icare:AdjuvantTreatmentSetting,
+        icare:ConcomitantTreatmentSetting,
+        icare:NeoadjuvantTreatmentSetting,
+        icare:TreatmentAloneSetting .
+
+icare:CancerTreatmentType a owl:Class ;
+    rdfs:label "Cancer Treatment Type"@en ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    rdfs:subClassOf skos:Concept ;
+    skos:definition "A controlled concept classifying a broad type of cancer treatment, such as chemotherapy, radiotherapy, surgery, immunotherapy or targeted therapy."@en .
+
+icare:CancerDiagnosis a owl:Class ;
+    rdfs:label "Cancer Diagnosis"@en ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    skos:definition "A recorded diagnosis of cancer associated with a person, representing a current or historical cancer condition and providing context for treatment history, follow-up and assessment of potential late effects."@en .
+
+icare:CancerTreatmentRecord a owl:Class ;
+    rdfs:label "Cancer Treatment Record"@en ;
+    rdfs:isDefinedBy icare:cancer-history ;
+    skos:definition "A record of cancer treatment received by a person, including its treatment type or regimen and, where known, its therapeutic intent, treatment setting, associated cancer diagnosis, timing and information source."@en .
+
+icare:CancerTreatmentTypeScheme a owl:NamedIndividual,
+        skos:ConceptScheme ;
+    rdfs:label "Cancer Treatment Type scheme"@en ;
+    skos:hasTopConcept icare:RadiotherapyTreatment,
+        icare:SurgeryTreatment,
+        icare:SystemicTreatment .
+
+icare:cancer-history a owl:Ontology ;
+    rdfs:label "Cancer History and Treatment Exposure"@en ;
+    meta:reviewStatus "Draft" ;
+    rdfs:comment "Represents cancer diagnoses and stages, treatment histories and records, regimens, agents, treatment exposures and treatment-related cardiotoxicity risk."@en ;
+    owl:imports icare:core,
+        <http://maya-project.eu/icareonto/imports/skos-reference>,
+        icare:metadata,
+        icare:person-role ;
+    owl:versionIRI <http://maya-project.eu/icareonto/releases/0.1.0-draft/cancer-history> ;
+    owl:versionInfo "0.1.0-draft" .
+

@@ -1,0 +1,1698 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@vocab": "http://maya-project.eu/icareonto/",
+    "activityContributesToGoal": {
+      "@id": "http://maya-project.eu/icareonto/activityContributesToGoal",
+      "@type": "@id"
+    },
+    "activityDeliveredThroughService": {
+      "@id": "http://maya-project.eu/icareonto/activityDeliveredThroughService",
+      "@type": "@id"
+    },
+    "activityExecutionFollowsSchedule": {
+      "@id": "http://maya-project.eu/icareonto/activityExecutionFollowsSchedule",
+      "@type": "@id"
+    },
+    "activityExecutionHasIdentifier": {
+      "@id": "http://maya-project.eu/icareonto/activityExecutionHasIdentifier",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "activityExecutionHasSource": {
+      "@id": "http://maya-project.eu/icareonto/activityExecutionHasSource",
+      "@type": "@id"
+    },
+    "activityExecutionOccursAt": {
+      "@id": "http://maya-project.eu/icareonto/activityExecutionOccursAt",
+      "@type": "@id"
+    },
+    "activityExecutionOccursDuring": {
+      "@id": "http://maya-project.eu/icareonto/activityExecutionOccursDuring",
+      "@type": "@id"
+    },
+    "activityExecutionUsesDevice": {
+      "@id": "http://maya-project.eu/icareonto/activityExecutionUsesDevice",
+      "@type": "@id"
+    },
+    "activityExecutionUsesService": {
+      "@id": "http://maya-project.eu/icareonto/activityExecutionUsesService",
+      "@type": "@id"
+    },
+    "activityHasOutcome": {
+      "@id": "http://maya-project.eu/icareonto/activityHasOutcome",
+      "@type": "@id"
+    },
+    "activityHasPriority": {
+      "@id": "http://maya-project.eu/icareonto/activityHasPriority",
+      "@type": "@id"
+    },
+    "activityHasSchedule": {
+      "@id": "http://maya-project.eu/icareonto/activityHasSchedule",
+      "@type": "@id"
+    },
+    "activityHasStatus": {
+      "@id": "http://maya-project.eu/icareonto/activityHasStatus",
+      "@type": "@id"
+    },
+    "activityHasTrigger": {
+      "@id": "http://maya-project.eu/icareonto/activityHasTrigger",
+      "@type": "@id"
+    },
+    "activityInstructionText": {
+      "@id": "http://maya-project.eu/icareonto/activityInstructionText",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "activityOutcomeValue": {
+      "@id": "http://maya-project.eu/icareonto/activityOutcomeValue",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "activityRealisedBy": {
+      "@id": "http://maya-project.eu/icareonto/activityRealisedBy",
+      "@type": "@id"
+    },
+    "activityRequiresReviewBy": {
+      "@id": "http://maya-project.eu/icareonto/activityRequiresReviewBy",
+      "@type": "@id"
+    },
+    "activityTypeHasModality": {
+      "@id": "http://maya-project.eu/icareonto/activityTypeHasModality",
+      "@type": "@id"
+    },
+    "adherenceAssessmentEvaluatesPrescription": {
+      "@id": "http://maya-project.eu/icareonto/adherenceAssessmentEvaluatesPrescription",
+      "@type": "@id"
+    },
+    "adherenceAssessmentHasResult": {
+      "@id": "http://maya-project.eu/icareonto/adherenceAssessmentHasResult",
+      "@type": "@id"
+    },
+    "adherenceAssessmentUsesPerformedSession": {
+      "@id": "http://maya-project.eu/icareonto/adherenceAssessmentUsesPerformedSession",
+      "@type": "@id"
+    },
+    "adherencePercent": {
+      "@id": "http://maya-project.eu/icareonto/adherencePercent",
+      "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "ageAtCancerDiagnosis": {
+      "@id": "http://maya-project.eu/icareonto/ageAtCancerDiagnosis",
+      "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "ageInYears": {
+      "@id": "http://maya-project.eu/icareonto/ageInYears",
+      "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "agentGovernedBySafetyPolicy": {
+      "@id": "http://maya-project.eu/icareonto/agentGovernedBySafetyPolicy",
+      "@type": "@id"
+    },
+    "agentHasCapability": {
+      "@id": "http://maya-project.eu/icareonto/agentHasCapability",
+      "@type": "@id"
+    },
+    "agentResponseGeneratedBy": {
+      "@id": "http://maya-project.eu/icareonto/agentResponseGeneratedBy",
+      "@type": "@id"
+    },
+    "agentResponseGroundedInResource": {
+      "@id": "http://maya-project.eu/icareonto/agentResponseGroundedInResource",
+      "@type": "@id"
+    },
+    "agentResponseRespondsTo": {
+      "@id": "http://maya-project.eu/icareonto/agentResponseRespondsTo",
+      "@type": "@id"
+    },
+    "agentResponseUsesContext": {
+      "@id": "http://maya-project.eu/icareonto/agentResponseUsesContext",
+      "@type": "@id"
+    },
+    "agentVersion": {
+      "@id": "http://maya-project.eu/icareonto/agentVersion",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "assessmentHasInterpretation": {
+      "@id": "http://maya-project.eu/icareonto/assessmentHasInterpretation",
+      "@type": "@id"
+    },
+    "assessmentMethodName": {
+      "@id": "http://maya-project.eu/icareonto/assessmentMethodName",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "assessmentRecordRecordsAssessment": {
+      "@id": "http://maya-project.eu/icareonto/assessmentRecordRecordsAssessment",
+      "@type": "@id"
+    },
+    "barrierDescription": {
+      "@id": "http://maya-project.eu/icareonto/barrierDescription",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "behaviourHasChangeStage": {
+      "@id": "http://maya-project.eu/icareonto/behaviourHasChangeStage",
+      "@type": "@id"
+    },
+    "behaviourInfluencesRiskFactor": {
+      "@id": "http://maya-project.eu/icareonto/behaviourInfluencesRiskFactor",
+      "@type": "@id"
+    },
+    "behaviourMetricHasType": {
+      "@id": "http://maya-project.eu/icareonto/behaviourMetricHasType",
+      "@type": "@id"
+    },
+    "behaviourMetricNumericValue": {
+      "@id": "http://maya-project.eu/icareonto/behaviourMetricNumericValue",
+      "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "behaviourMetricTextValue": {
+      "@id": "http://maya-project.eu/icareonto/behaviourMetricTextValue",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "behaviourMetricUnit": {
+      "@id": "http://maya-project.eu/icareonto/behaviourMetricUnit",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "behaviourRecordDerivedFromObservation": {
+      "@id": "http://maya-project.eu/icareonto/behaviourRecordDerivedFromObservation",
+      "@type": "@id"
+    },
+    "behaviourRecordHasBarrier": {
+      "@id": "http://maya-project.eu/icareonto/behaviourRecordHasBarrier",
+      "@type": "@id"
+    },
+    "behaviourRecordHasFacilitator": {
+      "@id": "http://maya-project.eu/icareonto/behaviourRecordHasFacilitator",
+      "@type": "@id"
+    },
+    "behaviourRecordHasMetric": {
+      "@id": "http://maya-project.eu/icareonto/behaviourRecordHasMetric",
+      "@type": "@id"
+    },
+    "behaviourRecordHasSmokingStatus": {
+      "@id": "http://maya-project.eu/icareonto/behaviourRecordHasSmokingStatus",
+      "@type": "@id"
+    },
+    "behaviourRecordHasSource": {
+      "@id": "http://maya-project.eu/icareonto/behaviourRecordHasSource",
+      "@type": "@id"
+    },
+    "behaviourRecordHasStatus": {
+      "@id": "http://maya-project.eu/icareonto/behaviourRecordHasStatus",
+      "@type": "@id"
+    },
+    "behaviourRecordRecordedAt": {
+      "@id": "http://maya-project.eu/icareonto/behaviourRecordRecordedAt",
+      "@type": "@id"
+    },
+    "behaviourRecordRecordsBehaviour": {
+      "@id": "http://maya-project.eu/icareonto/behaviourRecordRecordsBehaviour",
+      "@type": "@id"
+    },
+    "behaviourRecordRelatesToActivity": {
+      "@id": "http://maya-project.eu/icareonto/behaviourRecordRelatesToActivity",
+      "@type": "@id"
+    },
+    "behaviourRecordRelatesToGoal": {
+      "@id": "http://maya-project.eu/icareonto/behaviourRecordRelatesToGoal",
+      "@type": "@id"
+    },
+    "behaviourRecordValidDuring": {
+      "@id": "http://maya-project.eu/icareonto/behaviourRecordValidDuring",
+      "@type": "@id"
+    },
+    "cancerDiagnosisHasSource": {
+      "@id": "http://maya-project.eu/icareonto/cancerDiagnosisHasSource",
+      "@type": "@id"
+    },
+    "cancerDiagnosisRecordedAt": {
+      "@id": "http://maya-project.eu/icareonto/cancerDiagnosisRecordedAt",
+      "@type": "@id"
+    },
+    "cancerStageAssessedAt": {
+      "@id": "http://maya-project.eu/icareonto/cancerStageAssessedAt",
+      "@type": "@id"
+    },
+    "cancerStageHasSource": {
+      "@id": "http://maya-project.eu/icareonto/cancerStageHasSource",
+      "@type": "@id"
+    },
+    "cancerStageHasType": {
+      "@id": "http://maya-project.eu/icareonto/cancerStageHasType",
+      "@type": "@id"
+    },
+    "cancerStageHasValue": {
+      "@id": "http://maya-project.eu/icareonto/cancerStageHasValue",
+      "@type": "@id"
+    },
+    "cancerStageSummary": {
+      "@id": "http://maya-project.eu/icareonto/cancerStageSummary",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "cancerStageSystemVersion": {
+      "@id": "http://maya-project.eu/icareonto/cancerStageSystemVersion",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "cancerStageUsesSystem": {
+      "@id": "http://maya-project.eu/icareonto/cancerStageUsesSystem",
+      "@type": "@id"
+    },
+    "cancerTreatmentHistoryHasRecord": {
+      "@id": "http://maya-project.eu/icareonto/cancerTreatmentHistoryHasRecord",
+      "@type": "@id"
+    },
+    "cancerType": {
+      "@id": "http://maya-project.eu/icareonto/cancerType",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "cancerTypeName": {
+      "@id": "http://maya-project.eu/icareonto/cancerTypeName",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "cardiotoxicityRiskValue": {
+      "@id": "http://maya-project.eu/icareonto/cardiotoxicityRiskValue",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "carePlanActivityAdaptedToSocialContext": {
+      "@id": "http://maya-project.eu/icareonto/carePlanActivityAdaptedToSocialContext",
+      "@type": "@id"
+    },
+    "carePlanActivityName": {
+      "@id": "http://maya-project.eu/icareonto/carePlanActivityName",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "carePlanActivitySupersedes": {
+      "@id": "http://maya-project.eu/icareonto/carePlanActivitySupersedes",
+      "@type": "@id"
+    },
+    "carePlanCreatedAt": {
+      "@id": "http://maya-project.eu/icareonto/carePlanCreatedAt",
+      "@type": "@id"
+    },
+    "carePlanHasGoal": {
+      "@id": "http://maya-project.eu/icareonto/carePlanHasGoal",
+      "@type": "@id"
+    },
+    "carePlanHasParticipation": {
+      "@id": "http://maya-project.eu/icareonto/carePlanHasParticipation",
+      "@type": "@id"
+    },
+    "carePlanHasStatus": {
+      "@id": "http://maya-project.eu/icareonto/carePlanHasStatus",
+      "@type": "@id"
+    },
+    "carePlanHasTrigger": {
+      "@id": "http://maya-project.eu/icareonto/carePlanHasTrigger",
+      "@type": "@id"
+    },
+    "carePlanIncludesActivity": {
+      "@id": "http://maya-project.eu/icareonto/carePlanIncludesActivity",
+      "@type": "@id"
+    },
+    "carePlanIntendedFor": {
+      "@id": "http://maya-project.eu/icareonto/carePlanIntendedFor",
+      "@type": "@id"
+    },
+    "carePlanName": {
+      "@id": "http://maya-project.eu/icareonto/carePlanName",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "carePlanUpdatedAt": {
+      "@id": "http://maya-project.eu/icareonto/carePlanUpdatedAt",
+      "@type": "@id"
+    },
+    "clinicalAssessmentUsesMeasurement": {
+      "@id": "http://maya-project.eu/icareonto/clinicalAssessmentUsesMeasurement",
+      "@type": "@id"
+    },
+    "clinicalInterpretationText": {
+      "@id": "http://maya-project.eu/icareonto/clinicalInterpretationText",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "clinicalProfileHasCurrentStatus": {
+      "@id": "http://maya-project.eu/icareonto/clinicalProfileHasCurrentStatus",
+      "@type": "@id"
+    },
+    "clinicalProfileIncludesRecord": {
+      "@id": "http://maya-project.eu/icareonto/clinicalProfileIncludesRecord",
+      "@type": "@id"
+    },
+    "clinicalRecordHasSource": {
+      "@id": "http://maya-project.eu/icareonto/clinicalRecordHasSource",
+      "@type": "@id"
+    },
+    "clinicalRecordIdentifier": {
+      "@id": "http://maya-project.eu/icareonto/clinicalRecordIdentifier",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "clinicalRecordRecordedAt": {
+      "@id": "http://maya-project.eu/icareonto/clinicalRecordRecordedAt",
+      "@type": "@id"
+    },
+    "conditionCode": {
+      "@id": "http://maya-project.eu/icareonto/conditionCode",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "conditionCodeSystem": {
+      "@id": "http://maya-project.eu/icareonto/conditionCodeSystem",
+      "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+    },
+    "conditionCodeVersion": {
+      "@id": "http://maya-project.eu/icareonto/conditionCodeVersion",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "conditionName": {
+      "@id": "http://maya-project.eu/icareonto/conditionName",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "conditionRecordHasClinicalStatus": {
+      "@id": "http://maya-project.eu/icareonto/conditionRecordHasClinicalStatus",
+      "@type": "@id"
+    },
+    "conditionRecordHasOnset": {
+      "@id": "http://maya-project.eu/icareonto/conditionRecordHasOnset",
+      "@type": "@id"
+    },
+    "conditionRecordHasSeverity": {
+      "@id": "http://maya-project.eu/icareonto/conditionRecordHasSeverity",
+      "@type": "@id"
+    },
+    "conditionRecordRecordsCondition": {
+      "@id": "http://maya-project.eu/icareonto/conditionRecordRecordsCondition",
+      "@type": "@id"
+    },
+    "conditionRecordResolvedAt": {
+      "@id": "http://maya-project.eu/icareonto/conditionRecordResolvedAt",
+      "@type": "@id"
+    },
+    "conditionRecordValidDuring": {
+      "@id": "http://maya-project.eu/icareonto/conditionRecordValidDuring",
+      "@type": "@id"
+    },
+    "consentRecordAppliesToKnowledgeGraph": {
+      "@id": "http://maya-project.eu/icareonto/consentRecordAppliesToKnowledgeGraph",
+      "@type": "@id"
+    },
+    "consentRecordGrantedBy": {
+      "@id": "http://maya-project.eu/icareonto/consentRecordGrantedBy",
+      "@type": "@id"
+    },
+    "consentRecordHasStatus": {
+      "@id": "http://maya-project.eu/icareonto/consentRecordHasStatus",
+      "@type": "@id"
+    },
+    "consentRecordValidDuring": {
+      "@id": "http://maya-project.eu/icareonto/consentRecordValidDuring",
+      "@type": "@id"
+    },
+    "contextFactorDescriptionText": {
+      "@id": "http://maya-project.eu/icareonto/contextFactorDescriptionText",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "contraindicationText": {
+      "@id": "http://maya-project.eu/icareonto/contraindicationText",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "contributionMetricType": {
+      "@id": "http://maya-project.eu/icareonto/contributionMetricType",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "contributionValue": {
+      "@id": "http://maya-project.eu/icareonto/contributionValue",
+      "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "conversationAgentEscalatesTo": {
+      "@id": "http://maya-project.eu/icareonto/conversationAgentEscalatesTo",
+      "@type": "@id"
+    },
+    "conversationAgentOverseenBy": {
+      "@id": "http://maya-project.eu/icareonto/conversationAgentOverseenBy",
+      "@type": "@id"
+    },
+    "criterionText": {
+      "@id": "http://maya-project.eu/icareonto/criterionText",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "cumulativeDrugDose": {
+      "@id": "http://maya-project.eu/icareonto/cumulativeDrugDose",
+      "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "cumulativeDrugDoseUnit": {
+      "@id": "http://maya-project.eu/icareonto/cumulativeDrugDoseUnit",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "dataSourceDescription": {
+      "@id": "http://maya-project.eu/icareonto/dataSourceDescription",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "dataSourceIdentifier": {
+      "@id": "http://maya-project.eu/icareonto/dataSourceIdentifier",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "dataSourceName": {
+      "@id": "http://maya-project.eu/icareonto/dataSourceName",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "dcterms": "http://purl.org/dc/terms/",
+    "derivedParameterDerivedFrom": {
+      "@id": "http://maya-project.eu/icareonto/derivedParameterDerivedFrom",
+      "@type": "@id"
+    },
+    "deviceProvidesAccessTo": {
+      "@id": "http://maya-project.eu/icareonto/deviceProvidesAccessTo",
+      "@type": "@id"
+    },
+    "diagnosisDate": {
+      "@id": "http://maya-project.eu/icareonto/diagnosisDate",
+      "@type": "http://www.w3.org/2001/XMLSchema#date"
+    },
+    "dialogueContextAddressesIntent": {
+      "@id": "http://maya-project.eu/icareonto/dialogueContextAddressesIntent",
+      "@type": "@id"
+    },
+    "dialogueContextHasSlot": {
+      "@id": "http://maya-project.eu/icareonto/dialogueContextHasSlot",
+      "@type": "@id"
+    },
+    "dialogueContextIncludesEntity": {
+      "@id": "http://maya-project.eu/icareonto/dialogueContextIncludesEntity",
+      "@type": "@id"
+    },
+    "dialogueSessionDeliveredThroughService": {
+      "@id": "http://maya-project.eu/icareonto/dialogueSessionDeliveredThroughService",
+      "@type": "@id"
+    },
+    "dialogueSessionHasAgentParticipant": {
+      "@id": "http://maya-project.eu/icareonto/dialogueSessionHasAgentParticipant",
+      "@type": "@id"
+    },
+    "dialogueSessionHasParticipant": {
+      "@id": "http://maya-project.eu/icareonto/dialogueSessionHasParticipant",
+      "@type": "@id"
+    },
+    "dialogueSessionHasTurn": {
+      "@id": "http://maya-project.eu/icareonto/dialogueSessionHasTurn",
+      "@type": "@id"
+    },
+    "dialogueSessionStartedAt": {
+      "@id": "http://maya-project.eu/icareonto/dialogueSessionStartedAt",
+      "@type": "@id"
+    },
+    "dialogueSessionUsesStrategy": {
+      "@id": "http://maya-project.eu/icareonto/dialogueSessionUsesStrategy",
+      "@type": "@id"
+    },
+    "dialogueSlotConfidence": {
+      "@id": "http://maya-project.eu/icareonto/dialogueSlotConfidence",
+      "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "dialogueSlotExtractedFrom": {
+      "@id": "http://maya-project.eu/icareonto/dialogueSlotExtractedFrom",
+      "@type": "@id"
+    },
+    "dialogueSlotHasEntityValue": {
+      "@id": "http://maya-project.eu/icareonto/dialogueSlotHasEntityValue",
+      "@type": "@id"
+    },
+    "dialogueSlotHasStatus": {
+      "@id": "http://maya-project.eu/icareonto/dialogueSlotHasStatus",
+      "@type": "@id"
+    },
+    "dialogueSlotHasType": {
+      "@id": "http://maya-project.eu/icareonto/dialogueSlotHasType",
+      "@type": "@id"
+    },
+    "dialogueSlotLiteralValue": {
+      "@id": "http://maya-project.eu/icareonto/dialogueSlotLiteralValue",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "dialogueStrategyAdaptedToContext": {
+      "@id": "http://maya-project.eu/icareonto/dialogueStrategyAdaptedToContext",
+      "@type": "@id"
+    },
+    "dialogueTurnOccursAt": {
+      "@id": "http://maya-project.eu/icareonto/dialogueTurnOccursAt",
+      "@type": "@id"
+    },
+    "digitalLiteracyHasLevel": {
+      "@id": "http://maya-project.eu/icareonto/digitalLiteracyHasLevel",
+      "@type": "@id"
+    },
+    "digitalServiceHasType": {
+      "@id": "http://maya-project.eu/icareonto/digitalServiceHasType",
+      "@type": "@id"
+    },
+    "distanceUnit": {
+      "@id": "http://maya-project.eu/icareonto/distanceUnit",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "distanceValue": {
+      "@id": "http://maya-project.eu/icareonto/distanceValue",
+      "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "doseFrequency": {
+      "@id": "http://maya-project.eu/icareonto/doseFrequency",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "doseUnit": {
+      "@id": "http://maya-project.eu/icareonto/doseUnit",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "doseValue": {
+      "@id": "http://maya-project.eu/icareonto/doseValue",
+      "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "durationMinutes": {
+      "@id": "http://maya-project.eu/icareonto/durationMinutes",
+      "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "estimatedCompletionTime": {
+      "@id": "http://maya-project.eu/icareonto/estimatedCompletionTime",
+      "@type": "http://www.w3.org/2001/XMLSchema#duration"
+    },
+    "exerciseActivityHasActivityType": {
+      "@id": "http://maya-project.eu/icareonto/exerciseActivityHasActivityType",
+      "@type": "@id"
+    },
+    "exerciseActivityHasIntensity": {
+      "@id": "http://maya-project.eu/icareonto/exerciseActivityHasIntensity",
+      "@type": "@id"
+    },
+    "exerciseActivityHasSet": {
+      "@id": "http://maya-project.eu/icareonto/exerciseActivityHasSet",
+      "@type": "@id"
+    },
+    "exerciseActivityHasTrainingPattern": {
+      "@id": "http://maya-project.eu/icareonto/exerciseActivityHasTrainingPattern",
+      "@type": "@id"
+    },
+    "exerciseActivityName": {
+      "@id": "http://maya-project.eu/icareonto/exerciseActivityName",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "exerciseIntensityHasLevel": {
+      "@id": "http://maya-project.eu/icareonto/exerciseIntensityHasLevel",
+      "@type": "@id"
+    },
+    "exerciseInterventionHasPrescription": {
+      "@id": "http://maya-project.eu/icareonto/exerciseInterventionHasPrescription",
+      "@type": "@id"
+    },
+    "exercisePrescriptionIncludesActivity": {
+      "@id": "http://maya-project.eu/icareonto/exercisePrescriptionIncludesActivity",
+      "@type": "@id"
+    },
+    "exercisePrescriptionSpecifiesActivity": {
+      "@id": "http://maya-project.eu/icareonto/exercisePrescriptionSpecifiesActivity",
+      "@type": "@id"
+    },
+    "facilitatorDescription": {
+      "@id": "http://maya-project.eu/icareonto/facilitatorDescription",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "findingDerivedFromMeasurement": {
+      "@id": "http://maya-project.eu/icareonto/findingDerivedFromMeasurement",
+      "@type": "@id"
+    },
+    "findingName": {
+      "@id": "http://maya-project.eu/icareonto/findingName",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "findingRecordRecordsFinding": {
+      "@id": "http://maya-project.eu/icareonto/findingRecordRecordsFinding",
+      "@type": "@id"
+    },
+    "frequencyValue": {
+      "@id": "http://maya-project.eu/icareonto/frequencyValue",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "goalDescriptionText": {
+      "@id": "http://maya-project.eu/icareonto/goalDescriptionText",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "goalHasAchievementStatus": {
+      "@id": "http://maya-project.eu/icareonto/goalHasAchievementStatus",
+      "@type": "@id"
+    },
+    "goalHasLifecycleStatus": {
+      "@id": "http://maya-project.eu/icareonto/goalHasLifecycleStatus",
+      "@type": "@id"
+    },
+    "hasBarrierSeverity": {
+      "@id": "http://maya-project.eu/icareonto/hasBarrierSeverity",
+      "@type": "@id"
+    },
+    "hasCancerDiagnosis": {
+      "@id": "http://maya-project.eu/icareonto/hasCancerDiagnosis",
+      "@type": "@id"
+    },
+    "hasContextInfluence": {
+      "@id": "http://maya-project.eu/icareonto/hasContextInfluence",
+      "@type": "@id"
+    },
+    "hasEducationalAttainment": {
+      "@id": "http://maya-project.eu/icareonto/hasEducationalAttainment",
+      "@type": "@id"
+    },
+    "hasEmploymentStatus": {
+      "@id": "http://maya-project.eu/icareonto/hasEmploymentStatus",
+      "@type": "@id"
+    },
+    "hasFinancialConstraintStatus": {
+      "@id": "http://maya-project.eu/icareonto/hasFinancialConstraintStatus",
+      "@type": "@id"
+    },
+    "hasLanguageProficiencyLevel": {
+      "@id": "http://maya-project.eu/icareonto/hasLanguageProficiencyLevel",
+      "@type": "@id"
+    },
+    "hasLivingSituationType": {
+      "@id": "http://maya-project.eu/icareonto/hasLivingSituationType",
+      "@type": "@id"
+    },
+    "hasStage": {
+      "@id": "http://maya-project.eu/icareonto/hasStage",
+      "@type": "@id"
+    },
+    "hasVerificationStatus": {
+      "@id": "http://maya-project.eu/icareonto/hasVerificationStatus",
+      "@type": "@id"
+    },
+    "healthHubIncludesDevice": {
+      "@id": "http://maya-project.eu/icareonto/healthHubIncludesDevice",
+      "@type": "@id"
+    },
+    "healthHubProvidesService": {
+      "@id": "http://maya-project.eu/icareonto/healthHubProvidesService",
+      "@type": "@id"
+    },
+    "healthLiteracyHasLevel": {
+      "@id": "http://maya-project.eu/icareonto/healthLiteracyHasLevel",
+      "@type": "@id"
+    },
+    "healthLiteracyInterventionAddressesNeed": {
+      "@id": "http://maya-project.eu/icareonto/healthLiteracyInterventionAddressesNeed",
+      "@type": "@id"
+    },
+    "healthLiteracyInterventionUsesResource": {
+      "@id": "http://maya-project.eu/icareonto/healthLiteracyInterventionUsesResource",
+      "@type": "@id"
+    },
+    "healthLiteracyResourceAddressesNeed": {
+      "@id": "http://maya-project.eu/icareonto/healthLiteracyResourceAddressesNeed",
+      "@type": "@id"
+    },
+    "healthLiteracyResultIdentifiesNeed": {
+      "@id": "http://maya-project.eu/icareonto/healthLiteracyResultIdentifiesNeed",
+      "@type": "@id"
+    },
+    "icare": "http://maya-project.eu/icareonto/",
+    "id": "@id",
+    "informationPreferenceHasDetailLevel": {
+      "@id": "http://maya-project.eu/icareonto/informationPreferenceHasDetailLevel",
+      "@type": "@id"
+    },
+    "instrumentName": {
+      "@id": "http://maya-project.eu/icareonto/instrumentName",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "instrumentVersion": {
+      "@id": "http://maya-project.eu/icareonto/instrumentVersion",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "intensityAssessmentMethod": {
+      "@id": "http://maya-project.eu/icareonto/intensityAssessmentMethod",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "intensityLowerBound": {
+      "@id": "http://maya-project.eu/icareonto/intensityLowerBound",
+      "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "intensityUnit": {
+      "@id": "http://maya-project.eu/icareonto/intensityUnit",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "intensityUpperBound": {
+      "@id": "http://maya-project.eu/icareonto/intensityUpperBound",
+      "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "interpretationText": {
+      "@id": "http://maya-project.eu/icareonto/interpretationText",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "intervalDuration": {
+      "@id": "http://maya-project.eu/icareonto/intervalDuration",
+      "@type": "http://www.w3.org/2001/XMLSchema#duration"
+    },
+    "intervalEndsAt": {
+      "@id": "http://maya-project.eu/icareonto/intervalEndsAt",
+      "@type": "@id"
+    },
+    "intervalStartsAt": {
+      "@id": "http://maya-project.eu/icareonto/intervalStartsAt",
+      "@type": "@id"
+    },
+    "interventionTargetsRiskFactor": {
+      "@id": "http://maya-project.eu/icareonto/interventionTargetsRiskFactor",
+      "@type": "@id"
+    },
+    "isSupervised": {
+      "@id": "http://maya-project.eu/icareonto/isSupervised",
+      "@type": "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "knowledgeResourceContainsRecommendation": {
+      "@id": "http://maya-project.eu/icareonto/knowledgeResourceContainsRecommendation",
+      "@type": "@id"
+    },
+    "knowledgeResourceHasAccessibilityFeature": {
+      "@id": "http://maya-project.eu/icareonto/knowledgeResourceHasAccessibilityFeature",
+      "@type": "@id"
+    },
+    "knowledgeResourceHasApplicabilityCriterion": {
+      "@id": "http://maya-project.eu/icareonto/knowledgeResourceHasApplicabilityCriterion",
+      "@type": "@id"
+    },
+    "knowledgeResourceHasAudience": {
+      "@id": "http://maya-project.eu/icareonto/knowledgeResourceHasAudience",
+      "@type": "@id"
+    },
+    "knowledgeResourceHasComplexityLevel": {
+      "@id": "http://maya-project.eu/icareonto/knowledgeResourceHasComplexityLevel",
+      "@type": "@id"
+    },
+    "knowledgeResourceHasFormat": {
+      "@id": "http://maya-project.eu/icareonto/knowledgeResourceHasFormat",
+      "@type": "@id"
+    },
+    "knowledgeResourceHasPurpose": {
+      "@id": "http://maya-project.eu/icareonto/knowledgeResourceHasPurpose",
+      "@type": "@id"
+    },
+    "knowledgeResourceHasTopic": {
+      "@id": "http://maya-project.eu/icareonto/knowledgeResourceHasTopic",
+      "@type": "@id"
+    },
+    "knowledgeResourceSupportsRecommendation": {
+      "@id": "http://maya-project.eu/icareonto/knowledgeResourceSupportsRecommendation",
+      "@type": "@id"
+    },
+    "label": "http://www.w3.org/2000/01/rdf-schema#label",
+    "lifestyleProfileIncludesBehaviourRecord": {
+      "@id": "http://maya-project.eu/icareonto/lifestyleProfileIncludesBehaviourRecord",
+      "@type": "@id"
+    },
+    "localeCountryCode": {
+      "@id": "http://maya-project.eu/icareonto/localeCountryCode",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "localeTag": {
+      "@id": "http://maya-project.eu/icareonto/localeTag",
+      "@type": "http://www.w3.org/2001/XMLSchema#language"
+    },
+    "localeTimeZoneIdentifier": {
+      "@id": "http://maya-project.eu/icareonto/localeTimeZoneIdentifier",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "maximumRepetitionCount": {
+      "@id": "http://maya-project.eu/icareonto/maximumRepetitionCount",
+      "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    },
+    "measurementBasedTriggerUsesObservation": {
+      "@id": "http://maya-project.eu/icareonto/measurementBasedTriggerUsesObservation",
+      "@type": "@id"
+    },
+    "measurementEventFollowsProtocol": {
+      "@id": "http://maya-project.eu/icareonto/measurementEventFollowsProtocol",
+      "@type": "@id"
+    },
+    "measurementEventFollowsSamplingProcedure": {
+      "@id": "http://maya-project.eu/icareonto/measurementEventFollowsSamplingProcedure",
+      "@type": "@id"
+    },
+    "measurementEventHasContext": {
+      "@id": "http://maya-project.eu/icareonto/measurementEventHasContext",
+      "@type": "@id"
+    },
+    "measurementEventHasOutput": {
+      "@id": "http://maya-project.eu/icareonto/measurementEventHasOutput",
+      "@type": "@id"
+    },
+    "measurementEventHasQuality": {
+      "@id": "http://maya-project.eu/icareonto/measurementEventHasQuality",
+      "@type": "@id"
+    },
+    "measurementEventMeasures": {
+      "@id": "http://maya-project.eu/icareonto/measurementEventMeasures",
+      "@type": "@id"
+    },
+    "measurementEventOccursDuringPerformedSession": {
+      "@id": "http://maya-project.eu/icareonto/measurementEventOccursDuringPerformedSession",
+      "@type": "@id"
+    },
+    "measurementEventPartOfPanel": {
+      "@id": "http://maya-project.eu/icareonto/measurementEventPartOfPanel",
+      "@type": "@id"
+    },
+    "measurementEventUsesInstrument": {
+      "@id": "http://maya-project.eu/icareonto/measurementEventUsesInstrument",
+      "@type": "@id"
+    },
+    "measurementEventUsesMethod": {
+      "@id": "http://maya-project.eu/icareonto/measurementEventUsesMethod",
+      "@type": "@id"
+    },
+    "measurementEventUsesSpecimen": {
+      "@id": "http://maya-project.eu/icareonto/measurementEventUsesSpecimen",
+      "@type": "@id"
+    },
+    "measurementInstructionText": {
+      "@id": "http://maya-project.eu/icareonto/measurementInstructionText",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "measurementInstrumentHasValidationEvidence": {
+      "@id": "http://maya-project.eu/icareonto/measurementInstrumentHasValidationEvidence",
+      "@type": "@id"
+    },
+    "measurementPanelCode": {
+      "@id": "http://maya-project.eu/icareonto/measurementPanelCode",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "measurementPanelDescription": {
+      "@id": "http://maya-project.eu/icareonto/measurementPanelDescription",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "measurementPanelIncludesParameter": {
+      "@id": "http://maya-project.eu/icareonto/measurementPanelIncludesParameter",
+      "@type": "@id"
+    },
+    "measurementPanelName": {
+      "@id": "http://maya-project.eu/icareonto/measurementPanelName",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "medicationCode": {
+      "@id": "http://maya-project.eu/icareonto/medicationCode",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "medicationCodeSystem": {
+      "@id": "http://maya-project.eu/icareonto/medicationCodeSystem",
+      "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+    },
+    "medicationCodeVersion": {
+      "@id": "http://maya-project.eu/icareonto/medicationCodeVersion",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "medicationName": {
+      "@id": "http://maya-project.eu/icareonto/medicationName",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "medicationRecordHasDose": {
+      "@id": "http://maya-project.eu/icareonto/medicationRecordHasDose",
+      "@type": "@id"
+    },
+    "medicationRecordHasStatus": {
+      "@id": "http://maya-project.eu/icareonto/medicationRecordHasStatus",
+      "@type": "@id"
+    },
+    "medicationRecordPrescribedFor": {
+      "@id": "http://maya-project.eu/icareonto/medicationRecordPrescribedFor",
+      "@type": "@id"
+    },
+    "medicationRecordRecordsMedication": {
+      "@id": "http://maya-project.eu/icareonto/medicationRecordRecordsMedication",
+      "@type": "@id"
+    },
+    "methodName": {
+      "@id": "http://maya-project.eu/icareonto/methodName",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "minimumRepetitionCount": {
+      "@id": "http://maya-project.eu/icareonto/minimumRepetitionCount",
+      "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    },
+    "modelExecutionExecutedAt": {
+      "@id": "http://maya-project.eu/icareonto/modelExecutionExecutedAt",
+      "@type": "@id"
+    },
+    "modelExecutionExecutes": {
+      "@id": "http://maya-project.eu/icareonto/modelExecutionExecutes",
+      "@type": "@id"
+    },
+    "modelExecutionGeneratesRiskProfile": {
+      "@id": "http://maya-project.eu/icareonto/modelExecutionGeneratesRiskProfile",
+      "@type": "@id"
+    },
+    "modelExecutionHasOutput": {
+      "@id": "http://maya-project.eu/icareonto/modelExecutionHasOutput",
+      "@type": "@id"
+    },
+    "modelExecutionUsesInput": {
+      "@id": "http://maya-project.eu/icareonto/modelExecutionUsesInput",
+      "@type": "@id"
+    },
+    "modelIdentifier": {
+      "@id": "http://maya-project.eu/icareonto/modelIdentifier",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "modelInputDerivedFromObservation": {
+      "@id": "http://maya-project.eu/icareonto/modelInputDerivedFromObservation",
+      "@type": "@id"
+    },
+    "modelInputIncludesClinicalRecord": {
+      "@id": "http://maya-project.eu/icareonto/modelInputIncludesClinicalRecord",
+      "@type": "@id"
+    },
+    "modelInputIncludesExposure": {
+      "@id": "http://maya-project.eu/icareonto/modelInputIncludesExposure",
+      "@type": "@id"
+    },
+    "modelInputIncludesPersonAttribute": {
+      "@id": "http://maya-project.eu/icareonto/modelInputIncludesPersonAttribute",
+      "@type": "@id"
+    },
+    "modelOutputIncludesRiskEstimate": {
+      "@id": "http://maya-project.eu/icareonto/modelOutputIncludesRiskEstimate",
+      "@type": "@id"
+    },
+    "modelOutputValue": {
+      "@id": "http://maya-project.eu/icareonto/modelOutputValue",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "modelVersion": {
+      "@id": "http://maya-project.eu/icareonto/modelVersion",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "nutritionInstructionHasActionType": {
+      "@id": "http://maya-project.eu/icareonto/nutritionInstructionHasActionType",
+      "@type": "@id"
+    },
+    "nutritionInstructionHasSchedule": {
+      "@id": "http://maya-project.eu/icareonto/nutritionInstructionHasSchedule",
+      "@type": "@id"
+    },
+    "nutritionInstructionTargetsComponent": {
+      "@id": "http://maya-project.eu/icareonto/nutritionInstructionTargetsComponent",
+      "@type": "@id"
+    },
+    "nutritionInstructionText": {
+      "@id": "http://maya-project.eu/icareonto/nutritionInstructionText",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "nutritionInterventionSpecifiesInstruction": {
+      "@id": "http://maya-project.eu/icareonto/nutritionInterventionSpecifiesInstruction",
+      "@type": "@id"
+    },
+    "nutritionTargetAmount": {
+      "@id": "http://maya-project.eu/icareonto/nutritionTargetAmount",
+      "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "nutritionTargetUnitText": {
+      "@id": "http://maya-project.eu/icareonto/nutritionTargetUnitText",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "observationAssociatedWithStudyTimepoint": {
+      "@id": "http://maya-project.eu/icareonto/observationAssociatedWithStudyTimepoint",
+      "@type": "@id"
+    },
+    "observationComparedAgainst": {
+      "@id": "http://maya-project.eu/icareonto/observationComparedAgainst",
+      "@type": "@id"
+    },
+    "observationDerivedFromObservation": {
+      "@id": "http://maya-project.eu/icareonto/observationDerivedFromObservation",
+      "@type": "@id"
+    },
+    "observationHasInterpretation": {
+      "@id": "http://maya-project.eu/icareonto/observationHasInterpretation",
+      "@type": "@id"
+    },
+    "observationHasQuantityValue": {
+      "@id": "http://maya-project.eu/icareonto/observationHasQuantityValue",
+      "@type": "@id"
+    },
+    "observationHasReferenceRange": {
+      "@id": "http://maya-project.eu/icareonto/observationHasReferenceRange",
+      "@type": "@id"
+    },
+    "observationHasScoreValue": {
+      "@id": "http://maya-project.eu/icareonto/observationHasScoreValue",
+      "@type": "@id"
+    },
+    "observationHasThresholdCategory": {
+      "@id": "http://maya-project.eu/icareonto/observationHasThresholdCategory",
+      "@type": "@id"
+    },
+    "observationTextValue": {
+      "@id": "http://maya-project.eu/icareonto/observationTextValue",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "parameterCode": {
+      "@id": "http://maya-project.eu/icareonto/parameterCode",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "parameterCodeSystem": {
+      "@id": "http://maya-project.eu/icareonto/parameterCodeSystem",
+      "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+    },
+    "parameterCodeVersion": {
+      "@id": "http://maya-project.eu/icareonto/parameterCodeVersion",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "parameterName": {
+      "@id": "http://maya-project.eu/icareonto/parameterName",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "participantEnrolmentAssignedToArm": {
+      "@id": "http://maya-project.eu/icareonto/participantEnrolmentAssignedToArm",
+      "@type": "@id"
+    },
+    "participantEnrolmentAtSite": {
+      "@id": "http://maya-project.eu/icareonto/participantEnrolmentAtSite",
+      "@type": "@id"
+    },
+    "participantEnrolmentForPerson": {
+      "@id": "http://maya-project.eu/icareonto/participantEnrolmentForPerson",
+      "@type": "@id"
+    },
+    "participantEnrolmentHasStatus": {
+      "@id": "http://maya-project.eu/icareonto/participantEnrolmentHasStatus",
+      "@type": "@id"
+    },
+    "participantEnrolmentInPhase": {
+      "@id": "http://maya-project.eu/icareonto/participantEnrolmentInPhase",
+      "@type": "@id"
+    },
+    "participantEnrolmentInStudy": {
+      "@id": "http://maya-project.eu/icareonto/participantEnrolmentInStudy",
+      "@type": "@id"
+    },
+    "participantEnrolmentValidDuring": {
+      "@id": "http://maya-project.eu/icareonto/participantEnrolmentValidDuring",
+      "@type": "@id"
+    },
+    "participantKnowledgeGraphAboutPerson": {
+      "@id": "http://maya-project.eu/icareonto/participantKnowledgeGraphAboutPerson",
+      "@type": "@id"
+    },
+    "participationHasParticipant": {
+      "@id": "http://maya-project.eu/icareonto/participationHasParticipant",
+      "@type": "@id"
+    },
+    "participationHasRole": {
+      "@id": "http://maya-project.eu/icareonto/participationHasRole",
+      "@type": "@id"
+    },
+    "performanceMetricName": {
+      "@id": "http://maya-project.eu/icareonto/performanceMetricName",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "performanceMetricValue": {
+      "@id": "http://maya-project.eu/icareonto/performanceMetricValue",
+      "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "performedSessionIdentifier": {
+      "@id": "http://maya-project.eu/icareonto/performedSessionIdentifier",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "performedSessionIncludesActivity": {
+      "@id": "http://maya-project.eu/icareonto/performedSessionIncludesActivity",
+      "@type": "@id"
+    },
+    "performedSessionMonitoredBy": {
+      "@id": "http://maya-project.eu/icareonto/performedSessionMonitoredBy",
+      "@type": "@id"
+    },
+    "performedSessionRealises": {
+      "@id": "http://maya-project.eu/icareonto/performedSessionRealises",
+      "@type": "@id"
+    },
+    "personAttributeHasSource": {
+      "@id": "http://maya-project.eu/icareonto/personAttributeHasSource",
+      "@type": "@id"
+    },
+    "personAttributeName": {
+      "@id": "http://maya-project.eu/icareonto/personAttributeName",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "personAttributeRecordedAt": {
+      "@id": "http://maya-project.eu/icareonto/personAttributeRecordedAt",
+      "@type": "@id"
+    },
+    "personAttributeValue": {
+      "@id": "http://maya-project.eu/icareonto/personAttributeValue",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "personHasAttribute": {
+      "@id": "http://maya-project.eu/icareonto/personHasAttribute",
+      "@type": "@id"
+    },
+    "personHasCancerTreatmentHistory": {
+      "@id": "http://maya-project.eu/icareonto/personHasCancerTreatmentHistory",
+      "@type": "@id"
+    },
+    "personHasClinicalProfile": {
+      "@id": "http://maya-project.eu/icareonto/personHasClinicalProfile",
+      "@type": "@id"
+    },
+    "personHasLifestyleProfile": {
+      "@id": "http://maya-project.eu/icareonto/personHasLifestyleProfile",
+      "@type": "@id"
+    },
+    "personHasPreference": {
+      "@id": "http://maya-project.eu/icareonto/personHasPreference",
+      "@type": "@id"
+    },
+    "personHasRiskProfile": {
+      "@id": "http://maya-project.eu/icareonto/personHasRiskProfile",
+      "@type": "@id"
+    },
+    "personHasRole": {
+      "@id": "http://maya-project.eu/icareonto/personHasRole",
+      "@type": "@id"
+    },
+    "personHasSocialContextProfile": {
+      "@id": "http://maya-project.eu/icareonto/personHasSocialContextProfile",
+      "@type": "@id"
+    },
+    "personIdentifier": {
+      "@id": "http://maya-project.eu/icareonto/personIdentifier",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "personParticipatesInMeasurement": {
+      "@id": "http://maya-project.eu/icareonto/personParticipatesInMeasurement",
+      "@type": "@id"
+    },
+    "pilotPhaseHasVisit": {
+      "@id": "http://maya-project.eu/icareonto/pilotPhaseHasVisit",
+      "@type": "@id"
+    },
+    "pilotSiteHasLocale": {
+      "@id": "http://maya-project.eu/icareonto/pilotSiteHasLocale",
+      "@type": "@id"
+    },
+    "pilotStudyHasArm": {
+      "@id": "http://maya-project.eu/icareonto/pilotStudyHasArm",
+      "@type": "@id"
+    },
+    "pilotStudyHasPhase": {
+      "@id": "http://maya-project.eu/icareonto/pilotStudyHasPhase",
+      "@type": "@id"
+    },
+    "pilotStudyHasPilotSite": {
+      "@id": "http://maya-project.eu/icareonto/pilotStudyHasPilotSite",
+      "@type": "@id"
+    },
+    "plannedSessionFollowsPrescription": {
+      "@id": "http://maya-project.eu/icareonto/plannedSessionFollowsPrescription",
+      "@type": "@id"
+    },
+    "plannedSessionHasStatus": {
+      "@id": "http://maya-project.eu/icareonto/plannedSessionHasStatus",
+      "@type": "@id"
+    },
+    "plannedSessionIdentifier": {
+      "@id": "http://maya-project.eu/icareonto/plannedSessionIdentifier",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "plannedSessionScheduledAt": {
+      "@id": "http://maya-project.eu/icareonto/plannedSessionScheduledAt",
+      "@type": "@id"
+    },
+    "predictionModelHasPerformanceMetric": {
+      "@id": "http://maya-project.eu/icareonto/predictionModelHasPerformanceMetric",
+      "@type": "@id"
+    },
+    "preferenceName": {
+      "@id": "http://maya-project.eu/icareonto/preferenceName",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "preferenceRecordedAt": {
+      "@id": "http://maya-project.eu/icareonto/preferenceRecordedAt",
+      "@type": "@id"
+    },
+    "preferenceValue": {
+      "@id": "http://maya-project.eu/icareonto/preferenceValue",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "preferredCommunicationChannel": {
+      "@id": "http://maya-project.eu/icareonto/preferredCommunicationChannel",
+      "@type": "@id"
+    },
+    "preferredContactTime": {
+      "@id": "http://maya-project.eu/icareonto/preferredContactTime",
+      "@type": "@id"
+    },
+    "preferredLanguageTag": {
+      "@id": "http://maya-project.eu/icareonto/preferredLanguageTag",
+      "@type": "http://www.w3.org/2001/XMLSchema#language"
+    },
+    "prescriptionIdentifier": {
+      "@id": "http://maya-project.eu/icareonto/prescriptionIdentifier",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "prescriptionIssuedAt": {
+      "@id": "http://maya-project.eu/icareonto/prescriptionIssuedAt",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "prescriptionVersion": {
+      "@id": "http://maya-project.eu/icareonto/prescriptionVersion",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "privateUseSpaceAvailable": {
+      "@id": "http://maya-project.eu/icareonto/privateUseSpaceAvailable",
+      "@type": "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "progressionInstructionText": {
+      "@id": "http://maya-project.eu/icareonto/progressionInstructionText",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "protocolHasInstruction": {
+      "@id": "http://maya-project.eu/icareonto/protocolHasInstruction",
+      "@type": "@id"
+    },
+    "protocolHasSchedule": {
+      "@id": "http://maya-project.eu/icareonto/protocolHasSchedule",
+      "@type": "@id"
+    },
+    "protocolSpecifiesMethod": {
+      "@id": "http://maya-project.eu/icareonto/protocolSpecifiesMethod",
+      "@type": "@id"
+    },
+    "protocolSpecifiesParameter": {
+      "@id": "http://maya-project.eu/icareonto/protocolSpecifiesParameter",
+      "@type": "@id"
+    },
+    "quantityNumericValue": {
+      "@id": "http://maya-project.eu/icareonto/quantityNumericValue",
+      "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "quantityValueHasUnit": {
+      "@id": "http://maya-project.eu/icareonto/quantityValueHasUnit",
+      "@type": "@id"
+    },
+    "radiationDoseGy": {
+      "@id": "http://maya-project.eu/icareonto/radiationDoseGy",
+      "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "radiotherapyBodySiteName": {
+      "@id": "http://maya-project.eu/icareonto/radiotherapyBodySiteName",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "radiotherapyExposureHasBodySite": {
+      "@id": "http://maya-project.eu/icareonto/radiotherapyExposureHasBodySite",
+      "@type": "@id"
+    },
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "recommendationAppliesToSymptom": {
+      "@id": "http://maya-project.eu/icareonto/recommendationAppliesToSymptom",
+      "@type": "@id"
+    },
+    "recommendationDerivationPerformedByAgent": {
+      "@id": "http://maya-project.eu/icareonto/recommendationDerivationPerformedByAgent",
+      "@type": "@id"
+    },
+    "recommendationDerivationProduces": {
+      "@id": "http://maya-project.eu/icareonto/recommendationDerivationProduces",
+      "@type": "@id"
+    },
+    "recommendationDerivationUsesKnowledgeResource": {
+      "@id": "http://maya-project.eu/icareonto/recommendationDerivationUsesKnowledgeResource",
+      "@type": "@id"
+    },
+    "recommendationDerivationUsesModel": {
+      "@id": "http://maya-project.eu/icareonto/recommendationDerivationUsesModel",
+      "@type": "@id"
+    },
+    "recommendationDerivationUsesRiskProfile": {
+      "@id": "http://maya-project.eu/icareonto/recommendationDerivationUsesRiskProfile",
+      "@type": "@id"
+    },
+    "recommendationHasApplicabilityCriterion": {
+      "@id": "http://maya-project.eu/icareonto/recommendationHasApplicabilityCriterion",
+      "@type": "@id"
+    },
+    "recommendationHasContraindication": {
+      "@id": "http://maya-project.eu/icareonto/recommendationHasContraindication",
+      "@type": "@id"
+    },
+    "recommendationHasEvidenceGrade": {
+      "@id": "http://maya-project.eu/icareonto/recommendationHasEvidenceGrade",
+      "@type": "@id"
+    },
+    "recommendationRecommendsActivity": {
+      "@id": "http://maya-project.eu/icareonto/recommendationRecommendsActivity",
+      "@type": "@id"
+    },
+    "recommendationText": {
+      "@id": "http://maya-project.eu/icareonto/recommendationText",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "referenceRangeLowerBound": {
+      "@id": "http://maya-project.eu/icareonto/referenceRangeLowerBound",
+      "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "referenceRangeUpperBound": {
+      "@id": "http://maya-project.eu/icareonto/referenceRangeUpperBound",
+      "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "repetitionCount": {
+      "@id": "http://maya-project.eu/icareonto/repetitionCount",
+      "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    },
+    "resistanceLoadUnit": {
+      "@id": "http://maya-project.eu/icareonto/resistanceLoadUnit",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "resistanceLoadValue": {
+      "@id": "http://maya-project.eu/icareonto/resistanceLoadValue",
+      "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "restIntervalSeconds": {
+      "@id": "http://maya-project.eu/icareonto/restIntervalSeconds",
+      "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "riskBasedTriggerUsesRiskProfile": {
+      "@id": "http://maya-project.eu/icareonto/riskBasedTriggerUsesRiskProfile",
+      "@type": "@id"
+    },
+    "riskEstimateEstimatesConditionRisk": {
+      "@id": "http://maya-project.eu/icareonto/riskEstimateEstimatesConditionRisk",
+      "@type": "@id"
+    },
+    "riskEstimateEstimatesEventRisk": {
+      "@id": "http://maya-project.eu/icareonto/riskEstimateEstimatesEventRisk",
+      "@type": "@id"
+    },
+    "riskEstimateHasCategory": {
+      "@id": "http://maya-project.eu/icareonto/riskEstimateHasCategory",
+      "@type": "@id"
+    },
+    "riskEstimateHasContribution": {
+      "@id": "http://maya-project.eu/icareonto/riskEstimateHasContribution",
+      "@type": "@id"
+    },
+    "riskEstimateHasInterpretation": {
+      "@id": "http://maya-project.eu/icareonto/riskEstimateHasInterpretation",
+      "@type": "@id"
+    },
+    "riskEstimateHasTimeHorizon": {
+      "@id": "http://maya-project.eu/icareonto/riskEstimateHasTimeHorizon",
+      "@type": "@id"
+    },
+    "riskFactorContributionForInput": {
+      "@id": "http://maya-project.eu/icareonto/riskFactorContributionForInput",
+      "@type": "@id"
+    },
+    "riskFactorContributionForRiskFactor": {
+      "@id": "http://maya-project.eu/icareonto/riskFactorContributionForRiskFactor",
+      "@type": "@id"
+    },
+    "riskInterpretationValue": {
+      "@id": "http://maya-project.eu/icareonto/riskInterpretationValue",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "riskProfileAssessedAt": {
+      "@id": "http://maya-project.eu/icareonto/riskProfileAssessedAt",
+      "@type": "@id"
+    },
+    "riskProfileHasAssessmentMethod": {
+      "@id": "http://maya-project.eu/icareonto/riskProfileHasAssessmentMethod",
+      "@type": "@id"
+    },
+    "riskProfileIncludesRiskEstimate": {
+      "@id": "http://maya-project.eu/icareonto/riskProfileIncludesRiskEstimate",
+      "@type": "@id"
+    },
+    "riskProfileValidDuring": {
+      "@id": "http://maya-project.eu/icareonto/riskProfileValidDuring",
+      "@type": "@id"
+    },
+    "riskScore": {
+      "@id": "http://maya-project.eu/icareonto/riskScore",
+      "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "riskTimeHorizonValue": {
+      "@id": "http://maya-project.eu/icareonto/riskTimeHorizonValue",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "roleContext": {
+      "@id": "http://maya-project.eu/icareonto/roleContext",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "roleName": {
+      "@id": "http://maya-project.eu/icareonto/roleName",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "roleValidDuring": {
+      "@id": "http://maya-project.eu/icareonto/roleValidDuring",
+      "@type": "@id"
+    },
+    "safetyPolicyHasRule": {
+      "@id": "http://maya-project.eu/icareonto/safetyPolicyHasRule",
+      "@type": "@id"
+    },
+    "safetyPolicyVersion": {
+      "@id": "http://maya-project.eu/icareonto/safetyPolicyVersion",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "safetyRuleHasType": {
+      "@id": "http://maya-project.eu/icareonto/safetyRuleHasType",
+      "@type": "@id"
+    },
+    "safetyRuleText": {
+      "@id": "http://maya-project.eu/icareonto/safetyRuleText",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "scheduleHasFrequency": {
+      "@id": "http://maya-project.eu/icareonto/scheduleHasFrequency",
+      "@type": "@id"
+    },
+    "scheduleHasPreferredTimeOfDay": {
+      "@id": "http://maya-project.eu/icareonto/scheduleHasPreferredTimeOfDay",
+      "@type": "@id"
+    },
+    "scheduleHasRecurrencePattern": {
+      "@id": "http://maya-project.eu/icareonto/scheduleHasRecurrencePattern",
+      "@type": "@id"
+    },
+    "scheduleIncludesTimepoint": {
+      "@id": "http://maya-project.eu/icareonto/scheduleIncludesTimepoint",
+      "@type": "@id"
+    },
+    "scheduleNextDueAt": {
+      "@id": "http://maya-project.eu/icareonto/scheduleNextDueAt",
+      "@type": "@id"
+    },
+    "scheduleValidDuring": {
+      "@id": "http://maya-project.eu/icareonto/scheduleValidDuring",
+      "@type": "@id"
+    },
+    "scoreNumericValue": {
+      "@id": "http://maya-project.eu/icareonto/scoreNumericValue",
+      "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "serviceUseDuration": {
+      "@id": "http://maya-project.eu/icareonto/serviceUseDuration",
+      "@type": "http://www.w3.org/2001/XMLSchema#duration"
+    },
+    "serviceUseEventHasUser": {
+      "@id": "http://maya-project.eu/icareonto/serviceUseEventHasUser",
+      "@type": "@id"
+    },
+    "serviceUseEventSupportsActivity": {
+      "@id": "http://maya-project.eu/icareonto/serviceUseEventSupportsActivity",
+      "@type": "@id"
+    },
+    "serviceUseEventUsesService": {
+      "@id": "http://maya-project.eu/icareonto/serviceUseEventUsesService",
+      "@type": "@id"
+    },
+    "sessionNotes": {
+      "@id": "http://maya-project.eu/icareonto/sessionNotes",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "setCount": {
+      "@id": "http://maya-project.eu/icareonto/setCount",
+      "@type": "http://www.w3.org/2001/XMLSchema#positiveInteger"
+    },
+    "severityHasSeverityLevel": {
+      "@id": "http://maya-project.eu/icareonto/severityHasSeverityLevel",
+      "@type": "@id"
+    },
+    "socialContextRecordHasResponseStatus": {
+      "@id": "http://maya-project.eu/icareonto/socialContextRecordHasResponseStatus",
+      "@type": "@id"
+    },
+    "socialContextRecordHasSource": {
+      "@id": "http://maya-project.eu/icareonto/socialContextRecordHasSource",
+      "@type": "@id"
+    },
+    "socialContextRecordRecordedAt": {
+      "@id": "http://maya-project.eu/icareonto/socialContextRecordRecordedAt",
+      "@type": "@id"
+    },
+    "socialContextRecordRecordsFactor": {
+      "@id": "http://maya-project.eu/icareonto/socialContextRecordRecordsFactor",
+      "@type": "@id"
+    },
+    "socialContextRecordRelatesToBehaviourRecord": {
+      "@id": "http://maya-project.eu/icareonto/socialContextRecordRelatesToBehaviourRecord",
+      "@type": "@id"
+    },
+    "socialContextRecordValidDuring": {
+      "@id": "http://maya-project.eu/icareonto/socialContextRecordValidDuring",
+      "@type": "@id"
+    },
+    "socialProfileIncludesRecord": {
+      "@id": "http://maya-project.eu/icareonto/socialProfileIncludesRecord",
+      "@type": "@id"
+    },
+    "stageValueCode": {
+      "@id": "http://maya-project.eu/icareonto/stageValueCode",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "stageValueHasComponentType": {
+      "@id": "http://maya-project.eu/icareonto/stageValueHasComponentType",
+      "@type": "@id"
+    },
+    "stageValueText": {
+      "@id": "http://maya-project.eu/icareonto/stageValueText",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "studyTimepointHasType": {
+      "@id": "http://maya-project.eu/icareonto/studyTimepointHasType",
+      "@type": "@id"
+    },
+    "supportNetworkIncludesPerson": {
+      "@id": "http://maya-project.eu/icareonto/supportNetworkIncludesPerson",
+      "@type": "@id"
+    },
+    "symptomBasedTriggerUsesSymptomRecord": {
+      "@id": "http://maya-project.eu/icareonto/symptomBasedTriggerUsesSymptomRecord",
+      "@type": "@id"
+    },
+    "symptomCode": {
+      "@id": "http://maya-project.eu/icareonto/symptomCode",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "symptomCodeSystem": {
+      "@id": "http://maya-project.eu/icareonto/symptomCodeSystem",
+      "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+    },
+    "symptomCodeVersion": {
+      "@id": "http://maya-project.eu/icareonto/symptomCodeVersion",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "symptomName": {
+      "@id": "http://maya-project.eu/icareonto/symptomName",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "symptomRecordHasSeverity": {
+      "@id": "http://maya-project.eu/icareonto/symptomRecordHasSeverity",
+      "@type": "@id"
+    },
+    "symptomRecordRecordsSymptom": {
+      "@id": "http://maya-project.eu/icareonto/symptomRecordRecordsSymptom",
+      "@type": "@id"
+    },
+    "thresholdCategoryValue": {
+      "@id": "http://maya-project.eu/icareonto/thresholdCategoryValue",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "thresholdNumericValue": {
+      "@id": "http://maya-project.eu/icareonto/thresholdNumericValue",
+      "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "timepointDateTime": {
+      "@id": "http://maya-project.eu/icareonto/timepointDateTime",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "timepointLabel": {
+      "@id": "http://maya-project.eu/icareonto/timepointLabel",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "treatmentAgentName": {
+      "@id": "http://maya-project.eu/icareonto/treatmentAgentName",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "treatmentExposureHasAgent": {
+      "@id": "http://maya-project.eu/icareonto/treatmentExposureHasAgent",
+      "@type": "@id"
+    },
+    "treatmentExposureHasPeriod": {
+      "@id": "http://maya-project.eu/icareonto/treatmentExposureHasPeriod",
+      "@type": "@id"
+    },
+    "treatmentExposureIsRiskFactorOf": {
+      "@id": "http://maya-project.eu/icareonto/treatmentExposureIsRiskFactorOf",
+      "@type": "@id"
+    },
+    "treatmentRecordHasIntent": {
+      "@id": "http://maya-project.eu/icareonto/treatmentRecordHasIntent",
+      "@type": "@id"
+    },
+    "treatmentRecordHasRegimen": {
+      "@id": "http://maya-project.eu/icareonto/treatmentRecordHasRegimen",
+      "@type": "@id"
+    },
+    "treatmentRecordHasSetting": {
+      "@id": "http://maya-project.eu/icareonto/treatmentRecordHasSetting",
+      "@type": "@id"
+    },
+    "treatmentRecordHasSource": {
+      "@id": "http://maya-project.eu/icareonto/treatmentRecordHasSource",
+      "@type": "@id"
+    },
+    "treatmentRecordHasTreatmentPeriod": {
+      "@id": "http://maya-project.eu/icareonto/treatmentRecordHasTreatmentPeriod",
+      "@type": "@id"
+    },
+    "treatmentRecordIndicatesExposure": {
+      "@id": "http://maya-project.eu/icareonto/treatmentRecordIndicatesExposure",
+      "@type": "@id"
+    },
+    "treatmentRecordRecordedAt": {
+      "@id": "http://maya-project.eu/icareonto/treatmentRecordRecordedAt",
+      "@type": "@id"
+    },
+    "treatmentRecordRecordsTreatmentType": {
+      "@id": "http://maya-project.eu/icareonto/treatmentRecordRecordsTreatmentType",
+      "@type": "@id"
+    },
+    "treatmentRecordTreatsDiagnosis": {
+      "@id": "http://maya-project.eu/icareonto/treatmentRecordTreatsDiagnosis",
+      "@type": "@id"
+    },
+    "treatmentRegimenName": {
+      "@id": "http://maya-project.eu/icareonto/treatmentRegimenName",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "turnSequenceNumber": {
+      "@id": "http://maya-project.eu/icareonto/turnSequenceNumber",
+      "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    },
+    "turnText": {
+      "@id": "http://maya-project.eu/icareonto/turnText",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "type": "@type",
+    "unitCode": {
+      "@id": "http://maya-project.eu/icareonto/unitCode",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "unitCodeSystem": {
+      "@id": "http://maya-project.eu/icareonto/unitCodeSystem",
+      "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+    },
+    "unitSymbol": {
+      "@id": "http://maya-project.eu/icareonto/unitSymbol",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "userIntentRequiresSlot": {
+      "@id": "http://maya-project.eu/icareonto/userIntentRequiresSlot",
+      "@type": "@id"
+    },
+    "userUtteranceExpressesIntent": {
+      "@id": "http://maya-project.eu/icareonto/userUtteranceExpressesIntent",
+      "@type": "@id"
+    },
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  }
+}

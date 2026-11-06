@@ -1,0 +1,16 @@
+{
+  "synthetic": true,
+  "audience": "AYASurvivorAudience",
+  "journey_stage": "After treatment / survivorship",
+  "language": "en",
+  "topics": ["Nutrition"],
+  "needs": ["InformationAppraisalSupportNeed"],
+  "need_identification": {
+    "method": "Participant request",
+    "source": "Fictional participant requests support evaluating conflicting dietary information."
+  },
+  "preferred_formats": ["WrittenText"],
+  "preferred_complexities": ["FoundationalComplexity"],
+  "required_accessibility": [],
+  "include_registration_required": true
+}

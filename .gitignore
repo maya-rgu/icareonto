@@ -1,0 +1,44 @@
+# Python environments and caches
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+.coverage
+htmlcov/
+build/
+dist/
+
+# Operating system and temporary files
+.DS_Store
+~$*
+*.tmp
+*.log
+
+# Local configuration and operational data
+.env
+.env.*
+!.env.example
+CONTRIBUTING.md
+/local/
+/private/
+/work/
+
+# Rebuildable execution outputs
+/instantiation/generated/
+/instantiation/local-generated/
+/pilot-mapping/outputs/
+/pilot-mapping/cache/
+/education/generated/
+/outputs/
+
+# Downloaded models and computation caches
+/models/
+.cache/
+.maya-education-pending-*/
+
+# Tool-local operational inputs
+/instantiation/inputs/

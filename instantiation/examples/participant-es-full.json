@@ -1,0 +1,99 @@
+{
+  "schema_version": "1.1",
+  "recorded_at": "2026-11-04T10:00:00Z",
+  "source": "Entirely fictional longitudinal record for technical testing; risk values and exercise prescriptions are supplied dummy records, not recommendations or calculations by this software.",
+  "participant_id": "es-demo-aya-full",
+  "study_id": "maya-demo",
+  "site_id": "es-demo-01",
+  "enrolment": {"id": "enrolment-full", "enrolled_at": "2026-10-15T08:00:00Z", "status": "active", "arm_id": "intervention"},
+  "age_years": 27,
+  "survivor_role": "aya_cancer_survivor",
+  "preferences": {"language_tag": "es-ES", "detail_level": "brief"},
+  "sections": {
+    "clinical_profile": {
+      "records": [
+        {"id": "clinical-profile", "type": "ClinicalProfile", "properties": {
+          "clinicalProfileHasCurrentStatus": {"term": "RemissionClinicalStatus"},
+          "clinicalProfileIncludesRecord": [{"ref": "hypertension-record"}, {"ref": "symptom-record"}, {"ref": "medication-record"}]
+        }},
+        {"id": "hypertension", "type": "CardiovascularCondition", "label": "Fictional recorded hypertension", "properties": {"conditionName": "Hypertension", "conditionCode": "I10", "conditionCodeSystem": "http://hl7.org/fhir/sid/icd-10"}},
+        {"id": "hypertension-record", "type": "ClinicalConditionRecord", "source": "Fictional clinician record", "recorded_at": "2026-11-01T09:00:00Z", "properties": {
+          "clinicalRecordIdentifier": "condition-001", "conditionRecordRecordsCondition": {"ref": "hypertension"},
+          "conditionRecordHasClinicalStatus": {"term": "ActiveClinicalStatus"},
+          "clinicalRecordHasSource": {"ref": "$source"}, "clinicalRecordRecordedAt": {"ref": "review-time"}
+        }},
+        {"id": "fatigue", "type": "Symptom", "properties": {"symptomName": "Fatigue"}},
+        {"id": "symptom-record", "type": "SymptomRecord", "properties": {"symptomRecordRecordsSymptom": {"ref": "fatigue"}, "clinicalRecordRecordedAt": {"ref": "review-time"}, "clinicalRecordHasSource": {"ref": "$source"}}},
+        {"id": "medication", "type": "Medication", "properties": {"medicationName": "Fictional documented antihypertensive"}},
+        {"id": "medication-record", "type": "MedicationRecord", "properties": {"medicationRecordRecordsMedication": {"ref": "medication"}, "medicationRecordPrescribedFor": {"ref": "hypertension"}, "clinicalRecordHasSource": {"ref": "$source"}, "clinicalRecordRecordedAt": {"ref": "review-time"}}}
+      ],
+      "links": [{"subject": "$person", "property": "personHasClinicalProfile", "object": {"ref": "clinical-profile"}}]
+    },
+    "cancer_history": {
+      "records": [
+        {"id": "cancer-diagnosis", "type": "CancerDiagnosis", "properties": {"cancerTypeName": "Fictional Hodgkin lymphoma history", "diagnosisDate": "2022-03-12", "ageAtCancerDiagnosis": 23, "cancerDiagnosisHasSource": {"ref": "$source"}}},
+        {"id": "cancer-treatment-history", "type": "CancerTreatmentHistory", "properties": {"cancerTreatmentHistoryHasRecord": {"ref": "treatment-record"}}},
+        {"id": "treatment-record", "type": "CancerTreatmentRecord", "properties": {
+          "treatmentRecordRecordsTreatmentType": {"term": "ChemotherapyTreatment"}, "treatmentRecordTreatsDiagnosis": {"ref": "cancer-diagnosis"},
+          "treatmentRecordIndicatesExposure": {"ref": "anthracycline-exposure"}, "treatmentRecordHasTreatmentPeriod": {"ref": "treatment-period"},
+          "treatmentRecordHasSource": {"ref": "$source"}
+        }},
+        {"id": "anthracycline-agent", "type": "TreatmentAgent", "properties": {"treatmentAgentName": "Doxorubicin (fictional exposure record)"}},
+        {"id": "anthracycline-exposure", "type": "AnthracyclineExposure", "properties": {"treatmentExposureHasAgent": {"ref": "anthracycline-agent"}, "cumulativeDrugDose": 200, "cumulativeDrugDoseUnit": "mg/m2", "treatmentExposureHasPeriod": {"ref": "treatment-period"}}}
+      ],
+      "links": [
+        {"subject": "$person", "property": "hasCancerDiagnosis", "object": {"ref": "cancer-diagnosis"}},
+        {"subject": "$person", "property": "personHasCancerTreatmentHistory", "object": {"ref": "cancer-treatment-history"}}
+      ]
+    },
+    "measurements": {
+      "records": [
+        {"id": "bp-event", "type": "MeasurementEvent", "properties": {"measurementEventMeasures": {"ref": "systolic-bp"}, "measurementEventHasOutput": {"ref": "bp-result"}, "activityExecutionOccursAt": {"ref": "review-time"}, "activityExecutionHasSource": {"ref": "$source"}}},
+        {"id": "systolic-bp", "type": "VitalSign", "properties": {"parameterName": "Systolic blood pressure"}},
+        {"id": "bp-result", "type": "ObservationResult", "properties": {"observationHasQuantityValue": {"ref": "bp-quantity"}}},
+        {"id": "bp-quantity", "type": "QuantityValue", "properties": {"quantityNumericValue": 126, "quantityValueHasUnit": {"ref": "mmhg"}}},
+        {"id": "mmhg", "type": "Unit", "properties": {"unitSymbol": "mmHg", "unitCode": "mm[Hg]", "unitCodeSystem": "http://unitsofmeasure.org"}}
+      ],
+      "links": [{"subject": "$person", "property": "personParticipatesInMeasurement", "object": {"ref": "bp-event"}}]
+    },
+    "cv_risk": {
+      "records": [
+        {"id": "risk-profile", "type": "RiskProfile", "properties": {"riskProfileIncludesRiskEstimate": {"ref": "risk-estimate"}, "riskProfileAssessedAt": {"ref": "review-time"}, "riskProfileHasAssessmentMethod": {"ref": "risk-method"}}},
+        {"id": "risk-estimate", "type": "RiskEstimate", "properties": {"riskScore": 0.12, "riskEstimateHasCategory": {"term": "ModerateRisk"}, "riskEstimateEstimatesConditionRisk": {"ref": "hypertension"}, "riskEstimateHasTimeHorizon": {"ref": "risk-horizon"}}},
+        {"id": "risk-horizon", "type": "RiskTimeHorizon", "properties": {"riskTimeHorizonValue": "Fictional five-year horizon"}},
+        {"id": "risk-method", "type": "RiskAssessmentMethod", "properties": {"assessmentMethodName": "Synthetic supplied risk assessment; no validated predictive calculation"}},
+        {"id": "model-input", "type": "ModelInput", "properties": {"modelInputIncludesExposure": {"ref": "anthracycline-exposure"}, "modelInputIncludesClinicalRecord": {"ref": "hypertension-record"}, "modelInputDerivedFromObservation": {"ref": "bp-result"}}},
+        {"id": "dummy-model", "type": "PredictionModel", "properties": {"modelIdentifier": "synthetic-test-model", "modelVersion": "demo-only"}},
+        {"id": "model-execution", "type": "ModelExecution", "properties": {"modelExecutionExecutes": {"ref": "dummy-model"}, "modelExecutionUsesInput": {"ref": "model-input"}, "modelExecutionGeneratesRiskProfile": {"ref": "risk-profile"}, "modelExecutionExecutedAt": {"ref": "review-time"}}}
+      ],
+      "links": [{"subject": "$person", "property": "personHasRiskProfile", "object": {"ref": "risk-profile"}}]
+    },
+    "care_plans": {
+      "records": [
+        {"id": "care-plan", "type": "CarePlan", "properties": {"carePlanName": "Fictional survivorship support plan", "carePlanIntendedFor": {"ref": "$person"}, "carePlanHasStatus": {"term": "DraftCarePlan"}, "carePlanHasGoal": {"ref": "activity-goal"}, "carePlanIncludesActivity": {"ref": "exercise-intervention"}}},
+        {"id": "activity-goal", "type": "Goal", "properties": {"goalDescriptionText": "Discuss the supplied exercise plan and recorded participation with the care team"}},
+        {"id": "exercise-intervention", "type": "ExerciseIntervention", "properties": {"carePlanActivityName": "Fictional recorded exercise intervention", "activityHasStatus": {"term": "PlannedActivity"}, "activityContributesToGoal": {"ref": "activity-goal"}, "exerciseInterventionHasPrescription": {"ref": "exercise-prescription"}, "activityRealisedBy": {"ref": "performed-session"}}}
+      ]
+    },
+    "exercise": {
+      "records": [
+        {"id": "exercise-prescription", "type": "ExercisePrescription", "properties": {"prescriptionIdentifier": "fictional-prescription-001", "prescriptionIssuedAt": "2026-11-01T09:00:00Z", "exercisePrescriptionIncludesActivity": {"ref": "prescribed-walking"}}},
+        {"id": "prescribed-walking", "type": "ExerciseActivity", "properties": {"exerciseActivityName": "Walking, prescribed dummy record", "durationMinutes": 30, "exerciseActivityHasActivityType": {"ref": "walking-type"}, "exerciseActivityHasIntensity": {"ref": "exercise-intensity"}}},
+        {"id": "walking-type", "type": "ExerciseActivityType", "properties": {"activityTypeHasModality": {"term": "AerobicExercise"}}},
+        {"id": "exercise-intensity", "type": "ExerciseIntensity", "properties": {"exerciseIntensityHasLevel": {"term": "ModerateIntensity"}}},
+        {"id": "planned-session", "type": "PlannedExerciseSession", "properties": {"plannedSessionIdentifier": "planned-001", "plannedSessionFollowsPrescription": {"ref": "exercise-prescription"}, "plannedSessionHasStatus": {"term": "ScheduledActivity"}, "plannedSessionScheduledAt": {"ref": "session-time"}}},
+        {"id": "performed-session", "type": "PerformedExerciseSession", "properties": {"performedSessionIdentifier": "performed-001", "performedSessionRealises": {"ref": "planned-session"}, "performedSessionIncludesActivity": {"ref": "performed-walking"}, "activityExecutionOccursAt": {"ref": "session-time"}, "activityExecutionHasSource": {"ref": "$source"}}},
+        {"id": "performed-walking", "type": "ExerciseActivity", "properties": {"exerciseActivityName": "Walking, performed dummy record", "durationMinutes": 20, "exerciseActivityHasActivityType": {"ref": "walking-type"}}}
+      ]
+    },
+    "common": {
+      "records": [
+        {"id": "review-time", "type": "Timepoint", "properties": {"timepointDateTime": "2026-11-01T09:00:00Z"}},
+        {"id": "session-time", "type": "Timepoint", "properties": {"timepointDateTime": "2026-11-03T10:00:00Z"}},
+        {"id": "treatment-start", "type": "Timepoint", "properties": {"timepointDateTime": "2022-04-01T09:00:00Z"}},
+        {"id": "treatment-end", "type": "Timepoint", "properties": {"timepointDateTime": "2022-10-01T09:00:00Z"}},
+        {"id": "treatment-period", "type": "TimeInterval", "properties": {"intervalStartsAt": {"ref": "treatment-start"}, "intervalEndsAt": {"ref": "treatment-end"}}}
+      ]
+    }
+  }
+}

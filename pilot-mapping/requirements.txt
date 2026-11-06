@@ -1,0 +1,6 @@
+-r ../instantiation/requirements.txt
+# Required only in the Python environment running encode_texts.py:
+sentence-transformers==4.1.0
+torch==2.9.1
+transformers==4.49.0
+numpy==2.3.5

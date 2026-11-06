@@ -1,0 +1,252 @@
+{
+  "cases": [
+    {
+      "detail": "Rejected without changing published files: pilot must be generated",
+      "id": "UNREGISTERED-PILOT",
+      "status": "PASS"
+    },
+    {
+      "detail": "Pilot setup generated and validated",
+      "id": "CREATE-PILOT",
+      "status": "PASS"
+    },
+    {
+      "detail": "First enrolment generated and validated",
+      "id": "CREATE-FIRST",
+      "status": "PASS"
+    },
+    {
+      "detail": "Second enrolment references the same site",
+      "id": "CREATE-SECOND",
+      "status": "PASS"
+    },
+    {
+      "detail": "Combined query returns two distinct participant language preferences at the Spanish site",
+      "id": "SHARED-SITE-QUERY",
+      "status": "PASS"
+    },
+    {
+      "detail": "Site is defined once and referenced by both participant graphs",
+      "id": "NO-SITE-COPY",
+      "status": "PASS"
+    },
+    {
+      "detail": "Readable values map to existing ontology individuals",
+      "id": "CONTROLLED-VALUES",
+      "status": "PASS"
+    },
+    {
+      "detail": "Omitted age, consent and survivor role are not invented",
+      "id": "OPTIONAL-OMISSION",
+      "status": "PASS"
+    },
+    {
+      "detail": "Preference/attribute provenance and times are represented",
+      "id": "SOURCE-TIME",
+      "status": "PASS"
+    },
+    {
+      "detail": "The supplied enrolment-context query returns the exact independently specified participant/site answers",
+      "id": "DOCUMENTED-QUERY",
+      "status": "PASS"
+    },
+    {
+      "detail": "Age retains decimal datatype and the supplied numeric value",
+      "id": "AGE-TYPE",
+      "status": "PASS"
+    },
+    {
+      "detail": "Repeated input preserves managed seed bytes, graph identities and participant count",
+      "id": "REPEAT-IDENTITY",
+      "status": "PASS"
+    },
+    {
+      "detail": "TriG preserves exactly three separate instance graphs",
+      "id": "NAMED-GRAPHS",
+      "status": "PASS"
+    },
+    {
+      "detail": "Participant named graph survives RDF serialisation",
+      "id": "TRIG-ROUNDTRIP",
+      "status": "PASS"
+    },
+    {
+      "detail": "All catalogue targets and seed imports resolve locally",
+      "id": "CATALOGUE-GENERATED",
+      "status": "PASS"
+    },
+    {
+      "detail": "All catalogue targets and seed imports resolve locally",
+      "id": "CATALOGUE-PILOTS",
+      "status": "PASS"
+    },
+    {
+      "detail": "All catalogue targets and seed imports resolve locally",
+      "id": "CATALOGUE-PARTICIPANTS",
+      "status": "PASS"
+    },
+    {
+      "detail": "Rejected without changing published files: participant_id",
+      "id": "MISSING-ID",
+      "status": "PASS"
+    },
+    {
+      "detail": "Rejected without changing published files: Additional properties",
+      "id": "UNKNOWN-FIELD",
+      "status": "PASS"
+    },
+    {
+      "detail": "Rejected without changing published files: status",
+      "id": "BAD-STATUS",
+      "status": "PASS"
+    },
+    {
+      "detail": "Rejected without changing published files: date-time",
+      "id": "MISSING-OFFSET",
+      "status": "PASS"
+    },
+    {
+      "detail": "Rejected without changing published files: date-time",
+      "id": "BAD-DATE",
+      "status": "PASS"
+    },
+    {
+      "detail": "Rejected without changing published files: later than recorded_at",
+      "id": "FUTURE-ENROLMENT",
+      "status": "PASS"
+    },
+    {
+      "detail": "Rejected without changing published files: participant_id",
+      "id": "PLACEHOLDER",
+      "status": "PASS"
+    },
+    {
+      "detail": "Rejected without changing published files: age_years",
+      "id": "BAD-AGE",
+      "status": "PASS"
+    },
+    {
+      "detail": "Rejected without changing published files: age_years",
+      "id": "NULL-OPTIONAL",
+      "status": "PASS"
+    },
+    {
+      "detail": "Rejected without changing published files: pilot must be generated",
+      "id": "UNKNOWN-SITE",
+      "status": "PASS"
+    },
+    {
+      "detail": "Rejected without changing published files: pair does not match",
+      "id": "WRONG-STUDY",
+      "status": "PASS"
+    },
+    {
+      "detail": "Rejected without changing published files: phase_id",
+      "id": "UNKNOWN-PHASE",
+      "status": "PASS"
+    },
+    {
+      "detail": "Rejected without changing published files: arm_id",
+      "id": "UNKNOWN-ARM",
+      "status": "PASS"
+    },
+    {
+      "detail": "Rejected without changing published files: Repeated record identifier",
+      "id": "DUPLICATE-ATTRIBUTE",
+      "status": "PASS"
+    },
+    {
+      "detail": "Rejected without changing published files: later than valid_from",
+      "id": "CONSENT-INTERVAL",
+      "status": "PASS"
+    },
+    {
+      "detail": "Rejected without changing published files: unknown IANA time zone",
+      "id": "INVALID-ZONE",
+      "status": "PASS"
+    },
+    {
+      "detail": "Rejected without changing published files: country suffix",
+      "id": "LOCALE-COUNTRY",
+      "status": "PASS"
+    },
+    {
+      "detail": "Rejected without changing published files: Repeated record identifier",
+      "id": "DUPLICATE-PHASE",
+      "status": "PASS"
+    },
+    {
+      "detail": "Rejected without changing published files: Explicit range mismatch",
+      "id": "REMOVE-REFERENCED-ARM",
+      "status": "PASS"
+    },
+    {
+      "detail": "Rejected without changing published files: Conflicting labels",
+      "id": "CONFLICTING-SHARED-STUDY",
+      "status": "PASS"
+    },
+    {
+      "detail": "Site correction updates the shared seed without rewriting participant files",
+      "id": "PILOT-CORRECTION",
+      "status": "PASS"
+    },
+    {
+      "detail": "Both participants see the corrected site information through the existing links",
+      "id": "SHARED-CORRECTION-QUERY",
+      "status": "PASS"
+    },
+    {
+      "detail": "Rejected without changing published files: --replace-seed",
+      "id": "UNINTENTIONAL-REPLACEMENT",
+      "status": "PASS"
+    },
+    {
+      "detail": "Intentional preference correction keeps person identity and archives the previous seed",
+      "id": "EXPLICIT-CORRECTION",
+      "status": "PASS"
+    },
+    {
+      "detail": "Rejected without changing published files: cannot replace enrolment identity",
+      "id": "NO-SILENT-REENROLMENT",
+      "status": "PASS"
+    },
+    {
+      "detail": "Missing participant preferences remain unasserted despite the site's Spanish locale",
+      "id": "NO-PREFERENCE-DEFAULT",
+      "status": "PASS"
+    },
+    {
+      "detail": "Pending consent does not assert that a grant decision was supplied",
+      "id": "PENDING-CONSENT",
+      "status": "PASS"
+    },
+    {
+      "detail": "An existing deployment cannot silently switch its instance namespace",
+      "id": "NAMESPACE-PROTECTION",
+      "status": "PASS"
+    },
+    {
+      "detail": "Graph-level missing required identifier is rejected independently of input validation",
+      "id": "SHACL-MISSING-IDENTIFIER",
+      "status": "PASS"
+    },
+    {
+      "detail": "Missing explicit site type is rejected rather than inferred to repair the graph",
+      "id": "EXPLICIT-TYPE-CHECK",
+      "status": "PASS"
+    },
+    {
+      "detail": "CLI returns nonzero without publishing outputs for duplicate JSON keys",
+      "id": "CLI-INVALID-JSON",
+      "status": "PASS"
+    },
+    {
+      "detail": "Rejected without changing published files: edited outside the generator",
+      "id": "EXTERNAL-EDIT",
+      "status": "PASS"
+    }
+  ],
+  "checks": 49,
+  "scope": "Temporary fictional outputs; no modification of supplied examples, existing KG fixtures or ontology.",
+  "status": "PASS"
+}

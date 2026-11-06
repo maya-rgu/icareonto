@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MAYA educational resource selection request",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["audience", "journey_stage", "language", "topics", "needs", "need_identification"],
+  "properties": {
+    "synthetic": {"type": "boolean"},
+    "audience": {"type": "string", "minLength": 1},
+    "journey_stage": {"enum": ["Before treatment", "During treatment", "After treatment / survivorship"]},
+    "language": {"type": "string", "minLength": 2},
+    "topics": {"$ref": "#/$defs/nonemptyTerms"},
+    "needs": {"$ref": "#/$defs/nonemptyTerms"},
+    "preferred_formats": {"$ref": "#/$defs/terms"},
+    "preferred_complexities": {"$ref": "#/$defs/terms"},
+    "required_accessibility": {"$ref": "#/$defs/terms"},
+    "include_registration_required": {"type": "boolean"},
+    "need_identification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["method", "source"],
+      "properties": {
+        "method": {"type": "string", "minLength": 1},
+        "source": {"type": "string", "minLength": 1}
+      }
+    }
+  },
+  "$defs": {
+    "terms": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "nonemptyTerms": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}}
+  }
+}

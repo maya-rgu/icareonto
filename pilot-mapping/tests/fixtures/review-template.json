@@ -1,0 +1,101 @@
+{
+  "decisions": [
+    {
+      "classes": [],
+      "decision": "needs_review",
+      "rationale": "Review the ranked candidates; no mapping accepted automatically.",
+      "requirement_id": "DEMO-KR01"
+    },
+    {
+      "classes": [],
+      "decision": "needs_review",
+      "rationale": "Review the ranked candidates; no mapping accepted automatically.",
+      "requirement_id": "DEMO-KR02"
+    },
+    {
+      "classes": [],
+      "decision": "needs_review",
+      "rationale": "Review the ranked candidates; no mapping accepted automatically.",
+      "requirement_id": "DEMO-KR03"
+    },
+    {
+      "classes": [],
+      "decision": "needs_review",
+      "rationale": "Review the ranked candidates; no mapping accepted automatically.",
+      "requirement_id": "DEMO-KR04"
+    },
+    {
+      "classes": [],
+      "decision": "needs_review",
+      "rationale": "Review the ranked candidates; no mapping accepted automatically.",
+      "requirement_id": "DEMO-KR05"
+    },
+    {
+      "classes": [],
+      "decision": "needs_review",
+      "rationale": "Review the ranked candidates; no mapping accepted automatically.",
+      "requirement_id": "DEMO-KR06"
+    },
+    {
+      "classes": [],
+      "decision": "needs_review",
+      "rationale": "Review the ranked candidates; no mapping accepted automatically.",
+      "requirement_id": "DEMO-KR07"
+    },
+    {
+      "classes": [],
+      "decision": "needs_review",
+      "rationale": "Review the ranked candidates; no mapping accepted automatically.",
+      "requirement_id": "DEMO-KR08"
+    },
+    {
+      "classes": [],
+      "decision": "needs_review",
+      "rationale": "Review the ranked candidates; no mapping accepted automatically.",
+      "requirement_id": "DEMO-KR09"
+    },
+    {
+      "classes": [],
+      "decision": "needs_review",
+      "rationale": "Review the ranked candidates; no mapping accepted automatically.",
+      "requirement_id": "DEMO-KR10"
+    },
+    {
+      "classes": [],
+      "decision": "needs_review",
+      "rationale": "Review the ranked candidates; no mapping accepted automatically.",
+      "requirement_id": "DEMO-KR11"
+    },
+    {
+      "classes": [],
+      "decision": "needs_review",
+      "rationale": "Review the ranked candidates; no mapping accepted automatically.",
+      "requirement_id": "DEMO-KR12"
+    },
+    {
+      "classes": [],
+      "decision": "needs_review",
+      "rationale": "Review the ranked candidates; no mapping accepted automatically.",
+      "requirement_id": "DEMO-KR13"
+    },
+    {
+      "classes": [],
+      "decision": "needs_review",
+      "rationale": "Review the ranked candidates; no mapping accepted automatically.",
+      "requirement_id": "DEMO-KR14"
+    },
+    {
+      "classes": [],
+      "decision": "needs_review",
+      "rationale": "Review the ranked candidates; no mapping accepted automatically.",
+      "requirement_id": "DEMO-KR16"
+    }
+  ],
+  "needs_sha256": "d37d4a62f3355efcebf5ec9d68743eed6aedebbd8a6b4392f8dea7c024970e15",
+  "pilot_id": "es-demo-01",
+  "ranking_sha256": "c2f41ed2395f76e938b84bb8d24156f8a0162ff182099fe3492154118bfa88fd",
+  "review_status": "demonstration_annotation_not_site_approval",
+  "reviewer": "REPLACE WITH REVIEWER DESCRIPTION",
+  "schema_version": "1.1",
+  "study_id": "maya-demo"
+}

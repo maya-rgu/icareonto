@@ -1,0 +1,2586 @@
+{
+  "run_date": "2026-11-06",
+  "ontology_version": "0.1.0-draft",
+  "source_register": "icareonto_final_consolidated_competency_questions_v5.xlsx",
+  "source_register_sha256": "e46f6ffc5a42bf46d1e1f64ee515f76e2e499665341b883afe98aa6ea3dd42c0",
+  "query_engine": "RDFLib SPARQL 1.1",
+  "query_semantics": "Explicit RDF union; subclass traversal is expressed using SPARQL property paths. No OWL inference is materialised for query execution.",
+  "fixture_scope": "Original Spanish survivor graph plus a separate synthetic coverage supplement and four controls",
+  "canonical_cqs_executed": 78,
+  "canonical_status_counts": {
+    "PASS": 78
+  },
+  "controls_executed": 4,
+  "control_status_counts": {
+    "PASS": 4
+  },
+  "source_type_and_import_errors": [],
+  "inputs_sha256": {
+    "serialisation/alignments/approved.ttl": "e1df4340c83ff879f7ef8d31e4fb80bbc2de9fe84db7c814ff6ea06e90c9abe0",
+    "serialisation/icareonto.ttl": "d017c0038b4884837fb5be6b5bbb77eadf008d610aa8509044fd41f5b59aef29",
+    "serialisation/imports/metadata.ttl": "de327bcaf9a810594ac07810eee4332c44c1b529c9257539a50835c17b7dd4c5",
+    "serialisation/imports/prov-reference.ttl": "22fd91610f91f940a638690f83b6976e8acc3befa2d1b086bbee24e2931bf225",
+    "serialisation/imports/skos-reference.ttl": "a0df443bc1e3656d599b8e847bb45c95e475b33585e0d23e04397a683cc8e689",
+    "serialisation/modules/agent.ttl": "24bffaae6c9ed00ab017435cfc8920355c2f3499648c1019d72df7c667afb36b",
+    "serialisation/modules/cancer-history.ttl": "372f714b4a6e1d5fdaa5c0863ec58a2673f8f42c87a9f781099c0bf318a27401",
+    "serialisation/modules/clinical-profile.ttl": "072786bb458f9f2a384c8342b9a4ce812b9409132bc60f99b1c40cb6fb520163",
+    "serialisation/modules/core.ttl": "44bc1d8cc2a82e048240f77afe2e75d15cd8a1d3e8ae74be7e05547ec7919e99",
+    "serialisation/modules/cv-risk.ttl": "b0ef30b31ed7e9bd1094967f43421f64987fb977ee0e963a7b2ba3af34cead8c",
+    "serialisation/modules/dialogue.ttl": "c9a3d1f913eb5713724ac25ad5d1fbd5d181236aa60258e463d940817ccca34f",
+    "serialisation/modules/exercise.ttl": "f4362ac582f8c4f4faabf6ee80882002087ce3e364eacc22ce2e7803aa87ea75",
+    "serialisation/modules/healthhub-service.ttl": "41bde182a7f6fd3e7fa9fc1de84e3fda87b0205be810b00871544c60635a7635",
+    "serialisation/modules/intervention-careplan.ttl": "6eb22ba3a126e8037d730493365b968866fd7c74320a81dfba8ba0cb0a7a4518",
+    "serialisation/modules/knowledge-resource.ttl": "733d3a4e2de9e81cca15e6f8f559a2c89ef22e2ae4ca74adb79e83e35a7aa3dd",
+    "serialisation/modules/lifestyle-behaviour.ttl": "bd8858215a9d8b016014537124dde24b9c25a7c04e1288b3100e13c86f0bd48c",
+    "serialisation/modules/measurement-biomarker.ttl": "7c494e28294a15199b99001c2296f77a53d88d3768cfb8a0fe0b965d93b32f1b",
+    "serialisation/modules/nutrition.ttl": "284e794c623efa690160a5504e5866bf95d093be6d402f1a8278febe9e32ccfe",
+    "serialisation/modules/person-role.ttl": "54c52adc3f0c755797c1d1a0b975609b16f56d050c56c681b6d95d9ac55bc580",
+    "serialisation/modules/pilot.ttl": "134750c7fe0264f75e67022660804111561bbc3864bf6408884c5cf29adf88cc",
+    "serialisation/modules/provenance-governance.ttl": "19fdc227f3b39d11906f5de77b35c6afee1521ef7fce7af01b8dd650284a83f1",
+    "serialisation/modules/social-context.ttl": "c3fe7179038292df64af7cac6f7e7e3100d51c44fec56978ef3c53ed8c7e4061",
+    "validation/cq-tests/coverage.ttl": "986b472bf9ee4bbcf62a29515d724477b27bf87cc38325deca29b42663f67607",
+    "validation/demo_spain_aya.ttl": "6aed52897c61e3d366f431b4d9555459c886cc4cf8f4a830adabe0c1e8e724db"
+  },
+  "suite_spec_sha256": "898a0b47814f0083c7650cd92cc29f80e0a66a747dcfe313900ec63f9dae2699",
+  "owl_validation": {
+    "in_owl2_dl": true,
+    "profile_violations": 0,
+    "imports_closure_size": 24,
+    "reasoner": {
+      "datatype_mode": "strict",
+      "consistent": true,
+      "unsatisfiable_named_classes": []
+    }
+  },
+  "overall": "PASS",
+  "results": [
+    {
+      "id": "CQ-001",
+      "scope": "Instances in the combined synthetic graph",
+      "query_file": "queries/CQ-001.rq",
+      "question": "Which modifiable cardiovascular risk factors are represented in iCAREOnto?",
+      "theme": "Cardiovascular risk",
+      "expected_answer_type": "List of risk-factor concepts or instances",
+      "source_path": "cv-risk:ModifiableRiskFactor",
+      "modules": "cv-risk",
+      "primary_basis": "Project proposal",
+      "stakeholder_cq_ids": "\u2014",
+      "proposal_cq_ids": "CQ-001",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "factor": "demo:low-activity-risk-factor"
+        },
+        {
+          "factor": "test:dietary-factor"
+        }
+      ],
+      "actual": [
+        {
+          "factor": "test:dietary-factor"
+        },
+        {
+          "factor": "demo:low-activity-risk-factor"
+        }
+      ],
+      "error": null,
+      "query_sha256": "dc674e758e66d6b459667a7e5e73196c95134b44c73204c0e8d5b6f9abced914"
+    },
+    {
+      "id": "CQ-002",
+      "query_file": "queries/CQ-002.rq",
+      "question": "Which interventions target a given modifiable cardiovascular risk factor?",
+      "theme": "Cardiovascular risk",
+      "expected_answer_type": "List of intervention instances or types",
+      "source_path": "intervention-careplan:interventionTargetsRiskFactor",
+      "modules": "intervention-careplan; cv-risk",
+      "primary_basis": "Project proposal",
+      "stakeholder_cq_ids": "\u2014",
+      "proposal_cq_ids": "CQ-002",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "intervention": "demo:exercise-intervention"
+        }
+      ],
+      "actual": [
+        {
+          "intervention": "demo:exercise-intervention"
+        }
+      ],
+      "error": null,
+      "query_sha256": "0350f41597403dc2a103464dc8f591d335f62adc39e89fe31811f6168a559d2f"
+    },
+    {
+      "id": "CQ-003",
+      "query_file": "queries/CQ-003.rq",
+      "question": "Which clinical condition does a given cardiovascular risk estimate concern?",
+      "theme": "Cardiovascular risk",
+      "expected_answer_type": "Clinical condition",
+      "source_path": "cv-risk:riskEstimateEstimatesConditionRisk",
+      "modules": "cv-risk; clinical-profile",
+      "primary_basis": "Project proposal",
+      "stakeholder_cq_ids": "\u2014",
+      "proposal_cq_ids": "CQ-003",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "condition": "test:cv-condition"
+        }
+      ],
+      "actual": [
+        {
+          "condition": "test:cv-condition"
+        }
+      ],
+      "error": null,
+      "query_sha256": "a1182c199a1cb9db40b0767fed0efc936c830810473817bbb3a1768dddb545b1"
+    },
+    {
+      "id": "CQ-004",
+      "query_file": "queries/CQ-004.rq",
+      "question": "Which adverse cardiac event does a given cardiovascular risk estimate concern?",
+      "theme": "Cardiovascular risk",
+      "expected_answer_type": "Adverse cardiac event",
+      "source_path": "cv-risk:riskEstimateEstimatesEventRisk",
+      "modules": "cv-risk",
+      "primary_basis": "Project proposal",
+      "stakeholder_cq_ids": "\u2014",
+      "proposal_cq_ids": "CQ-004",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "event": "demo:adverse-cardiac-event"
+        }
+      ],
+      "actual": [
+        {
+          "event": "demo:adverse-cardiac-event"
+        }
+      ],
+      "error": null,
+      "query_sha256": "5c43b639d49696e5d4cf268da7d1282646ccbd31a6e0dd44c87f8eab570c6e5b"
+    },
+    {
+      "id": "CQ-005",
+      "numeric": [
+        "value"
+      ],
+      "query_file": "queries/CQ-005.rq",
+      "question": "Which risk factors contribute to a given risk estimate?",
+      "theme": "Cardiovascular risk",
+      "expected_answer_type": "List of risk factors and, where available, contribution values",
+      "source_path": "cv-risk:riskEstimateHasContribution / riskFactorContributionForRiskFactor",
+      "modules": "cv-risk",
+      "primary_basis": "Project proposal",
+      "stakeholder_cq_ids": "\u2014",
+      "proposal_cq_ids": "CQ-005",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "factor": "demo:low-activity-risk-factor",
+          "value": "0.4"
+        },
+        {
+          "factor": "test:prior-treatment-factor",
+          "value": "0.6"
+        }
+      ],
+      "actual": [
+        {
+          "factor": "demo:low-activity-risk-factor",
+          "value": "0.4"
+        },
+        {
+          "factor": "test:prior-treatment-factor",
+          "value": "0.6"
+        }
+      ],
+      "error": null,
+      "query_sha256": "5cfab6a01328216a646b4974f6b9048b3fae0b434a0d55f69a0e7bca03242ea7"
+    },
+    {
+      "id": "CQ-006",
+      "query_file": "queries/CQ-006.rq",
+      "question": "Which interpretation is assigned to a given cardiovascular risk estimate?",
+      "theme": "Cardiovascular risk",
+      "expected_answer_type": "Risk interpretation",
+      "source_path": "riskEstimateHasInterpretation",
+      "modules": "cv-risk",
+      "primary_basis": "Stakeholder requirements",
+      "stakeholder_cq_ids": "T32-CQ-11",
+      "proposal_cq_ids": "\u2014",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "interpretation": "demo:risk-interpretation"
+        }
+      ],
+      "actual": [
+        {
+          "interpretation": "demo:risk-interpretation"
+        }
+      ],
+      "error": null,
+      "query_sha256": "b4e393de93988e8c2cd6ab9b6c3bb1de39c1db943358044f44e9d9b9ca196c6a"
+    },
+    {
+      "id": "CQ-007",
+      "query_file": "queries/CQ-007.rq",
+      "question": "Which cancer diagnoses are recorded for a person?",
+      "theme": "Cancer survivorship and clinical profile",
+      "expected_answer_type": "List of cancer diagnoses",
+      "source_path": "cancer-history:hasCancerDiagnosis",
+      "modules": "cancer-history; person-role",
+      "primary_basis": "Project proposal",
+      "stakeholder_cq_ids": "\u2014",
+      "proposal_cq_ids": "CQ-006",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "diagnosis": "demo:cancer-diagnosis"
+        }
+      ],
+      "actual": [
+        {
+          "diagnosis": "demo:cancer-diagnosis"
+        }
+      ],
+      "error": null,
+      "query_sha256": "d9b75a9ef581b5de1c75e7f54cea9b40119490528b5e06d42475a7f9d0f77a7f"
+    },
+    {
+      "id": "CQ-008",
+      "query_file": "queries/CQ-008.rq",
+      "question": "Which treatment-related clinical conditions are recorded for a person?",
+      "theme": "Cancer survivorship and clinical profile",
+      "expected_answer_type": "List of treatment-related conditions and their records",
+      "source_path": "clinical-profile:clinicalProfileIncludesRecord / conditionRecordRecordsCondition",
+      "modules": "clinical-profile; person-role",
+      "primary_basis": "Project proposal",
+      "stakeholder_cq_ids": "\u2014",
+      "proposal_cq_ids": "CQ-007",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "record": "test:late-effect-record",
+          "condition": "test:cv-condition"
+        }
+      ],
+      "actual": [
+        {
+          "record": "test:late-effect-record",
+          "condition": "test:cv-condition"
+        }
+      ],
+      "error": null,
+      "query_sha256": "7a8b36d9e9964156a0a1122ef9965b09b0b30d9adedc635f16f3db544ff37a96"
+    },
+    {
+      "id": "CQ-009",
+      "query_file": "queries/CQ-009.rq",
+      "question": "Which cancer treatment exposures are recorded for a person?",
+      "theme": "Cancer survivorship and clinical profile",
+      "expected_answer_type": "List of treatment exposures",
+      "source_path": "cancer-history:personHasCancerTreatmentHistory / cancerTreatmentHistoryHasRecord / treatmentRecordIndicatesExposure",
+      "modules": "cancer-history; person-role",
+      "primary_basis": "Project proposal",
+      "stakeholder_cq_ids": "\u2014",
+      "proposal_cq_ids": "CQ-008",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "exposure": "demo:anthracycline-exposure"
+        }
+      ],
+      "actual": [
+        {
+          "exposure": "demo:anthracycline-exposure"
+        }
+      ],
+      "error": null,
+      "query_sha256": "903076d843716279be8be4067633c670f0426fb14ae563698776f3636d6d60ef"
+    },
+    {
+      "id": "CQ-010",
+      "query_file": "queries/CQ-010.rq",
+      "question": "Which cancer treatment exposures are represented as risk factors for cardiotoxicity?",
+      "theme": "Cancer survivorship and clinical profile",
+      "expected_answer_type": "Exposure-to-cardiotoxicity-risk pairs",
+      "source_path": "cancer-history:treatmentExposureIsRiskFactorOf",
+      "modules": "cancer-history",
+      "primary_basis": "Project proposal",
+      "stakeholder_cq_ids": "\u2014",
+      "proposal_cq_ids": "CQ-009",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "exposure": "demo:anthracycline-exposure",
+          "risk": "demo:treatment-related-risk"
+        }
+      ],
+      "actual": [
+        {
+          "exposure": "demo:anthracycline-exposure",
+          "risk": "demo:treatment-related-risk"
+        }
+      ],
+      "error": null,
+      "query_sha256": "944758a39c8922a3c3f3c3787f3ee391f599d23f5b0e2fe7a1eeb6db2144fca8"
+    },
+    {
+      "id": "CQ-011",
+      "scope": "Asserted clinical record types; subtype filtering uses explicit schema paths",
+      "query_file": "queries/CQ-011.rq",
+      "question": "Which clinical records are included in a person's clinical profile?",
+      "theme": "Cancer survivorship and clinical profile",
+      "expected_answer_type": "List of clinical records and record types",
+      "source_path": "clinical-profile:personHasClinicalProfile / clinicalProfileIncludesRecord",
+      "modules": "clinical-profile; person-role",
+      "primary_basis": "Project proposal",
+      "stakeholder_cq_ids": "\u2014",
+      "proposal_cq_ids": "CQ-010",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "record": "demo:symptom-record",
+          "type": "icare:SymptomRecord"
+        },
+        {
+          "record": "test:late-effect-record",
+          "type": "icare:ClinicalConditionRecord"
+        },
+        {
+          "record": "test:unrelated-condition-record",
+          "type": "icare:ClinicalConditionRecord"
+        }
+      ],
+      "actual": [
+        {
+          "record": "test:late-effect-record",
+          "type": "icare:ClinicalConditionRecord"
+        },
+        {
+          "record": "test:unrelated-condition-record",
+          "type": "icare:ClinicalConditionRecord"
+        },
+        {
+          "record": "demo:symptom-record",
+          "type": "icare:SymptomRecord"
+        }
+      ],
+      "error": null,
+      "query_sha256": "bd28ab6a9a69ff36f6046eee045a1e52ad864008faf0ba2b34caa8263023245d"
+    },
+    {
+      "id": "CQ-012",
+      "query_file": "queries/CQ-012.rq",
+      "question": "Which guidelines are represented in iCAREOnto?",
+      "theme": "Knowledge resources and health literacy",
+      "expected_answer_type": "List of guideline resources",
+      "source_path": "knowledge-resource:Guideline",
+      "modules": "knowledge-resource",
+      "primary_basis": "Project proposal",
+      "stakeholder_cq_ids": "\u2014",
+      "proposal_cq_ids": "CQ-011",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "guideline": "test:guideline"
+        }
+      ],
+      "actual": [
+        {
+          "guideline": "test:guideline"
+        }
+      ],
+      "error": null,
+      "query_sha256": "c5f9084ab23b95a17840e8683f389f1c9fd73d454636b957c0d1a6c1ab277fd6"
+    },
+    {
+      "id": "CQ-013",
+      "query_file": "queries/CQ-013.rq",
+      "question": "Which recommendations are contained in a given guideline or other knowledge resource?",
+      "theme": "Knowledge resources and health literacy",
+      "expected_answer_type": "List of recommendations",
+      "source_path": "knowledge-resource:knowledgeResourceContainsRecommendation",
+      "modules": "knowledge-resource",
+      "primary_basis": "Stakeholder requirements (primary); project proposal (supporting)",
+      "stakeholder_cq_ids": "T32-CQ-02",
+      "proposal_cq_ids": "CQ-012",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "recommendation": "demo:recommendation-walking"
+        },
+        {
+          "recommendation": "demo:recommendation-nutrition"
+        }
+      ],
+      "actual": [
+        {
+          "recommendation": "demo:recommendation-nutrition"
+        },
+        {
+          "recommendation": "demo:recommendation-walking"
+        }
+      ],
+      "error": null,
+      "query_sha256": "38ad87f3acba4f3a8c2a42727954a21296bdd015d24db38692db5052ce8b2803"
+    },
+    {
+      "id": "CQ-014",
+      "query_file": "queries/CQ-014.rq",
+      "question": "Which knowledge resources support a given recommendation?",
+      "theme": "Knowledge resources and health literacy",
+      "expected_answer_type": "List of knowledge resources",
+      "source_path": "knowledge-resource:knowledgeResourceSupportsRecommendation",
+      "modules": "knowledge-resource",
+      "primary_basis": "Stakeholder requirements (primary); project proposal (supporting)",
+      "stakeholder_cq_ids": "T32-CQ-03; T32-CQ-10",
+      "proposal_cq_ids": "CQ-013",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "resource": "demo:resource-walking-es"
+        }
+      ],
+      "actual": [
+        {
+          "resource": "demo:resource-walking-es"
+        }
+      ],
+      "error": null,
+      "query_sha256": "e68fbc2142f0e60a1088cc5f462632d27ada494b11bcf0ef015cffa345c12821"
+    },
+    {
+      "id": "CQ-015",
+      "scope": "Schema enumeration; local named subclasses, excluding the root class",
+      "query_file": "queries/CQ-015.rq",
+      "question": "Which intervention types are represented in iCAREOnto?",
+      "theme": "Knowledge resources and health literacy",
+      "expected_answer_type": "List of intervention subclasses or types",
+      "source_path": "intervention-careplan:Intervention and subclasses",
+      "modules": "intervention-careplan",
+      "primary_basis": "Project proposal",
+      "stakeholder_cq_ids": "\u2014",
+      "proposal_cq_ids": "CQ-014",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "type": "icare:ExerciseIntervention"
+        },
+        {
+          "type": "icare:NutritionIntervention"
+        },
+        {
+          "type": "icare:HealthLiteracyIntervention"
+        }
+      ],
+      "actual": [
+        {
+          "type": "icare:HealthLiteracyIntervention"
+        },
+        {
+          "type": "icare:NutritionIntervention"
+        },
+        {
+          "type": "icare:ExerciseIntervention"
+        }
+      ],
+      "error": null,
+      "query_sha256": "4ed8d70adf09b69383f02488503321994eb20572407b38bf1366806d6cc8c154"
+    },
+    {
+      "id": "CQ-016",
+      "query_file": "queries/CQ-016.rq",
+      "question": "Which risk profile was used to derive a given recommendation?",
+      "theme": "Knowledge resources and health literacy",
+      "expected_answer_type": "Risk profile",
+      "source_path": "knowledge-resource:recommendationDerivationUsesRiskProfile / recommendationDerivationProduces",
+      "modules": "knowledge-resource; cv-risk",
+      "primary_basis": "Project proposal",
+      "stakeholder_cq_ids": "\u2014",
+      "proposal_cq_ids": "CQ-015",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "risk": "demo:risk-profile"
+        }
+      ],
+      "actual": [
+        {
+          "risk": "demo:risk-profile"
+        }
+      ],
+      "error": null,
+      "query_sha256": "4956bd394373eae8710bc4ef7e35f1433a8a95a744de8e398a6c462bc1042a06"
+    },
+    {
+      "id": "CQ-017",
+      "query_file": "queries/CQ-017.rq",
+      "question": "Which care-plan activity does a given recommendation recommend?",
+      "theme": "Knowledge resources and health literacy",
+      "expected_answer_type": "Care-plan activity",
+      "source_path": "knowledge-resource:recommendationRecommendsActivity",
+      "modules": "knowledge-resource; intervention-careplan",
+      "primary_basis": "Project proposal",
+      "stakeholder_cq_ids": "\u2014",
+      "proposal_cq_ids": "CQ-016",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "activity": "demo:exercise-intervention"
+        }
+      ],
+      "actual": [
+        {
+          "activity": "demo:exercise-intervention"
+        }
+      ],
+      "error": null,
+      "query_sha256": "8386dec93954d00408a61567470a4ebe91117f928eafcb71f97505ffceba5d29"
+    },
+    {
+      "id": "CQ-018",
+      "query_file": "queries/CQ-018.rq",
+      "question": "Which person attributes are included in the model inputs used to generate a risk profile?",
+      "theme": "Knowledge resources and health literacy",
+      "expected_answer_type": "List of person attributes",
+      "source_path": "cv-risk:modelExecutionUsesInput / modelInputIncludesPersonAttribute / modelExecutionGeneratesRiskProfile",
+      "modules": "cv-risk; person-role",
+      "primary_basis": "Project proposal",
+      "stakeholder_cq_ids": "\u2014",
+      "proposal_cq_ids": "CQ-017",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "attribute": "test:age-attribute"
+        }
+      ],
+      "actual": [
+        {
+          "attribute": "test:age-attribute"
+        }
+      ],
+      "error": null,
+      "query_sha256": "d8694698518a5dbc4c746121a0acf49c65ef12b79ef515f7f4fc76479d969247"
+    },
+    {
+      "id": "CQ-019",
+      "scope": "Includes both nutrition-focused and mixed-topic resources that address nutrition, as required by the revised CQ",
+      "query_file": "queries/CQ-019.rq",
+      "question": "Which knowledge resources address nutrition as a topic?",
+      "theme": "Knowledge resources and health literacy",
+      "expected_answer_type": "List of knowledge resources",
+      "source_path": "knowledgeResourceHasTopic \u2192 Nutrition",
+      "modules": "knowledge-resource",
+      "primary_basis": "Stakeholder requirements",
+      "stakeholder_cq_ids": "T32-CQ-01",
+      "proposal_cq_ids": "\u2014",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "resource": "demo:resource-nutrition-es"
+        },
+        {
+          "resource": "test:mixed-topic-resource"
+        }
+      ],
+      "actual": [
+        {
+          "resource": "test:mixed-topic-resource"
+        },
+        {
+          "resource": "demo:resource-nutrition-es"
+        }
+      ],
+      "error": null,
+      "query_sha256": "a41107db04a2920028ca556d6bfe57fd29655f0d1b616fd9768e20d80206660f"
+    },
+    {
+      "id": "CQ-020",
+      "query_file": "queries/CQ-020.rq",
+      "question": "Which health-literacy need does a given health-literacy resource address?",
+      "theme": "Knowledge resources and health literacy",
+      "expected_answer_type": "Health-literacy need type",
+      "source_path": "healthLiteracyResourceAddressesNeed",
+      "modules": "knowledge-resource; social-context",
+      "primary_basis": "Stakeholder requirements",
+      "stakeholder_cq_ids": "T32-CQ-04",
+      "proposal_cq_ids": "\u2014",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "need": "icare:InformationComprehensionSupportNeed"
+        }
+      ],
+      "actual": [
+        {
+          "need": "icare:InformationComprehensionSupportNeed"
+        }
+      ],
+      "error": null,
+      "query_sha256": "12bdec7e87be3f75c577ebf782fbe34dcfff4a6c83241eb0a979df144b66623f"
+    },
+    {
+      "id": "CQ-021",
+      "query_file": "queries/CQ-021.rq",
+      "question": "Which health-literacy resources are used by a given health-literacy intervention?",
+      "theme": "Knowledge resources and health literacy",
+      "expected_answer_type": "List of health-literacy resources",
+      "source_path": "healthLiteracyInterventionUsesResource",
+      "modules": "knowledge-resource; intervention-careplan",
+      "primary_basis": "Stakeholder requirements",
+      "stakeholder_cq_ids": "T32-CQ-05",
+      "proposal_cq_ids": "\u2014",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "resource": "demo:resource-late-effects-es"
+        }
+      ],
+      "actual": [
+        {
+          "resource": "demo:resource-late-effects-es"
+        }
+      ],
+      "error": null,
+      "query_sha256": "d8f73567243ca468c3cbbd27eb8fe7cba4d27fd1bf8289ac60a7d867d089991a"
+    },
+    {
+      "id": "CQ-022",
+      "query_file": "queries/CQ-022.rq",
+      "question": "Which user-facing format does a given knowledge resource have?",
+      "theme": "Knowledge resources and health literacy",
+      "expected_answer_type": "Resource format",
+      "source_path": "knowledgeResourceHasFormat",
+      "modules": "knowledge-resource",
+      "primary_basis": "Stakeholder requirements",
+      "stakeholder_cq_ids": "T32-CQ-06",
+      "proposal_cq_ids": "\u2014",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "format": "icare:Video"
+        }
+      ],
+      "actual": [
+        {
+          "format": "icare:Video"
+        }
+      ],
+      "error": null,
+      "query_sha256": "36933bbce5251ff7de96c03d3a38198a0051a3c261805ea18b31235d926a99c5"
+    },
+    {
+      "id": "CQ-023",
+      "query_file": "queries/CQ-023.rq",
+      "question": "Which content-complexity level does a given knowledge resource have?",
+      "theme": "Knowledge resources and health literacy",
+      "expected_answer_type": "Content-complexity level",
+      "source_path": "knowledgeResourceHasComplexityLevel",
+      "modules": "knowledge-resource",
+      "primary_basis": "Stakeholder requirements",
+      "stakeholder_cq_ids": "T32-CQ-07",
+      "proposal_cq_ids": "\u2014",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "complexity": "icare:FoundationalComplexity"
+        }
+      ],
+      "actual": [
+        {
+          "complexity": "icare:FoundationalComplexity"
+        }
+      ],
+      "error": null,
+      "query_sha256": "3b9dae3638d6553afd0367d2409e660ea67efd35eb399c9bb7ea6bfd90d41488"
+    },
+    {
+      "id": "CQ-024",
+      "query_file": "queries/CQ-024.rq",
+      "question": "Which accessibility features does a given knowledge resource provide?",
+      "theme": "Knowledge resources and health literacy",
+      "expected_answer_type": "List of accessibility features",
+      "source_path": "knowledgeResourceHasAccessibilityFeature",
+      "modules": "knowledge-resource",
+      "primary_basis": "Stakeholder requirements",
+      "stakeholder_cq_ids": "T32-CQ-08",
+      "proposal_cq_ids": "\u2014",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "feature": "icare:PlainLanguage"
+        },
+        {
+          "feature": "icare:Captions"
+        }
+      ],
+      "actual": [
+        {
+          "feature": "icare:PlainLanguage"
+        },
+        {
+          "feature": "icare:Captions"
+        }
+      ],
+      "error": null,
+      "query_sha256": "8cbe5ccd293241a9f0ba47e4d70d9d7edd44161fdc44104143541be5b9037cff"
+    },
+    {
+      "id": "CQ-025",
+      "datatypes": {
+        "language": "http://www.w3.org/2001/XMLSchema#language"
+      },
+      "query_file": "queries/CQ-025.rq",
+      "question": "What language is a given knowledge resource available in?",
+      "theme": "Knowledge resources and health literacy",
+      "expected_answer_type": "Language tag or language concept",
+      "source_path": "dcterms:language",
+      "modules": "knowledge-resource",
+      "primary_basis": "Stakeholder requirements",
+      "stakeholder_cq_ids": "T32-CQ-09",
+      "proposal_cq_ids": "\u2014",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "language": "es-ES"
+        }
+      ],
+      "actual": [
+        {
+          "language": "es-ES"
+        }
+      ],
+      "error": null,
+      "query_sha256": "6810199b34196a23bc993059d64138cdeca280eabfdf79782365cb935d7e5fa1"
+    },
+    {
+      "id": "CQ-026",
+      "query_file": "queries/CQ-026.rq",
+      "question": "Which recommendations apply to a given symptom?",
+      "theme": "Knowledge resources and health literacy",
+      "expected_answer_type": "List of recommendations",
+      "source_path": "recommendationAppliesToSymptom",
+      "modules": "knowledge-resource; clinical-profile",
+      "primary_basis": "Stakeholder requirements",
+      "stakeholder_cq_ids": "T32-CQ-22",
+      "proposal_cq_ids": "\u2014",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "recommendation": "demo:symptom-recommendation"
+        }
+      ],
+      "actual": [
+        {
+          "recommendation": "demo:symptom-recommendation"
+        }
+      ],
+      "error": null,
+      "query_sha256": "9ebc089423835efd111ee1a58930b77c8082c178d2318a0f80fad18f05f63d1e"
+    },
+    {
+      "id": "CQ-027",
+      "query_file": "queries/CQ-027.rq",
+      "question": "Which applicability criteria apply to a given recommendation?",
+      "theme": "Knowledge resources and health literacy",
+      "expected_answer_type": "List of applicability criteria",
+      "source_path": "recommendationHasApplicabilityCriterion",
+      "modules": "knowledge-resource",
+      "primary_basis": "Stakeholder requirements",
+      "stakeholder_cq_ids": "T32-CQ-23",
+      "proposal_cq_ids": "\u2014",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "criterion": "demo:recommendation-criterion"
+        }
+      ],
+      "actual": [
+        {
+          "criterion": "demo:recommendation-criterion"
+        }
+      ],
+      "error": null,
+      "query_sha256": "b3f788dddef18cceb392b7ea5bf6efe1e3012c61bef0c630f4a22a344ff98391"
+    },
+    {
+      "id": "CQ-028",
+      "query_file": "queries/CQ-028.rq",
+      "question": "Which contraindications apply to a given recommendation?",
+      "theme": "Knowledge resources and health literacy",
+      "expected_answer_type": "List of contraindications",
+      "source_path": "recommendationHasContraindication",
+      "modules": "knowledge-resource",
+      "primary_basis": "Stakeholder requirements",
+      "stakeholder_cq_ids": "T32-CQ-24",
+      "proposal_cq_ids": "\u2014",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "contraindication": "test:contraindication"
+        }
+      ],
+      "actual": [
+        {
+          "contraindication": "test:contraindication"
+        }
+      ],
+      "error": null,
+      "query_sha256": "a565f0a6c3bf3e8e204d85c11600e232b5cc0945d090a6f090b93ff4683f85fe"
+    },
+    {
+      "id": "CQ-029",
+      "scope": "Schema enumeration; local named subclasses, excluding the root class",
+      "query_file": "queries/CQ-029.rq",
+      "question": "Which social-context factor types are represented in iCAREOnto?",
+      "theme": "Social context and dialogue",
+      "expected_answer_type": "List of social-context factor subclasses or concepts",
+      "source_path": "social-context:SocialContextFactor and subclasses",
+      "modules": "social-context",
+      "primary_basis": "Project proposal",
+      "stakeholder_cq_ids": "\u2014",
+      "proposal_cq_ids": "CQ-018",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "type": "icare:DigitalLiteracy"
+        },
+        {
+          "type": "icare:HealthLiteracy"
+        },
+        {
+          "type": "icare:SupportNetwork"
+        },
+        {
+          "type": "icare:LivingSituation"
+        },
+        {
+          "type": "icare:SocioEconomicFactor"
+        },
+        {
+          "type": "icare:EducationalAttainment"
+        },
+        {
+          "type": "icare:EmploymentStatus"
+        },
+        {
+          "type": "icare:FinancialConstraint"
+        },
+        {
+          "type": "icare:CulturalFactor"
+        },
+        {
+          "type": "icare:AccessOrEngagementBarrier"
+        },
+        {
+          "type": "icare:TrustConcern"
+        },
+        {
+          "type": "icare:PrivacyConcern"
+        },
+        {
+          "type": "icare:LanguageBarrier"
+        },
+        {
+          "type": "icare:TransportationBarrier"
+        }
+      ],
+      "actual": [
+        {
+          "type": "icare:SocioEconomicFactor"
+        },
+        {
+          "type": "icare:EducationalAttainment"
+        },
+        {
+          "type": "icare:EmploymentStatus"
+        },
+        {
+          "type": "icare:FinancialConstraint"
+        },
+        {
+          "type": "icare:SupportNetwork"
+        },
+        {
+          "type": "icare:DigitalLiteracy"
+        },
+        {
+          "type": "icare:LivingSituation"
+        },
+        {
+          "type": "icare:AccessOrEngagementBarrier"
+        },
+        {
+          "type": "icare:PrivacyConcern"
+        },
+        {
+          "type": "icare:LanguageBarrier"
+        },
+        {
+          "type": "icare:TransportationBarrier"
+        },
+        {
+          "type": "icare:TrustConcern"
+        },
+        {
+          "type": "icare:CulturalFactor"
+        },
+        {
+          "type": "icare:HealthLiteracy"
+        }
+      ],
+      "error": null,
+      "query_sha256": "80026ea5be1232bf3c8d8f24c21f057ffb1dd0eabae5aa287b957dd8e5a99001"
+    },
+    {
+      "id": "CQ-030",
+      "query_file": "queries/CQ-030.rq",
+      "question": "Which socioeconomic factors are recorded for a person?",
+      "theme": "Social context and dialogue",
+      "expected_answer_type": "List of socioeconomic factors and records",
+      "source_path": "social-context:personHasSocialContextProfile / socialProfileIncludesRecord / socialContextRecordRecordsFactor",
+      "modules": "social-context; person-role",
+      "primary_basis": "Project proposal",
+      "stakeholder_cq_ids": "\u2014",
+      "proposal_cq_ids": "CQ-019",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "record": "test:employment-record",
+          "factor": "test:employment"
+        },
+        {
+          "record": "test:financial-record",
+          "factor": "test:financial-context"
+        }
+      ],
+      "actual": [
+        {
+          "record": "test:employment-record",
+          "factor": "test:employment"
+        },
+        {
+          "record": "test:financial-record",
+          "factor": "test:financial-context"
+        }
+      ],
+      "error": null,
+      "query_sha256": "848142880112c41d3b16516e1dccde6eb021178d6393e5956b2e947a36050b3d"
+    },
+    {
+      "id": "CQ-031",
+      "query_file": "queries/CQ-031.rq",
+      "question": "Which cultural factors are recorded for a person?",
+      "theme": "Social context and dialogue",
+      "expected_answer_type": "List of cultural factors and records",
+      "source_path": "social-context:personHasSocialContextProfile / socialProfileIncludesRecord / socialContextRecordRecordsFactor",
+      "modules": "social-context; person-role",
+      "primary_basis": "Project proposal",
+      "stakeholder_cq_ids": "\u2014",
+      "proposal_cq_ids": "CQ-020",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "record": "test:cultural-record",
+          "factor": "test:communication-context"
+        }
+      ],
+      "actual": [
+        {
+          "record": "test:cultural-record",
+          "factor": "test:communication-context"
+        }
+      ],
+      "error": null,
+      "query_sha256": "2bcd629927eb6dde8f8ea70b0a5423bc55bc5f9911d6a6dec91eefe00154f5ec"
+    },
+    {
+      "id": "CQ-032",
+      "query_file": "queries/CQ-032.rq",
+      "question": "Which social-context records are included in the dialogue context used to generate a given agent response?",
+      "theme": "Social context and dialogue",
+      "expected_answer_type": "List of social-context records",
+      "source_path": "dialogue:agentResponseUsesContext / dialogueContextIncludesEntity",
+      "modules": "dialogue; social-context",
+      "primary_basis": "Project proposal",
+      "stakeholder_cq_ids": "\u2014",
+      "proposal_cq_ids": "CQ-021",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "record": "demo:health-literacy-record"
+        },
+        {
+          "record": "test:employment-record"
+        },
+        {
+          "record": "test:cultural-record"
+        }
+      ],
+      "actual": [
+        {
+          "record": "test:cultural-record"
+        },
+        {
+          "record": "demo:health-literacy-record"
+        },
+        {
+          "record": "test:employment-record"
+        }
+      ],
+      "error": null,
+      "query_sha256": "cd05db7ecec4bb9b71c011be75940c6b2fac36f239d2481b12863d8eb686195b"
+    },
+    {
+      "id": "CQ-033",
+      "query_file": "queries/CQ-033.rq",
+      "question": "Which dialogue strategy was used in a given dialogue session?",
+      "theme": "Social context and dialogue",
+      "expected_answer_type": "Dialogue strategy",
+      "source_path": "dialogue:dialogueSessionUsesStrategy",
+      "modules": "dialogue",
+      "primary_basis": "Project proposal",
+      "stakeholder_cq_ids": "\u2014",
+      "proposal_cq_ids": "CQ-022",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "strategy": "icare:PlainLanguageStrategy"
+        }
+      ],
+      "actual": [
+        {
+          "strategy": "icare:PlainLanguageStrategy"
+        }
+      ],
+      "error": null,
+      "query_sha256": "e624dd46aeec62f500a218dc383040f3f94b643f7e79b903e01985e7d443c415"
+    },
+    {
+      "id": "CQ-034",
+      "query_file": "queries/CQ-034.rq",
+      "question": "Which dialogue strategies are adapted to a given social-context record?",
+      "theme": "Social context and dialogue",
+      "expected_answer_type": "List of dialogue strategies",
+      "source_path": "dialogue:dialogueStrategyAdaptedToContext",
+      "modules": "dialogue; social-context",
+      "primary_basis": "Project proposal",
+      "stakeholder_cq_ids": "\u2014",
+      "proposal_cq_ids": "CQ-023",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "strategy": "icare:PlainLanguageStrategy"
+        }
+      ],
+      "actual": [
+        {
+          "strategy": "icare:PlainLanguageStrategy"
+        }
+      ],
+      "error": null,
+      "query_sha256": "9ae568523f49ad2e07ab24ebe1984e0f70a4f00603ed6924c0a9564f09030eaa"
+    },
+    {
+      "id": "CQ-035",
+      "scope": "Schema enumeration; local named subclasses, excluding the root class",
+      "query_file": "queries/CQ-035.rq",
+      "question": "Which lifestyle behaviour types are represented in iCAREOnto?",
+      "theme": "Lifestyle and behaviour",
+      "expected_answer_type": "List of lifestyle-behaviour subclasses or types",
+      "source_path": "lifestyle-behaviour:LifestyleBehaviour and subclasses",
+      "modules": "lifestyle-behaviour",
+      "primary_basis": "Project proposal",
+      "stakeholder_cq_ids": "\u2014",
+      "proposal_cq_ids": "CQ-024",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "type": "icare:NutritionBehaviour"
+        },
+        {
+          "type": "icare:DietaryPattern"
+        },
+        {
+          "type": "icare:PhysicalActivityBehaviour"
+        },
+        {
+          "type": "icare:SedentaryBehaviour"
+        },
+        {
+          "type": "icare:SleepBehaviour"
+        },
+        {
+          "type": "icare:SmokingBehaviour"
+        },
+        {
+          "type": "icare:AdherenceBehaviour"
+        },
+        {
+          "type": "icare:AlcoholUseBehaviour"
+        },
+        {
+          "type": "icare:SubstanceUseBehaviour"
+        },
+        {
+          "type": "icare:MedicationAdherenceBehaviour"
+        },
+        {
+          "type": "icare:MonitoringAdherenceBehaviour"
+        },
+        {
+          "type": "icare:CarePlanAdherenceBehaviour"
+        }
+      ],
+      "actual": [
+        {
+          "type": "icare:NutritionBehaviour"
+        },
+        {
+          "type": "icare:DietaryPattern"
+        },
+        {
+          "type": "icare:SleepBehaviour"
+        },
+        {
+          "type": "icare:SmokingBehaviour"
+        },
+        {
+          "type": "icare:AdherenceBehaviour"
+        },
+        {
+          "type": "icare:MedicationAdherenceBehaviour"
+        },
+        {
+          "type": "icare:MonitoringAdherenceBehaviour"
+        },
+        {
+          "type": "icare:CarePlanAdherenceBehaviour"
+        },
+        {
+          "type": "icare:SedentaryBehaviour"
+        },
+        {
+          "type": "icare:PhysicalActivityBehaviour"
+        },
+        {
+          "type": "icare:SubstanceUseBehaviour"
+        },
+        {
+          "type": "icare:AlcoholUseBehaviour"
+        }
+      ],
+      "error": null,
+      "query_sha256": "7637f388c4bb24250f36b0626dbc7e6903086bebb3d3e45da444df96d1b11564"
+    },
+    {
+      "id": "CQ-036",
+      "query_file": "queries/CQ-036.rq",
+      "question": "Which modifiable cardiovascular risk factors are influenced by a given lifestyle behaviour?",
+      "theme": "Lifestyle and behaviour",
+      "expected_answer_type": "List of modifiable risk factors",
+      "source_path": "lifestyle-behaviour:behaviourInfluencesRiskFactor",
+      "modules": "lifestyle-behaviour; cv-risk",
+      "primary_basis": "Project proposal",
+      "stakeholder_cq_ids": "\u2014",
+      "proposal_cq_ids": "CQ-025",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "factor": "demo:low-activity-risk-factor"
+        }
+      ],
+      "actual": [
+        {
+          "factor": "demo:low-activity-risk-factor"
+        }
+      ],
+      "error": null,
+      "query_sha256": "8b6da24e8068a7678823d2cd6790068e563b68b0a29f8e1c20e117bceb7dd509"
+    },
+    {
+      "id": "CQ-037",
+      "query_file": "queries/CQ-037.rq",
+      "question": "Which care-plan activity is related to a given behaviour record?",
+      "theme": "Lifestyle and behaviour",
+      "expected_answer_type": "Care-plan activity",
+      "source_path": "lifestyle-behaviour:behaviourRecordRelatesToActivity",
+      "modules": "lifestyle-behaviour; intervention-careplan",
+      "primary_basis": "Project proposal",
+      "stakeholder_cq_ids": "\u2014",
+      "proposal_cq_ids": "CQ-026",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "activity": "demo:exercise-intervention"
+        }
+      ],
+      "actual": [
+        {
+          "activity": "demo:exercise-intervention"
+        }
+      ],
+      "error": null,
+      "query_sha256": "1a204cb716e70dfbb90e307c4313e672426ebe1516c41223cb7a6816f6096cea"
+    },
+    {
+      "id": "CQ-038",
+      "query_file": "queries/CQ-038.rq",
+      "question": "Which care-plan goal is related to a given behaviour record?",
+      "theme": "Lifestyle and behaviour",
+      "expected_answer_type": "Goal",
+      "source_path": "lifestyle-behaviour:behaviourRecordRelatesToGoal",
+      "modules": "lifestyle-behaviour; intervention-careplan",
+      "primary_basis": "Project proposal",
+      "stakeholder_cq_ids": "\u2014",
+      "proposal_cq_ids": "CQ-027",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "goal": "demo:walking-goal"
+        }
+      ],
+      "actual": [
+        {
+          "goal": "demo:walking-goal"
+        }
+      ],
+      "error": null,
+      "query_sha256": "69bd8114d58e94fe3b48f4553fb37023041df04a5ca75bc5c1cbd38a93cd986c"
+    },
+    {
+      "id": "CQ-039",
+      "query_file": "queries/CQ-039.rq",
+      "question": "Which anthropometric parameters are represented in iCAREOnto?",
+      "theme": "Measurement and biomarkers",
+      "expected_answer_type": "List of measurable parameters",
+      "source_path": "measurement-biomarker:MeasurableParameter",
+      "modules": "measurement-biomarker",
+      "primary_basis": "Project proposal",
+      "stakeholder_cq_ids": "\u2014",
+      "proposal_cq_ids": "CQ-028",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "parameter": "demo:weight"
+        },
+        {
+          "parameter": "demo:height"
+        },
+        {
+          "parameter": "demo:bmi"
+        },
+        {
+          "parameter": "test:body-fat-parameter"
+        }
+      ],
+      "actual": [
+        {
+          "parameter": "test:body-fat-parameter"
+        },
+        {
+          "parameter": "demo:height"
+        },
+        {
+          "parameter": "demo:bmi"
+        },
+        {
+          "parameter": "demo:weight"
+        }
+      ],
+      "error": null,
+      "query_sha256": "b47ac3cbe1cc2cf4649077283a8c9f18308c8dde4bb5b3f0e760b6deb98dbd5b"
+    },
+    {
+      "id": "CQ-040",
+      "scope": "Parameters specified by a body-composition protocol, rather than a dedicated body-composition parameter class",
+      "query_file": "queries/CQ-040.rq",
+      "question": "Which body-composition parameters are represented in iCAREOnto?",
+      "theme": "Measurement and biomarkers",
+      "expected_answer_type": "List of measurable parameters",
+      "source_path": "measurement-biomarker:MeasurableParameter / BodyCompositionProtocol",
+      "modules": "measurement-biomarker",
+      "primary_basis": "Project proposal",
+      "stakeholder_cq_ids": "\u2014",
+      "proposal_cq_ids": "CQ-029",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "parameter": "demo:weight"
+        },
+        {
+          "parameter": "demo:height"
+        },
+        {
+          "parameter": "demo:bmi"
+        },
+        {
+          "parameter": "test:body-fat-parameter"
+        }
+      ],
+      "actual": [
+        {
+          "parameter": "demo:bmi"
+        },
+        {
+          "parameter": "test:body-fat-parameter"
+        },
+        {
+          "parameter": "demo:height"
+        },
+        {
+          "parameter": "demo:weight"
+        }
+      ],
+      "error": null,
+      "query_sha256": "ff4f97d3dc499462582977a053c4f387fce6f19702fd39a409f16660529e4939"
+    },
+    {
+      "id": "CQ-041",
+      "query_file": "queries/CQ-041.rq",
+      "question": "Which physiological parameters are represented in iCAREOnto?",
+      "theme": "Measurement and biomarkers",
+      "expected_answer_type": "List of physiological parameters",
+      "source_path": "measurement-biomarker:PhysiologicalParameter",
+      "modules": "measurement-biomarker",
+      "primary_basis": "Project proposal",
+      "stakeholder_cq_ids": "\u2014",
+      "proposal_cq_ids": "CQ-030",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "parameter": "demo:weight"
+        },
+        {
+          "parameter": "demo:height"
+        },
+        {
+          "parameter": "demo:bmi"
+        },
+        {
+          "parameter": "test:body-fat-parameter"
+        },
+        {
+          "parameter": "demo:systolic-bp"
+        },
+        {
+          "parameter": "demo:diastolic-bp"
+        }
+      ],
+      "actual": [
+        {
+          "parameter": "demo:systolic-bp"
+        },
+        {
+          "parameter": "demo:diastolic-bp"
+        },
+        {
+          "parameter": "test:body-fat-parameter"
+        },
+        {
+          "parameter": "demo:height"
+        },
+        {
+          "parameter": "demo:bmi"
+        },
+        {
+          "parameter": "demo:weight"
+        }
+      ],
+      "error": null,
+      "query_sha256": "af39ab4c6b4e002f2559107f5c8d11ac2634fff55bd11eff2d9e4eb103610b48"
+    },
+    {
+      "id": "CQ-042",
+      "datatypes": {
+        "datetime": "http://www.w3.org/2001/XMLSchema#dateTime"
+      },
+      "query_file": "queries/CQ-042.rq",
+      "question": "When did a given measurement event occur?",
+      "theme": "Measurement and biomarkers",
+      "expected_answer_type": "Timepoint and date-time",
+      "source_path": "core:activityExecutionOccursAt",
+      "modules": "measurement-biomarker; core",
+      "primary_basis": "Project proposal",
+      "stakeholder_cq_ids": "\u2014",
+      "proposal_cq_ids": "CQ-031",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "time": "demo:time-baseline",
+          "datetime": "2026-10-20T08:30:00+02:00"
+        }
+      ],
+      "actual": [
+        {
+          "time": "demo:time-baseline",
+          "datetime": "2026-10-20T08:30:00+02:00"
+        }
+      ],
+      "error": null,
+      "query_sha256": "753e6573689b38df4426602cca756242b7cad7d186bbd128c93678ee8e06e913"
+    },
+    {
+      "id": "CQ-043",
+      "ordered": true,
+      "datatypes": {
+        "time": "http://www.w3.org/2001/XMLSchema#dateTime"
+      },
+      "scope": "Systolic observations in [19 Oct 00:00Z, 28 Oct 00:00Z); intervals overlap the window; point at upper boundary excluded",
+      "query_file": "queries/CQ-043.rq",
+      "question": "What observation results were recorded for a given measurable parameter over a specified time interval?",
+      "theme": "Measurement and biomarkers",
+      "expected_answer_type": "Time-ordered list of observation results",
+      "source_path": "measurementEventMeasures / measurementEventHasOutput / core:activityExecutionOccursDuring",
+      "modules": "measurement-biomarker; core",
+      "primary_basis": "Project proposal",
+      "stakeholder_cq_ids": "\u2014",
+      "proposal_cq_ids": "CQ-032",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "result": "demo:baseline-sbp-result",
+          "time": "2026-10-20T08:30:00+02:00"
+        },
+        {
+          "result": "test:averaged-sbp-result",
+          "time": "2026-10-24T07:00:00+02:00"
+        },
+        {
+          "result": "demo:followup-sbp-result",
+          "time": "2026-10-27T08:30:00+01:00"
+        }
+      ],
+      "actual": [
+        {
+          "result": "demo:baseline-sbp-result",
+          "time": "2026-10-20T08:30:00+02:00"
+        },
+        {
+          "result": "test:averaged-sbp-result",
+          "time": "2026-10-24T07:00:00+02:00"
+        },
+        {
+          "result": "demo:followup-sbp-result",
+          "time": "2026-10-27T08:30:00+01:00"
+        }
+      ],
+      "error": null,
+      "query_sha256": "1867ee68de996b5838f5e3d2be10027603381b34c7f69b6a34325e4682b2c7f4"
+    },
+    {
+      "id": "CQ-044",
+      "query_file": "queries/CQ-044.rq",
+      "question": "Which threshold category is assigned to a given observation result?",
+      "theme": "Measurement and biomarkers",
+      "expected_answer_type": "Threshold category",
+      "source_path": "measurement-biomarker:observationHasThresholdCategory",
+      "modules": "measurement-biomarker",
+      "primary_basis": "Stakeholder requirements (primary); project proposal (supporting)",
+      "stakeholder_cq_ids": "T32-CQ-13",
+      "proposal_cq_ids": "CQ-033",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "category": "icare:WithinReferenceRange"
+        }
+      ],
+      "actual": [
+        {
+          "category": "icare:WithinReferenceRange"
+        }
+      ],
+      "error": null,
+      "query_sha256": "ea34febb9f14122ce0fc26033af9b9559599bc8bc54bc475d2fcf40ace3b8d9c"
+    },
+    {
+      "id": "CQ-045",
+      "query_file": "queries/CQ-045.rq",
+      "question": "Which reference range was used to interpret a given observation result?",
+      "theme": "Measurement and biomarkers",
+      "expected_answer_type": "Reference range",
+      "source_path": "measurement-biomarker:observationHasReferenceRange",
+      "modules": "measurement-biomarker",
+      "primary_basis": "Stakeholder requirements (primary); project proposal (supporting)",
+      "stakeholder_cq_ids": "T32-CQ-14",
+      "proposal_cq_ids": "CQ-034",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "range": "test:reference-range"
+        }
+      ],
+      "actual": [
+        {
+          "range": "test:reference-range"
+        }
+      ],
+      "error": null,
+      "query_sha256": "62db43ea7e1383b149ab71e1674a691e3839f4ecb1a4dbb9d59dc667f96d3744"
+    },
+    {
+      "id": "CQ-046",
+      "query_file": "queries/CQ-046.rq",
+      "question": "Which body-composition observations were used as inputs in a given prediction-model execution?",
+      "theme": "Measurement and biomarkers",
+      "expected_answer_type": "List of observation results",
+      "source_path": "cv-risk:modelExecutionUsesInput / modelInputDerivedFromObservation",
+      "modules": "measurement-biomarker; cv-risk",
+      "primary_basis": "Project proposal",
+      "stakeholder_cq_ids": "\u2014",
+      "proposal_cq_ids": "CQ-035",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "observation": "demo:baseline-weight-result"
+        },
+        {
+          "observation": "test:body-fat-result"
+        }
+      ],
+      "actual": [
+        {
+          "observation": "test:body-fat-result"
+        },
+        {
+          "observation": "demo:baseline-weight-result"
+        }
+      ],
+      "error": null,
+      "query_sha256": "5281e78c06f1c245f259e28b24eeedf8ef12abcfcbb3924565e2f515a2024d13"
+    },
+    {
+      "id": "CQ-047",
+      "query_file": "queries/CQ-047.rq",
+      "question": "Which alert threshold was a given observation result compared against?",
+      "theme": "Measurement and biomarkers",
+      "expected_answer_type": "Alert threshold",
+      "source_path": "observationComparedAgainst",
+      "modules": "measurement-biomarker",
+      "primary_basis": "Stakeholder requirements",
+      "stakeholder_cq_ids": "T32-CQ-12",
+      "proposal_cq_ids": "\u2014",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "threshold": "test:alert-threshold"
+        }
+      ],
+      "actual": [
+        {
+          "threshold": "test:alert-threshold"
+        }
+      ],
+      "error": null,
+      "query_sha256": "1c9dbadb01a0d01b6bfa7133f80f50248773d9b03111d4cf1c618d8f6a357291"
+    },
+    {
+      "id": "CQ-048",
+      "query_file": "queries/CQ-048.rq",
+      "question": "Which measurement instrument was used in a given measurement event?",
+      "theme": "Measurement and biomarkers",
+      "expected_answer_type": "Measurement instrument",
+      "source_path": "measurementEventUsesInstrument",
+      "modules": "measurement-biomarker",
+      "primary_basis": "Stakeholder requirements",
+      "stakeholder_cq_ids": "T32-CQ-16",
+      "proposal_cq_ids": "\u2014",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "instrument": "demo:blood-pressure-monitor"
+        }
+      ],
+      "actual": [
+        {
+          "instrument": "demo:blood-pressure-monitor"
+        }
+      ],
+      "error": null,
+      "query_sha256": "bdf68bcc654c1f12c8b3cdd2a0fbb7071794550ba0489772b1d24d2ae84f65c3"
+    },
+    {
+      "id": "CQ-049",
+      "query_file": "queries/CQ-049.rq",
+      "question": "Which measurable parameter does a given measurement protocol specify?",
+      "theme": "Measurement and biomarkers",
+      "expected_answer_type": "Measurable parameter",
+      "source_path": "protocolSpecifiesParameter",
+      "modules": "measurement-biomarker",
+      "primary_basis": "Stakeholder requirements",
+      "stakeholder_cq_ids": "T32-CQ-17",
+      "proposal_cq_ids": "\u2014",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "parameter": "demo:systolic-bp"
+        },
+        {
+          "parameter": "demo:diastolic-bp"
+        }
+      ],
+      "actual": [
+        {
+          "parameter": "demo:diastolic-bp"
+        },
+        {
+          "parameter": "demo:systolic-bp"
+        }
+      ],
+      "error": null,
+      "query_sha256": "e90c6449b170fa4559123bd1630be040c81277a3ac330f6822cc8c2e3886ce2d"
+    },
+    {
+      "id": "CQ-050",
+      "query_file": "queries/CQ-050.rq",
+      "question": "Which measurement method does a given measurement protocol specify?",
+      "theme": "Measurement and biomarkers",
+      "expected_answer_type": "Measurement method",
+      "source_path": "protocolSpecifiesMethod",
+      "modules": "measurement-biomarker",
+      "primary_basis": "Stakeholder requirements",
+      "stakeholder_cq_ids": "T32-CQ-18",
+      "proposal_cq_ids": "\u2014",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "method": "demo:bp-method"
+        }
+      ],
+      "actual": [
+        {
+          "method": "demo:bp-method"
+        }
+      ],
+      "error": null,
+      "query_sha256": "d40115f325f8b8cba2cca2924aa05c5a28e352b7975a540328674431586b2d82"
+    },
+    {
+      "id": "CQ-051",
+      "scope": "Uses the explicit validation-evidence relation and excludes an instrument's general background citation",
+      "query_file": "queries/CQ-051.rq",
+      "question": "Which evidence sources document the validation of a given measurement instrument?",
+      "theme": "Measurement and biomarkers",
+      "expected_answer_type": "List of evidence sources",
+      "source_path": "measurementInstrumentHasValidationEvidence \u2192 EvidenceSource",
+      "modules": "measurement-biomarker; knowledge-resource",
+      "primary_basis": "Stakeholder requirements",
+      "stakeholder_cq_ids": "T32-CQ-19",
+      "proposal_cq_ids": "\u2014",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "evidence": "test:validation-evidence"
+        }
+      ],
+      "actual": [
+        {
+          "evidence": "test:validation-evidence"
+        }
+      ],
+      "error": null,
+      "query_sha256": "7f6fc90c6074d84310a3d04ad666a17981cbb71be5cc5d2365a6128657c3e36e"
+    },
+    {
+      "id": "CQ-052",
+      "query_file": "queries/CQ-052.rq",
+      "question": "Which nutrition behaviour records are included in a person's lifestyle profile?",
+      "theme": "Nutrition",
+      "expected_answer_type": "List of nutrition behaviour records",
+      "source_path": "lifestyleProfileIncludesBehaviourRecord / behaviourRecordRecordsBehaviour",
+      "modules": "lifestyle-behaviour",
+      "primary_basis": "Project proposal",
+      "stakeholder_cq_ids": "\u2014",
+      "proposal_cq_ids": "CQ-036",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "record": "test:nutrition-record"
+        }
+      ],
+      "actual": [
+        {
+          "record": "test:nutrition-record"
+        }
+      ],
+      "error": null,
+      "query_sha256": "0bc52093f8a540f6731ccb1fb41bc7ec32982c1308fa73b996d65048b8f28d0e"
+    },
+    {
+      "id": "CQ-053",
+      "query_file": "queries/CQ-053.rq",
+      "question": "Which dietary component does a given nutrition instruction target?",
+      "theme": "Nutrition",
+      "expected_answer_type": "Dietary component",
+      "source_path": "nutrition:nutritionInstructionTargetsComponent",
+      "modules": "nutrition",
+      "primary_basis": "Project proposal",
+      "stakeholder_cq_ids": "\u2014",
+      "proposal_cq_ids": "CQ-037",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "component": "icare:FruitAndVegetables"
+        }
+      ],
+      "actual": [
+        {
+          "component": "icare:FruitAndVegetables"
+        }
+      ],
+      "error": null,
+      "query_sha256": "6c7ac9a40b1903194ae67a7d6c40b25778d7faaf57d18cc8f5894bc58df1e7db"
+    },
+    {
+      "id": "CQ-054",
+      "query_file": "queries/CQ-054.rq",
+      "question": "Which action type does a given nutrition instruction specify for its targeted dietary component?",
+      "theme": "Nutrition",
+      "expected_answer_type": "Nutrition action type",
+      "source_path": "nutrition:nutritionInstructionHasActionType",
+      "modules": "nutrition",
+      "primary_basis": "Project proposal",
+      "stakeholder_cq_ids": "\u2014",
+      "proposal_cq_ids": "CQ-038",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "action": "icare:Increase"
+        }
+      ],
+      "actual": [
+        {
+          "action": "icare:Increase"
+        }
+      ],
+      "error": null,
+      "query_sha256": "1438b7dd541c428f5e23511c1548e884e54705a32eb262da29e62b0a4cbcab31"
+    },
+    {
+      "id": "CQ-055",
+      "numeric": [
+        "amount"
+      ],
+      "query_file": "queries/CQ-055.rq",
+      "question": "What target amount and unit are recorded for a given nutrition instruction?",
+      "theme": "Nutrition",
+      "expected_answer_type": "Numeric amount and unit",
+      "source_path": "nutrition:nutritionTargetAmount / nutritionTargetUnitText",
+      "modules": "nutrition",
+      "primary_basis": "Project proposal",
+      "stakeholder_cq_ids": "\u2014",
+      "proposal_cq_ids": "CQ-039",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "amount": "1",
+          "unit": "demo-portion/day"
+        }
+      ],
+      "actual": [
+        {
+          "amount": "1.0",
+          "unit": "demo-portion/day"
+        }
+      ],
+      "error": null,
+      "query_sha256": "b72b053565318307c0eabb72bd060248d88e722d9c4f2044b51a65be43e915d8"
+    },
+    {
+      "id": "CQ-056",
+      "query_file": "queries/CQ-056.rq",
+      "question": "What schedule applies to a given nutrition instruction?",
+      "theme": "Nutrition",
+      "expected_answer_type": "Schedule",
+      "source_path": "nutrition:nutritionInstructionHasSchedule",
+      "modules": "nutrition; core",
+      "primary_basis": "Project proposal",
+      "stakeholder_cq_ids": "\u2014",
+      "proposal_cq_ids": "CQ-040",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "schedule": "test:nutrition-schedule"
+        }
+      ],
+      "actual": [
+        {
+          "schedule": "test:nutrition-schedule"
+        }
+      ],
+      "error": null,
+      "query_sha256": "844b9eb626bca52f366c2d4b125a7f38853777c578975f48d973e382bdbaa07e"
+    },
+    {
+      "id": "CQ-057",
+      "query_file": "queries/CQ-057.rq",
+      "question": "Which nutrition instructions are specified by a given nutrition intervention?",
+      "theme": "Nutrition",
+      "expected_answer_type": "List of nutrition instructions",
+      "source_path": "nutrition:nutritionInterventionSpecifiesInstruction",
+      "modules": "nutrition; intervention-careplan",
+      "primary_basis": "Project proposal",
+      "stakeholder_cq_ids": "\u2014",
+      "proposal_cq_ids": "CQ-041",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "instruction": "demo:nutrition-instruction"
+        },
+        {
+          "instruction": "test:quantified-nutrition-instruction"
+        }
+      ],
+      "actual": [
+        {
+          "instruction": "test:quantified-nutrition-instruction"
+        },
+        {
+          "instruction": "demo:nutrition-instruction"
+        }
+      ],
+      "error": null,
+      "query_sha256": "c491f5cd1aefcaee95e2f7f5ffb3bc74dbf9d0aa472fb97dc8417ce0caf3cb31"
+    },
+    {
+      "id": "CQ-058",
+      "query_file": "queries/CQ-058.rq",
+      "question": "Which care-plan activity is related to a given nutrition behaviour record?",
+      "theme": "Nutrition",
+      "expected_answer_type": "Care-plan activity",
+      "source_path": "lifestyle-behaviour:behaviourRecordRelatesToActivity",
+      "modules": "lifestyle-behaviour; intervention-careplan",
+      "primary_basis": "Project proposal",
+      "stakeholder_cq_ids": "\u2014",
+      "proposal_cq_ids": "CQ-042",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "activity": "demo:nutrition-intervention"
+        }
+      ],
+      "actual": [
+        {
+          "activity": "demo:nutrition-intervention"
+        }
+      ],
+      "error": null,
+      "query_sha256": "12d74b69be838e9bdd34b066c497e3aaa0d1fab65207eafabea6f2da405a0a5f"
+    },
+    {
+      "id": "CQ-059",
+      "query_file": "queries/CQ-059.rq",
+      "question": "Which recommendations recommend a given nutrition intervention?",
+      "theme": "Nutrition",
+      "expected_answer_type": "List of recommendations",
+      "source_path": "knowledge-resource:recommendationRecommendsActivity",
+      "modules": "knowledge-resource; intervention-careplan",
+      "primary_basis": "Project proposal",
+      "stakeholder_cq_ids": "\u2014",
+      "proposal_cq_ids": "CQ-043",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "recommendation": "demo:recommendation-nutrition"
+        }
+      ],
+      "actual": [
+        {
+          "recommendation": "demo:recommendation-nutrition"
+        }
+      ],
+      "error": null,
+      "query_sha256": "dcfd37d5c80222e778fc31aa627df3a5200af431945226a69c99363d3c093f4d"
+    },
+    {
+      "id": "CQ-060",
+      "query_file": "queries/CQ-060.rq",
+      "question": "Which exercise modalities are represented in iCAREOnto?",
+      "theme": "Exercise",
+      "expected_answer_type": "List of exercise-modality concepts",
+      "source_path": "exercise:ExerciseModality",
+      "modules": "exercise",
+      "primary_basis": "Project proposal",
+      "stakeholder_cq_ids": "\u2014",
+      "proposal_cq_ids": "CQ-044",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "modality": "icare:AerobicExercise"
+        },
+        {
+          "modality": "icare:BalanceTraining"
+        },
+        {
+          "modality": "icare:CombinedTraining"
+        },
+        {
+          "modality": "icare:FlexibilityExercise"
+        },
+        {
+          "modality": "icare:ResistanceTraining"
+        }
+      ],
+      "actual": [
+        {
+          "modality": "icare:CombinedTraining"
+        },
+        {
+          "modality": "icare:AerobicExercise"
+        },
+        {
+          "modality": "icare:BalanceTraining"
+        },
+        {
+          "modality": "icare:FlexibilityExercise"
+        },
+        {
+          "modality": "icare:ResistanceTraining"
+        }
+      ],
+      "error": null,
+      "query_sha256": "be5056bb343ee02358f4d3842bccf941089a6044938fb3907e63b09fa823c634"
+    },
+    {
+      "id": "CQ-061",
+      "query_file": "queries/CQ-061.rq",
+      "question": "Which exercise training patterns are represented in iCAREOnto?",
+      "theme": "Exercise",
+      "expected_answer_type": "List of training-pattern concepts",
+      "source_path": "exercise:ExerciseTrainingPattern",
+      "modules": "exercise",
+      "primary_basis": "Project proposal",
+      "stakeholder_cq_ids": "\u2014",
+      "proposal_cq_ids": "CQ-045",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "pattern": "icare:CircuitTraining"
+        },
+        {
+          "pattern": "icare:ContinuousTraining"
+        },
+        {
+          "pattern": "icare:HighIntensityIntervalTraining"
+        },
+        {
+          "pattern": "icare:IntervalTraining"
+        }
+      ],
+      "actual": [
+        {
+          "pattern": "icare:ContinuousTraining"
+        },
+        {
+          "pattern": "icare:IntervalTraining"
+        },
+        {
+          "pattern": "icare:HighIntensityIntervalTraining"
+        },
+        {
+          "pattern": "icare:CircuitTraining"
+        }
+      ],
+      "error": null,
+      "query_sha256": "337907485dd93a1925ee5eefe3fcf7bf5e68d0cbaeba1287e60f80a852336996"
+    },
+    {
+      "id": "CQ-062",
+      "query_file": "queries/CQ-062.rq",
+      "question": "Which exercise activities are included in a given exercise prescription?",
+      "theme": "Exercise",
+      "expected_answer_type": "List of exercise activities",
+      "source_path": "exercise:exercisePrescriptionIncludesActivity",
+      "modules": "exercise",
+      "primary_basis": "Project proposal",
+      "stakeholder_cq_ids": "\u2014",
+      "proposal_cq_ids": "CQ-046",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "activity": "demo:walking-activity"
+        }
+      ],
+      "actual": [
+        {
+          "activity": "demo:walking-activity"
+        }
+      ],
+      "error": null,
+      "query_sha256": "19b94a4ee08f880d47088830f519c4d3bb385db588b0b44601458de08f7c5f34"
+    },
+    {
+      "id": "CQ-063",
+      "numeric": [
+        "minutes"
+      ],
+      "query_file": "queries/CQ-063.rq",
+      "question": "What duration is prescribed for a given exercise activity?",
+      "theme": "Exercise",
+      "expected_answer_type": "Duration in minutes",
+      "source_path": "exercise:durationMinutes in prescription context",
+      "modules": "exercise",
+      "primary_basis": "Project proposal",
+      "stakeholder_cq_ids": "\u2014",
+      "proposal_cq_ids": "CQ-047",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "minutes": "20"
+        }
+      ],
+      "actual": [
+        {
+          "minutes": "20.0"
+        }
+      ],
+      "error": null,
+      "query_sha256": "8a6983487b0830d9e38d5d984a494b9756b8842d363de3b9b51a75fe82b4ec98"
+    },
+    {
+      "id": "CQ-064",
+      "numeric": [
+        "minutes"
+      ],
+      "query_file": "queries/CQ-064.rq",
+      "question": "What duration was recorded for a given exercise activity in a performed session?",
+      "theme": "Exercise",
+      "expected_answer_type": "Duration in minutes",
+      "source_path": "performedSessionIncludesActivity / exercise:durationMinutes",
+      "modules": "exercise",
+      "primary_basis": "Project proposal",
+      "stakeholder_cq_ids": "\u2014",
+      "proposal_cq_ids": "CQ-048",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "minutes": "18"
+        }
+      ],
+      "actual": [
+        {
+          "minutes": "18.0"
+        }
+      ],
+      "error": null,
+      "query_sha256": "74cb5d62fcc0b7b01388774ff35a24aa5bf5f4099ba58c65187a0a7e703ae6dc"
+    },
+    {
+      "id": "CQ-065",
+      "query_file": "queries/CQ-065.rq",
+      "question": "Which modifiable risk factor does a given exercise intervention target?",
+      "theme": "Exercise",
+      "expected_answer_type": "Modifiable risk factor",
+      "source_path": "intervention-careplan:interventionTargetsRiskFactor",
+      "modules": "exercise; intervention-careplan; cv-risk",
+      "primary_basis": "Project proposal",
+      "stakeholder_cq_ids": "\u2014",
+      "proposal_cq_ids": "CQ-049",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "factor": "demo:low-activity-risk-factor"
+        }
+      ],
+      "actual": [
+        {
+          "factor": "demo:low-activity-risk-factor"
+        }
+      ],
+      "error": null,
+      "query_sha256": "a886d86a2edc7bfb6a0fbf80dd8abb4b45e888548ae43f4a4b099b5ef178a4ac"
+    },
+    {
+      "id": "CQ-066",
+      "query_file": "queries/CQ-066.rq",
+      "question": "Which care-plan goal does a given exercise intervention contribute to?",
+      "theme": "Exercise",
+      "expected_answer_type": "Goal",
+      "source_path": "intervention-careplan:activityContributesToGoal",
+      "modules": "exercise; intervention-careplan",
+      "primary_basis": "Project proposal",
+      "stakeholder_cq_ids": "\u2014",
+      "proposal_cq_ids": "CQ-050",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "goal": "demo:walking-goal"
+        }
+      ],
+      "actual": [
+        {
+          "goal": "demo:walking-goal"
+        }
+      ],
+      "error": null,
+      "query_sha256": "24abd770ae9f4f2d36599bd6f492d0e3c6545ff297194555ccb54ad6a69bdab1"
+    },
+    {
+      "id": "CQ-067",
+      "query_file": "queries/CQ-067.rq",
+      "question": "Which recommendations recommend a given exercise intervention?",
+      "theme": "Exercise",
+      "expected_answer_type": "List of recommendations",
+      "source_path": "knowledge-resource:recommendationRecommendsActivity",
+      "modules": "exercise; knowledge-resource; intervention-careplan",
+      "primary_basis": "Project proposal",
+      "stakeholder_cq_ids": "\u2014",
+      "proposal_cq_ids": "CQ-051",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "recommendation": "demo:recommendation-walking"
+        }
+      ],
+      "actual": [
+        {
+          "recommendation": "demo:recommendation-walking"
+        }
+      ],
+      "error": null,
+      "query_sha256": "67e7eb15979bd9f36a027fec10954cdab08a6ed7c100073bd2aee481a1dc93a2"
+    },
+    {
+      "id": "CQ-068",
+      "query_file": "queries/CQ-068.rq",
+      "question": "Which planned exercise session does a given performed exercise session realise?",
+      "theme": "Exercise",
+      "expected_answer_type": "Planned exercise session",
+      "source_path": "exercise:performedSessionRealises",
+      "modules": "exercise",
+      "primary_basis": "Project proposal",
+      "stakeholder_cq_ids": "\u2014",
+      "proposal_cq_ids": "CQ-052",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "planned": "demo:planned-walking-session"
+        }
+      ],
+      "actual": [
+        {
+          "planned": "demo:planned-walking-session"
+        }
+      ],
+      "error": null,
+      "query_sha256": "cdbb3c539fa6d061aea1bf644ee8c90c19df2cd40020d8a7f4ae9a0f9853cd5f"
+    },
+    {
+      "id": "CQ-069",
+      "query_file": "queries/CQ-069.rq",
+      "question": "Which adherence result was produced by a given exercise-adherence assessment?",
+      "theme": "Exercise",
+      "expected_answer_type": "Exercise-adherence result",
+      "source_path": "exercise:adherenceAssessmentHasResult",
+      "modules": "exercise",
+      "primary_basis": "Project proposal",
+      "stakeholder_cq_ids": "\u2014",
+      "proposal_cq_ids": "CQ-053",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "result": "test:adherence-result"
+        }
+      ],
+      "actual": [
+        {
+          "result": "test:adherence-result"
+        }
+      ],
+      "error": null,
+      "query_sha256": "b4974fc20e034c0d84652331d1fdf0f50d88b1cc96626dc5139c3579b04fc26c"
+    },
+    {
+      "id": "CQ-070",
+      "query_file": "queries/CQ-070.rq",
+      "question": "Which knowledge resource supports the recommendation for a given physical-activity goal?",
+      "theme": "Exercise",
+      "expected_answer_type": "Knowledge resource",
+      "source_path": "Goal \u2190 activityContributesToGoal \u2190 CarePlanActivity \u2190 recommendationRecommendsActivity \u2190 Recommendation \u2190 knowledgeResourceSupportsRecommendation",
+      "modules": "knowledge-resource; intervention-careplan; exercise",
+      "primary_basis": "Stakeholder requirements",
+      "stakeholder_cq_ids": "T32-CQ-15",
+      "proposal_cq_ids": "\u2014",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "resource": "demo:resource-walking-es"
+        }
+      ],
+      "actual": [
+        {
+          "resource": "demo:resource-walking-es"
+        }
+      ],
+      "error": null,
+      "query_sha256": "2fa293ea3f32f236e235adb68775ce5aa7e250845f04f27b5abe83aa436c9b18"
+    },
+    {
+      "id": "CQ-071",
+      "query_file": "queries/CQ-071.rq",
+      "question": "Which medical check-up activities are included in a given care plan?",
+      "theme": "Care plans, warnings and check-ups",
+      "expected_answer_type": "List of medical check-up activities",
+      "source_path": "intervention-careplan:carePlanIncludesActivity",
+      "modules": "intervention-careplan",
+      "primary_basis": "Project proposal",
+      "stakeholder_cq_ids": "\u2014",
+      "proposal_cq_ids": "CQ-054",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "activity": "demo:clinical-review"
+        }
+      ],
+      "actual": [
+        {
+          "activity": "demo:clinical-review"
+        }
+      ],
+      "error": null,
+      "query_sha256": "2a40b431d68cb690d3357ba0cd018672ff1811d5efb6d69cda681b03f13783aa"
+    },
+    {
+      "id": "CQ-072",
+      "query_file": "queries/CQ-072.rq",
+      "question": "Which recommendations recommend a given medical check-up activity?",
+      "theme": "Care plans, warnings and check-ups",
+      "expected_answer_type": "List of recommendations",
+      "source_path": "knowledge-resource:recommendationRecommendsActivity",
+      "modules": "knowledge-resource; intervention-careplan",
+      "primary_basis": "Project proposal",
+      "stakeholder_cq_ids": "\u2014",
+      "proposal_cq_ids": "CQ-055",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "recommendation": "demo:symptom-recommendation"
+        }
+      ],
+      "actual": [
+        {
+          "recommendation": "demo:symptom-recommendation"
+        }
+      ],
+      "error": null,
+      "query_sha256": "823e7753e6489bca44c9593d407ae857313029034785bb5bf7285c7b80101b02"
+    },
+    {
+      "id": "CQ-073",
+      "query_file": "queries/CQ-073.rq",
+      "question": "Which risk profile triggered a given medical check-up activity?",
+      "theme": "Care plans, warnings and check-ups",
+      "expected_answer_type": "Risk profile",
+      "source_path": "activityHasTrigger / riskBasedTriggerUsesRiskProfile",
+      "modules": "intervention-careplan; cv-risk",
+      "primary_basis": "Project proposal",
+      "stakeholder_cq_ids": "\u2014",
+      "proposal_cq_ids": "CQ-056",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "profile": "demo:risk-profile"
+        }
+      ],
+      "actual": [
+        {
+          "profile": "demo:risk-profile"
+        }
+      ],
+      "error": null,
+      "query_sha256": "6563a33b9f4e751cd05763fc09a1ba8c683a6fe3d00dc1eb378cbf5b3f827970"
+    },
+    {
+      "id": "CQ-074",
+      "query_file": "queries/CQ-074.rq",
+      "question": "Which observation result triggered a given medical check-up activity?",
+      "theme": "Care plans, warnings and check-ups",
+      "expected_answer_type": "Observation result",
+      "source_path": "activityHasTrigger / measurementBasedTriggerUsesObservation",
+      "modules": "intervention-careplan; measurement-biomarker",
+      "primary_basis": "Project proposal",
+      "stakeholder_cq_ids": "\u2014",
+      "proposal_cq_ids": "CQ-057",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "observation": "demo:followup-sbp-result"
+        }
+      ],
+      "actual": [
+        {
+          "observation": "demo:followup-sbp-result"
+        }
+      ],
+      "error": null,
+      "query_sha256": "70d6e5c8dea7e8cb5376a26d3aaa0969ba8edb15e787f27017c3daf0569d4c82"
+    },
+    {
+      "id": "CQ-075",
+      "query_file": "queries/CQ-075.rq",
+      "question": "Which symptom record does a given symptom-based trigger use?",
+      "theme": "Care plans, warnings and check-ups",
+      "expected_answer_type": "Symptom record",
+      "source_path": "symptomBasedTriggerUsesSymptomRecord",
+      "modules": "intervention-careplan; clinical-profile",
+      "primary_basis": "Stakeholder requirements (primary); project proposal (supporting)",
+      "stakeholder_cq_ids": "T32-CQ-20",
+      "proposal_cq_ids": "CQ-058",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "record": "demo:symptom-record"
+        }
+      ],
+      "actual": [
+        {
+          "record": "demo:symptom-record"
+        }
+      ],
+      "error": null,
+      "query_sha256": "b5849b263fb2418e52c4f7ceddbb92a7c02bd7615a8d6817493432ac42ae0248"
+    },
+    {
+      "id": "CQ-076",
+      "query_file": "queries/CQ-076.rq",
+      "question": "What schedule applies to a given medical check-up activity?",
+      "theme": "Care plans, warnings and check-ups",
+      "expected_answer_type": "Schedule",
+      "source_path": "intervention-careplan:activityHasSchedule",
+      "modules": "intervention-careplan; core",
+      "primary_basis": "Project proposal",
+      "stakeholder_cq_ids": "\u2014",
+      "proposal_cq_ids": "CQ-059",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "schedule": "demo:review-schedule"
+        }
+      ],
+      "actual": [
+        {
+          "schedule": "demo:review-schedule"
+        }
+      ],
+      "error": null,
+      "query_sha256": "409df2bdb540b19bb867914452f95c42e0c0833671c31d6c19793b6f661fdce6"
+    },
+    {
+      "id": "CQ-077",
+      "scope": "Retrieves authored trigger associations per the register's path; does not demonstrate execution or causal initiation",
+      "query_file": "queries/CQ-077.rq",
+      "question": "Which care-plan activity was initiated by a given symptom-based trigger?",
+      "theme": "Care plans, warnings and check-ups",
+      "expected_answer_type": "Care-plan activity",
+      "source_path": "inverse of activityHasTrigger",
+      "modules": "intervention-careplan; clinical-profile",
+      "primary_basis": "Stakeholder requirements",
+      "stakeholder_cq_ids": "T32-CQ-21",
+      "proposal_cq_ids": "\u2014",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "activity": "demo:clinical-review"
+        },
+        {
+          "activity": "demo:referral"
+        }
+      ],
+      "actual": [
+        {
+          "activity": "demo:referral"
+        },
+        {
+          "activity": "demo:clinical-review"
+        }
+      ],
+      "error": null,
+      "query_sha256": "95c13ff72d2fad2fa64cff8406f7ffa67f7c1258c71a1731c4138b614e3cf752"
+    },
+    {
+      "id": "CQ-078",
+      "scope": "Retrieves referral/escalation associations; no clinical alert rule is executed",
+      "query_file": "queries/CQ-078.rq",
+      "question": "Which referral or escalation activity is associated with a recorded warning trigger?",
+      "theme": "Care plans, warnings and check-ups",
+      "expected_answer_type": "Referral or escalation activity",
+      "source_path": "CarePlanActivity \u2192 activityHasTrigger \u2192 CarePlanTrigger, filtered by activity type",
+      "modules": "intervention-careplan; clinical-profile; measurement-biomarker; cv-risk",
+      "primary_basis": "Stakeholder requirements",
+      "stakeholder_cq_ids": "T32-CQ-25",
+      "proposal_cq_ids": "\u2014",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "activity": "demo:referral"
+        }
+      ],
+      "actual": [
+        {
+          "activity": "demo:referral"
+        }
+      ],
+      "error": null,
+      "query_sha256": "236cbd2069f2efa6daa42e116422dc41cfdedc94c4b4aaa074c3d3fc280b0bae"
+    },
+    {
+      "id": "CTRL-OTHER-PERSON",
+      "scope": "Same query path with another participant",
+      "query_file": "queries/CTRL-OTHER-PERSON.rq",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "diagnosis": "test:control-diagnosis"
+        }
+      ],
+      "actual": [
+        {
+          "diagnosis": "test:control-diagnosis"
+        }
+      ],
+      "error": null,
+      "query_sha256": "8ee82f21397e5ae0b0c43823f70e1bbcd1b59ad11dac83c56357b548d709e60f"
+    },
+    {
+      "id": "CTRL-UNKNOWN-PERSON",
+      "scope": "No matching record; empty result is not a statement of clinical absence",
+      "query_file": "queries/CTRL-UNKNOWN-PERSON.rq",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [],
+      "actual": [],
+      "error": null,
+      "query_sha256": "8bbdb047f52eecf1dd8e77ca01c4075131c9aa86e7efe5c51d3aa879e474bdbe"
+    },
+    {
+      "id": "CTRL-BROKEN-PATH",
+      "remove_triples": [
+        [
+          "demo:recommendation-walking",
+          "icare:recommendationRecommendsActivity",
+          "demo:exercise-intervention"
+        ]
+      ],
+      "scope": "Remove a bridge in a disposable graph; the integration answer must disappear",
+      "query_file": "queries/CTRL-BROKEN-PATH.rq",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [],
+      "actual": [],
+      "error": null,
+      "query_sha256": "2fa293ea3f32f236e235adb68775ce5aa7e250845f04f27b5abe83aa436c9b18"
+    },
+    {
+      "id": "CTRL-PERFORMED-NOT-PLANNED",
+      "numeric": [
+        "minutes"
+      ],
+      "scope": "Recorded duration must not be replaced by the prescribed duration",
+      "query_file": "queries/CTRL-PERFORMED-NOT-PLANNED.rq",
+      "status": "PASS",
+      "comparison": "MATCH",
+      "expected": [
+        {
+          "minutes": "18"
+        }
+      ],
+      "actual": [
+        {
+          "minutes": "18.0"
+        }
+      ],
+      "error": null,
+      "query_sha256": "74cb5d62fcc0b7b01388774ff35a24aa5bf5f4099ba58c65187a0a7e703ae6dc"
+    }
+  ],
+  "limitations": [
+    "One authored positive scenario per canonical CQ, plus four controls; this is not exhaustive validation over all possible instance data.",
+    "The fixture, thresholds, clinical conditions, evidence and scores are fictional. No clinical validity, prediction accuracy or real instrument validation is established.",
+    "CQ-019 follows the revised topic wording; CQ-051 uses the explicit validation-evidence relation and excludes background-only citations.",
+    "Trigger queries retrieve authored associations, not execution traces or clinical causal inference.",
+    "Required-field validation and full FHIR transformation testing are outside this suite."
+  ]
+}

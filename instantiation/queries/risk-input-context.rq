@@ -1,0 +1,14 @@
+PREFIX i: <http://maya-project.eu/icareonto/>
+SELECT ?score ?category ?input ?exposure ?observation WHERE {
+  VALUES ?requestedId { "es-demo-aya-full" }
+  ?person i:personIdentifier ?identifier ; i:personHasRiskProfile ?profile .
+  FILTER(STR(?identifier) = ?requestedId)
+  ?profile i:riskProfileIncludesRiskEstimate ?estimate .
+  ?estimate i:riskScore ?score .
+  OPTIONAL { ?estimate i:riskEstimateHasCategory ?category }
+  OPTIONAL {
+    ?execution i:modelExecutionGeneratesRiskProfile ?profile ; i:modelExecutionUsesInput ?input .
+    OPTIONAL { ?input i:modelInputIncludesExposure ?exposure }
+    OPTIONAL { ?input i:modelInputDerivedFromObservation ?observation }
+  }
+}

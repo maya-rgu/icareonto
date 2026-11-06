@@ -1,0 +1,138 @@
+{
+  "engine": "Installed Protégé OWLAPI and HermiT",
+  "ontology": "OntologyID(OntologyIRI(<https://example.org/maya/demo/es>) VersionIRI(<null>))",
+  "imports_closure_size": 23,
+  "loaded_documents": [
+    {
+      "ontology": "OntologyID(OntologyIRI(<http://maya-project.eu/icareonto/agent>) VersionIRI(<http://maya-project.eu/icareonto/releases/0.1.0-draft/agent>))",
+      "document": "modules/agent.ttl",
+      "axioms": 271
+    },
+    {
+      "ontology": "OntologyID(OntologyIRI(<http://maya-project.eu/icareonto/alignments>) VersionIRI(<http://maya-project.eu/icareonto/releases/0.1.0-draft/alignments>))",
+      "document": "alignments/approved.ttl",
+      "axioms": 3
+    },
+    {
+      "ontology": "OntologyID(OntologyIRI(<http://maya-project.eu/icareonto/cancer-history>) VersionIRI(<http://maya-project.eu/icareonto/releases/0.1.0-draft/cancer-history>))",
+      "document": "modules/cancer-history.ttl",
+      "axioms": 595
+    },
+    {
+      "ontology": "OntologyID(OntologyIRI(<http://maya-project.eu/icareonto/clinical-profile>) VersionIRI(<http://maya-project.eu/icareonto/releases/0.1.0-draft/clinical-profile>))",
+      "document": "modules/clinical-profile.ttl",
+      "axioms": 521
+    },
+    {
+      "ontology": "OntologyID(OntologyIRI(<http://maya-project.eu/icareonto/core>) VersionIRI(<http://maya-project.eu/icareonto/releases/0.1.0-draft/core>))",
+      "document": "modules/core.ttl",
+      "axioms": 308
+    },
+    {
+      "ontology": "OntologyID(OntologyIRI(<http://maya-project.eu/icareonto/cv-risk>) VersionIRI(<http://maya-project.eu/icareonto/releases/0.1.0-draft/cv-risk>))",
+      "document": "modules/cv-risk.ttl",
+      "axioms": 337
+    },
+    {
+      "ontology": "OntologyID(OntologyIRI(<http://maya-project.eu/icareonto/dialogue>) VersionIRI(<http://maya-project.eu/icareonto/releases/0.1.0-draft/dialogue>))",
+      "document": "modules/dialogue.ttl",
+      "axioms": 528
+    },
+    {
+      "ontology": "OntologyID(OntologyIRI(<http://maya-project.eu/icareonto/exercise>) VersionIRI(<http://maya-project.eu/icareonto/releases/0.1.0-draft/exercise>))",
+      "document": "modules/exercise.ttl",
+      "axioms": 551
+    },
+    {
+      "ontology": "OntologyID(OntologyIRI(<http://maya-project.eu/icareonto/healthhub-service>) VersionIRI(<http://maya-project.eu/icareonto/releases/0.1.0-draft/healthhub-service>))",
+      "document": "modules/healthhub-service.ttl",
+      "axioms": 152
+    },
+    {
+      "ontology": "OntologyID(OntologyIRI(<http://maya-project.eu/icareonto/imports/prov-reference>) VersionIRI(<http://maya-project.eu/icareonto/releases/0.1.0-draft/imports/prov-reference>))",
+      "document": "imports/prov-reference.ttl",
+      "axioms": 21
+    },
+    {
+      "ontology": "OntologyID(OntologyIRI(<http://maya-project.eu/icareonto/imports/skos-reference>) VersionIRI(<http://maya-project.eu/icareonto/releases/0.1.0-draft/imports/skos-reference>))",
+      "document": "imports/skos-reference.ttl",
+      "axioms": 176
+    },
+    {
+      "ontology": "OntologyID(OntologyIRI(<http://maya-project.eu/icareonto/intervention-careplan>) VersionIRI(<http://maya-project.eu/icareonto/releases/0.1.0-draft/intervention-careplan>))",
+      "document": "modules/intervention-careplan.ttl",
+      "axioms": 601
+    },
+    {
+      "ontology": "OntologyID(OntologyIRI(<http://maya-project.eu/icareonto/knowledge-resource>) VersionIRI(<http://maya-project.eu/icareonto/releases/0.1.0-draft/knowledge-resource>))",
+      "document": "modules/knowledge-resource.ttl",
+      "axioms": 682
+    },
+    {
+      "ontology": "OntologyID(OntologyIRI(<http://maya-project.eu/icareonto/lifestyle-behaviour>) VersionIRI(<http://maya-project.eu/icareonto/releases/0.1.0-draft/lifestyle-behaviour>))",
+      "document": "modules/lifestyle-behaviour.ttl",
+      "axioms": 437
+    },
+    {
+      "ontology": "OntologyID(OntologyIRI(<http://maya-project.eu/icareonto/measurement-biomarker>) VersionIRI(<http://maya-project.eu/icareonto/releases/0.1.0-draft/measurement-biomarker>))",
+      "document": "modules/measurement-biomarker.ttl",
+      "axioms": 613
+    },
+    {
+      "ontology": "OntologyID(OntologyIRI(<http://maya-project.eu/icareonto/metadata>) VersionIRI(<http://maya-project.eu/icareonto/releases/0.1.0-draft/metadata>))",
+      "document": "imports/metadata.ttl",
+      "axioms": 33
+    },
+    {
+      "ontology": "OntologyID(OntologyIRI(<http://maya-project.eu/icareonto/nutrition>) VersionIRI(<http://maya-project.eu/icareonto/releases/0.1.0-draft/nutrition>))",
+      "document": "modules/nutrition.ttl",
+      "axioms": 183
+    },
+    {
+      "ontology": "OntologyID(OntologyIRI(<http://maya-project.eu/icareonto/person-role>) VersionIRI(<http://maya-project.eu/icareonto/releases/0.1.0-draft/person-role>))",
+      "document": "modules/person-role.ttl",
+      "axioms": 307
+    },
+    {
+      "ontology": "OntologyID(OntologyIRI(<http://maya-project.eu/icareonto/pilot>) VersionIRI(<http://maya-project.eu/icareonto/releases/0.1.0-draft/pilot>))",
+      "document": "modules/pilot.ttl",
+      "axioms": 300
+    },
+    {
+      "ontology": "OntologyID(OntologyIRI(<http://maya-project.eu/icareonto/provenance-governance>) VersionIRI(<http://maya-project.eu/icareonto/releases/0.1.0-draft/provenance-governance>))",
+      "document": "modules/provenance-governance.ttl",
+      "axioms": 172
+    },
+    {
+      "ontology": "OntologyID(OntologyIRI(<http://maya-project.eu/icareonto/social-context>) VersionIRI(<http://maya-project.eu/icareonto/releases/0.1.0-draft/social-context>))",
+      "document": "modules/social-context.ttl",
+      "axioms": 797
+    },
+    {
+      "ontology": "OntologyID(OntologyIRI(<http://maya-project.eu/icareonto>) VersionIRI(<http://maya-project.eu/icareonto/releases/0.1.0-draft/icareonto>))",
+      "document": "icareonto.ttl",
+      "axioms": 0
+    },
+    {
+      "ontology": "OntologyID(OntologyIRI(<https://example.org/maya/demo/es>) VersionIRI(<null>))",
+      "document": "../KG/demo_spain_aya.ttl",
+      "axioms": 900
+    }
+  ],
+  "local_signature_counts": {
+    "classes": 283,
+    "object_properties": 284,
+    "data_properties": 137,
+    "individuals": 364
+  },
+  "owl2_dl_profile": {
+    "in_profile": true,
+    "violations": []
+  },
+  "reasoner": {
+    "datatype_mode": "strict",
+    "consistent": true,
+    "unsatisfiable_named_classes": []
+  },
+  "total_named_individuals": 508
+}

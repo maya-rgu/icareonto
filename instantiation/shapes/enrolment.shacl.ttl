@@ -1,0 +1,85 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix icare: <http://maya-project.eu/icareonto/> .
+@prefix profile: <https://example.org/maya/instantiation-profile/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Constraints apply to this generator's initialisation profile. They are not
+# added to the ontology and are not a universal participant-data specification.
+profile:PersonShape a sh:NodeShape ;
+    sh:targetClass icare:Person ;
+    sh:property [ sh:path icare:personIdentifier ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+    sh:property [ sh:path icare:personHasRole ; sh:minCount 1 ; sh:class icare:PersonRole ] ;
+    sh:property [ sh:path icare:ageInYears ; sh:maxCount 1 ; sh:datatype xsd:decimal ; sh:minInclusive 0 ; sh:maxInclusive 130 ] .
+
+profile:SiteShape a sh:NodeShape ;
+    sh:targetClass icare:PilotSite ;
+    sh:property [ sh:path rdfs:label ; sh:minCount 1 ; sh:maxCount 1 ] ;
+    sh:property [ sh:path icare:pilotSiteHasLocale ; sh:minCount 1 ; sh:maxCount 1 ; sh:class icare:Locale ] .
+
+profile:LocaleShape a sh:NodeShape ;
+    sh:targetClass icare:Locale ;
+    sh:property [ sh:path icare:localeTag ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:language ; sh:pattern "^[a-z]{2,3}-[A-Z]{2}$" ] ;
+    sh:property [ sh:path icare:localeCountryCode ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:pattern "^[A-Z]{2}$" ] ;
+    sh:property [ sh:path icare:localeTimeZoneIdentifier ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] .
+
+profile:EnrolmentShape a sh:NodeShape ;
+    sh:targetClass icare:ParticipantEnrolment ;
+    sh:property [ sh:path icare:participantEnrolmentForPerson ; sh:minCount 1 ; sh:maxCount 1 ; sh:class icare:Person ] ;
+    sh:property [ sh:path icare:participantEnrolmentAtSite ; sh:minCount 1 ; sh:maxCount 1 ; sh:class icare:PilotSite ] ;
+    sh:property [ sh:path icare:participantEnrolmentInStudy ; sh:minCount 1 ; sh:maxCount 1 ; sh:class icare:PilotStudy ] ;
+    sh:property [ sh:path icare:participantEnrolmentHasStatus ; sh:minCount 1 ; sh:maxCount 1 ; sh:class icare:EnrolmentStatusValue ] ;
+    sh:property [ sh:path icare:participantEnrolmentValidDuring ; sh:minCount 1 ; sh:maxCount 1 ; sh:class icare:TimeInterval ] ;
+    sh:property [ sh:path icare:participantEnrolmentInPhase ; sh:maxCount 1 ; sh:class icare:PilotPhase ] ;
+    sh:property [ sh:path icare:participantEnrolmentAssignedToArm ; sh:maxCount 1 ; sh:class icare:StudyArm ] ;
+    sh:sparql [
+        sh:message "The enrolment's study must contain its site and any assigned phase or arm." ;
+        sh:select """
+          PREFIX icare: <http://maya-project.eu/icareonto/>
+          SELECT $this WHERE {
+            $this icare:participantEnrolmentInStudy ?study ; icare:participantEnrolmentAtSite ?site .
+            { FILTER NOT EXISTS { ?study icare:pilotStudyHasPilotSite ?site } }
+            UNION { $this icare:participantEnrolmentInPhase ?phase . FILTER NOT EXISTS { ?study icare:pilotStudyHasPhase ?phase } }
+            UNION { $this icare:participantEnrolmentAssignedToArm ?arm . FILTER NOT EXISTS { ?study icare:pilotStudyHasArm ?arm } }
+          }
+        """
+    ] .
+
+profile:TimepointShape a sh:NodeShape ;
+    sh:targetClass icare:Timepoint ;
+    sh:property [ sh:path icare:timepointDateTime ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:dateTime ] .
+
+profile:IntervalShape a sh:NodeShape ;
+    sh:targetClass icare:TimeInterval ;
+    sh:property [ sh:path icare:intervalStartsAt ; sh:minCount 1 ; sh:maxCount 1 ; sh:class icare:Timepoint ] ;
+    sh:property [ sh:path icare:intervalEndsAt ; sh:maxCount 1 ; sh:class icare:Timepoint ] .
+
+profile:LogicalGraphShape a sh:NodeShape ;
+    sh:targetClass icare:ParticipantKnowledgeGraph ;
+    sh:property [ sh:path icare:participantKnowledgeGraphAboutPerson ; sh:minCount 1 ; sh:maxCount 1 ; sh:class icare:Person ] .
+
+profile:PreferenceShape a sh:NodeShape ;
+    sh:targetClass icare:PersonPreference ;
+    sh:property [ sh:path icare:preferenceRecordedAt ; sh:minCount 1 ; sh:maxCount 1 ; sh:class icare:Timepoint ] .
+
+profile:LanguageShape a sh:NodeShape ;
+    sh:targetClass icare:LanguagePreference ;
+    sh:property [ sh:path icare:preferredLanguageTag ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:language ] .
+
+profile:InformationShape a sh:NodeShape ;
+    sh:targetClass icare:InformationPreference ;
+    sh:property [ sh:path icare:informationPreferenceHasDetailLevel ; sh:minCount 1 ; sh:maxCount 1 ; sh:class icare:InformationDetailLevelValue ] .
+
+profile:AttributeShape a sh:NodeShape ;
+    sh:targetClass icare:PersonAttribute ;
+    sh:property [ sh:path icare:personAttributeName ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+    sh:property [ sh:path icare:personAttributeValue ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+    sh:property [ sh:path icare:personAttributeRecordedAt ; sh:minCount 1 ; sh:maxCount 1 ; sh:class icare:Timepoint ] ;
+    sh:property [ sh:path icare:personAttributeHasSource ; sh:minCount 1 ; sh:maxCount 1 ; sh:class icare:DataSource ] .
+
+profile:ConsentShape a sh:NodeShape ;
+    sh:targetClass icare:ConsentRecord ;
+    sh:property [ sh:path icare:consentRecordAppliesToKnowledgeGraph ; sh:minCount 1 ; sh:maxCount 1 ; sh:class icare:ParticipantKnowledgeGraph ] ;
+    sh:property [ sh:path icare:consentRecordHasStatus ; sh:minCount 1 ; sh:maxCount 1 ; sh:class icare:ConsentStatusValue ] ;
+    sh:property [ sh:path icare:consentRecordGrantedBy ; sh:maxCount 1 ; sh:class icare:Person ] ;
+    sh:property [ sh:path icare:consentRecordValidDuring ; sh:minCount 1 ; sh:maxCount 1 ; sh:class icare:TimeInterval ] .

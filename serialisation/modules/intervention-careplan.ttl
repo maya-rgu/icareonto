@@ -1,0 +1,710 @@
+@prefix icare: <http://maya-project.eu/icareonto/> .
+@prefix meta: <http://maya-project.eu/icareonto/metadata#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+icare:ClinicalAssessmentActivity a owl:Class ;
+    rdfs:label "Clinical Assessment Activity"@en ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    rdfs:subClassOf icare:CarePlanActivity ;
+    skos:definition "A care-plan activity involving clinical review, examination, assessment, or interpretation of health status."@en .
+
+icare:EducationActivity a owl:Class ;
+    rdfs:label "Education Activity"@en ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    rdfs:subClassOf icare:CarePlanActivity ;
+    skos:definition "A care-plan activity that provides educational or self-management content."@en .
+
+icare:EscalationActivity a owl:Class ;
+    rdfs:label "Escalation Activity"@en ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    rdfs:subClassOf icare:CarePlanActivity ;
+    skos:definition "A care-plan activity that routes a concern for clinical review, urgent follow-up, or safety oversight."@en .
+
+icare:ExerciseIntervention a owl:Class ;
+    rdfs:label "Exercise Intervention"@en ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    rdfs:subClassOf icare:Intervention ;
+    skos:definition "An intervention involving prescribed, guided, or monitored physical activity or exercise."@en .
+
+icare:FollowUpActivity a owl:Class ;
+    rdfs:label "Follow Up Activity"@en ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    rdfs:subClassOf icare:CarePlanActivity ;
+    skos:definition "A planned activity that continues review, monitoring, communication, or care after a prior assessment, event, or intervention."@en .
+
+icare:MedicalCheckUpActivity a owl:Class ;
+    rdfs:label "Medical Check Up Activity"@en ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    rdfs:subClassOf icare:CarePlanActivity ;
+    skos:definition "A scheduled clinical check-up used for routine follow-up, monitoring, or review of survivorship care needs."@en .
+
+icare:MonitoringActivity a owl:Class ;
+    rdfs:label "Monitoring Activity"@en ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    rdfs:subClassOf icare:CarePlanActivity ;
+    skos:definition "A care-plan activity that collects or reviews data to track symptoms, clinical status, measurements, adherence, or late-effect risk."@en .
+
+icare:NutritionIntervention a owl:Class ;
+    rdfs:label "Nutrition Intervention"@en ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    rdfs:subClassOf icare:Intervention ;
+    skos:definition "An intervention involving dietary guidance, nutrition coaching, or behaviour change related to cardiometabolic risk."@en .
+
+icare:ReferralActivity a owl:Class ;
+    rdfs:label "Referral Activity"@en ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    rdfs:subClassOf icare:CarePlanActivity ;
+    skos:definition "A care-plan activity involving referral to another clinician, service, programme, or specialist."@en .
+
+icare:SurveillanceActivity a owl:Class ;
+    rdfs:label "Surveillance Activity"@en ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    rdfs:subClassOf icare:CarePlanActivity ;
+    skos:definition "A planned activity for ongoing detection or monitoring of late effects, recurrence concerns, risk change, or clinically relevant deterioration."@en .
+
+icare:activityContributesToGoal a owl:ObjectProperty ;
+    rdfs:label "contributes to"@en ;
+    rdfs:domain icare:CarePlanActivity ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    rdfs:range icare:Goal ;
+    skos:definition "Relates Care Plan Activity to Goal."@en .
+
+icare:activityHasOutcome a owl:ObjectProperty ;
+    rdfs:label "activity has outcome"@en ;
+    rdfs:domain icare:CarePlanActivity ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    rdfs:range icare:ActivityOutcome ;
+    skos:definition "Relates a care-plan activity to its result or outcome."@en .
+
+icare:activityHasPriority a owl:ObjectProperty ;
+    rdfs:label "activity has priority"@en ;
+    rdfs:domain icare:CarePlanActivity ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    rdfs:range icare:ActivityPriority ;
+    skos:definition "Relates a care-plan activity to its priority."@en .
+
+icare:activityHasSchedule a owl:ObjectProperty ;
+    rdfs:label "has schedule"@en ;
+    rdfs:domain icare:CarePlanActivity ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    rdfs:range icare:Schedule ;
+    skos:definition "Relates Care Plan Activity to Schedule."@en .
+
+icare:activityHasStatus a owl:ObjectProperty ;
+    rdfs:label "has status"@en ;
+    rdfs:domain icare:CarePlanActivity ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    rdfs:range icare:ActivityStatus ;
+    skos:definition "Relates Care Plan Activity to Activity Status."@en .
+
+icare:activityHasTrigger a owl:ObjectProperty ;
+    rdfs:label "activity has trigger"@en ;
+    rdfs:domain icare:CarePlanActivity ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    rdfs:range icare:CarePlanTrigger ;
+    skos:definition "Relates a care-plan activity to the trigger that caused or justified it."@en .
+
+icare:activityOutcomeValue a owl:DatatypeProperty ;
+    rdfs:label "activity outcome value"@en ;
+    rdfs:domain icare:ActivityOutcome ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    rdfs:range xsd:string ;
+    skos:definition "Records the activity outcome value."@en .
+
+icare:activityRealisedBy a owl:ObjectProperty ;
+    rdfs:label "realised by"@en ;
+    rdfs:domain icare:CarePlanActivity ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    rdfs:range icare:ActivityExecution ;
+    skos:definition "Relates Care Plan Activity to Activity Execution."@en .
+
+icare:activityRequiresReviewBy a owl:ObjectProperty ;
+    rdfs:label "requires review by"@en ;
+    rdfs:domain icare:CarePlanActivity ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    rdfs:range icare:PersonRole ;
+    skos:definition "Relates an activity to the role expected to review it."@en .
+
+icare:carePlanActivityAdaptedToSocialContext a owl:ObjectProperty ;
+    rdfs:label "adapted to"@en ;
+    rdfs:domain icare:CarePlanActivity ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    rdfs:range icare:SocialContextRecord ;
+    skos:definition "Indicates that a care-plan activity was selected or adapted in response to recorded social context."@en .
+
+icare:carePlanActivityName a owl:DatatypeProperty ;
+    rdfs:label "care plan activity name"@en ;
+    rdfs:domain icare:CarePlanActivity ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    rdfs:range xsd:string ;
+    skos:definition "Records a name or title for the care plan activity."@en .
+
+icare:carePlanActivitySupersedes a owl:ObjectProperty ;
+    rdfs:label "supersedes"@en ;
+    rdfs:domain icare:CarePlanActivity ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    rdfs:range icare:CarePlanActivity ;
+    skos:definition "Connects a revised Care Plan Activity to the version it replaces."@en .
+
+icare:carePlanCreatedAt a owl:ObjectProperty ;
+    rdfs:label "created at"@en ;
+    rdfs:domain icare:CarePlan ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    rdfs:range icare:Timepoint ;
+    skos:definition "Relates a care plan to its creation time."@en .
+
+icare:carePlanHasGoal a owl:ObjectProperty ;
+    rdfs:label "has goal"@en ;
+    rdfs:domain icare:CarePlan ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    rdfs:range icare:Goal ;
+    skos:definition "Relates Care Plan to Goal."@en .
+
+icare:carePlanHasParticipation a owl:ObjectProperty ;
+    rdfs:label "has participation"@en ;
+    rdfs:domain icare:CarePlan ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    rdfs:range icare:CarePlanParticipation ;
+    skos:definition "Relates Care Plan to Care Plan Participation."@en .
+
+icare:carePlanHasStatus a owl:ObjectProperty ;
+    rdfs:label "has status"@en ;
+    rdfs:domain icare:CarePlan ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    rdfs:range icare:CarePlanStatus ;
+    skos:definition "Relates Care Plan to Care Plan Status."@en .
+
+icare:carePlanHasTrigger a owl:ObjectProperty ;
+    rdfs:label "plan has trigger"@en ;
+    rdfs:domain icare:CarePlan ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    rdfs:range icare:CarePlanTrigger ;
+    skos:definition "Relates a care plan to the trigger or reason that caused it to be created or updated."@en .
+
+icare:carePlanIncludesActivity a owl:ObjectProperty ;
+    rdfs:label "includes"@en ;
+    rdfs:domain icare:CarePlan ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    rdfs:range icare:CarePlanActivity ;
+    skos:definition "Relates Care Plan to Care Plan Activity."@en .
+
+icare:carePlanIntendedFor a owl:ObjectProperty ;
+    rdfs:label "intended for"@en ;
+    rdfs:domain icare:CarePlan ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    rdfs:range icare:Person ;
+    skos:definition "Relates Care Plan to Person."@en .
+
+icare:carePlanName a owl:DatatypeProperty ;
+    rdfs:label "care plan name"@en ;
+    rdfs:domain icare:CarePlan ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    rdfs:range xsd:string ;
+    skos:definition "Records a name or title for the care plan."@en .
+
+icare:carePlanUpdatedAt a owl:ObjectProperty ;
+    rdfs:label "updated at"@en ;
+    rdfs:domain icare:CarePlan ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    rdfs:range icare:Timepoint ;
+    skos:definition "Relates a care plan to its most recent update time."@en .
+
+icare:goalDescriptionText a owl:DatatypeProperty ;
+    rdfs:label "goal description text"@en ;
+    rdfs:domain icare:Goal ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    rdfs:range xsd:string ;
+    skos:definition "Records the goal description text for Goal."@en .
+
+icare:goalHasAchievementStatus a owl:ObjectProperty ;
+    rdfs:label "has achievement status"@en ;
+    rdfs:domain icare:Goal ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    rdfs:range icare:GoalAchievementStatus ;
+    skos:definition "Identifies the current progress or outcome of a goal against its intended target."@en .
+
+icare:goalHasLifecycleStatus a owl:ObjectProperty ;
+    rdfs:label "has lifecycle status"@en ;
+    rdfs:domain icare:Goal ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    rdfs:range icare:GoalLifecycleStatus ;
+    skos:definition "Identifies the current operational state of a goal in its lifecycle."@en .
+
+icare:healthLiteracyInterventionAddressesNeed a owl:ObjectProperty ;
+    rdfs:label "intervention addresses need"@en ;
+    rdfs:domain icare:HealthLiteracyIntervention ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    rdfs:range icare:HealthLiteracyNeedType ;
+    skos:definition "Identifies the health-literacy need an intervention is intended to address."@en .
+
+icare:interventionTargetsRiskFactor a owl:ObjectProperty ;
+    rdfs:label "targets risk factor"@en ;
+    rdfs:domain icare:Intervention ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    rdfs:range icare:RiskFactor ;
+    skos:definition "Relates Intervention to Modifiable Risk Factor."@en .
+
+icare:measurementBasedTriggerUsesObservation a owl:ObjectProperty ;
+    rdfs:label "uses observation"@en ;
+    rdfs:domain icare:MeasurementBasedTrigger ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    rdfs:range icare:ObservationResult ;
+    skos:definition "Relates a measurement-based trigger to the observation result that caused it."@en .
+
+icare:participationHasParticipant a owl:ObjectProperty ;
+    rdfs:label "has participant"@en ;
+    rdfs:domain icare:CarePlanParticipation ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    rdfs:range icare:Person ;
+    skos:definition "Relates Care Plan Participation to Person."@en .
+
+icare:participationHasRole a owl:ObjectProperty ;
+    rdfs:label "has participation role"@en ;
+    rdfs:domain icare:CarePlanParticipation ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    rdfs:range icare:PersonRole ;
+    skos:definition "Relates Care Plan Participation to Person Role."@en .
+
+icare:riskBasedTriggerUsesRiskProfile a owl:ObjectProperty ;
+    rdfs:label "uses risk profile"@en ;
+    rdfs:domain icare:RiskBasedTrigger ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    rdfs:range icare:RiskProfile ;
+    skos:definition "Relates a risk-based trigger to the risk profile that caused it."@en .
+
+icare:symptomBasedTriggerUsesSymptomRecord a owl:ObjectProperty ;
+    rdfs:label "uses symptom record"@en ;
+    rdfs:domain icare:SymptomBasedTrigger ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    rdfs:range icare:SymptomRecord ;
+    skos:definition "Relates a symptom-based trigger to the symptom record that caused it."@en .
+
+icare:AchievedGoalAchievementStatus a icare:GoalAchievementStatus,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Achieved goal achievement status"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    skos:definition "A goal-achievement status indicating achieved."@en ;
+    skos:inScheme icare:GoalAchievementStatusScheme ;
+    skos:prefLabel "Achieved goal achievement status"@en ;
+    skos:topConceptOf icare:GoalAchievementStatusScheme .
+
+icare:ActiveCarePlan a icare:CarePlanStatus,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Active care plan"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    skos:definition "A care-plan status indicating that the care plan is in the active state."@en ;
+    skos:inScheme icare:CarePlanStatusScheme ;
+    skos:prefLabel "Active care plan"@en ;
+    skos:topConceptOf icare:CarePlanStatusScheme .
+
+icare:ActiveGoalLifecycleStatus a icare:GoalLifecycleStatus,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Active goal lifecycle status"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    skos:definition "A goal-lifecycle status indicating active."@en ;
+    skos:inScheme icare:GoalLifecycleStatusScheme ;
+    skos:prefLabel "Active goal lifecycle status"@en ;
+    skos:topConceptOf icare:GoalLifecycleStatusScheme .
+
+icare:CancelledActivity a icare:ActivityStatus,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Cancelled activity"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    skos:definition "An activity status indicating that the activity is cancelled."@en ;
+    skos:inScheme icare:ActivityStatusScheme ;
+    skos:prefLabel "Cancelled activity"@en ;
+    skos:topConceptOf icare:ActivityStatusScheme .
+
+icare:CancelledCarePlan a icare:CarePlanStatus,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Cancelled care plan"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    skos:definition "A care-plan status indicating that the care plan is in the cancelled state."@en ;
+    skos:inScheme icare:CarePlanStatusScheme ;
+    skos:prefLabel "Cancelled care plan"@en ;
+    skos:topConceptOf icare:CarePlanStatusScheme .
+
+icare:CancelledGoalLifecycleStatus a icare:GoalLifecycleStatus,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Cancelled goal lifecycle status"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    skos:definition "A goal-lifecycle status indicating cancelled."@en ;
+    skos:inScheme icare:GoalLifecycleStatusScheme ;
+    skos:prefLabel "Cancelled goal lifecycle status"@en ;
+    skos:topConceptOf icare:GoalLifecycleStatusScheme .
+
+icare:CompletedActivity a icare:ActivityStatus,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Completed activity"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    skos:definition "An activity status indicating that the activity is completed."@en ;
+    skos:inScheme icare:ActivityStatusScheme ;
+    skos:prefLabel "Completed activity"@en ;
+    skos:topConceptOf icare:ActivityStatusScheme .
+
+icare:CompletedCarePlan a icare:CarePlanStatus,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Completed care plan"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    skos:definition "A care-plan status indicating that the care plan is in the completed state."@en ;
+    skos:inScheme icare:CarePlanStatusScheme ;
+    skos:prefLabel "Completed care plan"@en ;
+    skos:topConceptOf icare:CarePlanStatusScheme .
+
+icare:CompletedGoalLifecycleStatus a icare:GoalLifecycleStatus,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Completed goal lifecycle status"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    skos:definition "A goal-lifecycle status indicating completed."@en ;
+    skos:inScheme icare:GoalLifecycleStatusScheme ;
+    skos:prefLabel "Completed goal lifecycle status"@en ;
+    skos:topConceptOf icare:GoalLifecycleStatusScheme .
+
+icare:DraftCarePlan a icare:CarePlanStatus,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Draft care plan"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    skos:definition "A care-plan status indicating that the care plan is in the draft state."@en ;
+    skos:inScheme icare:CarePlanStatusScheme ;
+    skos:prefLabel "Draft care plan"@en ;
+    skos:topConceptOf icare:CarePlanStatusScheme .
+
+icare:EscalationRequiredPriority a icare:ActivityPriority,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Escalation required priority"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    skos:definition "An activity-priority value indicating escalation required priority."@en ;
+    skos:inScheme icare:ActivityPriorityScheme ;
+    skos:prefLabel "Escalation required priority"@en ;
+    skos:topConceptOf icare:ActivityPriorityScheme .
+
+icare:HealthLiteracyIntervention a owl:Class ;
+    rdfs:label "Health Literacy Intervention"@en ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    rdfs:subClassOf icare:Intervention ;
+    skos:definition "An intervention intended to improve a person's understanding, confidence, or ability to act on health information."@en .
+
+icare:ImportantPriority a icare:ActivityPriority,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Important priority"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    skos:definition "An activity-priority value indicating important priority."@en ;
+    skos:inScheme icare:ActivityPriorityScheme ;
+    skos:prefLabel "Important priority"@en ;
+    skos:topConceptOf icare:ActivityPriorityScheme .
+
+icare:ImprovingGoalAchievementStatus a icare:GoalAchievementStatus,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Improving goal achievement status"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    skos:definition "A goal-achievement status indicating improving."@en ;
+    skos:inScheme icare:GoalAchievementStatusScheme ;
+    skos:prefLabel "Improving goal achievement status"@en ;
+    skos:topConceptOf icare:GoalAchievementStatusScheme .
+
+icare:InProgressActivity a icare:ActivityStatus,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "In-progress activity"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    skos:definition "An activity status indicating that the activity is in-progress."@en ;
+    skos:inScheme icare:ActivityStatusScheme ;
+    skos:prefLabel "In-progress activity"@en ;
+    skos:topConceptOf icare:ActivityStatusScheme .
+
+icare:InProgressGoalAchievementStatus a icare:GoalAchievementStatus,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "In-progress goal achievement status"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    skos:definition "A goal-achievement status indicating in-progress."@en ;
+    skos:inScheme icare:GoalAchievementStatusScheme ;
+    skos:prefLabel "In-progress goal achievement status"@en ;
+    skos:topConceptOf icare:GoalAchievementStatusScheme .
+
+icare:MeasurementBasedTrigger a owl:Class ;
+    rdfs:label "Measurement Based Trigger"@en ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    rdfs:subClassOf icare:CarePlanTrigger ;
+    skos:definition "A trigger based on a measurement, observation result, threshold, or monitoring change."@en .
+
+icare:MissedActivity a icare:ActivityStatus,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Missed activity"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    skos:definition "An activity status indicating that the activity is missed."@en ;
+    skos:inScheme icare:ActivityStatusScheme ;
+    skos:prefLabel "Missed activity"@en ;
+    skos:topConceptOf icare:ActivityStatusScheme .
+
+icare:NotAchievedGoalAchievementStatus a icare:GoalAchievementStatus,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Not-achieved goal achievement status"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    skos:definition "A goal-achievement status indicating not-achieved."@en ;
+    skos:inScheme icare:GoalAchievementStatusScheme ;
+    skos:prefLabel "Not-achieved goal achievement status"@en ;
+    skos:topConceptOf icare:GoalAchievementStatusScheme .
+
+icare:NotAttainableGoalAchievementStatus a icare:GoalAchievementStatus,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Not-attainable goal achievement status"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    skos:definition "A goal-achievement status indicating not-attainable."@en ;
+    skos:inScheme icare:GoalAchievementStatusScheme ;
+    skos:prefLabel "Not-attainable goal achievement status"@en ;
+    skos:topConceptOf icare:GoalAchievementStatusScheme .
+
+icare:OnHoldGoalLifecycleStatus a icare:GoalLifecycleStatus,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "On-hold goal lifecycle status"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    skos:definition "A goal-lifecycle status indicating on-hold."@en ;
+    skos:inScheme icare:GoalLifecycleStatusScheme ;
+    skos:prefLabel "On-hold goal lifecycle status"@en ;
+    skos:topConceptOf icare:GoalLifecycleStatusScheme .
+
+icare:PausedCarePlan a icare:CarePlanStatus,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Paused care plan"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    skos:definition "A care-plan status indicating that the care plan is in the paused state."@en ;
+    skos:inScheme icare:CarePlanStatusScheme ;
+    skos:prefLabel "Paused care plan"@en ;
+    skos:topConceptOf icare:CarePlanStatusScheme .
+
+icare:PlannedActivity a icare:ActivityStatus,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Planned activity"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    skos:definition "An activity status indicating that the activity is planned."@en ;
+    skos:inScheme icare:ActivityStatusScheme ;
+    skos:prefLabel "Planned activity"@en ;
+    skos:topConceptOf icare:ActivityStatusScheme .
+
+icare:PlannedGoalLifecycleStatus a icare:GoalLifecycleStatus,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Planned goal lifecycle status"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    skos:definition "A goal-lifecycle status indicating planned."@en ;
+    skos:inScheme icare:GoalLifecycleStatusScheme ;
+    skos:prefLabel "Planned goal lifecycle status"@en ;
+    skos:topConceptOf icare:GoalLifecycleStatusScheme .
+
+icare:RiskBasedTrigger a owl:Class ;
+    rdfs:label "Risk Based Trigger"@en ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    rdfs:subClassOf icare:CarePlanTrigger ;
+    skos:definition "A trigger based on a risk profile, risk estimate, or risk interpretation."@en .
+
+icare:RoutinePriority a icare:ActivityPriority,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Routine priority"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    skos:definition "An activity-priority value indicating routine priority."@en ;
+    skos:inScheme icare:ActivityPriorityScheme ;
+    skos:prefLabel "Routine priority"@en ;
+    skos:topConceptOf icare:ActivityPriorityScheme .
+
+icare:ScheduledActivity a icare:ActivityStatus,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Scheduled activity"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    skos:definition "An activity status indicating that the activity is scheduled."@en ;
+    skos:inScheme icare:ActivityStatusScheme ;
+    skos:prefLabel "Scheduled activity"@en ;
+    skos:topConceptOf icare:ActivityStatusScheme .
+
+icare:SymptomBasedTrigger a owl:Class ;
+    rdfs:label "Symptom Based Trigger"@en ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    rdfs:subClassOf icare:CarePlanTrigger ;
+    skos:definition "A trigger based on a reported or recorded symptom."@en .
+
+icare:UrgentPriority a icare:ActivityPriority,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Urgent priority"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    skos:definition "An activity-priority value indicating urgent priority."@en ;
+    skos:inScheme icare:ActivityPriorityScheme ;
+    skos:prefLabel "Urgent priority"@en ;
+    skos:topConceptOf icare:ActivityPriorityScheme .
+
+icare:ActivityOutcome a owl:Class ;
+    rdfs:label "Activity Outcome"@en ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    skos:definition "The result or outcome of a care-plan activity after it has been performed or reviewed."@en .
+
+icare:CarePlanParticipation a owl:Class ;
+    rdfs:label "Care Plan Participation"@en ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    skos:definition "A representation of a person's role in a care plan, such as survivor, clinician, caregiver, or reviewer."@en .
+
+icare:Intervention a owl:Class ;
+    rdfs:label "Intervention"@en ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    rdfs:subClassOf icare:CarePlanActivity ;
+    skos:definition "A planned care-plan activity intended to reduce risk, manage symptoms, improve health behaviour, support monitoring, or address survivorship needs."@en .
+
+icare:ActivityPriority a owl:Class ;
+    rdfs:label "Activity Priority"@en ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    rdfs:subClassOf skos:Concept ;
+    skos:definition "A controlled concept representing the relative importance or urgency assigned to a care-plan activity, such as routine, important, urgent or requiring escalation."@en .
+
+icare:CarePlanTrigger a owl:Class ;
+    rdfs:label "Care Plan Trigger"@en ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    skos:definition "A reason or event that causes a care plan or activity to be created, updated, escalated, or reviewed."@en .
+
+icare:Goal a owl:Class ;
+    rdfs:label "Goal"@en ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    skos:definition "A desired care, monitoring, behavioural, or clinical outcome that care-plan activities are intended to support."@en .
+
+icare:CarePlanStatus a owl:Class ;
+    rdfs:label "Care Plan Status"@en ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    rdfs:subClassOf skos:Concept ;
+    skos:definition "A controlled concept representing the lifecycle state of a care plan, such as draft, active, paused, completed or cancelled."@en .
+
+icare:GoalAchievementStatus a owl:Class ;
+    rdfs:label "Goal Achievement Status"@en ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    rdfs:subClassOf skos:Concept ;
+    skos:definition "A controlled concept representing progress toward or achievement of a goal against its intended target."@en .
+
+icare:GoalLifecycleStatus a owl:Class ;
+    rdfs:label "Goal Lifecycle Status"@en ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    rdfs:subClassOf skos:Concept ;
+    skos:definition "A controlled concept representing the operational state of a goal throughout its lifecycle and whether it remains subject to active pursuit."@en .
+
+icare:ActivityStatus a owl:Class ;
+    rdfs:label "Activity Status"@en ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    rdfs:subClassOf skos:Concept ;
+    skos:definition "A controlled concept representing the operational or lifecycle state of a care-plan activity, such as planned, scheduled, in progress, completed, cancelled or missed."@en .
+
+icare:ActivityPriorityScheme a owl:NamedIndividual,
+        skos:ConceptScheme ;
+    rdfs:label "Activity Priority scheme"@en ;
+    skos:hasTopConcept icare:EscalationRequiredPriority,
+        icare:ImportantPriority,
+        icare:RoutinePriority,
+        icare:UrgentPriority .
+
+icare:CarePlan a owl:Class ;
+    rdfs:label "Care Plan"@en ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    skos:altLabel "personalised care plan"@en ;
+    skos:definition "Personalised plan of goals and activities used to support cardiovascular risk management, lifestyle change and follow-up."@en .
+
+icare:CarePlanStatusScheme a owl:NamedIndividual,
+        skos:ConceptScheme ;
+    rdfs:label "Care Plan Status scheme"@en ;
+    skos:hasTopConcept icare:ActiveCarePlan,
+        icare:CancelledCarePlan,
+        icare:CompletedCarePlan,
+        icare:DraftCarePlan,
+        icare:PausedCarePlan .
+
+icare:GoalAchievementStatusScheme a owl:NamedIndividual,
+        skos:ConceptScheme ;
+    rdfs:label "Goal Achievement Status scheme"@en ;
+    skos:hasTopConcept icare:AchievedGoalAchievementStatus,
+        icare:ImprovingGoalAchievementStatus,
+        icare:InProgressGoalAchievementStatus,
+        icare:NotAchievedGoalAchievementStatus,
+        icare:NotAttainableGoalAchievementStatus .
+
+icare:GoalLifecycleStatusScheme a owl:NamedIndividual,
+        skos:ConceptScheme ;
+    rdfs:label "Goal Lifecycle Status scheme"@en ;
+    skos:hasTopConcept icare:ActiveGoalLifecycleStatus,
+        icare:CancelledGoalLifecycleStatus,
+        icare:CompletedGoalLifecycleStatus,
+        icare:OnHoldGoalLifecycleStatus,
+        icare:PlannedGoalLifecycleStatus .
+
+icare:ActivityStatusScheme a owl:NamedIndividual,
+        skos:ConceptScheme ;
+    rdfs:label "Activity Status scheme"@en ;
+    skos:hasTopConcept icare:CancelledActivity,
+        icare:CompletedActivity,
+        icare:InProgressActivity,
+        icare:MissedActivity,
+        icare:PlannedActivity,
+        icare:ScheduledActivity .
+
+icare:CarePlanActivity a owl:Class ;
+    rdfs:label "Care Plan Activity"@en ;
+    rdfs:isDefinedBy icare:intervention-careplan ;
+    skos:definition "A planned activity within a care plan, including interventions, monitoring, assessment, follow-up, and surveillance."@en .
+
+icare:intervention-careplan a owl:Ontology ;
+    rdfs:label "Intervention and Care Plan"@en ;
+    meta:reviewStatus "Draft" ;
+    rdfs:comment "Represents care plans, participants, goals, interventions and other activities, triggers, schedules, priorities, statuses, outcomes and activity executions."@en ;
+    owl:imports icare:clinical-profile,
+        icare:core,
+        icare:cv-risk,
+        <http://maya-project.eu/icareonto/imports/skos-reference>,
+        icare:measurement-biomarker,
+        icare:metadata,
+        icare:person-role,
+        icare:social-context ;
+    owl:versionIRI <http://maya-project.eu/icareonto/releases/0.1.0-draft/intervention-careplan> ;
+    owl:versionInfo "0.1.0-draft" .
+

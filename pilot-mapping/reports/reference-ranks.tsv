@@ -1,0 +1,16 @@
+requirement_id	reference_class	semantic_rank	lexical_rank	top_candidate	top_cosine	expected_review	actual_review
+DEMO-KR01	http://maya-project.eu/icareonto/LanguagePreference	2	25	http://maya-project.eu/icareonto/LanguageProficiencyLevelValue	0.44584798		
+DEMO-KR02	http://maya-project.eu/icareonto/InformationPreference	82	3	http://maya-project.eu/icareonto/ResponseStatus	0.53412770		
+DEMO-KR03	http://maya-project.eu/icareonto/ParticipantEnrolment	2	1	http://maya-project.eu/icareonto/StudyArm	0.56676704		
+DEMO-KR04	http://maya-project.eu/icareonto/BloodPressureMeasurementProtocol	1	2	http://maya-project.eu/icareonto/BloodPressureMeasurementProtocol	0.51165007		
+DEMO-KR05	http://maya-project.eu/icareonto/Questionnaire	1	6	http://maya-project.eu/icareonto/Questionnaire	0.65123173		
+DEMO-KR06	http://maya-project.eu/icareonto/HealthLiteracyNeedType	8	11	http://maya-project.eu/icareonto/CancerSurvivorRole	0.57333104		
+DEMO-KR07	http://maya-project.eu/icareonto/AccessibilityFeature	1	72	http://maya-project.eu/icareonto/AccessibilityFeature	0.49981825		
+DEMO-KR08	http://maya-project.eu/icareonto/PerformedExerciseSession	2	3	http://maya-project.eu/icareonto/PlannedExerciseSession	0.62564858		
+DEMO-KR09	http://maya-project.eu/icareonto/ExercisePrescription	1	1	http://maya-project.eu/icareonto/ExercisePrescription	0.71904244		
+DEMO-KR10	http://maya-project.eu/icareonto/CancerTreatmentHistory	1	8	http://maya-project.eu/icareonto/CancerTreatmentHistory	0.67512990		
+DEMO-KR11	http://maya-project.eu/icareonto/ConsentRecord	1	1	http://maya-project.eu/icareonto/ConsentRecord	0.56908163		
+DEMO-KR12	http://maya-project.eu/icareonto/EvidenceSource	1	1	http://maya-project.eu/icareonto/EvidenceSource	0.56079516		
+DEMO-KR13	http://maya-project.eu/icareonto/NutritionInstruction	1	2	http://maya-project.eu/icareonto/NutritionInstruction	0.59392448		
+DEMO-KR14	http://maya-project.eu/icareonto/Locale	1	5	http://maya-project.eu/icareonto/Locale	0.41384616		
+DEMO-KR16				http://maya-project.eu/icareonto/ClinicalAssessment	0.46615138	needs_review	needs_review

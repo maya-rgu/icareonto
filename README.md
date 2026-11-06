@@ -1,44 +1,61 @@
-# iCARE Onto
+# iCARE Onto tools and ontology
 
-> ⚠️ **Status: Early-stage / Draft ontology**  
-> iCARE Onto is under active development. **Classes, properties, IRIs, and axioms may change without notice** until a stable v1.0 release.  
-> Users who require a stable reference are encouraged to rely on **tagged releases** rather than the `main` branch.
+This repository contains the shared ontology and four tools supporting knowledge representation in the MAYA iCARE Health Hub. The ontology is **0.1.0-draft**, under review toward iCARE Onto Version 1. Participant and pilot examples are fictional.
 
-**iCARE Onto** is the ontology developed in the [MAYA Project](https://maya-project.eu) to support AYA (Adolescents and Young Adults) cancer survivorship care.  
-It is currently in an **initial design phase** and is being iteratively refined through expert input, workshops, and use-case evaluation.
+| Tool                        | Purpose                                                                                                              | Documentation                              |
+| --------------------------- | -------------------------------------------------------------------------------------------------------------------- | ------------------------------------------ |
+| Ontology Serialiser         | Build the modular OWL ontology from the release source snapshots                                                     | [serialisation](serialisation/README.md)    |
+| KG Instantiator             | Create and refresh pilot/participant knowledge graphs, including grouped clinical records; export Turtle and JSON-LD | [instantiation](instantiation/README.md)    |
+| Pilot Mapper                | Rank ontology concepts against pilot knowledge needs and record reviewed mapping decisions                           | [pilot-mapping](pilot-mapping/INTERFACE.md) |
+| Education Resource Selector | Publish reviewed resource metadata and select candidate educational signposts                                        | [education](education/README.md)            |
 
----
+## Install and inspect
 
-## Repository structure
+Use Python 3.10+ and run commands from the repository root:
 
-- `ontology/modules/` – thematic modules (user, clinical, lifestyle, devices, etc.).
-- `ontology/imports/` – slim extracts of external ontologies reused in iCARE Onto (NCIt, ExMO, FHIR, etc.).
-- `ontology/icare-all.owl` – meta-ontology that imports all modules and core components for full browsing.
-- `docs/` – background documentation, competency questions, and workshop methods.
-- `catalog-v001.xml` – local mapping of ontology IRIs to file paths (so Protégé resolves imports offline).
-- `CHANGELOG.md` – tracks ontology changes per version.
-- `README.md` – this file.
+```bash
+python -m venv .venv
+```
 
----
+Activate the environment with `source .venv/bin/activate` on macOS/Linux or `.venv\Scripts\Activate.ps1` in Windows PowerShell, then install the dependencies:
 
-## Stability & versioning
+```bash
+python -m pip install -r requirements.txt
+```
 
-iCARE Onto currently follows a **0.x versioning scheme**, indicating a draft and unstable phase.
+Open `serialisation/icareonto.ttl` in Protégé with its supplied modules, imports and catalogue. The ontology can be inspected without rebuilding it or installing Python.
 
-- During the 0.x series, **breaking changes may occur at any time**, including:
-  - Renaming, modification, or removal of classes and properties
-  - Changes to axioms, domain/range restrictions, or module boundaries
-  - Refactoring of imports and alignments with external ontologies
-- The `main` branch reflects ongoing development and **should not be considered stable**.
-- Users who need a fixed and reproducible reference should use **tagged releases** and cite the corresponding version.
+## Run the workflows
 
-A **v1.0.0 release** will mark the first stable version of iCARE Onto, after which backward compatibility and deprecation policies will apply.
+```bash
+python instantiation/kg-instantiator.py pilot --input instantiation/examples/pilot-es-demo.json
+python instantiation/kg-instantiator.py participant --input instantiation/examples/participant-es-full.json
+python education/scripts/education_resources.py select --output education/data/catalogue --request education/examples/spanish-cardiovascular.json
+```
 
----
+The pilot must exist before its participants. Instantiation inputs are current-record snapshots; retain earlier records when adding information. See [the section guide](instantiation/SECTIONS_GUIDE.md).
 
-## Getting started
+The educational catalogue contains metadata and links to reviewed resources, not copied provider content. Rebuild a local catalogue from the supplied workbook using `python education/scripts/education_resources.py build`; local results go under `education/generated/`. Use `--output education/generated` when selecting from that local build.
 
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/maya-rgu/icareonto.git
-   cd icare-onto
+The Pilot Mapper's saved-ranking checks run without model weights. Live semantic ranking additionally needs the encoder dependencies in `pilot-mapping/requirements.txt` and the pinned local model described in its guide. Downloaded weights and embedding caches are not distributed here.
+
+## Reproduce validation
+
+```bash
+python scripts/run_checks.py
+```
+
+This runs ontology/source reconciliation, instantiation, grouped-record, educational and saved-ranking workflow tests, and all 78 CQs with four additional controls. [Validation documentation](validation/README.md) explains the datasets and scope. The optional live encoder integration can be run with `--with-encoder` and a configured encoder environment. The public-file audit uses Git's ignore rules when Git is available; source-integrity and import checks also run without Git.
+
+Formal OWL checking is separate. The ontology and original CQ fixtures have saved results. Populating `diagnosisDate` in the fuller participant example exposes an existing `xsd:date` OWL 2 DL profile compatibility issue; HermiT reports consistency. See [the recorded limitation](instantiation/reports/DATATYPE_COMPATIBILITY.md). Do not interpret passing workflow tests as clinical validation or as zero OWL profile violations for every dataset.
+
+## Repository contents
+
+- `sources/`: exact release input snapshots and integrity hashes.
+- `serialisation/`: the ontology release, generator and reconciliation evidence.
+- `instantiation/`, `pilot-mapping/`, `education/`: implementation, templates, schemas, examples and tests.
+- `education/data/catalogue/`: one complete published catalogue snapshot, including its loader metadata.
+- `validation/`: shared synthetic CQ fixtures, queries, runners and reports.
+- `local/`: ignored working area for operational inputs and outputs.
+
+A project licence and citation metadata have not yet been included in this snapshot.

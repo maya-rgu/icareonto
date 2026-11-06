@@ -1,0 +1,357 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix demo: <https://example.org/maya/demo/es/> .
+@prefix icare: <http://maya-project.eu/icareonto/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix test: <https://example.org/maya/demo/cq-tests/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+icare:PlainLanguageStrategy icare:dialogueStrategyAdaptedToContext demo:health-literacy-record .
+
+<https://example.org/maya/demo/cq-tests> a owl:Ontology ;
+    rdfs:label "Synthetic CQ coverage supplement"@en ;
+    rdfs:comment "Wholly fictional technical test data supplementing the Spanish survivor graph. Clinical conditions, evidence, scores, ranges, thresholds and care associations are invented; none constitute validated clinical knowledge or real participant information."@en ;
+    owl:imports <https://example.org/maya/demo/es> .
+
+test:adherence-assessment a icare:ExerciseAdherenceAssessment,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional exercise-adherence assessment"@en ;
+    icare:adherenceAssessmentEvaluatesPrescription demo:exercise-prescription ;
+    icare:adherenceAssessmentHasResult test:adherence-result ;
+    icare:adherenceAssessmentUsesPerformedSession demo:performed-walking-session .
+
+test:alternate-strategy a icare:DialogueStrategy,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional strategy adapted to a different context"@en ;
+    icare:dialogueStrategyAdaptedToContext test:cultural-record .
+
+test:at-upper-bound-event a icare:MeasurementEvent,
+        owl:NamedIndividual ;
+    rdfs:label "Contrasting at-upper-bound event"@en ;
+    icare:activityExecutionOccursAt test:at-upper-bound-time ;
+    icare:measurementEventHasOutput test:at-upper-bound-result ;
+    icare:measurementEventMeasures demo:systolic-bp .
+
+test:before-window-event a icare:MeasurementEvent,
+        owl:NamedIndividual ;
+    rdfs:label "Contrasting before-window event"@en ;
+    icare:activityExecutionOccursAt test:before-window-time ;
+    icare:measurementEventHasOutput test:before-window-result ;
+    icare:measurementEventMeasures demo:systolic-bp .
+
+test:control-care-plan a icare:CarePlan,
+        owl:NamedIndividual ;
+    rdfs:label "Contrasting control person's plan"@en ;
+    icare:carePlanIncludesActivity test:control-checkup ;
+    icare:carePlanIntendedFor test:control-person .
+
+test:guideline a icare:Guideline,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional guideline for technical retrieval tests"@en ;
+    icare:knowledgeResourceContainsRecommendation demo:recommendation-nutrition,
+        demo:recommendation-walking ;
+    rdfs:comment "Invented catalogue entry; no genuine guideline or clinical recommendation is asserted."@en .
+
+test:mixed-topic-resource a icare:EducationalResource,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional activity resource with a secondary nutrition discussion"@en ;
+    icare:knowledgeResourceHasTopic icare:Nutrition,
+        icare:PhysicalActivity ;
+    rdfs:comment "Addresses physical activity and nutrition. CQ-019 retrieves any resource addressing nutrition, without ranking its topics."@en .
+
+test:questionnaire a icare:Questionnaire,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional instrument for validation-provenance testing"@en ;
+    icare:measurementInstrumentHasValidationEvidence test:validation-evidence ;
+    dcterms:source test:background-evidence,
+        test:validation-evidence .
+
+test:recommendation-derivation a icare:RecommendationDerivation,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional derivation linking a risk profile to a recommendation"@en ;
+    icare:recommendationDerivationProduces demo:recommendation-walking ;
+    icare:recommendationDerivationUsesRiskProfile demo:risk-profile .
+
+demo:clinical-profile icare:clinicalProfileIncludesRecord test:late-effect-record,
+        test:unrelated-condition-record .
+
+demo:clinical-review icare:activityHasTrigger test:observation-trigger,
+        test:risk-trigger .
+
+demo:dialogue-context icare:dialogueContextIncludesEntity test:cultural-record,
+        test:employment-record .
+
+demo:diastolic-bp a icare:PhysiologicalParameter .
+
+demo:lifestyle-profile icare:lifestyleProfileIncludesBehaviourRecord test:nutrition-record .
+
+demo:model-input icare:modelInputDerivedFromObservation test:body-fat-result,
+        demo:baseline-weight-result ;
+    icare:modelInputIncludesPersonAttribute test:age-attribute .
+
+demo:participant icare:personHasAttribute test:age-attribute ;
+    icare:personParticipatesInMeasurement test:averaged-sbp-event,
+        test:body-fat-event .
+
+demo:risk-estimate icare:riskEstimateEstimatesConditionRisk test:cv-condition ;
+    icare:riskEstimateHasContribution test:activity-contribution,
+        test:prior-contribution .
+
+demo:social-profile icare:socialProfileIncludesRecord test:cultural-record,
+        test:employment-record,
+        test:financial-record .
+
+test:activity-contribution a icare:RiskFactorContribution,
+        owl:NamedIndividual ;
+    rdfs:label "Authored example factor contribution"@en ;
+    icare:contributionValue 0.4 ;
+    icare:riskFactorContributionForRiskFactor demo:low-activity-risk-factor ;
+    rdfs:comment "Arbitrary fixture coefficient; not an output from a validated risk model."@en .
+
+test:adherence-result a icare:ExerciseAdherenceResult,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional duration-completion result"@en ;
+    icare:adherencePercent 90.0 ;
+    rdfs:comment "Illustrative 18/20 duration-completion percentage; not a validated adherence assessment."@en .
+
+test:alert-threshold a icare:AlertThreshold,
+        owl:NamedIndividual ;
+    rdfs:label "Arbitrary technical-test threshold, not a clinical alert rule"@en ;
+    icare:thresholdNumericValue 150.0 .
+
+test:at-upper-bound-result a icare:ObservationResult,
+        owl:NamedIndividual ;
+    rdfs:label "Contrasting out-of-window result"@en .
+
+test:at-upper-bound-time a icare:Timepoint,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional test time at-upper-bound-time"@en ;
+    icare:timepointDateTime "2026-10-28T00:00:00+00:00"^^xsd:dateTime .
+
+test:averaged-sbp-event a icare:MeasurementEvent,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional interval-based systolic observation"@en ;
+    icare:activityExecutionOccursDuring test:measurement-interval ;
+    icare:measurementEventHasOutput test:averaged-sbp-result ;
+    icare:measurementEventMeasures demo:systolic-bp .
+
+test:averaged-sbp-result a icare:ObservationResult,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional interval result"@en .
+
+test:background-evidence a icare:EvidenceSource,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional background study, not instrument-validation evidence"@en ;
+    rdfs:comment "General background citation only; it is not linked by measurementInstrumentHasValidationEvidence."@en .
+
+test:before-window-result a icare:ObservationResult,
+        owl:NamedIndividual ;
+    rdfs:label "Contrasting out-of-window result"@en .
+
+test:before-window-time a icare:Timepoint,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional test time before-window-time"@en ;
+    icare:timepointDateTime "2026-10-18T23:59:59+00:00"^^xsd:dateTime .
+
+test:body-fat-event a icare:MeasurementEvent,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional body-composition measurement"@en ;
+    icare:activityExecutionOccursAt demo:time-baseline ;
+    icare:measurementEventFollowsProtocol demo:body-protocol ;
+    icare:measurementEventHasOutput test:body-fat-result ;
+    icare:measurementEventMeasures test:body-fat-parameter .
+
+test:communication-context a icare:CulturalFactor,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional preference for family-inclusive discussions"@en .
+
+test:contraindication a icare:Contraindication,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional restriction used only for a query test"@en ;
+    icare:contraindicationText "Demonstration-only condition requiring fictional reviewer approval."^^xsd:string .
+
+test:control-checkup a icare:MedicalCheckUpActivity,
+        owl:NamedIndividual ;
+    rdfs:label "Contrasting check-up in another plan"@en .
+
+test:control-clinical-profile a icare:ClinicalProfile,
+        owl:NamedIndividual ;
+    rdfs:label "Control person's clinical profile"@en ;
+    icare:clinicalProfileIncludesRecord test:control-record .
+
+test:control-diagnosis a icare:CancerDiagnosis,
+        owl:NamedIndividual ;
+    rdfs:label "Control person's fictional diagnosis"@en .
+
+test:control-person a icare:Person,
+        owl:NamedIndividual ;
+    rdfs:label "Separate fictional control person"@en ;
+    icare:hasCancerDiagnosis test:control-diagnosis ;
+    icare:personHasClinicalProfile test:control-clinical-profile .
+
+test:control-record a icare:ClinicalConditionRecord,
+        owl:NamedIndividual ;
+    rdfs:label "Control person's condition record"@en ;
+    icare:conditionRecordRecordsCondition test:cv-condition .
+
+test:dietary-factor a icare:ModifiableRiskFactor,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional dietary factor, contrasting with low activity"@en .
+
+test:employment a icare:EmploymentStatus,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional part-time employment context"@en ;
+    icare:hasEmploymentStatus icare:Employed .
+
+test:financial-context a icare:FinancialConstraint,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional financial constraint"@en ;
+    icare:hasFinancialConstraintStatus icare:SomeFinancialConstraint .
+
+test:financial-record a icare:SocialContextRecord,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional financial-record"@en ;
+    icare:socialContextRecordHasSource demo:source-participant ;
+    icare:socialContextRecordRecordedAt demo:time-baseline ;
+    icare:socialContextRecordRecordsFactor test:financial-context .
+
+test:interval-end a icare:Timepoint,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional test time interval-end"@en ;
+    icare:timepointDateTime "2026-10-24T08:00:00+02:00"^^xsd:dateTime .
+
+test:interval-start a icare:Timepoint,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional test time interval-start"@en ;
+    icare:timepointDateTime "2026-10-24T07:00:00+02:00"^^xsd:dateTime .
+
+test:late-effect-record a icare:ClinicalConditionRecord,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional treatment-related condition record"@en ;
+    icare:clinicalRecordHasSource demo:source-clinical-record ;
+    icare:clinicalRecordRecordedAt demo:time-baseline ;
+    icare:conditionRecordRecordsCondition test:cv-condition .
+
+test:measurement-interval a icare:TimeInterval,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional interval measurement"@en ;
+    icare:intervalEndsAt test:interval-end ;
+    icare:intervalStartsAt test:interval-start .
+
+test:nutrition-behaviour a icare:NutritionBehaviour,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional dietary behaviour"@en ;
+    icare:behaviourInfluencesRiskFactor test:dietary-factor .
+
+test:nutrition-record a icare:BehaviourRecord,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional nutrition self-report"@en ;
+    icare:behaviourRecordRecordsBehaviour test:nutrition-behaviour ;
+    icare:behaviourRecordRelatesToActivity demo:nutrition-intervention .
+
+test:nutrition-schedule a icare:Schedule,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional instruction schedule"@en ;
+    icare:scheduleHasRecurrencePattern icare:DailyRecurrence .
+
+test:observation-trigger a icare:MeasurementBasedTrigger,
+        owl:NamedIndividual ;
+    rdfs:label "Authored observation-to-review association"@en ;
+    icare:measurementBasedTriggerUsesObservation demo:followup-sbp-result .
+
+test:prior-contribution a icare:RiskFactorContribution,
+        owl:NamedIndividual ;
+    rdfs:label "Authored example factor contribution"@en ;
+    icare:contributionValue 0.6 ;
+    icare:riskFactorContributionForRiskFactor test:prior-treatment-factor ;
+    rdfs:comment "Arbitrary fixture coefficient; not an output from a validated risk model."@en .
+
+test:prior-treatment-factor a icare:NonModifiableRiskFactor,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional historical-treatment factor"@en .
+
+test:quantified-nutrition-instruction a icare:NutritionInstruction,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional quantity/unit test instruction"@en ;
+    icare:nutritionInstructionHasActionType icare:Maintain ;
+    icare:nutritionInstructionHasSchedule test:nutrition-schedule ;
+    icare:nutritionInstructionTargetsComponent icare:WholeGrains ;
+    icare:nutritionInstructionText "Arbitrary quantity/unit fixture; not a dietary recommendation."^^xsd:string ;
+    icare:nutritionTargetAmount 1.0 ;
+    icare:nutritionTargetUnitText "demo-portion/day"^^xsd:string .
+
+test:reference-range a icare:ReferenceRange,
+        owl:NamedIndividual ;
+    rdfs:label "Arbitrary technical-test range, not clinical guidance"@en ;
+    icare:referenceRangeLowerBound 100.0 ;
+    icare:referenceRangeUpperBound 130.0 .
+
+test:risk-trigger a icare:RiskBasedTrigger,
+        owl:NamedIndividual ;
+    rdfs:label "Authored risk-profile-to-review association"@en ;
+    icare:riskBasedTriggerUsesRiskProfile demo:risk-profile .
+
+test:unrelated-condition a icare:MetabolicCondition,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional condition not asserted to be treatment-related"@en .
+
+test:unrelated-condition-record a icare:ClinicalConditionRecord,
+        owl:NamedIndividual ;
+    rdfs:label "Contrasting non-treatment-related condition record"@en ;
+    icare:conditionRecordRecordsCondition test:unrelated-condition .
+
+demo:bmi a icare:AnthropometricParameter .
+
+demo:body-protocol icare:protocolSpecifiesParameter test:body-fat-parameter,
+        demo:bmi,
+        demo:height,
+        demo:weight .
+
+demo:followup-sbp-result icare:observationComparedAgainst test:alert-threshold ;
+    icare:observationHasReferenceRange test:reference-range ;
+    icare:observationHasThresholdCategory icare:WithinReferenceRange .
+
+demo:nutrition-intervention icare:nutritionInterventionSpecifiesInstruction test:quantified-nutrition-instruction .
+
+test:age-attribute a icare:DemographicAttribute,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional age attribute at enrolment"@en ;
+    icare:personAttributeName "Age at enrolment"^^xsd:string ;
+    icare:personAttributeValue "27"^^xsd:string .
+
+test:body-fat-parameter a icare:AnthropometricParameter,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional body-fat percentage parameter"@en .
+
+test:body-fat-result a icare:ObservationResult,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional body-composition observation"@en .
+
+test:employment-record a icare:SocialContextRecord,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional employment-record"@en ;
+    icare:socialContextRecordHasSource demo:source-participant ;
+    icare:socialContextRecordRecordedAt demo:time-baseline ;
+    icare:socialContextRecordRecordsFactor test:employment .
+
+test:validation-evidence a icare:EvidenceSource,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional validation study for this instrument"@en ;
+    rdfs:comment "Fixture oracle: specifically supports the fictional instrument's validation. No actual psychometric validation is claimed."@en .
+
+demo:recommendation-walking icare:recommendationHasContraindication test:contraindication .
+
+test:cultural-record a icare:SocialContextRecord,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional cultural-record"@en ;
+    icare:socialContextRecordHasSource demo:source-participant ;
+    icare:socialContextRecordRecordedAt demo:time-baseline ;
+    icare:socialContextRecordRecordsFactor test:communication-context .
+
+test:cv-condition a icare:CardiovascularCondition,
+        icare:TreatmentRelatedCondition,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional late-effect condition for query testing"@en .
+
+demo:systolic-bp a icare:PhysiologicalParameter .
+

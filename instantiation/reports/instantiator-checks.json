@@ -1,0 +1,82 @@
+{
+  "cases": [
+    {
+      "name": "test_filled_invalid_optional_value_is_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "test_incomplete_supplied_consent_record_is_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "test_named_command_accepts_the_same_file_for_creation_and_refresh",
+      "status": "PASS"
+    },
+    {
+      "name": "test_optional_placeholder_is_not_published",
+      "status": "PASS"
+    },
+    {
+      "name": "test_participant_cannot_be_silently_reassigned",
+      "status": "PASS"
+    },
+    {
+      "name": "test_participant_requires_a_registered_pilot",
+      "status": "PASS"
+    },
+    {
+      "name": "test_participant_template_leaves_unknown_information_unasserted",
+      "status": "PASS"
+    },
+    {
+      "name": "test_pilot_refresh_cannot_remove_a_referenced_arm",
+      "status": "PASS"
+    },
+    {
+      "name": "test_pilot_refresh_updates_shared_context_without_rewriting_participants",
+      "status": "PASS"
+    },
+    {
+      "name": "test_pilot_template_can_leave_phases_and_arms_unknown",
+      "status": "PASS"
+    },
+    {
+      "name": "test_progressive_enrichment_preserves_identity_and_archives_previous_graph",
+      "status": "PASS"
+    },
+    {
+      "name": "test_refresh_rejects_a_controlled_value_with_an_incompatible_ontology_type",
+      "status": "PASS"
+    },
+    {
+      "name": "test_refresh_rejects_a_property_absent_from_the_loaded_ontology",
+      "status": "PASS"
+    },
+    {
+      "name": "test_required_placeholders_prevent_publication",
+      "status": "PASS"
+    },
+    {
+      "name": "test_snapshot_omission_removes_old_optional_assertions",
+      "status": "PASS"
+    },
+    {
+      "name": "test_unchanged_input_keeps_seed_bytes",
+      "status": "PASS"
+    },
+    {
+      "name": "test_unknown_field_is_rejected_even_when_null",
+      "status": "PASS"
+    },
+    {
+      "name": "test_wrong_study_site_pair_is_rejected",
+      "status": "PASS"
+    }
+  ],
+  "checks": 18,
+  "errors": 0,
+  "failures": 0,
+  "run_date": "2026-11-06",
+  "scope": "Fictional JSON inputs and temporary outputs; existing delivered graphs and the ontology are unchanged.",
+  "status": "PASS"
+}

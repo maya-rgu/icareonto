@@ -1,0 +1,53 @@
+{
+  "run_date": "2026-11-06",
+  "status": "PASS",
+  "live_encoder_requested": false,
+  "checks": [
+    {
+      "script": "serialisation/scripts/check_outputs.py",
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    {
+      "script": "instantiation/scripts/check_workflow.py",
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    {
+      "script": "instantiation/scripts/check_instantiator.py",
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    {
+      "script": "instantiation/scripts/check_sections.py",
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    {
+      "script": "pilot-mapping/scripts/check_mapping.py",
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    {
+      "script": "education/scripts/check_workflow.py",
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    {
+      "script": "validation/scripts/check_demo.py",
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    {
+      "script": "validation/scripts/run_cq_suite.py",
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    {
+      "script": "scripts/check_publication.py",
+      "exit_code": 0,
+      "status": "PASS"
+    }
+  ],
+  "scope": "Reproducible software and query checks; formal OWL conformance and clinical validity are separate."
+}

@@ -1,0 +1,920 @@
+{
+  "activity_templates": [
+    {
+      "audiences": [
+        "AYASurvivorAudience"
+      ],
+      "candidate_resource_ids": [
+        "MAYA-EDU-0004",
+        "MAYA-EDU-0017",
+        "MAYA-EDU-0018"
+      ],
+      "id": "EDU-CV-FOLLOWUP",
+      "iri": "http://maya-project.eu/icareonto/education/activity-templates/EDU-CV-FOLLOWUP",
+      "journey_stages": [
+        "After treatment / survivorship"
+      ],
+      "learning_objective": "Identify the purpose of cardiovascular follow-up and formulate a question for the care team about the participant's own follow-up.",
+      "needs": [
+        "http://maya-project.eu/icareonto/InformationComprehensionSupportNeed",
+        "http://maya-project.eu/icareonto/CareTeamCommunicationSupportNeed"
+      ],
+      "reflection_prompts": [
+        "In your own words, what is the main reason for the follow-up described in this resource?",
+        "What would you like your care team to explain about your own follow-up?"
+      ],
+      "status": "Draft",
+      "steps": [
+        "Introduce the topic using the participant's stated question and identified support need.",
+        "Offer a suitable reviewed resource in the participant's language and explain its access conditions.",
+        "Invite the participant to explain the main message in their own words and identify any unclear information.",
+        "Help the participant prepare a question for their care team; personal monitoring decisions remain with the care team."
+      ],
+      "title": "Understanding cardiovascular follow-up",
+      "topics": [
+        "http://maya-project.eu/icareonto/CardiovascularLateEffects"
+      ]
+    },
+    {
+      "audiences": [
+        "AYASurvivorAudience"
+      ],
+      "candidate_resource_ids": [
+        "MAYA-EDU-0005",
+        "MAYA-EDU-0007",
+        "MAYA-EDU-0008",
+        "MAYA-EDU-0023"
+      ],
+      "id": "EDU-HEALTHY-CHOICES",
+      "iri": "http://maya-project.eu/icareonto/education/activity-templates/EDU-HEALTHY-CHOICES",
+      "journey_stages": [
+        "After treatment / survivorship"
+      ],
+      "learning_objective": "Identify one practical nutrition or activity question or action relevant to the participant's interests and circumstances.",
+      "needs": [
+        "http://maya-project.eu/icareonto/InformationApplicationSupportNeed",
+        "http://maya-project.eu/icareonto/SelfManagementSupportNeed"
+      ],
+      "reflection_prompts": [
+        "Which idea from the resource would you like to explore?",
+        "What support or advice would you need before trying it?"
+      ],
+      "status": "Draft",
+      "steps": [
+        "Ask whether the participant wants information about food choices or physical activity.",
+        "Select a resource matching that topic, the identified support need and the participant's preferences.",
+        "Invite the participant to identify one manageable idea and any barriers or questions.",
+        "Distinguish general educational information from an individual dietary or exercise prescription."
+      ],
+      "title": "Making manageable everyday health choices",
+      "topics": [
+        "http://maya-project.eu/icareonto/PhysicalActivity",
+        "http://maya-project.eu/icareonto/Nutrition"
+      ]
+    },
+    {
+      "audiences": [
+        "AYASurvivorAudience"
+      ],
+      "candidate_resource_ids": [
+        "MAYA-EDU-0009",
+        "MAYA-EDU-0010",
+        "MAYA-EDU-0011",
+        "MAYA-EDU-0013",
+        "MAYA-EDU-0019",
+        "MAYA-EDU-0020",
+        "MAYA-EDU-0021",
+        "MAYA-EDU-0030"
+      ],
+      "id": "EDU-AFTER-TREATMENT",
+      "iri": "http://maya-project.eu/icareonto/education/activity-templates/EDU-AFTER-TREATMENT",
+      "journey_stages": [
+        "After treatment / survivorship"
+      ],
+      "learning_objective": "Recognise an information or support need concerning life after treatment and identify a suitable source of support.",
+      "needs": [
+        "http://maya-project.eu/icareonto/InformationComprehensionSupportNeed",
+        "http://maya-project.eu/icareonto/SelfManagementSupportNeed",
+        "http://maya-project.eu/icareonto/SocialSupportNeed"
+      ],
+      "reflection_prompts": [
+        "Which part of this information feels relevant to your situation?",
+        "Who could you talk to, or what further information would help?"
+      ],
+      "status": "Draft",
+      "steps": [
+        "Ask which aspect of adjustment the participant wishes to discuss, without inferring a literacy need from emotional distress alone.",
+        "Offer a reviewed resource matching the recorded need, topic and language.",
+        "Invite reflection on what feels relevant and what remains unclear.",
+        "Identify a person or service the participant may choose to approach; follow the avatar's operational support and escalation arrangements."
+      ],
+      "title": "Adjusting to life after treatment",
+      "topics": [
+        "http://maya-project.eu/icareonto/MentalHealthAndEmotionalWellbeing"
+      ]
+    }
+  ],
+  "base_iri": "http://maya-project.eu/icareonto/education/",
+  "ontology_sha256": "7b22cbc0575ed20207f9040847b26593a38f4a5ad70378e5639270689c8e6b44",
+  "profile_version": "1.1",
+  "records": [
+    {
+      "access_conditions": "Public",
+      "accessibility": [
+        "http://maya-project.eu/icareonto/VisualSummary"
+      ],
+      "applicability_notes": "General oncology patient information, updated 2024; not specifically developed for AYA survivors. Covers cardiovascular risks, monitoring and prevention before, during and after treatment. Suitable as background education, with exercise, medication and surveillance advice interpreted in the participant’s clinical context.",
+      "audiences": [
+        "http://maya-project.eu/icareonto/AYASurvivorAudience"
+      ],
+      "completion_status": "Complete",
+      "complexities": [
+        "http://maya-project.eu/icareonto/StandardComplexity"
+      ],
+      "curation_status": "Approved",
+      "delivery_mode": "signpost",
+      "description": "Two-page illustrated patient information sheet explaining cardiovascular complications of cancer treatment, assessment and monitoring before, during and after treatment, and practical measures to support cardiovascular health.",
+      "formats": [
+        "http://maya-project.eu/icareonto/Infographic",
+        "http://maya-project.eu/icareonto/WrittenText"
+      ],
+      "id": "MAYA-EDU-0004",
+      "iri": "http://maya-project.eu/icareonto/education/resources/MAYA-EDU-0004",
+      "journey_stages": [
+        "After treatment / survivorship",
+        "Before treatment",
+        "During treatment"
+      ],
+      "languages": [
+        "es"
+      ],
+      "needs": [
+        "http://maya-project.eu/icareonto/InformationApplicationSupportNeed",
+        "http://maya-project.eu/icareonto/InformationComprehensionSupportNeed",
+        "http://maya-project.eu/icareonto/SelfManagementSupportNeed"
+      ],
+      "permitted_use": "Link / Signpost Only",
+      "provider": "Fundación Española del Corazón",
+      "purposes": [
+        "http://maya-project.eu/icareonto/ExplainHealthTopic",
+        "http://maya-project.eu/icareonto/SupportBehaviourChange",
+        "http://maya-project.eu/icareonto/SupportSelfManagement"
+      ],
+      "resource_date_text": "2024",
+      "resource_role": "Direct Educational Resource",
+      "review_date": "2026-11-03",
+      "reviewer": "INO",
+      "title": "Ficha del paciente: Cardio-oncología",
+      "topics": [
+        "http://maya-project.eu/icareonto/CardiovascularLateEffects",
+        "http://maya-project.eu/icareonto/FollowUpCare"
+      ],
+      "url": "https://fundaciondelcorazon.com/phocadownload/recursos-didacticos/fichas/FICHA%20CARDIO-ONCOLOGIA.pdf"
+    },
+    {
+      "access_conditions": "Public",
+      "accessibility": [
+        "http://maya-project.eu/icareonto/VisualSummary"
+      ],
+      "applicability_notes": "General oncology patient resource, not AYA-specific. Introduces exercise benefits and directs readers towards clinical assessment and suitable programmes. Does not provide an individual exercise prescription.",
+      "audiences": [
+        "http://maya-project.eu/icareonto/AYASurvivorAudience"
+      ],
+      "completion_status": "Complete",
+      "complexities": [
+        "http://maya-project.eu/icareonto/FoundationalComplexity"
+      ],
+      "curation_status": "Approved",
+      "delivery_mode": "signpost",
+      "description": "Patient infographic introducing exercise in cancer care and encouraging discussion with the oncology team about individually appropriate activity and access to exercise programmes.",
+      "formats": [
+        "http://maya-project.eu/icareonto/Infographic"
+      ],
+      "id": "MAYA-EDU-0005",
+      "iri": "http://maya-project.eu/icareonto/education/resources/MAYA-EDU-0005",
+      "journey_stages": [
+        "After treatment / survivorship",
+        "Before treatment",
+        "During treatment"
+      ],
+      "languages": [
+        "es"
+      ],
+      "needs": [
+        "http://maya-project.eu/icareonto/HealthcareNavigationSupportNeed",
+        "http://maya-project.eu/icareonto/InformationApplicationSupportNeed",
+        "http://maya-project.eu/icareonto/InformationComprehensionSupportNeed"
+      ],
+      "permitted_use": "Link / Signpost Only",
+      "provider": "Sociedad Española de Oncología Médica (SEOM)",
+      "purposes": [
+        "http://maya-project.eu/icareonto/ExplainHealthTopic",
+        "http://maya-project.eu/icareonto/SupportBehaviourChange",
+        "http://maya-project.eu/icareonto/SupportCareNavigation"
+      ],
+      "resource_date_text": "2024",
+      "resource_role": "Direct Educational Resource",
+      "review_date": "2026-11-03",
+      "reviewer": "INO",
+      "title": "Infografía para pacientes: ejercicio físico y cáncer",
+      "topics": [
+        "http://maya-project.eu/icareonto/PhysicalActivity"
+      ],
+      "url": "https://seom.org/150025-seom/210349-infografias-dia-mundial-2024"
+    },
+    {
+      "access_conditions": "Public",
+      "accessibility": [],
+      "applicability_notes": "General oncology resource, not AYA-specific. Relevant to exercise during treatment and survivorship. Includes situations requiring clinical assessment and adaptation of activity.",
+      "audiences": [
+        "http://maya-project.eu/icareonto/AYASurvivorAudience"
+      ],
+      "completion_status": "Complete",
+      "complexities": [
+        "http://maya-project.eu/icareonto/StandardComplexity"
+      ],
+      "curation_status": "Approved",
+      "delivery_mode": "signpost",
+      "description": "Practical guidance on staying active during and after cancer treatment, covering exercise benefits, activity types, gradual progression, safety considerations and everyday strategies for reducing sedentary time.",
+      "formats": [
+        "http://maya-project.eu/icareonto/WrittenText"
+      ],
+      "id": "MAYA-EDU-0007",
+      "iri": "http://maya-project.eu/icareonto/education/resources/MAYA-EDU-0007",
+      "journey_stages": [
+        "After treatment / survivorship",
+        "During treatment"
+      ],
+      "languages": [
+        "es"
+      ],
+      "needs": [
+        "http://maya-project.eu/icareonto/InformationApplicationSupportNeed",
+        "http://maya-project.eu/icareonto/InformationComprehensionSupportNeed",
+        "http://maya-project.eu/icareonto/SelfManagementSupportNeed"
+      ],
+      "permitted_use": "Link / Signpost Only",
+      "provider": "Fundación Jiménez Díaz – Comprehensive Cancer Center",
+      "purposes": [
+        "http://maya-project.eu/icareonto/ExplainHealthTopic",
+        "http://maya-project.eu/icareonto/SupportBehaviourChange",
+        "http://maya-project.eu/icareonto/SupportSelfManagement"
+      ],
+      "resource_date_text": "",
+      "resource_role": "Direct Educational Resource",
+      "review_date": "2026-11-03",
+      "reviewer": "INO",
+      "title": "Mantenerse activo",
+      "topics": [
+        "http://maya-project.eu/icareonto/PhysicalActivity"
+      ],
+      "url": "https://www.fjd.es/comprehensivecancer/es/area-paciente/cancer/prevenir/estilo-vida-saludable/mantenerse-activo"
+    },
+    {
+      "access_conditions": "Public",
+      "accessibility": [],
+      "applicability_notes": "General oncology information, not AYA-specific. Includes general dietary targets and advice concerning supplements and reduced immunity; suitability depends on individual nutritional and treatment needs.",
+      "audiences": [
+        "http://maya-project.eu/icareonto/AYASurvivorAudience"
+      ],
+      "completion_status": "Complete",
+      "complexities": [
+        "http://maya-project.eu/icareonto/StandardComplexity"
+      ],
+      "curation_status": "Approved",
+      "delivery_mode": "signpost",
+      "description": "Guidance on balanced eating after a cancer diagnosis, including gradual dietary changes, weight management, food safety, supplements and common nutrition misconceptions.",
+      "formats": [
+        "http://maya-project.eu/icareonto/WrittenText"
+      ],
+      "id": "MAYA-EDU-0008",
+      "iri": "http://maya-project.eu/icareonto/education/resources/MAYA-EDU-0008",
+      "journey_stages": [
+        "After treatment / survivorship",
+        "During treatment"
+      ],
+      "languages": [
+        "es"
+      ],
+      "needs": [
+        "http://maya-project.eu/icareonto/InformationApplicationSupportNeed",
+        "http://maya-project.eu/icareonto/InformationAppraisalSupportNeed",
+        "http://maya-project.eu/icareonto/InformationComprehensionSupportNeed",
+        "http://maya-project.eu/icareonto/SelfManagementSupportNeed"
+      ],
+      "permitted_use": "Link / Signpost Only",
+      "provider": "Fundación Jiménez Díaz – Comprehensive Cancer Center",
+      "purposes": [
+        "http://maya-project.eu/icareonto/ExplainHealthTopic",
+        "http://maya-project.eu/icareonto/SupportBehaviourChange",
+        "http://maya-project.eu/icareonto/SupportSelfManagement"
+      ],
+      "resource_date_text": "",
+      "resource_role": "Direct Educational Resource",
+      "review_date": "2026-11-03",
+      "reviewer": "INO",
+      "title": "Alimentación saludable",
+      "topics": [
+        "http://maya-project.eu/icareonto/Nutrition"
+      ],
+      "url": "https://www.fjd.es/comprehensivecancer/es/area-paciente/cancer/prevenir/estilo-vida-saludable/alimentacion-saludable"
+    },
+    {
+      "access_conditions": "Public",
+      "accessibility": [],
+      "applicability_notes": "General survivorship resource, not AYA-specific. Educational content can support adjustment after treatment. References to Kālida courses and services require separate confirmation of availability and eligibility.",
+      "audiences": [
+        "http://maya-project.eu/icareonto/AYASurvivorAudience"
+      ],
+      "completion_status": "Complete",
+      "complexities": [
+        "http://maya-project.eu/icareonto/FoundationalComplexity"
+      ],
+      "curation_status": "Approved",
+      "delivery_mode": "signpost",
+      "description": "Information on emotional adjustment after cancer treatment, including uncertainty, confidence, changing identity, everyday coping strategies and when to seek additional support.",
+      "formats": [
+        "http://maya-project.eu/icareonto/WrittenText"
+      ],
+      "id": "MAYA-EDU-0009",
+      "iri": "http://maya-project.eu/icareonto/education/resources/MAYA-EDU-0009",
+      "journey_stages": [
+        "After treatment / survivorship"
+      ],
+      "languages": [
+        "es"
+      ],
+      "needs": [
+        "http://maya-project.eu/icareonto/InformationApplicationSupportNeed",
+        "http://maya-project.eu/icareonto/InformationComprehensionSupportNeed",
+        "http://maya-project.eu/icareonto/SelfManagementSupportNeed",
+        "http://maya-project.eu/icareonto/SocialSupportNeed"
+      ],
+      "permitted_use": "Link / Signpost Only",
+      "provider": "Fundación Kālida",
+      "purposes": [
+        "http://maya-project.eu/icareonto/ExplainHealthTopic",
+        "http://maya-project.eu/icareonto/SupportCareNavigation",
+        "http://maya-project.eu/icareonto/SupportSelfManagement"
+      ],
+      "resource_date_text": "",
+      "resource_role": "Direct Educational Resource",
+      "review_date": "2026-11-03",
+      "reviewer": "INO",
+      "title": "¿Y después del cáncer, qué?",
+      "topics": [
+        "http://maya-project.eu/icareonto/FollowUpCare",
+        "http://maya-project.eu/icareonto/MentalHealthAndEmotionalWellbeing"
+      ],
+      "url": "https://www.fundaciokalida.org/es/como-te-ayudamos/cuidado-de-tu-bienestar-emocional/y-despues-del-cancer-que/"
+    },
+    {
+      "access_conditions": "Public",
+      "accessibility": [],
+      "applicability_notes": "General oncology resource, not AYA-specific. Provides educational coping guidance rather than a psychological treatment programme. Confirm access separately before signposting to the advertised courses.",
+      "audiences": [
+        "http://maya-project.eu/icareonto/AYASurvivorAudience"
+      ],
+      "completion_status": "Complete",
+      "complexities": [
+        "http://maya-project.eu/icareonto/FoundationalComplexity"
+      ],
+      "curation_status": "Approved",
+      "delivery_mode": "signpost",
+      "description": "Explains stress associated with cancer and presents eight practical strategies for managing daily demands, supporting emotional wellbeing and seeking help from others.",
+      "formats": [
+        "http://maya-project.eu/icareonto/WrittenText"
+      ],
+      "id": "MAYA-EDU-0010",
+      "iri": "http://maya-project.eu/icareonto/education/resources/MAYA-EDU-0010",
+      "journey_stages": [
+        "After treatment / survivorship",
+        "Before treatment",
+        "During treatment"
+      ],
+      "languages": [
+        "es"
+      ],
+      "needs": [
+        "http://maya-project.eu/icareonto/InformationApplicationSupportNeed",
+        "http://maya-project.eu/icareonto/InformationComprehensionSupportNeed",
+        "http://maya-project.eu/icareonto/SelfManagementSupportNeed",
+        "http://maya-project.eu/icareonto/SocialSupportNeed"
+      ],
+      "permitted_use": "Link / Signpost Only",
+      "provider": "Fundación Kālida",
+      "purposes": [
+        "http://maya-project.eu/icareonto/ExplainHealthTopic",
+        "http://maya-project.eu/icareonto/SupportBehaviourChange",
+        "http://maya-project.eu/icareonto/SupportSelfManagement"
+      ],
+      "resource_date_text": "2021",
+      "resource_role": "Direct Educational Resource",
+      "review_date": "2026-11-03",
+      "reviewer": "INO",
+      "title": "8 consejos para gestionar el estrés cuando convives con el cáncer",
+      "topics": [
+        "http://maya-project.eu/icareonto/MentalHealthAndEmotionalWellbeing"
+      ],
+      "url": "https://www.fundaciokalida.org/es/8-consejos-para-gestionar-el-estres-cuando-convives-con-el-cancer/"
+    },
+    {
+      "access_conditions": "Public",
+      "accessibility": [],
+      "applicability_notes": "General oncology overview, not AYA-specific. Provides introductory information and signposting; detailed relationship guidance is contained in separate linked pages.",
+      "audiences": [
+        "http://maya-project.eu/icareonto/AYASurvivorAudience"
+      ],
+      "completion_status": "Complete",
+      "complexities": [
+        "http://maya-project.eu/icareonto/FoundationalComplexity"
+      ],
+      "curation_status": "Approved",
+      "delivery_mode": "signpost",
+      "description": "Introduces the effects of cancer on relationships and communication, with links to guidance on partners, children, friends and living alone.",
+      "formats": [
+        "http://maya-project.eu/icareonto/WrittenText"
+      ],
+      "id": "MAYA-EDU-0011",
+      "iri": "http://maya-project.eu/icareonto/education/resources/MAYA-EDU-0011",
+      "journey_stages": [
+        "After treatment / survivorship",
+        "Before treatment",
+        "During treatment"
+      ],
+      "languages": [
+        "es"
+      ],
+      "needs": [
+        "http://maya-project.eu/icareonto/InformationComprehensionSupportNeed",
+        "http://maya-project.eu/icareonto/SocialSupportNeed"
+      ],
+      "permitted_use": "Link / Signpost Only",
+      "provider": "Fundación Kālida",
+      "purposes": [
+        "http://maya-project.eu/icareonto/ExplainHealthTopic",
+        "http://maya-project.eu/icareonto/SupportDisclosure"
+      ],
+      "resource_date_text": "",
+      "resource_role": "Direct Educational Resource",
+      "review_date": "2026-11-03",
+      "reviewer": "INO",
+      "title": "Cáncer y relaciones sociales",
+      "topics": [
+        "http://maya-project.eu/icareonto/MentalHealthAndEmotionalWellbeing"
+      ],
+      "url": "https://www.fundaciokalida.org/es/como-te-ayudamos/cancer-y-relaciones-sociales/"
+    },
+    {
+      "access_conditions": "Public",
+      "accessibility": [],
+      "applicability_notes": "Primarily a caregiver-support overview and signposting page. Not specific to caregivers of AYA survivors. Confirm eligibility and availability before recommending provider services.",
+      "audiences": [
+        "http://maya-project.eu/icareonto/CaregiverAudience",
+        "http://maya-project.eu/icareonto/FamilyAudience"
+      ],
+      "completion_status": "Complete",
+      "complexities": [
+        "http://maya-project.eu/icareonto/FoundationalComplexity"
+      ],
+      "curation_status": "Approved",
+      "delivery_mode": "signpost",
+      "description": "Introduces caregivers’ emotional and practical support needs, with links to guidance for adult and young carers and people experiencing bereavement.",
+      "formats": [
+        "http://maya-project.eu/icareonto/WrittenText"
+      ],
+      "id": "MAYA-EDU-0012",
+      "iri": "http://maya-project.eu/icareonto/education/resources/MAYA-EDU-0012",
+      "journey_stages": [
+        "After treatment / survivorship",
+        "Before treatment",
+        "During treatment"
+      ],
+      "languages": [
+        "es"
+      ],
+      "needs": [
+        "http://maya-project.eu/icareonto/HealthcareNavigationSupportNeed",
+        "http://maya-project.eu/icareonto/InformationComprehensionSupportNeed",
+        "http://maya-project.eu/icareonto/SocialSupportNeed"
+      ],
+      "permitted_use": "Link / Signpost Only",
+      "provider": "Fundación Kālida",
+      "purposes": [
+        "http://maya-project.eu/icareonto/ExplainHealthTopic",
+        "http://maya-project.eu/icareonto/SupportCareNavigation"
+      ],
+      "resource_date_text": "",
+      "resource_role": "Direct Educational Resource",
+      "review_date": "2026-11-03",
+      "reviewer": "INO",
+      "title": "Apoyo a los cuidadores",
+      "topics": [
+        "http://maya-project.eu/icareonto/MentalHealthAndEmotionalWellbeing"
+      ],
+      "url": "https://www.fundaciokalida.org/es/como-te-ayudamos/apoyo-a-los-cuidadores/"
+    },
+    {
+      "access_conditions": "Public",
+      "accessibility": [],
+      "applicability_notes": "General oncology article, not AYA-specific. Relevant to identity transitions and adjustment; reflective educational support rather than a structured psychological intervention.",
+      "audiences": [
+        "http://maya-project.eu/icareonto/AYASurvivorAudience"
+      ],
+      "completion_status": "Complete",
+      "complexities": [
+        "http://maya-project.eu/icareonto/FoundationalComplexity"
+      ],
+      "curation_status": "Approved",
+      "delivery_mode": "signpost",
+      "description": "Explores changes in identity, self-image, roles and priorities associated with cancer, with practical reflection prompts for understanding and adapting to these changes.",
+      "formats": [
+        "http://maya-project.eu/icareonto/WrittenText"
+      ],
+      "id": "MAYA-EDU-0013",
+      "iri": "http://maya-project.eu/icareonto/education/resources/MAYA-EDU-0013",
+      "journey_stages": [
+        "After treatment / survivorship",
+        "Before treatment",
+        "During treatment"
+      ],
+      "languages": [
+        "es"
+      ],
+      "needs": [
+        "http://maya-project.eu/icareonto/InformationApplicationSupportNeed",
+        "http://maya-project.eu/icareonto/InformationComprehensionSupportNeed",
+        "http://maya-project.eu/icareonto/SelfManagementSupportNeed"
+      ],
+      "permitted_use": "Link / Signpost Only",
+      "provider": "Fundación Kālida",
+      "purposes": [
+        "http://maya-project.eu/icareonto/ExplainHealthTopic",
+        "http://maya-project.eu/icareonto/SupportSelfManagement"
+      ],
+      "resource_date_text": "2026",
+      "resource_role": "Direct Educational Resource",
+      "review_date": "2026-11-03",
+      "reviewer": "INO",
+      "title": "Identidad y cáncer: cómo la enfermedad puede cambiar la percepción de quién eres",
+      "topics": [
+        "http://maya-project.eu/icareonto/FollowUpCare",
+        "http://maya-project.eu/icareonto/MentalHealthAndEmotionalWellbeing"
+      ],
+      "url": "https://www.fundaciokalida.org/es/identitat-i-cancer-percepcio-de-qui-ets/"
+    },
+    {
+      "access_conditions": "Public",
+      "accessibility": [
+        "http://maya-project.eu/icareonto/PlainLanguage"
+      ],
+      "applicability_notes": "General oncology information, with some childhood-treatment context. Includes emergency and service information that requires local interpretation when used across pilots.",
+      "audiences": [
+        "http://maya-project.eu/icareonto/AYASurvivorAudience"
+      ],
+      "completion_status": "Complete",
+      "complexities": [
+        "http://maya-project.eu/icareonto/StandardComplexity"
+      ],
+      "curation_status": "Approved",
+      "delivery_mode": "signpost",
+      "description": "Explains how cancer treatments can affect heart health, including symptoms, cardiovascular assessments, long-term monitoring and practical measures to support cardiovascular wellbeing.",
+      "formats": [
+        "http://maya-project.eu/icareonto/WrittenText"
+      ],
+      "id": "MAYA-EDU-0017",
+      "iri": "http://maya-project.eu/icareonto/education/resources/MAYA-EDU-0017",
+      "journey_stages": [
+        "After treatment / survivorship",
+        "Before treatment",
+        "During treatment"
+      ],
+      "languages": [
+        "en"
+      ],
+      "needs": [
+        "http://maya-project.eu/icareonto/CareTeamCommunicationSupportNeed",
+        "http://maya-project.eu/icareonto/InformationApplicationSupportNeed",
+        "http://maya-project.eu/icareonto/InformationComprehensionSupportNeed",
+        "http://maya-project.eu/icareonto/SelfManagementSupportNeed"
+      ],
+      "permitted_use": "Link / Signpost Only",
+      "provider": "Macmillan Cancer Support",
+      "purposes": [
+        "http://maya-project.eu/icareonto/ExplainHealthTopic",
+        "http://maya-project.eu/icareonto/PrepareForConsultation",
+        "http://maya-project.eu/icareonto/SupportBehaviourChange",
+        "http://maya-project.eu/icareonto/SupportSelfManagement"
+      ],
+      "resource_date_text": "2024",
+      "resource_role": "Direct Educational Resource",
+      "review_date": "2026-11-03",
+      "reviewer": "INO",
+      "title": "Heart health and cancer",
+      "topics": [
+        "http://maya-project.eu/icareonto/CardiovascularLateEffects",
+        "http://maya-project.eu/icareonto/FollowUpCare"
+      ],
+      "url": "https://www.macmillan.org.uk/cancer-information-and-support/impacts-of-cancer/heart-health"
+    },
+    {
+      "access_conditions": "Public",
+      "accessibility": [],
+      "applicability_notes": "Particularly relevant to survivors treated as children, teenagers or young adults. Primarily concerns late effects and follow-up. Treatment-specific monitoring and exercise advice require individual clinical interpretation.",
+      "audiences": [
+        "http://maya-project.eu/icareonto/AYASurvivorAudience"
+      ],
+      "completion_status": "Complete",
+      "complexities": [
+        "http://maya-project.eu/icareonto/StandardComplexity"
+      ],
+      "curation_status": "Approved",
+      "delivery_mode": "signpost",
+      "description": "Explains potential heart problems following cancer treatment in young people, including relevant treatment exposures, symptoms to report, follow-up tests and measures to support heart health.",
+      "formats": [
+        "http://maya-project.eu/icareonto/WrittenText"
+      ],
+      "id": "MAYA-EDU-0018",
+      "iri": "http://maya-project.eu/icareonto/education/resources/MAYA-EDU-0018",
+      "journey_stages": [
+        "After treatment / survivorship",
+        "Before treatment",
+        "During treatment"
+      ],
+      "languages": [
+        "en"
+      ],
+      "needs": [
+        "http://maya-project.eu/icareonto/CareTeamCommunicationSupportNeed",
+        "http://maya-project.eu/icareonto/InformationApplicationSupportNeed",
+        "http://maya-project.eu/icareonto/InformationComprehensionSupportNeed",
+        "http://maya-project.eu/icareonto/SelfManagementSupportNeed"
+      ],
+      "permitted_use": "Link / Signpost Only",
+      "provider": "Children's Cancer and Leukaemia Group (CCLG)",
+      "purposes": [
+        "http://maya-project.eu/icareonto/ExplainHealthTopic",
+        "http://maya-project.eu/icareonto/PrepareForConsultation",
+        "http://maya-project.eu/icareonto/SupportSelfManagement"
+      ],
+      "resource_date_text": "",
+      "resource_role": "Direct Educational Resource",
+      "review_date": "2026-11-03",
+      "reviewer": "INO",
+      "title": "Late Effects: Heart Problems",
+      "topics": [
+        "http://maya-project.eu/icareonto/CardiovascularLateEffects",
+        "http://maya-project.eu/icareonto/FollowUpCare"
+      ],
+      "url": "https://www.cclg.org.uk/about-cancer/living-beyond-cancer/late-effect-factsheets/heart-problems"
+    },
+    {
+      "access_conditions": "Public",
+      "accessibility": [],
+      "applicability_notes": "Youth-focused collection including post-treatment mental health, coping techniques, professional support and family support. Annotations describe the collection’s advertised coverage; individual resources require separate review when selected for use.",
+      "audiences": [
+        "http://maya-project.eu/icareonto/AYASurvivorAudience",
+        "http://maya-project.eu/icareonto/FamilyAudience"
+      ],
+      "completion_status": "Complete",
+      "complexities": [
+        "http://maya-project.eu/icareonto/FoundationalComplexity"
+      ],
+      "curation_status": "Approved",
+      "delivery_mode": "signpost",
+      "description": "Collection of mental-health information for young people affected by cancer, covering anxiety, coping strategies, psychological support, asking for help and support from family and friends, alongside personal experiences.",
+      "formats": [
+        "http://maya-project.eu/icareonto/WrittenText"
+      ],
+      "id": "MAYA-EDU-0019",
+      "iri": "http://maya-project.eu/icareonto/education/resources/MAYA-EDU-0019",
+      "journey_stages": [
+        "After treatment / survivorship",
+        "Before treatment",
+        "During treatment"
+      ],
+      "languages": [
+        "en"
+      ],
+      "needs": [
+        "http://maya-project.eu/icareonto/HealthcareNavigationSupportNeed",
+        "http://maya-project.eu/icareonto/InformationComprehensionSupportNeed",
+        "http://maya-project.eu/icareonto/SelfManagementSupportNeed",
+        "http://maya-project.eu/icareonto/SocialSupportNeed"
+      ],
+      "permitted_use": "Link / Signpost Only",
+      "provider": "Teenage Cancer Trust",
+      "purposes": [
+        "http://maya-project.eu/icareonto/ExplainHealthTopic",
+        "http://maya-project.eu/icareonto/SupportCareNavigation",
+        "http://maya-project.eu/icareonto/SupportSelfManagement"
+      ],
+      "resource_date_text": "",
+      "resource_role": "Direct Educational Resource",
+      "review_date": "2026-11-03",
+      "reviewer": "INO",
+      "title": "Cancer and mental health information",
+      "topics": [
+        "http://maya-project.eu/icareonto/MentalHealthAndEmotionalWellbeing"
+      ],
+      "url": "https://www.teenagecancertrust.org/information-about-cancer/cancer-and-mental-health-information"
+    },
+    {
+      "access_conditions": "Public",
+      "accessibility": [],
+      "applicability_notes": "Youth-focused survivorship guidance. Includes UK-specific employment, education and support references whose applicability varies between pilots. Content can be viewed in 134 different languages.",
+      "audiences": [
+        "http://maya-project.eu/icareonto/AYASurvivorAudience"
+      ],
+      "completion_status": "Complete",
+      "complexities": [
+        "http://maya-project.eu/icareonto/FoundationalComplexity"
+      ],
+      "curation_status": "Approved",
+      "delivery_mode": "signpost",
+      "description": "Practical guidance for young people adjusting to life after cancer treatment, covering relationships, identity, work or education, ongoing effects, emotional recovery and fear of relapse.",
+      "formats": [
+        "http://maya-project.eu/icareonto/WrittenText"
+      ],
+      "id": "MAYA-EDU-0020",
+      "iri": "http://maya-project.eu/icareonto/education/resources/MAYA-EDU-0020",
+      "journey_stages": [
+        "After treatment / survivorship"
+      ],
+      "languages": [
+        "en"
+      ],
+      "needs": [
+        "http://maya-project.eu/icareonto/InformationApplicationSupportNeed",
+        "http://maya-project.eu/icareonto/InformationComprehensionSupportNeed",
+        "http://maya-project.eu/icareonto/SelfManagementSupportNeed",
+        "http://maya-project.eu/icareonto/SocialSupportNeed"
+      ],
+      "permitted_use": "Link / Signpost Only",
+      "provider": "Young Lives vs Cancer",
+      "purposes": [
+        "http://maya-project.eu/icareonto/ExplainHealthTopic",
+        "http://maya-project.eu/icareonto/SupportDisclosure",
+        "http://maya-project.eu/icareonto/SupportSelfManagement"
+      ],
+      "resource_date_text": "",
+      "resource_role": "Direct Educational Resource",
+      "review_date": "2026-11-03",
+      "reviewer": "INO",
+      "title": "Getting Back to Normal After Treatment Ends",
+      "topics": [
+        "http://maya-project.eu/icareonto/FollowUpCare",
+        "http://maya-project.eu/icareonto/MentalHealthAndEmotionalWellbeing"
+      ],
+      "url": "https://www.younglivesvscancer.org.uk/cancer-info-support/body-and-health/getting-back-to-normal-after-treatment-ends/"
+    },
+    {
+      "access_conditions": "Public",
+      "accessibility": [],
+      "applicability_notes": "Youth-focused survivorship guidance addressing relationship adjustment and communication. Includes discussing treatment-related fertility effects with a partner, rather than detailed fertility guidance.",
+      "audiences": [
+        "http://maya-project.eu/icareonto/AYASurvivorAudience"
+      ],
+      "completion_status": "Complete",
+      "complexities": [
+        "http://maya-project.eu/icareonto/FoundationalComplexity"
+      ],
+      "curation_status": "Approved",
+      "delivery_mode": "signpost",
+      "description": "Guidance for young people navigating relationships after cancer treatment, including family dynamics, friendships, romantic relationships, independence and communicating personal needs and concerns.",
+      "formats": [
+        "http://maya-project.eu/icareonto/WrittenText"
+      ],
+      "id": "MAYA-EDU-0021",
+      "iri": "http://maya-project.eu/icareonto/education/resources/MAYA-EDU-0021",
+      "journey_stages": [
+        "After treatment / survivorship"
+      ],
+      "languages": [
+        "en"
+      ],
+      "needs": [
+        "http://maya-project.eu/icareonto/InformationApplicationSupportNeed",
+        "http://maya-project.eu/icareonto/InformationComprehensionSupportNeed",
+        "http://maya-project.eu/icareonto/SocialSupportNeed"
+      ],
+      "permitted_use": "Link / Signpost Only",
+      "provider": "Teenage Cancer Trust",
+      "purposes": [
+        "http://maya-project.eu/icareonto/ExplainHealthTopic",
+        "http://maya-project.eu/icareonto/SupportDisclosure",
+        "http://maya-project.eu/icareonto/SupportSelfManagement"
+      ],
+      "resource_date_text": "",
+      "resource_role": "Direct Educational Resource",
+      "review_date": "2026-11-03",
+      "reviewer": "INO",
+      "title": "Relationships after cancer treatment",
+      "topics": [
+        "http://maya-project.eu/icareonto/FollowUpCare",
+        "http://maya-project.eu/icareonto/MentalHealthAndEmotionalWellbeing"
+      ],
+      "url": "https://www.teenagecancertrust.org/information-about-cancer/relationships-after-cancer-treatment"
+    },
+    {
+      "access_conditions": "Restricted",
+      "accessibility": [
+        "http://maya-project.eu/icareonto/PlainLanguage"
+      ],
+      "applicability_notes": "Designed for people in their 20s, 30s and 40s during and after treatment, including people living with cancer long-term. Uses short sections, reduced text and imagery to accommodate fatigue and reading difficulties. Full-guide access requires name and email registration.",
+      "audiences": [
+        "http://maya-project.eu/icareonto/AYASurvivorAudience"
+      ],
+      "completion_status": "Complete",
+      "complexities": [
+        "http://maya-project.eu/icareonto/FoundationalComplexity"
+      ],
+      "curation_status": "Approved",
+      "delivery_mode": "signpost",
+      "description": "Illustrated nutrition guide for people living with and beyond cancer, supporting informed food choices, understanding conflicting dietary advice and managing eating difficulties through practical guidance and recipes.",
+      "formats": [
+        "http://maya-project.eu/icareonto/WrittenText"
+      ],
+      "id": "MAYA-EDU-0023",
+      "iri": "http://maya-project.eu/icareonto/education/resources/MAYA-EDU-0023",
+      "journey_stages": [
+        "After treatment / survivorship",
+        "During treatment"
+      ],
+      "languages": [
+        "en"
+      ],
+      "needs": [
+        "http://maya-project.eu/icareonto/InformationApplicationSupportNeed",
+        "http://maya-project.eu/icareonto/InformationAppraisalSupportNeed",
+        "http://maya-project.eu/icareonto/InformationComprehensionSupportNeed",
+        "http://maya-project.eu/icareonto/SelfManagementSupportNeed"
+      ],
+      "permitted_use": "Link / Signpost Only",
+      "provider": "Trekstock",
+      "purposes": [
+        "http://maya-project.eu/icareonto/ExplainHealthTopic",
+        "http://maya-project.eu/icareonto/SupportBehaviourChange",
+        "http://maya-project.eu/icareonto/SupportSelfManagement"
+      ],
+      "resource_date_text": "",
+      "resource_role": "Direct Educational Resource",
+      "review_date": "2026-11-03",
+      "reviewer": "INO",
+      "title": "Overwhelmed by diet and cancer advice? You’re not alone",
+      "topics": [
+        "http://maya-project.eu/icareonto/Nutrition"
+      ],
+      "url": "https://www.trekstock.com/get-support/nutrition-guide"
+    },
+    {
+      "access_conditions": "Public",
+      "accessibility": [],
+      "applicability_notes": "Primarily signposting rather than detailed educational guidance. Includes UK-specific services, rights and eligibility criteria. Young carers are a separate audience from young people diagnosed with cancer.",
+      "audiences": [
+        "http://maya-project.eu/icareonto/AYASurvivorAudience",
+        "http://maya-project.eu/icareonto/CaregiverAudience"
+      ],
+      "completion_status": "Complete",
+      "complexities": [
+        "http://maya-project.eu/icareonto/FoundationalComplexity"
+      ],
+      "curation_status": "Approved",
+      "delivery_mode": "signpost",
+      "description": "Information and signposting to age-appropriate cancer support for teenagers, young adults and young carers, including practical, emotional, financial and peer-support services.",
+      "formats": [
+        "http://maya-project.eu/icareonto/WrittenText"
+      ],
+      "id": "MAYA-EDU-0030",
+      "iri": "http://maya-project.eu/icareonto/education/resources/MAYA-EDU-0030",
+      "journey_stages": [
+        "After treatment / survivorship",
+        "Before treatment",
+        "During treatment"
+      ],
+      "languages": [
+        "en"
+      ],
+      "needs": [
+        "http://maya-project.eu/icareonto/HealthcareNavigationSupportNeed",
+        "http://maya-project.eu/icareonto/InformationAccessSupportNeed",
+        "http://maya-project.eu/icareonto/SocialSupportNeed"
+      ],
+      "permitted_use": "Link / Signpost Only",
+      "provider": "Macmillan Cancer Support",
+      "purposes": [
+        "http://maya-project.eu/icareonto/SupportCareNavigation"
+      ],
+      "resource_date_text": "2026",
+      "resource_role": "Direct Educational Resource",
+      "review_date": "2026-11-03",
+      "reviewer": "INO",
+      "title": "Teenagers and young adults affected by cancer",
+      "topics": [
+        "http://maya-project.eu/icareonto/FollowUpCare",
+        "http://maya-project.eu/icareonto/MentalHealthAndEmotionalWellbeing"
+      ],
+      "url": "https://www.macmillan.org.uk/cancer-information-and-support/get-help/teenagers-and-young-adults"
+    }
+  ]
+}

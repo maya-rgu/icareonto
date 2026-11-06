@@ -1,0 +1,3 @@
+-r serialisation/scripts/requirements.txt
+-r instantiation/requirements.txt
+-r education/requirements.txt

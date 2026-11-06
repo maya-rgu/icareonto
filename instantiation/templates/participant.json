@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.1",
+  "recorded_at": "<YYYY-MM-DDThh:mm:ss+hh:mm>",
+  "source": "<source of participant information>",
+  "participant_id": "<pseudonymous-participant-id>",
+  "study_id": "<existing-study-id>",
+  "site_id": "<existing-site-id>",
+  "enrolment": {
+    "id": "<enrolment-id>", "enrolled_at": "<YYYY-MM-DDThh:mm:ss+hh:mm>",
+    "status": "<screening | enrolled | active | completed | withdrawn>",
+    "phase_id": null,
+    "arm_id": null
+  },
+  "age_years": null,
+  "survivor_role": null,
+  "preferences": {
+    "language_tag": null,
+    "detail_level": null,
+    "communication_channel": null,
+    "contact_time": null
+  },
+  "attributes": null,
+  "consent": null,
+  "sections": {
+    "clinical_profile": null,
+    "cancer_history": null,
+    "measurements": null,
+    "cv_risk": null,
+    "care_plans": null,
+    "exercise": null,
+    "nutrition": null,
+    "lifestyle": null,
+    "social_context": null,
+    "education": null,
+    "dialogue": null,
+    "agents": null,
+    "digital_services": null,
+    "governance": null,
+    "person_context": null,
+    "pilot_context": null,
+    "common": null
+  }
+}

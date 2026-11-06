@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "iCARE participant knowledge record",
+  "description": "Participant enrolment with optional grouped clinical, cancer-history, risk, care, exercise and other ontology records. Omitted information is not inferred.",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "recorded_at", "source", "participant_id", "study_id", "site_id", "enrolment"],
+  "properties": {
+    "schema_version": {"enum": ["1.0", "1.1"], "description": "Input profile version; 1.1 adds grouped ontology records."},
+    "sections": {"$ref": "sections.schema.json"},
+    "recorded_at": {"type": "string", "format": "date-time", "description": "When the participant information was recorded; include Z or an explicit offset."},
+    "source": {"type": "string", "minLength": 1, "description": "Description of the source of these statements, e.g. participant-confirmed enrolment interview."},
+    "participant_id": {"$ref": "#/$defs/id", "description": "Pseudonymous participant identifier, unique across this deployment. Reuse it to reference the same person."},
+    "study_id": {"$ref": "#/$defs/id", "description": "Existing study identifier in the registered pilot setup."},
+    "site_id": {"$ref": "#/$defs/id", "description": "Existing site identifier. Site details are referenced, not copied."},
+    "enrolment": {
+      "type": "object", "additionalProperties": false, "required": ["id", "enrolled_at", "status"],
+      "properties": {
+        "id": {"$ref": "#/$defs/id", "description": "Enrolment record identifier, unique within the participant's seed."},
+        "enrolled_at": {"type": "string", "format": "date-time", "description": "Start of enrolment; include Z or an explicit UTC offset."},
+        "status": {"enum": ["screening", "enrolled", "active", "completed", "withdrawn"], "description": "Explicit participation status; no status is inferred from consent."},
+        "phase_id": {"$ref": "#/$defs/id", "description": "Optional phase declared in the site's study setup."},
+        "arm_id": {"$ref": "#/$defs/id", "description": "Optional assigned study arm declared in the setup."}
+      }
+    },
+    "age_years": {"type": "number", "minimum": 0, "maximum": 130, "description": "Optional age snapshot at recorded_at, not an automatically advancing age or eligibility decision."},
+    "survivor_role": {"enum": ["cancer_survivor", "aya_cancer_survivor"], "description": "Optional explicitly confirmed survivor role. It is never inferred from current age."},
+    "preferences": {
+      "type": "object", "additionalProperties": false, "minProperties": 1,
+      "properties": {
+        "language_tag": {"type": "string", "pattern": "^[A-Za-z]{2,8}(-[A-Za-z0-9]{1,8})*$", "description": "Participant's supplied language preference, e.g. es-ES. Syntax subset only; no language-registry verification."},
+        "detail_level": {"enum": ["brief", "detailed"], "description": "Preferred information detail."},
+        "communication_channel": {"enum": ["smart_mirror", "mobile_app", "email", "sms", "telephone", "in_person"], "description": "Preferred communication channel."},
+        "contact_time": {"enum": ["morning", "afternoon", "evening", "night", "any_time"], "description": "Preferred time of day; does not create a scheduled contact."}
+      }
+    },
+    "attributes": {
+      "type": "array", "minItems": 1, "description": "Optional textual person attributes; these do not create specialised clinical records or coded diagnoses.",
+      "items": {
+        "type": "object", "additionalProperties": false, "required": ["id", "name", "value"],
+        "properties": {
+          "id": {"$ref": "#/$defs/id", "description": "Stable attribute record identifier within this participant."},
+          "name": {"type": "string", "minLength": 1, "description": "Readable attribute name."},
+          "value": {"type": "string", "minLength": 1, "description": "Supplied textual attribute value."}
+        }
+      }
+    },
+    "consent": {
+      "type": "object", "additionalProperties": false, "required": ["id", "status", "valid_from"],
+      "description": "Optional consent metadata. This profile records status and dates, not consent-purpose enforcement or a complete consent instrument.",
+      "properties": {
+        "id": {"$ref": "#/$defs/id"},
+        "status": {"enum": ["pending", "granted", "refused", "withdrawn", "expired"], "description": "Supplied consent status, never defaulted to granted."},
+        "valid_from": {"type": "string", "format": "date-time", "description": "Start of the supplied consent record's applicability."},
+        "valid_until": {"type": "string", "format": "date-time", "description": "Optional end of applicability; must be later than valid_from."}
+      }
+    }
+  },
+  "$defs": {"id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,79}$"}}
+}

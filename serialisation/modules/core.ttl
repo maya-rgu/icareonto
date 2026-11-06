@@ -1,0 +1,371 @@
+@prefix icare: <http://maya-project.eu/icareonto/> .
+@prefix meta: <http://maya-project.eu/icareonto/metadata#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+icare:activityExecutionFollowsSchedule a owl:ObjectProperty ;
+    rdfs:label "activity execution follows schedule"@en ;
+    rdfs:domain icare:ActivityExecution ;
+    rdfs:isDefinedBy icare:core ;
+    rdfs:range icare:Schedule ;
+    skos:definition "Relates an activity execution to its schedule."@en .
+
+icare:activityExecutionHasIdentifier a owl:DatatypeProperty ;
+    rdfs:label "activity execution identifier"@en ;
+    rdfs:domain icare:ActivityExecution ;
+    rdfs:isDefinedBy icare:core ;
+    rdfs:range xsd:string ;
+    skos:definition "Records an identifier for an activity execution."@en .
+
+icare:activityExecutionHasSource a owl:ObjectProperty ;
+    rdfs:label "activity execution has source"@en ;
+    rdfs:domain icare:ActivityExecution ;
+    rdfs:isDefinedBy icare:core ;
+    rdfs:range icare:DataSource ;
+    skos:definition "Relates an activity execution to the source that recorded, generated, or supplied evidence for it."@en .
+
+icare:activityExecutionOccursAt a owl:ObjectProperty ;
+    rdfs:label "activity execution occurs at"@en ;
+    rdfs:domain icare:ActivityExecution ;
+    rdfs:isDefinedBy icare:core ;
+    rdfs:range icare:Timepoint ;
+    skos:definition "Relates an activity execution to the timepoint at which it occurred."@en .
+
+icare:activityExecutionOccursDuring a owl:ObjectProperty ;
+    rdfs:label "activity execution occurs during"@en ;
+    rdfs:domain icare:ActivityExecution ;
+    rdfs:isDefinedBy icare:core ;
+    rdfs:range icare:TimeInterval ;
+    skos:definition "Relates an activity execution to the interval during which it occurred."@en .
+
+icare:activityExecutionUsesDevice a owl:ObjectProperty ;
+    rdfs:label "activity execution uses device"@en ;
+    rdfs:domain icare:ActivityExecution ;
+    rdfs:isDefinedBy icare:core ;
+    rdfs:range icare:Device ;
+    skos:definition "Relates an activity execution to a physical device used during its performance or recording."@en .
+
+icare:dataSourceDescription a owl:DatatypeProperty ;
+    rdfs:label "data source description"@en ;
+    rdfs:domain icare:DataSource ;
+    rdfs:isDefinedBy icare:core ;
+    rdfs:range xsd:string ;
+    skos:definition "Records a textual description of the data source and what it contributes."@en .
+
+icare:dataSourceIdentifier a owl:DatatypeProperty ;
+    rdfs:label "data source identifier"@en ;
+    rdfs:domain icare:DataSource ;
+    rdfs:isDefinedBy icare:core ;
+    rdfs:range xsd:string ;
+    skos:definition "Records an identifier for a data source."@en .
+
+icare:dataSourceName a owl:DatatypeProperty ;
+    rdfs:label "data source name"@en ;
+    rdfs:domain icare:DataSource ;
+    rdfs:isDefinedBy icare:core ;
+    rdfs:range xsd:string ;
+    skos:definition "Records the display name or common name of a data source."@en .
+
+icare:frequencyValue a owl:DatatypeProperty ;
+    rdfs:label "frequency value"@en ;
+    rdfs:domain icare:Frequency ;
+    rdfs:isDefinedBy icare:core ;
+    rdfs:range xsd:string ;
+    skos:definition "Records the frequency value for Frequency."@en .
+
+icare:intervalDuration a owl:DatatypeProperty ;
+    rdfs:label "interval duration"@en ;
+    rdfs:domain icare:TimeInterval ;
+    rdfs:isDefinedBy icare:core ;
+    rdfs:range xsd:duration ;
+    skos:definition "Records the duration of a temporal interval when represented directly."@en .
+
+icare:intervalEndsAt a owl:ObjectProperty ;
+    rdfs:label "interval ends at"@en ;
+    rdfs:domain icare:TimeInterval ;
+    rdfs:isDefinedBy icare:core ;
+    rdfs:range icare:Timepoint ;
+    skos:definition "Relates a temporal interval to its ending timepoint."@en .
+
+icare:intervalStartsAt a owl:ObjectProperty ;
+    rdfs:label "interval starts at"@en ;
+    rdfs:domain icare:TimeInterval ;
+    rdfs:isDefinedBy icare:core ;
+    rdfs:range icare:Timepoint ;
+    skos:definition "Relates a temporal interval to its starting timepoint."@en .
+
+icare:localeCountryCode a owl:DatatypeProperty ;
+    rdfs:label "locale country code"@en ;
+    rdfs:domain icare:Locale ;
+    rdfs:isDefinedBy icare:core ;
+    rdfs:range xsd:string ;
+    skos:definition "The country or territory code associated with the locale using ISO 3166-1 alpha-2 standard two-letter code."@en .
+
+icare:localeTag a owl:DatatypeProperty ;
+    rdfs:label "locale tag"@en ;
+    rdfs:domain icare:Locale ;
+    rdfs:isDefinedBy icare:core ;
+    rdfs:range xsd:language ;
+    skos:definition "A language code followed by a hyphen and a 2-letter uppercase country code (ISO 3166) e.g. it-IT."@en .
+
+icare:localeTimeZoneIdentifier a owl:DatatypeProperty ;
+    rdfs:label "locale time zone identifier"@en ;
+    rdfs:domain icare:Locale ;
+    rdfs:isDefinedBy icare:core ;
+    rdfs:range xsd:string ;
+    skos:definition "The primary time zone identifier associated with the locale using the standard IANA Time Zone Database naming convention, specifying the region and main city (e.g., Europe/Rome)."@en .
+
+icare:scheduleHasFrequency a owl:ObjectProperty ;
+    rdfs:label "schedule has frequency"@en ;
+    rdfs:domain icare:Schedule ;
+    rdfs:isDefinedBy icare:core ;
+    rdfs:range icare:Frequency ;
+    skos:definition "Relates Schedule to Frequency."@en .
+
+icare:scheduleHasPreferredTimeOfDay a owl:ObjectProperty ;
+    rdfs:label "has preferred time of day"@en ;
+    rdfs:domain icare:Schedule ;
+    rdfs:isDefinedBy icare:core ;
+    rdfs:range icare:TimeOfDay ;
+    skos:definition "Relates Schedule to Time Of Day."@en .
+
+icare:scheduleHasRecurrencePattern a owl:ObjectProperty ;
+    rdfs:label "schedule has recurrence pattern"@en ;
+    rdfs:domain icare:Schedule ;
+    rdfs:isDefinedBy icare:core ;
+    rdfs:range icare:RecurrencePattern ;
+    skos:definition "Relates Schedule to Recurrence Pattern."@en .
+
+icare:scheduleIncludesTimepoint a owl:ObjectProperty ;
+    rdfs:label "schedule includes timepoint"@en ;
+    rdfs:domain icare:Schedule ;
+    rdfs:isDefinedBy icare:core ;
+    rdfs:range icare:Timepoint ;
+    skos:definition "Relates a schedule to one of its planned timepoints."@en .
+
+icare:scheduleNextDueAt a owl:ObjectProperty ;
+    rdfs:label "schedule next due at"@en ;
+    rdfs:domain icare:Schedule ;
+    rdfs:isDefinedBy icare:core ;
+    rdfs:range icare:Timepoint ;
+    skos:definition "Relates a schedule to the next planned or expected due time."@en .
+
+icare:scheduleValidDuring a owl:ObjectProperty ;
+    rdfs:label "schedule valid during"@en ;
+    rdfs:domain icare:Schedule ;
+    rdfs:isDefinedBy icare:core ;
+    rdfs:range icare:TimeInterval ;
+    skos:definition "Relates a schedule to the interval during which it applies."@en .
+
+icare:timepointDateTime a owl:DatatypeProperty ;
+    rdfs:label "timepoint datetime"@en ;
+    rdfs:domain icare:Timepoint ;
+    rdfs:isDefinedBy icare:core ;
+    rdfs:range xsd:dateTime ;
+    skos:definition "Records the concrete date/time represented by a timepoint."@en .
+
+icare:timepointLabel a owl:DatatypeProperty ;
+    rdfs:label "timepoint label"@en ;
+    rdfs:domain icare:Timepoint ;
+    rdfs:isDefinedBy icare:core ;
+    rdfs:range xsd:string ;
+    skos:definition "Records a human-readable label for a timepoint, such as baseline, morning check-in, or follow-up."@en .
+
+icare:AfternoonTimeOfDay a icare:TimeOfDay,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Afternoon time of day"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:core ;
+    skos:definition "A time-of-day value representing the afternoon period."@en ;
+    skos:inScheme icare:TimeOfDayScheme ;
+    skos:prefLabel "Afternoon time of day"@en ;
+    skos:topConceptOf icare:TimeOfDayScheme .
+
+icare:AnyTimeOfDay a icare:TimeOfDay,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Any time of day"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:core ;
+    skos:definition "A time-of-day value indicating that no particular period of the day is required or preferred."@en ;
+    skos:inScheme icare:TimeOfDayScheme ;
+    skos:prefLabel "Any time of day"@en ;
+    skos:topConceptOf icare:TimeOfDayScheme .
+
+icare:AsNeededRecurrence a icare:RecurrencePattern,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "As needed recurrence"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:core ;
+    skos:definition "A recurrence pattern in which an activity occurs when needed rather than at fixed recurring intervals."@en ;
+    skos:inScheme icare:RecurrencePatternScheme ;
+    skos:prefLabel "As needed recurrence"@en ;
+    skos:topConceptOf icare:RecurrencePatternScheme .
+
+icare:CustomRecurrence a icare:RecurrencePattern,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Custom recurrence"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:core ;
+    skos:definition "A recurrence pattern defined by a schedule that does not correspond to the standard daily, weekly or monthly patterns."@en ;
+    skos:inScheme icare:RecurrencePatternScheme ;
+    skos:prefLabel "Custom recurrence"@en ;
+    skos:topConceptOf icare:RecurrencePatternScheme .
+
+icare:DailyRecurrence a icare:RecurrencePattern,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Daily recurrence"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:core ;
+    skos:definition "A recurrence pattern in which an activity is expected to recur each day."@en ;
+    skos:inScheme icare:RecurrencePatternScheme ;
+    skos:prefLabel "Daily recurrence"@en ;
+    skos:topConceptOf icare:RecurrencePatternScheme .
+
+icare:Device a owl:Class ;
+    rdfs:label "Device"@en ;
+    rdfs:isDefinedBy icare:core ;
+    skos:definition "A physical device used to support interaction, collect data or provide access to a digital service."@en .
+
+icare:EveningTimeOfDay a icare:TimeOfDay,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Evening time of day"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:core ;
+    skos:definition "A time-of-day value representing the evening period."@en ;
+    skos:inScheme icare:TimeOfDayScheme ;
+    skos:prefLabel "Evening time of day"@en ;
+    skos:topConceptOf icare:TimeOfDayScheme .
+
+icare:MonthlyRecurrence a icare:RecurrencePattern,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Monthly recurrence"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:core ;
+    skos:definition "A recurrence pattern in which an activity is expected to recur each month."@en ;
+    skos:inScheme icare:RecurrencePatternScheme ;
+    skos:prefLabel "Monthly recurrence"@en ;
+    skos:topConceptOf icare:RecurrencePatternScheme .
+
+icare:MorningTimeOfDay a icare:TimeOfDay,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Morning time of day"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:core ;
+    skos:definition "A time-of-day value representing the morning period."@en ;
+    skos:inScheme icare:TimeOfDayScheme ;
+    skos:prefLabel "Morning time of day"@en ;
+    skos:topConceptOf icare:TimeOfDayScheme .
+
+icare:NightTimeOfDay a icare:TimeOfDay,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Night time of day"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:core ;
+    skos:definition "A time-of-day value representing the night period."@en ;
+    skos:inScheme icare:TimeOfDayScheme ;
+    skos:prefLabel "Night time of day"@en ;
+    skos:topConceptOf icare:TimeOfDayScheme .
+
+icare:WeeklyRecurrence a icare:RecurrencePattern,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Weekly recurrence"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:core ;
+    skos:definition "A recurrence pattern in which an activity is expected to recur each week."@en ;
+    skos:inScheme icare:RecurrencePatternScheme ;
+    skos:prefLabel "Weekly recurrence"@en ;
+    skos:topConceptOf icare:RecurrencePatternScheme .
+
+icare:Frequency a owl:Class ;
+    rdfs:label "Frequency"@en ;
+    rdfs:isDefinedBy icare:core ;
+    skos:definition "A value describing how often a scheduled activity should occur."@en .
+
+icare:TemporalEntity a owl:Class ;
+    rdfs:label "Temporal Entity"@en ;
+    rdfs:isDefinedBy icare:core ;
+    skos:definition "A general temporal entity used to group instants and intervals."@en .
+
+icare:Locale a owl:Class ;
+    rdfs:label "Locale"@en ;
+    rdfs:isDefinedBy icare:core ;
+    skos:definition "A regional, linguistic and operational context used to localise services, dialogue and knowledge resources."@en .
+
+icare:DataSource a owl:Class ;
+    rdfs:label "Data Source"@en ;
+    rdfs:isDefinedBy icare:core ;
+    skos:definition "A source from which a record, measurement, or contextual statement is obtained, such as a device, clinical record, questionnaire, self-report, or service."@en .
+
+icare:TimeInterval a owl:Class ;
+    rdfs:label "Time Interval"@en ;
+    rdfs:isDefinedBy icare:core ;
+    rdfs:subClassOf icare:TemporalEntity ;
+    skos:definition "A temporal interval with duration or start and end bounds, used for treatment periods, schedule validity, and risk-profile validity."@en .
+
+icare:ActivityExecution a owl:Class ;
+    rdfs:label "Activity Execution"@en ;
+    rdfs:isDefinedBy icare:core ;
+    skos:definition "An occurrence that realises or documents the execution of a planned activity, service interaction, assessment, session, or measurement."@en .
+
+icare:RecurrencePattern a owl:Class ;
+    rdfs:label "Recurrence Pattern"@en ;
+    rdfs:isDefinedBy icare:core ;
+    rdfs:subClassOf skos:Concept ;
+    skos:definition "A controlled concept classifying the repeated temporal pattern according to which an activity, assessment, intervention or reminder is scheduled, such as daily, weekly or monthly."@en .
+
+icare:TimeOfDay a owl:Class ;
+    rdfs:label "Time Of Day"@en ;
+    rdfs:isDefinedBy icare:core ;
+    rdfs:subClassOf skos:Concept ;
+    skos:definition "A controlled concept representing a broad period within a day during which an activity, communication or reminder is preferred or scheduled, such as morning, afternoon or evening."@en .
+
+icare:Schedule a owl:Class ;
+    rdfs:label "Schedule"@en ;
+    rdfs:isDefinedBy icare:core ;
+    skos:definition "A structured plan for when an activity, protocol, visit, or reminder should occur."@en .
+
+icare:Timepoint a owl:Class ;
+    rdfs:label "Timepoint"@en ;
+    rdfs:isDefinedBy icare:core ;
+    rdfs:subClassOf icare:TemporalEntity ;
+    skos:definition "A temporal point or instant used to timestamp records, events, assessments, schedules, and model executions."@en .
+
+icare:RecurrencePatternScheme a owl:NamedIndividual,
+        skos:ConceptScheme ;
+    rdfs:label "Recurrence Pattern scheme"@en ;
+    skos:hasTopConcept icare:AsNeededRecurrence,
+        icare:CustomRecurrence,
+        icare:DailyRecurrence,
+        icare:MonthlyRecurrence,
+        icare:WeeklyRecurrence .
+
+icare:TimeOfDayScheme a owl:NamedIndividual,
+        skos:ConceptScheme ;
+    rdfs:label "Time Of Day scheme"@en ;
+    skos:hasTopConcept icare:AfternoonTimeOfDay,
+        icare:AnyTimeOfDay,
+        icare:EveningTimeOfDay,
+        icare:MorningTimeOfDay,
+        icare:NightTimeOfDay .
+
+icare:core a owl:Ontology ;
+    rdfs:label "Core"@en ;
+    meta:reviewStatus "Draft" ;
+    rdfs:comment "Defines module-independent concepts for time, schedules, source attribution, devices, locales and recorded activity executions."@en ;
+    owl:imports <http://maya-project.eu/icareonto/imports/skos-reference>,
+        icare:metadata ;
+    owl:versionIRI <http://maya-project.eu/icareonto/releases/0.1.0-draft/core> ;
+    owl:versionInfo "0.1.0-draft" .
+

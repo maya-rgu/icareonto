@@ -1,0 +1,47 @@
+@prefix icare: <http://maya-project.eu/icareonto/> .
+@prefix meta: <http://maya-project.eu/icareonto/metadata#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+icare:alignments a owl:Ontology ;
+    rdfs:label "iCARE Onto external alignments"@en ;
+    meta:reviewStatus "Draft" ;
+    rdfs:comment "Semantic relationships connecting iCARE Onto entities to external ontology concepts while preserving their domain-specific meaning."@en ;
+    owl:imports icare:agent,
+        <http://maya-project.eu/icareonto/imports/prov-reference>,
+        icare:metadata,
+        icare:provenance-governance ;
+    owl:versionIRI <http://maya-project.eu/icareonto/releases/0.1.0-draft/alignments> ;
+    owl:versionInfo "0.1.0-draft" .
+
+icare:Agent rdfs:subClassOf prov:Agent .
+
+icare:ConsentRecord rdfs:subClassOf prov:Entity .
+
+icare:ParticipantKnowledgeGraph rdfs:subClassOf prov:Collection .
+
+[] a owl:Axiom ;
+    meta:reviewStatus "Approved" ;
+    rdfs:comment "A participant KG is a collection of provenance-bearing entities."@en ;
+    rdfs:seeAlso <https://www.w3.org/TR/prov-o/> ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource icare:ParticipantKnowledgeGraph ;
+    owl:annotatedTarget prov:Collection .
+
+[] a owl:Axiom ;
+    meta:reviewStatus "Approved" ;
+    rdfs:comment "A consent record is a provenance-bearing information entity."@en ;
+    rdfs:seeAlso <https://www.w3.org/TR/prov-o/> ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource icare:ConsentRecord ;
+    owl:annotatedTarget prov:Entity .
+
+[] a owl:Axiom ;
+    meta:reviewStatus "Approved" ;
+    rdfs:comment "The local Agent is scoped to MAYA/iCARE agents and is therefore narrower than prov:Agent."@en ;
+    rdfs:seeAlso <https://www.w3.org/TR/prov-o/> ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource icare:Agent ;
+    owl:annotatedTarget prov:Agent .
+

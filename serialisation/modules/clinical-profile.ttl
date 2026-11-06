@@ -1,0 +1,621 @@
+@prefix icare: <http://maya-project.eu/icareonto/> .
+@prefix meta: <http://maya-project.eu/icareonto/metadata#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+icare:CardiovascularCondition a owl:Class ;
+    rdfs:label "Cardiovascular Condition"@en ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    rdfs:subClassOf icare:ClinicalCondition ;
+    skos:definition "A clinical condition affecting the heart or vascular system, including hypertension, cardiomyopathy, arrhythmia, heart failure, or other cardiovascular late effects."@en .
+
+icare:MetabolicCondition a owl:Class ;
+    rdfs:label "Metabolic Condition"@en ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    rdfs:subClassOf icare:ClinicalCondition ;
+    skos:definition "A clinical condition involving metabolic risk or dysfunction, such as diabetes, dyslipidaemia, obesity, insulin resistance, or metabolic syndrome."@en .
+
+icare:PsychosocialCondition a owl:Class ;
+    rdfs:label "Psychosocial Condition"@en ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    rdfs:subClassOf icare:ClinicalCondition ;
+    skos:definition "A condition or concern affecting psychological, emotional, social, or quality-of-life status."@en .
+
+icare:TreatmentRelatedCondition a owl:Class ;
+    rdfs:label "Treatment Related Condition"@en ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    rdfs:subClassOf icare:ClinicalCondition ;
+    skos:definition "A condition attributed to, associated with, or monitored because of prior cancer treatment exposure."@en .
+
+icare:assessmentHasInterpretation a owl:ObjectProperty ;
+    rdfs:label "has interpretation"@en ;
+    rdfs:domain icare:ClinicalAssessment ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    rdfs:range icare:ClinicalInterpretation ;
+    skos:definition "Relates an assessment to its interpretation or summary."@en .
+
+icare:assessmentRecordRecordsAssessment a owl:ObjectProperty ;
+    rdfs:label "records assessment"@en ;
+    rdfs:domain icare:ClinicalAssessmentRecord ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    rdfs:range icare:ClinicalAssessment ;
+    skos:definition "Relates Clinical Assessment Record to Clinical Assessment."@en .
+
+icare:clinicalAssessmentUsesMeasurement a owl:ObjectProperty ;
+    rdfs:label "uses measurement"@en ;
+    rdfs:domain icare:ClinicalAssessment ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    rdfs:range icare:MeasurementEvent ;
+    skos:definition "Relates Clinical Assessment to Measurement Event."@en .
+
+icare:clinicalInterpretationText a owl:DatatypeProperty ;
+    rdfs:label "interpretation text"@en ;
+    rdfs:domain icare:ClinicalInterpretation ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    rdfs:range xsd:string ;
+    skos:definition "Records the textual interpretation."@en .
+
+icare:clinicalProfileHasCurrentStatus a owl:ObjectProperty ;
+    rdfs:label "has current status"@en ;
+    rdfs:domain icare:ClinicalProfile ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    rdfs:range icare:ClinicalStatus ;
+    skos:definition "Relates a clinical profile to an overall current clinical status summary."@en .
+
+icare:clinicalProfileIncludesRecord a owl:ObjectProperty ;
+    rdfs:label "includes record"@en ;
+    rdfs:domain icare:ClinicalProfile ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    rdfs:range icare:ClinicalRecord ;
+    skos:definition "Relates Clinical Profile to Clinical Record."@en .
+
+icare:clinicalRecordHasSource a owl:ObjectProperty ;
+    rdfs:label "has source"@en ;
+    rdfs:domain icare:ClinicalRecord ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    rdfs:range icare:DataSource ;
+    skos:definition "Relates Clinical Record to Data Source."@en .
+
+icare:clinicalRecordIdentifier a owl:DatatypeProperty ;
+    rdfs:label "clinical record identifier"@en ;
+    rdfs:domain icare:ClinicalRecord ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    rdfs:range xsd:string ;
+    skos:definition "Records the clinical record identifier for Clinical Record."@en .
+
+icare:clinicalRecordRecordedAt a owl:ObjectProperty ;
+    rdfs:label "recorded at"@en ;
+    rdfs:domain icare:ClinicalRecord ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    rdfs:range icare:Timepoint ;
+    skos:definition "Relates Clinical Record to Timepoint."@en .
+
+icare:conditionCode a owl:DatatypeProperty ;
+    rdfs:label "condition code"@en ;
+    rdfs:domain icare:ClinicalCondition ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    rdfs:range xsd:string ;
+    skos:definition "Records a code identifying the clinical condition within the specified code system."@en .
+
+icare:conditionCodeSystem a owl:DatatypeProperty ;
+    rdfs:label "condition code system"@en ;
+    rdfs:domain icare:ClinicalCondition ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    rdfs:range xsd:anyURI ;
+    skos:definition "Identifies the terminology or code system that defines the condition code."@en .
+
+icare:conditionCodeVersion a owl:DatatypeProperty ;
+    rdfs:label "condition code version"@en ;
+    rdfs:domain icare:ClinicalCondition ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    rdfs:range xsd:string ;
+    skos:definition "Identifies the version of the terminology from which the condition code was selected."@en .
+
+icare:conditionName a owl:DatatypeProperty ;
+    rdfs:label "condition name"@en ;
+    rdfs:domain icare:ClinicalCondition ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    rdfs:range xsd:string ;
+    skos:definition "Records the human-readable name of a clinical condition."@en .
+
+icare:conditionRecordHasClinicalStatus a owl:ObjectProperty ;
+    rdfs:label "has clinical status"@en ;
+    rdfs:domain icare:ClinicalConditionRecord ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    rdfs:range icare:ClinicalStatus ;
+    skos:definition "Relates Clinical Condition Record to Clinical Status."@en .
+
+icare:conditionRecordHasOnset a owl:ObjectProperty ;
+    rdfs:label "record has onset"@en ;
+    rdfs:domain icare:ClinicalConditionRecord ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    rdfs:range icare:Timepoint ;
+    skos:definition "Relates a condition record to the time the condition began or was first observed."@en .
+
+icare:conditionRecordHasSeverity a owl:ObjectProperty ;
+    rdfs:label "has severity"@en ;
+    rdfs:domain icare:ClinicalConditionRecord ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    rdfs:range icare:Severity ;
+    skos:definition "Relates Clinical Condition Record to Severity."@en .
+
+icare:conditionRecordRecordsCondition a owl:ObjectProperty ;
+    rdfs:label "records condition"@en ;
+    rdfs:domain icare:ClinicalConditionRecord ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    rdfs:range icare:ClinicalCondition ;
+    skos:definition "Relates Clinical Condition Record to Clinical Condition."@en .
+
+icare:conditionRecordResolvedAt a owl:ObjectProperty ;
+    rdfs:label "record resolved at"@en ;
+    rdfs:domain icare:ClinicalConditionRecord ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    rdfs:range icare:Timepoint ;
+    skos:definition "Relates a condition record to the time the condition resolved, if known."@en .
+
+icare:conditionRecordValidDuring a owl:ObjectProperty ;
+    rdfs:label "record valid during"@en ;
+    rdfs:domain icare:ClinicalConditionRecord ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    rdfs:range icare:TimeInterval ;
+    skos:definition "Relates a condition record to the interval during which the condition status applies."@en .
+
+icare:doseFrequency a owl:DatatypeProperty ;
+    rdfs:label "dose frequency"@en ;
+    rdfs:domain icare:MedicationDose ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    rdfs:range xsd:string ;
+    skos:definition "Records dosing frequency as text."@en .
+
+icare:doseUnit a owl:DatatypeProperty ;
+    rdfs:label "dose unit"@en ;
+    rdfs:domain icare:MedicationDose ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    rdfs:range xsd:string ;
+    skos:definition "Records the medication dose unit."@en .
+
+icare:doseValue a owl:DatatypeProperty ;
+    rdfs:label "dose value"@en ;
+    rdfs:domain icare:MedicationDose ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    rdfs:range xsd:decimal ;
+    skos:definition "Records the numeric medication dose."@en .
+
+icare:findingDerivedFromMeasurement a owl:ObjectProperty ;
+    rdfs:label "derived from measurement"@en ;
+    rdfs:domain icare:ClinicalFinding ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    rdfs:range icare:MeasurementEvent ;
+    skos:definition "Relates a clinical finding to supporting measurement evidence."@en .
+
+icare:findingName a owl:DatatypeProperty ;
+    rdfs:label "finding name"@en ;
+    rdfs:domain icare:ClinicalFinding ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    rdfs:range xsd:string ;
+    skos:definition "Records the finding name or label."@en .
+
+icare:findingRecordRecordsFinding a owl:ObjectProperty ;
+    rdfs:label "records finding"@en ;
+    rdfs:domain icare:ClinicalFindingRecord ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    rdfs:range icare:ClinicalFinding ;
+    skos:definition "Relates a finding record to the clinical finding being documented."@en .
+
+icare:medicationCode a owl:DatatypeProperty ;
+    rdfs:label "medication code"@en ;
+    rdfs:domain icare:Medication ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    rdfs:range xsd:string ;
+    skos:definition "Records a code identifying the medication or medication class within the specified code system."@en .
+
+icare:medicationCodeSystem a owl:DatatypeProperty ;
+    rdfs:label "medication code system"@en ;
+    rdfs:domain icare:Medication ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    rdfs:range xsd:anyURI ;
+    skos:definition "Identifies the terminology or classification system that defines the medication code."@en .
+
+icare:medicationCodeVersion a owl:DatatypeProperty ;
+    rdfs:label "medication code version"@en ;
+    rdfs:domain icare:Medication ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    rdfs:range xsd:string ;
+    skos:definition "Identifies the version of the terminology from which the medication code was selected."@en .
+
+icare:medicationName a owl:DatatypeProperty ;
+    rdfs:label "medication name"@en ;
+    rdfs:domain icare:Medication ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    rdfs:range xsd:string ;
+    skos:definition "Records the medication name for Medication."@en .
+
+icare:medicationRecordHasDose a owl:ObjectProperty ;
+    rdfs:label "record has dose"@en ;
+    rdfs:domain icare:MedicationRecord ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    rdfs:range icare:MedicationDose ;
+    skos:definition "Relates a medication record to dose information."@en .
+
+icare:medicationRecordHasStatus a owl:ObjectProperty ;
+    rdfs:label "record has status"@en ;
+    rdfs:domain icare:MedicationRecord ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    rdfs:range icare:MedicationStatus ;
+    skos:definition "Relates a medication record to its current or recorded medication status."@en .
+
+icare:medicationRecordPrescribedFor a owl:ObjectProperty ;
+    rdfs:label "prescribed for"@en ;
+    rdfs:domain icare:MedicationRecord ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    rdfs:range icare:ClinicalCondition ;
+    skos:definition "Relates Medication Record to Clinical Condition."@en .
+
+icare:medicationRecordRecordsMedication a owl:ObjectProperty ;
+    rdfs:label "records medication"@en ;
+    rdfs:domain icare:MedicationRecord ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    rdfs:range icare:Medication ;
+    skos:definition "Relates Medication Record to Medication."@en .
+
+icare:personHasClinicalProfile a owl:ObjectProperty ;
+    rdfs:label "has clinical profile"@en ;
+    rdfs:domain icare:Person ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    rdfs:range icare:ClinicalProfile ;
+    skos:definition "Relates Person to Clinical Profile."@en .
+
+icare:severityHasSeverityLevel a owl:ObjectProperty ;
+    rdfs:label "has severity level"@en ;
+    rdfs:domain icare:Severity ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    rdfs:range icare:ClinicalSeverityLevel ;
+    skos:definition "Records the severity level, category or grade."@en .
+
+icare:symptomCode a owl:DatatypeProperty ;
+    rdfs:label "symptom code"@en ;
+    rdfs:domain icare:Symptom ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    rdfs:range xsd:string ;
+    skos:definition "Records a code identifying the symptom within the specified code system."@en .
+
+icare:symptomCodeSystem a owl:DatatypeProperty ;
+    rdfs:label "symptom code system"@en ;
+    rdfs:domain icare:Symptom ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    rdfs:range xsd:anyURI ;
+    skos:definition "Identifies the terminology or code system that defines the symptom code."@en .
+
+icare:symptomCodeVersion a owl:DatatypeProperty ;
+    rdfs:label "symptom code version"@en ;
+    rdfs:domain icare:Symptom ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    rdfs:range xsd:string ;
+    skos:definition "Identifies the version of the terminology from which the symptom code was selected."@en .
+
+icare:symptomName a owl:DatatypeProperty ;
+    rdfs:label "symptom name"@en ;
+    rdfs:domain icare:Symptom ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    rdfs:range xsd:string ;
+    skos:definition "Records the symptom name, such as fatigue, chest pain, dizziness, or shortness of breath."@en .
+
+icare:symptomRecordHasSeverity a owl:ObjectProperty ;
+    rdfs:label "has severity"@en ;
+    rdfs:domain icare:SymptomRecord ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    rdfs:range icare:Severity ;
+    skos:definition "Relates a symptom record to its severity."@en .
+
+icare:symptomRecordRecordsSymptom a owl:ObjectProperty ;
+    rdfs:label "records symptom"@en ;
+    rdfs:domain icare:SymptomRecord ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    rdfs:range icare:Symptom ;
+    skos:definition "Relates a symptom record to the symptom being documented."@en .
+
+icare:ActiveClinicalStatus a icare:ClinicalStatus,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Active clinical status"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    skos:definition "A clinical-status value indicating active status."@en ;
+    skos:inScheme icare:ClinicalStatusScheme ;
+    skos:prefLabel "Active clinical status"@en ;
+    skos:topConceptOf icare:ClinicalStatusScheme .
+
+icare:ActiveMedicationStatus a icare:MedicationStatus,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Active medication status"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    skos:definition "A medication-status value indicating active status."@en ;
+    skos:inScheme icare:MedicationStatusScheme ;
+    skos:prefLabel "Active medication status"@en ;
+    skos:topConceptOf icare:MedicationStatusScheme .
+
+icare:ClinicalAssessmentRecord a owl:Class ;
+    rdfs:label "Clinical Assessment Record"@en ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    rdfs:subClassOf icare:ClinicalRecord ;
+    skos:definition "A clinical record documenting an assessment performed to evaluate symptoms, conditions, risk, function, late effects, or need for follow-up."@en .
+
+icare:ClinicalFindingRecord a owl:Class ;
+    rdfs:label "Clinical Finding Record"@en ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    rdfs:subClassOf icare:ClinicalRecord ;
+    skos:definition "A record documenting a clinical finding derived from examination, interpretation, measurements, imaging, or assessment."@en .
+
+icare:CompletedMedicationStatus a icare:MedicationStatus,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Completed medication status"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    skos:definition "A medication-status value indicating completed status."@en ;
+    skos:inScheme icare:MedicationStatusScheme ;
+    skos:prefLabel "Completed medication status"@en ;
+    skos:topConceptOf icare:MedicationStatusScheme .
+
+icare:HistoricalClinicalStatus a icare:ClinicalStatus,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Historical clinical status"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    skos:definition "A clinical-status value indicating historical status."@en ;
+    skos:inScheme icare:ClinicalStatusScheme ;
+    skos:prefLabel "Historical clinical status"@en ;
+    skos:topConceptOf icare:ClinicalStatusScheme .
+
+icare:HistoricalMedicationStatus a icare:MedicationStatus,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Historical medication status"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    skos:definition "A medication-status value indicating historical status."@en ;
+    skos:inScheme icare:MedicationStatusScheme ;
+    skos:prefLabel "Historical medication status"@en ;
+    skos:topConceptOf icare:MedicationStatusScheme .
+
+icare:MildSeverity a icare:ClinicalSeverityLevel,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Mild severity"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    skos:definition "A clinical-severity level indicating mild clinical severity."@en ;
+    skos:inScheme icare:ClinicalSeverityLevelScheme ;
+    skos:prefLabel "Mild severity"@en ;
+    skos:topConceptOf icare:ClinicalSeverityLevelScheme .
+
+icare:ModerateSeverity a icare:ClinicalSeverityLevel,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Moderate severity"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    skos:definition "A clinical-severity level indicating moderate clinical severity."@en ;
+    skos:inScheme icare:ClinicalSeverityLevelScheme ;
+    skos:prefLabel "Moderate severity"@en ;
+    skos:topConceptOf icare:ClinicalSeverityLevelScheme .
+
+icare:PausedMedicationStatus a icare:MedicationStatus,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Paused medication status"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    skos:definition "A medication-status value indicating paused status."@en ;
+    skos:inScheme icare:MedicationStatusScheme ;
+    skos:prefLabel "Paused medication status"@en ;
+    skos:topConceptOf icare:MedicationStatusScheme .
+
+icare:PlannedMedicationStatus a icare:MedicationStatus,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Planned medication status"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    skos:definition "A medication-status value indicating planned status."@en ;
+    skos:inScheme icare:MedicationStatusScheme ;
+    skos:prefLabel "Planned medication status"@en ;
+    skos:topConceptOf icare:MedicationStatusScheme .
+
+icare:RemissionClinicalStatus a icare:ClinicalStatus,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Remission clinical status"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    skos:definition "A clinical-status value indicating remission status."@en ;
+    skos:inScheme icare:ClinicalStatusScheme ;
+    skos:prefLabel "Remission clinical status"@en ;
+    skos:topConceptOf icare:ClinicalStatusScheme .
+
+icare:ResolvedClinicalStatus a icare:ClinicalStatus,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Resolved clinical status"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    skos:definition "A clinical-status value indicating resolved status."@en ;
+    skos:inScheme icare:ClinicalStatusScheme ;
+    skos:prefLabel "Resolved clinical status"@en ;
+    skos:topConceptOf icare:ClinicalStatusScheme .
+
+icare:SevereSeverity a icare:ClinicalSeverityLevel,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Severe severity"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    skos:definition "A clinical-severity level indicating severe clinical severity."@en ;
+    skos:inScheme icare:ClinicalSeverityLevelScheme ;
+    skos:prefLabel "Severe severity"@en ;
+    skos:topConceptOf icare:ClinicalSeverityLevelScheme .
+
+icare:StoppedMedicationStatus a icare:MedicationStatus,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Stopped medication status"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    skos:definition "A medication-status value indicating stopped status."@en ;
+    skos:inScheme icare:MedicationStatusScheme ;
+    skos:prefLabel "Stopped medication status"@en ;
+    skos:topConceptOf icare:MedicationStatusScheme .
+
+icare:SuspectedClinicalStatus a icare:ClinicalStatus,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Suspected clinical status"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    skos:definition "A clinical-status value indicating suspected status."@en ;
+    skos:inScheme icare:ClinicalStatusScheme ;
+    skos:prefLabel "Suspected clinical status"@en ;
+    skos:topConceptOf icare:ClinicalStatusScheme .
+
+icare:UnknownSeverity a icare:ClinicalSeverityLevel,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Unknown severity"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    skos:definition "A clinical-severity level indicating unknown clinical severity."@en ;
+    skos:inScheme icare:ClinicalSeverityLevelScheme ;
+    skos:prefLabel "Unknown severity"@en ;
+    skos:topConceptOf icare:ClinicalSeverityLevelScheme .
+
+icare:ClinicalInterpretation a owl:Class ;
+    rdfs:label "Clinical Interpretation"@en ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    skos:definition "A clinical interpretation or summary derived from records, observations, assessments, or measurements."@en .
+
+icare:SymptomRecord a owl:Class ;
+    rdfs:label "Symptom Record"@en ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    rdfs:subClassOf icare:ClinicalRecord ;
+    skos:definition "A clinical record documenting a symptom reported by a person or observed during care."@en .
+
+icare:ClinicalAssessment a owl:Class ;
+    rdfs:label "Clinical Assessment"@en ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    rdfs:subClassOf icare:ActivityExecution ;
+    skos:definition "An assessment activity used to evaluate clinical status, late-effect risk, symptoms, function, monitoring results, or care needs."@en .
+
+icare:ClinicalFinding a owl:Class ;
+    rdfs:label "Clinical Finding"@en ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    skos:definition "A clinically meaningful finding that may indicate status, risk, abnormality, progression, or need for follow-up."@en .
+
+icare:ClinicalProfile a owl:Class ;
+    rdfs:label "Clinical Profile"@en ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    skos:definition "Longitudinal clinical profile grouping clinical records for conditions, medication, assessments, status and source provenance."@en .
+
+icare:Severity a owl:Class ;
+    rdfs:label "Severity"@en ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    skos:definition "A value or category describing the intensity, seriousness, grade, or clinical impact of a condition, symptom, finding, or adverse effect."@en .
+
+icare:MedicationDose a owl:Class ;
+    rdfs:label "Medication Dose"@en ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    skos:definition "A structured representation of medication dose amount, unit, frequency, or dosing instruction."@en .
+
+icare:MedicationRecord a owl:Class ;
+    rdfs:label "Medication Record"@en ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    rdfs:subClassOf icare:ClinicalRecord ;
+    skos:definition "A clinical record describing a medication a person is taking, has taken, or has been prescribed, including indication, timing, status, and dose where available."@en .
+
+icare:ClinicalSeverityLevel a owl:Class ;
+    rdfs:label "Clinical Severity Level"@en ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    rdfs:subClassOf skos:Concept ;
+    skos:definition "A controlled concept representing the degree of intensity, seriousness or clinical impact of a symptom, condition or finding, such as mild, moderate or severe."@en .
+
+icare:Medication a owl:Class ;
+    rdfs:label "Medication"@en ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    skos:definition "A medicinal product, drug, or therapeutic substance used for treatment, prevention, symptom control, or risk-factor management."@en .
+
+icare:Symptom a owl:Class ;
+    rdfs:label "Symptom"@en ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    skos:definition "A subjective or observed health complaint relevant to monitoring, triage, assessment, or late-effect management."@en .
+
+icare:ClinicalConditionRecord a owl:Class ;
+    rdfs:label "Clinical Condition Record"@en ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    rdfs:subClassOf icare:ClinicalRecord ;
+    skos:definition "A clinical record documenting the presence, absence, history, severity, status, or monitoring state of a clinical condition."@en .
+
+icare:ClinicalStatus a owl:Class ;
+    rdfs:label "Clinical Status"@en ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    rdfs:subClassOf skos:Concept ;
+    skos:definition "A controlled concept representing the current state of a clinical condition or clinical record, such as active, resolved, suspected, in remission or historical."@en .
+
+icare:MedicationStatus a owl:Class ;
+    rdfs:label "Medication Status"@en ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    rdfs:subClassOf skos:Concept ;
+    skos:definition "A controlled concept representing the current state of a medication prescription or use, such as planned, active, paused, stopped or completed."@en .
+
+icare:ClinicalSeverityLevelScheme a owl:NamedIndividual,
+        skos:ConceptScheme ;
+    rdfs:label "Clinical Severity Level scheme"@en ;
+    skos:hasTopConcept icare:MildSeverity,
+        icare:ModerateSeverity,
+        icare:SevereSeverity,
+        icare:UnknownSeverity .
+
+icare:ClinicalRecord a owl:Class ;
+    rdfs:label "Clinical Record"@en ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    skos:definition "A dated clinical statement or record about a person's health status, medication, condition, symptom, assessment, or care-relevant finding."@en .
+
+icare:ClinicalCondition a owl:Class ;
+    rdfs:label "Clinical Condition"@en ;
+    rdfs:isDefinedBy icare:clinical-profile ;
+    skos:definition "A clinical, psychosocial, metabolic, cardiovascular, or late-effect condition."@en .
+
+icare:ClinicalStatusScheme a owl:NamedIndividual,
+        skos:ConceptScheme ;
+    rdfs:label "Clinical Status scheme"@en ;
+    skos:hasTopConcept icare:ActiveClinicalStatus,
+        icare:HistoricalClinicalStatus,
+        icare:RemissionClinicalStatus,
+        icare:ResolvedClinicalStatus,
+        icare:SuspectedClinicalStatus .
+
+icare:MedicationStatusScheme a owl:NamedIndividual,
+        skos:ConceptScheme ;
+    rdfs:label "Medication Status scheme"@en ;
+    skos:hasTopConcept icare:ActiveMedicationStatus,
+        icare:CompletedMedicationStatus,
+        icare:HistoricalMedicationStatus,
+        icare:PausedMedicationStatus,
+        icare:PlannedMedicationStatus,
+        icare:StoppedMedicationStatus .
+
+icare:clinical-profile a owl:Ontology ;
+    rdfs:label "Clinical Profile"@en ;
+    meta:reviewStatus "Draft" ;
+    rdfs:comment "Represents person-level clinical profiles and source- and time-qualified records of conditions, symptoms, findings, medications, assessments, severity, status and interpretation."@en ;
+    owl:imports icare:core,
+        <http://maya-project.eu/icareonto/imports/skos-reference>,
+        icare:measurement-biomarker,
+        icare:metadata,
+        icare:person-role ;
+    owl:versionIRI <http://maya-project.eu/icareonto/releases/0.1.0-draft/clinical-profile> ;
+    owl:versionInfo "0.1.0-draft" .
+
