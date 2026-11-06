@@ -1,0 +1,31 @@
+@prefix icare: <http://maya-project.eu/icareonto/> .
+@prefix meta: <http://maya-project.eu/icareonto/metadata#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://maya-project.eu/icareonto> a owl:Ontology ;
+    rdfs:label "iCARE Onto v1 (draft)"@en ;
+    meta:reviewStatus "Draft" ;
+    rdfs:comment "iCARE Onto provides the semantic foundation for the MAYA iCARE Health Hub, supporting adolescent and young adult cancer survivorship and cardiovascular health. Its modular model represents people and preferences, cancer treatment history, clinical profiles, measurements, cardiovascular risk, personalised care, lifestyle, social context, educational resources, conversational interaction, digital services, pilot settings and knowledge governance. It supports participant- and pilot-specific knowledge graphs, personalised educational support and evidence-grounded dialogue. This pre-release draft is under review toward iCARE Onto v1."@en ;
+    owl:imports icare:agent,
+        icare:alignments,
+        icare:cancer-history,
+        icare:clinical-profile,
+        icare:core,
+        icare:cv-risk,
+        icare:dialogue,
+        icare:exercise,
+        icare:healthhub-service,
+        icare:intervention-careplan,
+        icare:knowledge-resource,
+        icare:lifestyle-behaviour,
+        icare:measurement-biomarker,
+        icare:metadata,
+        icare:nutrition,
+        icare:person-role,
+        icare:pilot,
+        icare:provenance-governance,
+        icare:social-context ;
+    owl:versionIRI <http://maya-project.eu/icareonto/releases/0.1.0-draft/icareonto> ;
+    owl:versionInfo "0.1.0-draft" .
+

@@ -1,0 +1,372 @@
+@prefix icare: <http://maya-project.eu/icareonto/> .
+@prefix meta: <http://maya-project.eu/icareonto/metadata#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+icare:AYACancerSurvivorRole a owl:Class ;
+    rdfs:label "AYA Cancer Survivor Role"@en ;
+    rdfs:isDefinedBy icare:person-role ;
+    rdfs:subClassOf icare:CancerSurvivorRole ;
+    skos:altLabel "AYA survivor role"@en,
+        "adolescent and young adult cancer survivor role"@en ;
+    skos:definition "A cancer survivor role held by a person whose cancer diagnosis or treatment occurred during adolescence or young adulthood, typically between 15 and 39 years of age."@en .
+
+icare:CaregiverRole a owl:Class ;
+    rdfs:label "Caregiver Role"@en ;
+    rdfs:isDefinedBy icare:person-role ;
+    rdfs:subClassOf icare:PersonRole ;
+    skos:definition "A support role held by a person who provides practical, emotional, health-related, or daily-living support to a survivor."@en .
+
+icare:ClinicianRole a owl:Class ;
+    rdfs:label "Clinician Role"@en ;
+    rdfs:isDefinedBy icare:person-role ;
+    rdfs:subClassOf icare:PersonRole ;
+    skos:definition "A care delivery role held by a healthcare professional involved in assessment, follow-up, treatment, monitoring, counselling, or clinical oversight."@en .
+
+icare:DemographicAttribute a owl:Class ;
+    rdfs:label "Demographic Attribute"@en ;
+    rdfs:isDefinedBy icare:person-role ;
+    rdfs:subClassOf icare:PersonAttribute ;
+    skos:definition "A demographic attribute of a person, such as age group, sex, gender, country, or education-related demographic data."@en .
+
+icare:FamilyMemberRole a owl:Class ;
+    rdfs:label "Family Member Role"@en ;
+    rdfs:isDefinedBy icare:person-role ;
+    rdfs:subClassOf icare:PersonRole ;
+    skos:definition "A relationship-based support role held by a person who is a family member of a survivor and may contribute to care, support, communication, or contextual knowledge."@en .
+
+icare:ResearcherRole a owl:Class ;
+    rdfs:label "Researcher Role"@en ;
+    rdfs:isDefinedBy icare:person-role ;
+    rdfs:subClassOf icare:PersonRole ;
+    skos:definition "A role held by a person involved in study delivery, analysis, coordination, or research oversight."@en .
+
+icare:StudyParticipantRole a owl:Class ;
+    rdfs:label "Study Participant Role"@en ;
+    rdfs:isDefinedBy icare:person-role ;
+    rdfs:subClassOf icare:PersonRole ;
+    skos:definition "A role held by a person participating in a study or pilot activity."@en .
+
+icare:ageInYears a owl:DatatypeProperty ;
+    rdfs:label "age in years"@en ;
+    rdfs:domain icare:Person ;
+    rdfs:isDefinedBy icare:person-role ;
+    rdfs:range xsd:decimal ;
+    skos:definition "Records the age in years for Person."@en .
+
+icare:informationPreferenceHasDetailLevel a owl:ObjectProperty ;
+    rdfs:label "has detail level"@en ;
+    rdfs:domain icare:InformationPreference ;
+    rdfs:isDefinedBy icare:person-role ;
+    rdfs:range icare:InformationDetailLevelValue ;
+    skos:definition "Relates information preference to level of detail."@en .
+
+icare:personAttributeHasSource a owl:ObjectProperty ;
+    rdfs:label "person attribute has source"@en ;
+    rdfs:domain icare:PersonAttribute ;
+    rdfs:isDefinedBy icare:person-role ;
+    rdfs:range icare:DataSource ;
+    skos:definition "Relates a person attribute to the source that supplied it."@en .
+
+icare:personAttributeName a owl:DatatypeProperty ;
+    rdfs:label "person attribute name"@en ;
+    rdfs:domain icare:PersonAttribute ;
+    rdfs:isDefinedBy icare:person-role ;
+    rdfs:range xsd:string ;
+    skos:definition "Records the name or category of a person attribute."@en .
+
+icare:personAttributeRecordedAt a owl:ObjectProperty ;
+    rdfs:label "person attribute recorded at"@en ;
+    rdfs:domain icare:PersonAttribute ;
+    rdfs:isDefinedBy icare:person-role ;
+    rdfs:range icare:Timepoint ;
+    skos:definition "Relates a person attribute to the time it was recorded or asserted."@en .
+
+icare:personAttributeValue a owl:DatatypeProperty ;
+    rdfs:label "person attribute value"@en ;
+    rdfs:domain icare:PersonAttribute ;
+    rdfs:isDefinedBy icare:person-role ;
+    rdfs:range xsd:string ;
+    skos:definition "Records the value of a person attribute when represented textually."@en .
+
+icare:personHasAttribute a owl:ObjectProperty ;
+    rdfs:label "has attribute"@en ;
+    rdfs:domain icare:Person ;
+    rdfs:isDefinedBy icare:person-role ;
+    rdfs:range icare:PersonAttribute ;
+    skos:definition "Relates Person to Person Attribute."@en .
+
+icare:personHasPreference a owl:ObjectProperty ;
+    rdfs:label "has preference"@en ;
+    rdfs:domain icare:Person ;
+    rdfs:isDefinedBy icare:person-role ;
+    rdfs:range icare:PersonPreference ;
+    skos:definition "Relates Person to Person Preference."@en .
+
+icare:personHasRole a owl:ObjectProperty ;
+    rdfs:label "has role"@en ;
+    rdfs:domain icare:Person ;
+    rdfs:isDefinedBy icare:person-role ;
+    rdfs:range icare:PersonRole ;
+    skos:definition "Relates Person to Person Role."@en .
+
+icare:personIdentifier a owl:DatatypeProperty ;
+    rdfs:label "person identifier"@en ;
+    rdfs:domain icare:Person ;
+    rdfs:isDefinedBy icare:person-role ;
+    rdfs:range xsd:string ;
+    skos:definition "Records the person identifier for Person."@en .
+
+icare:preferenceName a owl:DatatypeProperty ;
+    rdfs:label "preference name"@en ;
+    rdfs:domain icare:PersonPreference ;
+    rdfs:isDefinedBy icare:person-role ;
+    rdfs:range xsd:string ;
+    skos:definition "Records the name or category of a preference."@en .
+
+icare:preferenceRecordedAt a owl:ObjectProperty ;
+    rdfs:label "preference recorded at"@en ;
+    rdfs:domain icare:PersonPreference ;
+    rdfs:isDefinedBy icare:person-role ;
+    rdfs:range icare:Timepoint ;
+    skos:definition "Relates a preference to the time it was recorded or updated."@en .
+
+icare:preferenceValue a owl:DatatypeProperty ;
+    rdfs:label "preference value"@en ;
+    rdfs:domain icare:PersonPreference ;
+    rdfs:isDefinedBy icare:person-role ;
+    rdfs:range xsd:string ;
+    skos:definition "Records the preference value, such as \"SMS\", \"Italian\", \"brief\", or \"evening\"."@en .
+
+icare:preferredCommunicationChannel a owl:ObjectProperty ;
+    rdfs:label "preferred communication channel"@en ;
+    rdfs:domain icare:CommunicationPreference ;
+    rdfs:isDefinedBy icare:person-role ;
+    rdfs:range icare:CommunicationChannelType ;
+    skos:definition "Identifies the preferred channel of communication."@en .
+
+icare:preferredContactTime a owl:ObjectProperty ;
+    rdfs:label "preferred contact time"@en ;
+    rdfs:domain icare:ContactPreference ;
+    rdfs:isDefinedBy icare:person-role ;
+    rdfs:range icare:TimeOfDay ;
+    skos:definition "Records a preferred contact time window."@en .
+
+icare:preferredLanguageTag a owl:DatatypeProperty ;
+    rdfs:label "preferred language tag"@en ;
+    rdfs:domain icare:LanguagePreference ;
+    rdfs:isDefinedBy icare:person-role ;
+    rdfs:range xsd:language ;
+    skos:definition "Records an IETF language tag for the preferred language."@en .
+
+icare:roleContext a owl:DatatypeProperty ;
+    rdfs:label "role context"@en ;
+    rdfs:domain icare:PersonRole ;
+    rdfs:isDefinedBy icare:person-role ;
+    rdfs:range xsd:string ;
+    skos:definition "Records contextual details for the role, such as study, clinic, family, or care-plan context."@en .
+
+icare:roleName a owl:DatatypeProperty ;
+    rdfs:label "role name"@en ;
+    rdfs:domain icare:PersonRole ;
+    rdfs:isDefinedBy icare:person-role ;
+    rdfs:range xsd:string ;
+    skos:definition "Records a human-readable role name when a role instance needs a label beyond its class."@en .
+
+icare:roleValidDuring a owl:ObjectProperty ;
+    rdfs:label "role valid during"@en ;
+    rdfs:domain icare:PersonRole ;
+    rdfs:isDefinedBy icare:person-role ;
+    rdfs:range icare:TimeInterval ;
+    skos:definition "Relates a role to the interval during which it applies."@en .
+
+icare:BriefInformation a icare:InformationDetailLevelValue,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Brief information"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:person-role ;
+    skos:definition "An information-detail preference indicating brief information."@en ;
+    skos:inScheme icare:InformationDetailLevelValueScheme ;
+    skos:prefLabel "Brief information"@en ;
+    skos:topConceptOf icare:InformationDetailLevelValueScheme .
+
+icare:CancerSurvivorRole a owl:Class ;
+    rdfs:label "Cancer Survivor Role"@en ;
+    rdfs:isDefinedBy icare:person-role ;
+    rdfs:subClassOf icare:PersonRole ;
+    skos:definition "A role held by a person who has completed, is living after, or is receiving follow-up after a cancer diagnosis or cancer treatment."@en .
+
+icare:ContactPreference a owl:Class ;
+    rdfs:label "Contact Preference"@en ;
+    rdfs:isDefinedBy icare:person-role ;
+    rdfs:subClassOf icare:CommunicationPreference ;
+    skos:definition "A preference describing preferred contact channels, timing, or communication method."@en .
+
+icare:DetailedInformation a icare:InformationDetailLevelValue,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Detailed information"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:person-role ;
+    skos:definition "An information-detail preference indicating detailed information."@en ;
+    skos:inScheme icare:InformationDetailLevelValueScheme ;
+    skos:prefLabel "Detailed information"@en ;
+    skos:topConceptOf icare:InformationDetailLevelValueScheme .
+
+icare:EmailChannel a icare:CommunicationChannelType,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Email channel"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:person-role ;
+    skos:definition "A communication-channel type delivered through email."@en ;
+    skos:inScheme icare:CommunicationChannelTypeScheme ;
+    skos:prefLabel "Email channel"@en ;
+    skos:topConceptOf icare:CommunicationChannelTypeScheme .
+
+icare:InPersonChannel a icare:CommunicationChannelType,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "In person channel"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:person-role ;
+    skos:definition "A communication-channel type involving face-to-face interaction."@en ;
+    skos:inScheme icare:CommunicationChannelTypeScheme ;
+    skos:prefLabel "In person channel"@en ;
+    skos:topConceptOf icare:CommunicationChannelTypeScheme .
+
+icare:InformationPreference a owl:Class ;
+    rdfs:label "Information Preference"@en ;
+    rdfs:isDefinedBy icare:person-role ;
+    rdfs:subClassOf icare:CommunicationPreference ;
+    skos:definition "A preference describing how a person wants information to be presented, such as detail level, format, or tone."@en .
+
+icare:LanguagePreference a owl:Class ;
+    rdfs:label "Language Preference"@en ;
+    rdfs:isDefinedBy icare:person-role ;
+    rdfs:subClassOf icare:PersonPreference ;
+    skos:definition "A preference specifying the language in which a person prefers to receive communication, education, dialogue, or service content."@en .
+
+icare:MobileAppChannel a icare:CommunicationChannelType,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Mobile app channel"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:person-role ;
+    skos:definition "A communication-channel type delivered through a mobile application."@en ;
+    skos:inScheme icare:CommunicationChannelTypeScheme ;
+    skos:prefLabel "Mobile app channel"@en ;
+    skos:topConceptOf icare:CommunicationChannelTypeScheme .
+
+icare:SMSChannel a icare:CommunicationChannelType,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "SMS channel"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:person-role ;
+    skos:definition "A communication-channel type delivered through SMS text messaging."@en ;
+    skos:inScheme icare:CommunicationChannelTypeScheme ;
+    skos:prefLabel "SMS channel"@en ;
+    skos:topConceptOf icare:CommunicationChannelTypeScheme .
+
+icare:SmartMirrorChannel a icare:CommunicationChannelType,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Smart mirror channel"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:person-role ;
+    skos:definition "A communication-channel type delivered through the smart-mirror interface."@en ;
+    skos:inScheme icare:CommunicationChannelTypeScheme ;
+    skos:prefLabel "Smart mirror channel"@en ;
+    skos:topConceptOf icare:CommunicationChannelTypeScheme .
+
+icare:StandardInformation a icare:InformationDetailLevelValue,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Standard information"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:person-role ;
+    skos:definition "An information-detail preference indicating standard information."@en ;
+    skos:inScheme icare:InformationDetailLevelValueScheme ;
+    skos:prefLabel "Standard information"@en ;
+    skos:topConceptOf icare:InformationDetailLevelValueScheme .
+
+icare:TelephoneChannel a icare:CommunicationChannelType,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Telephone channel"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:person-role ;
+    skos:definition "A communication-channel type delivered through a telephone call."@en ;
+    skos:inScheme icare:CommunicationChannelTypeScheme ;
+    skos:prefLabel "Telephone channel"@en ;
+    skos:topConceptOf icare:CommunicationChannelTypeScheme .
+
+icare:CommunicationPreference a owl:Class ;
+    rdfs:label "Communication Preference"@en ;
+    rdfs:isDefinedBy icare:person-role ;
+    rdfs:subClassOf icare:PersonPreference ;
+    skos:definition "A preference specifying how a person prefers to communicate or receive contact, such as channel, timing, frequency, format, or level of detail."@en .
+
+icare:InformationDetailLevelValue a owl:Class ;
+    rdfs:label "Information Detail Level Value"@en ;
+    rdfs:isDefinedBy icare:person-role ;
+    rdfs:subClassOf skos:Concept ;
+    skos:definition "A controlled concept representing the level of detail a person prefers when receiving health information, such as brief, standard or detailed."@en .
+
+icare:Person a owl:Class ;
+    rdfs:label "Person"@en ;
+    rdfs:isDefinedBy icare:person-role ;
+    skos:definition "A human actor represented in the ontology, such as an AYA cancer survivor, clinician, caregiver, family member, researcher, or study participant."@en .
+
+icare:InformationDetailLevelValueScheme a owl:NamedIndividual,
+        skos:ConceptScheme ;
+    rdfs:label "Information Detail Level Value scheme"@en ;
+    skos:hasTopConcept icare:BriefInformation,
+        icare:DetailedInformation,
+        icare:StandardInformation .
+
+icare:PersonAttribute a owl:Class ;
+    rdfs:label "Person Attribute"@en ;
+    rdfs:isDefinedBy icare:person-role ;
+    skos:definition "A recorded characteristic of a person that may be used for personalisation, risk assessment, eligibility, care planning, or study analysis."@en .
+
+icare:PersonPreference a owl:Class ;
+    rdfs:label "Person Preference"@en ;
+    rdfs:isDefinedBy icare:person-role ;
+    skos:definition "A recorded preference describing how a person wants information, interaction, monitoring, or support to be adapted."@en .
+
+icare:CommunicationChannelType a owl:Class ;
+    rdfs:label "Communication Channel Type"@en ;
+    rdfs:isDefinedBy icare:person-role ;
+    rdfs:subClassOf skos:Concept ;
+    skos:definition "A controlled concept classifying the medium or interface through which communication is delivered or accessed, such as a smart mirror, mobile application, telephone or in-person interaction."@en .
+
+icare:PersonRole a owl:Class ;
+    rdfs:label "Person Role"@en ;
+    rdfs:isDefinedBy icare:person-role ;
+    skos:definition "A contextual role held by a person in care delivery, survivorship support, family support, research participation, or study operations."@en .
+
+icare:CommunicationChannelTypeScheme a owl:NamedIndividual,
+        skos:ConceptScheme ;
+    rdfs:label "Communication Channel Type scheme"@en ;
+    skos:hasTopConcept icare:EmailChannel,
+        icare:InPersonChannel,
+        icare:MobileAppChannel,
+        icare:SMSChannel,
+        icare:SmartMirrorChannel,
+        icare:TelephoneChannel .
+
+icare:person-role a owl:Ontology ;
+    rdfs:label "Person and Role"@en ;
+    meta:reviewStatus "Draft" ;
+    rdfs:comment "Represents people, their attributes, roles, and language, communication, contact and information preferences used to personalise care and dialogue."@en ;
+    owl:imports icare:core,
+        <http://maya-project.eu/icareonto/imports/skos-reference>,
+        icare:metadata ;
+    owl:versionIRI <http://maya-project.eu/icareonto/releases/0.1.0-draft/person-role> ;
+    owl:versionInfo "0.1.0-draft" .
+

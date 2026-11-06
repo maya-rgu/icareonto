@@ -1,0 +1,74 @@
+{
+  "delivery_mode": "signpost",
+  "match_count": 1,
+  "matches": [
+    {
+      "access_conditions": "Public",
+      "accessibility": [
+        "http://maya-project.eu/icareonto/VisualSummary"
+      ],
+      "applicability_notes": "General oncology patient information, updated 2024; not specifically developed for AYA survivors. Covers cardiovascular risks, monitoring and prevention before, during and after treatment. Suitable as background education, with exercise, medication and surveillance advice interpreted in the participant’s clinical context.",
+      "audiences": [
+        "http://maya-project.eu/icareonto/AYASurvivorAudience"
+      ],
+      "completion_status": "Complete",
+      "complexities": [
+        "http://maya-project.eu/icareonto/StandardComplexity"
+      ],
+      "curation_status": "Approved",
+      "delivery_mode": "signpost",
+      "description": "Two-page illustrated patient information sheet explaining cardiovascular complications of cancer treatment, assessment and monitoring before, during and after treatment, and practical measures to support cardiovascular health.",
+      "formats": [
+        "http://maya-project.eu/icareonto/Infographic",
+        "http://maya-project.eu/icareonto/WrittenText"
+      ],
+      "id": "MAYA-EDU-0004",
+      "iri": "http://maya-project.eu/icareonto/education/resources/MAYA-EDU-0004",
+      "journey_stages": [
+        "After treatment / survivorship",
+        "Before treatment",
+        "During treatment"
+      ],
+      "languages": [
+        "es"
+      ],
+      "matched_needs": [
+        "http://maya-project.eu/icareonto/InformationComprehensionSupportNeed"
+      ],
+      "matched_topics": [
+        "http://maya-project.eu/icareonto/CardiovascularLateEffects"
+      ],
+      "needs": [
+        "http://maya-project.eu/icareonto/InformationApplicationSupportNeed",
+        "http://maya-project.eu/icareonto/InformationComprehensionSupportNeed",
+        "http://maya-project.eu/icareonto/SelfManagementSupportNeed"
+      ],
+      "permitted_use": "Link / Signpost Only",
+      "preference_matches": {
+        "complexities": false,
+        "formats": true
+      },
+      "provider": "Fundación Española del Corazón",
+      "purposes": [
+        "http://maya-project.eu/icareonto/ExplainHealthTopic",
+        "http://maya-project.eu/icareonto/SupportBehaviourChange",
+        "http://maya-project.eu/icareonto/SupportSelfManagement"
+      ],
+      "requires_registration_or_access_check": false,
+      "resource_date_text": "2024",
+      "resource_role": "Direct Educational Resource",
+      "review_date": "2026-11-03",
+      "reviewer": "INO",
+      "selection_explanation": "Matches recorded need, topic, audience, journey stage and language; any required accessibility features are annotated.",
+      "title": "Ficha del paciente: Cardio-oncología",
+      "topics": [
+        "http://maya-project.eu/icareonto/CardiovascularLateEffects",
+        "http://maya-project.eu/icareonto/FollowUpCare"
+      ],
+      "url": "https://fundaciondelcorazon.com/phocadownload/recursos-didacticos/fichas/FICHA%20CARDIO-ONCOLOGIA.pdf"
+    }
+  ],
+  "release_id": "09e1028d8186c099e815bf93",
+  "status": "MATCHES_FOUND",
+  "unmatched_needs": []
+}

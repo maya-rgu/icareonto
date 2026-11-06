@@ -1,0 +1,8 @@
+PREFIX icare: <http://maya-project.eu/icareonto/>
+PREFIX demo: <https://example.org/maya/demo/es/>
+SELECT ?country ?language ?timezone WHERE {
+  demo:enrolment icare:participantEnrolmentAtSite/icare:pilotSiteHasLocale ?locale .
+  ?locale icare:localeCountryCode ?country ;
+          icare:localeTag ?language ;
+          icare:localeTimeZoneIdentifier ?timezone .
+}

@@ -1,0 +1,17 @@
+PREFIX icare: <http://maya-project.eu/icareonto/>
+PREFIX demo: <https://example.org/maya/demo/es/>
+PREFIX test: <https://example.org/maya/demo/cq-tests/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+SELECT ?result ?time WHERE {
+  ?event icare:measurementEventMeasures demo:systolic-bp ; icare:measurementEventHasOutput ?result .
+  { ?event icare:activityExecutionOccursAt/icare:timepointDateTime ?time .
+    FILTER(?time >= "2026-10-19T00:00:00Z"^^xsd:dateTime && ?time < "2026-10-28T00:00:00Z"^^xsd:dateTime)
+  } UNION {
+    ?event icare:activityExecutionOccursDuring ?interval .
+    ?interval icare:intervalStartsAt/icare:timepointDateTime ?time ; icare:intervalEndsAt/icare:timepointDateTime ?end .
+    FILTER(?end > "2026-10-19T00:00:00Z"^^xsd:dateTime && ?time < "2026-10-28T00:00:00Z"^^xsd:dateTime)
+  }
+} ORDER BY ?time

@@ -1,0 +1,172 @@
+{
+  "checks_run": 40,
+  "errors": 0,
+  "failures": 0,
+  "fixture": "education/tests/fixtures/reviewed-rows.json",
+  "fixture_sha256": "f207174df0724e2c93c9b35e1318b0af6a4fda504e23233c3df04335c254461a",
+  "result": "PASS",
+  "run_date": "2026-11-06",
+  "source_workbook_unchanged": true,
+  "test_cases": [
+    {
+      "name": "test_activity_does_not_infer_an_unidentified_need",
+      "status": "PASS"
+    },
+    {
+      "name": "test_approved_and_complete_are_both_required",
+      "status": "PASS"
+    },
+    {
+      "name": "test_audience_excludes_caregiver_only_resources",
+      "status": "PASS"
+    },
+    {
+      "name": "test_columns_are_located_by_header",
+      "status": "PASS"
+    },
+    {
+      "name": "test_configurable_sheet_and_shifted_header_row",
+      "status": "PASS"
+    },
+    {
+      "name": "test_custom_namespace_is_preserved",
+      "status": "PASS"
+    },
+    {
+      "name": "test_demo_does_not_publish_real_participant_data",
+      "status": "PASS"
+    },
+    {
+      "name": "test_demo_links_real_resource_to_synthetic_draft_intervention",
+      "status": "PASS"
+    },
+    {
+      "name": "test_duplicate_id_fails_without_replacing_current_release",
+      "status": "PASS"
+    },
+    {
+      "name": "test_email_like_url_is_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "test_empty_release_requires_explicit_flag",
+      "status": "PASS"
+    },
+    {
+      "name": "test_empty_required_annotation_is_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "test_exact_initial_resource_set",
+      "status": "PASS"
+    },
+    {
+      "name": "test_existing_old_release_is_verified_before_reactivation",
+      "status": "PASS"
+    },
+    {
+      "name": "test_failed_initial_write_can_be_retried",
+      "status": "PASS"
+    },
+    {
+      "name": "test_invalid_request_and_unknown_term_fail",
+      "status": "PASS"
+    },
+    {
+      "name": "test_journey_stage_excludes_nonmatching_resource",
+      "status": "PASS"
+    },
+    {
+      "name": "test_language_and_topic_filters_have_no_automatic_fallback",
+      "status": "PASS"
+    },
+    {
+      "name": "test_language_claims_need_verified_values",
+      "status": "PASS"
+    },
+    {
+      "name": "test_missing_column_fails",
+      "status": "PASS"
+    },
+    {
+      "name": "test_multiple_values_split_on_semicolons_not_commas",
+      "status": "PASS"
+    },
+    {
+      "name": "test_namespace_cannot_change_in_existing_deployment",
+      "status": "PASS"
+    },
+    {
+      "name": "test_new_approved_id_is_automatically_published",
+      "status": "PASS"
+    },
+    {
+      "name": "test_preferred_complexity_is_not_required_complexity",
+      "status": "PASS"
+    },
+    {
+      "name": "test_registration_is_visible_and_can_be_excluded",
+      "status": "PASS"
+    },
+    {
+      "name": "test_reordering_keeps_resource_identities",
+      "status": "PASS"
+    },
+    {
+      "name": "test_repeated_build_is_unchanged",
+      "status": "PASS"
+    },
+    {
+      "name": "test_required_accessibility_is_not_inferred",
+      "status": "PASS"
+    },
+    {
+      "name": "test_review_dates_preserve_excel_epochs",
+      "status": "PASS"
+    },
+    {
+      "name": "test_shacl_rejects_missing_resource_url",
+      "status": "PASS"
+    },
+    {
+      "name": "test_spanish_cardiovascular_expected_match",
+      "status": "PASS"
+    },
+    {
+      "name": "test_sparql_returns_independent_expected_answer",
+      "status": "PASS"
+    },
+    {
+      "name": "test_stale_ontology_is_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "test_tampered_managed_file_is_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "test_unknown_need_is_not_fuzzily_mapped",
+      "status": "PASS"
+    },
+    {
+      "name": "test_unknown_stage_is_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "test_unresolved_permission_is_not_released",
+      "status": "PASS"
+    },
+    {
+      "name": "test_update_preserves_iri_and_removes_old_url",
+      "status": "PASS"
+    },
+    {
+      "name": "test_withdrawal_removes_current_but_preserves_history",
+      "status": "PASS"
+    },
+    {
+      "name": "test_wrong_vocabulary_category_is_rejected",
+      "status": "PASS"
+    }
+  ]
+}

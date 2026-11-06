@@ -1,0 +1,117 @@
+{
+  "cases": [
+    {
+      "detail": "CLI creates an operational template without requiring real data or an embedding run",
+      "id": "INIT",
+      "status": "PASS"
+    },
+    {
+      "detail": "Unreplaced placeholders fail validation",
+      "id": "UNFILLED-TEMPLATE",
+      "status": "PASS"
+    },
+    {
+      "detail": "Initialisation preserves a previously created working template",
+      "id": "NO-TEMPLATE-OVERWRITE",
+      "status": "PASS"
+    },
+    {
+      "detail": "Completed source-referenced operational-format input passes validation",
+      "id": "OPERATIONAL-NEEDS-VALIDATE",
+      "status": "PASS"
+    },
+    {
+      "detail": "Rejected: source_refs",
+      "id": "SOURCE-REF-REQUIRED",
+      "status": "PASS"
+    },
+    {
+      "detail": "Rejected: owner",
+      "id": "OWNER-REQUIRED",
+      "status": "PASS"
+    },
+    {
+      "detail": "Rankings retain operational provenance and original requirement references",
+      "id": "OPERATIONAL-RANKING",
+      "status": "PASS"
+    },
+    {
+      "detail": "Operational input creates a draft review bound to the exact ranking",
+      "id": "DRAFT-REVIEW-TEMPLATE",
+      "status": "PASS"
+    },
+    {
+      "detail": "Proposed selections may be inspected without claiming completed review",
+      "id": "DRAFT-PROFILE",
+      "status": "PASS"
+    },
+    {
+      "detail": "Rejected: reviewed profile",
+      "id": "DRAFT-NOT-APPLIED",
+      "status": "PASS"
+    },
+    {
+      "detail": "Draft profile rejection leaves no generated graph output",
+      "id": "NO-PREMATURE-GENERATION",
+      "status": "PASS"
+    },
+    {
+      "detail": "Rejected: reviewed_at",
+      "id": "REVIEW-TIME-REQUIRED",
+      "status": "PASS"
+    },
+    {
+      "detail": "Reviewed-format profile retains source references, actual scores and recorded reviewer details",
+      "id": "REVIEWED-PROFILE",
+      "status": "PASS"
+    },
+    {
+      "detail": "Rejected: --base-iri",
+      "id": "NAMESPACE-REQUIRED",
+      "status": "PASS"
+    },
+    {
+      "detail": "Rejected: Review is stale",
+      "id": "STALE-REVIEW",
+      "status": "PASS"
+    },
+    {
+      "detail": "Rejected: Operational needs",
+      "id": "NO-DEMO-APPROVAL",
+      "status": "PASS"
+    },
+    {
+      "detail": "CLI generates the pilot and both participants using the supplied instance namespace",
+      "id": "CUSTOM-NAMESPACE",
+      "status": "PASS"
+    },
+    {
+      "detail": "RDF entities use the configured namespace rather than the demonstration default",
+      "id": "REAL-IRI-OUTPUT",
+      "status": "PASS"
+    },
+    {
+      "detail": "Generation records operational-format provenance, reviewer, namespace and scope limits",
+      "id": "REVIEW-TRACEABILITY",
+      "status": "PASS"
+    },
+    {
+      "detail": "Repeated processing preserves the existing participant seed",
+      "id": "REPEAT-OPERATIONAL-INPUT",
+      "status": "PASS"
+    },
+    {
+      "detail": "Changed seed requires an explicit correction flag",
+      "id": "NO-SILENT-CORRECTION",
+      "status": "PASS"
+    },
+    {
+      "detail": "Explicit correction archives the previous participant seed",
+      "id": "EXPLICIT-OPERATIONAL-CORRECTION",
+      "status": "PASS"
+    }
+  ],
+  "checks": 22,
+  "scope": "All data and reviewer identities are fictional. This tests the operational input/code paths; it does not assert that a real pilot review or deployment has occurred.",
+  "status": "PASS"
+}

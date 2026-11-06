@@ -1,0 +1,16 @@
+{
+  "synthetic": true,
+  "audience": "AYASurvivorAudience",
+  "journey_stage": "After treatment / survivorship",
+  "language": "es-ES",
+  "topics": ["CardiovascularLateEffects"],
+  "needs": ["InformationComprehensionSupportNeed"],
+  "need_identification": {
+    "method": "Discussion",
+    "source": "Fictional participant requests help understanding cardiovascular follow-up information. No licensed questionnaire or measured outcome is claimed."
+  },
+  "preferred_formats": ["WrittenText"],
+  "preferred_complexities": ["FoundationalComplexity"],
+  "required_accessibility": [],
+  "include_registration_required": true
+}

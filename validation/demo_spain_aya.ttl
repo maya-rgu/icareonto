@@ -1,0 +1,1057 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix demo: <https://example.org/maya/demo/es/> .
+@prefix icare: <http://maya-project.eu/icareonto/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://example.org/maya/demo/es> a owl:Ontology ;
+    rdfs:label "Fictional Spanish AYA survivor — technical test graph"@en ;
+    dcterms:description "All people, pilot sites, clinical records, assessments, recommendations, educational resources and dialogue are fictional technical fixtures. This graph contains no real patient data and asserts no real site participation, clinical validation or medical advice. Scores and care activities are authored examples, not outputs of a validated prediction model or automated clinical rules."@en ;
+    owl:imports <http://maya-project.eu/icareonto> ;
+    owl:versionInfo "Synthetic fixture 0.1; 2026-10-30" .
+
+demo:care-plan a icare:CarePlan,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional participant-agreed support plan"@en ;
+    icare:carePlanCreatedAt demo:time-baseline ;
+    icare:carePlanHasGoal demo:nutrition-goal,
+        demo:walking-goal ;
+    icare:carePlanHasParticipation demo:care-plan-participation ;
+    icare:carePlanHasStatus icare:ActiveCarePlan ;
+    icare:carePlanIncludesActivity demo:clinical-review,
+        demo:exercise-intervention,
+        demo:literacy-intervention,
+        demo:nutrition-intervention,
+        demo:referral ;
+    icare:carePlanIntendedFor demo:participant ;
+    icare:carePlanName "DEMO-ES-AYA-001 support plan"^^xsd:string ;
+    icare:carePlanUpdatedAt demo:time-followup .
+
+demo:consent a icare:ConsentRecord,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional consent record for technical demonstration"@en ;
+    icare:consentRecordAppliesToKnowledgeGraph demo:participant-knowledge-graph ;
+    icare:consentRecordGrantedBy demo:participant ;
+    icare:consentRecordHasStatus icare:ConsentGranted ;
+    icare:consentRecordValidDuring demo:enrolment-period ;
+    icare:hasVerificationStatus icare:Unverified ;
+    rdfs:comment "A synthetic consent decision; it neither represents real consent nor implements access control."@en .
+
+demo:dialogue-session a icare:DialogueSession,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional Spanish health-literacy conversation"@en ;
+    icare:activityExecutionHasSource demo:source-participant ;
+    icare:dialogueSessionDeliveredThroughService demo:dialogue-service ;
+    icare:dialogueSessionHasAgentParticipant demo:avatar ;
+    icare:dialogueSessionHasParticipant demo:participant ;
+    icare:dialogueSessionHasTurn demo:response,
+        demo:utterance ;
+    icare:dialogueSessionStartedAt demo:time-dialogue ;
+    icare:dialogueSessionUsesStrategy icare:PlainLanguageStrategy .
+
+demo:education-service-use a icare:ServiceUseEvent,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional educational service use"@en ;
+    icare:activityExecutionHasSource demo:source-participant ;
+    icare:activityExecutionOccursAt demo:time-dialogue ;
+    icare:serviceUseEventHasUser demo:participant ;
+    icare:serviceUseEventSupportsActivity demo:literacy-intervention ;
+    icare:serviceUseEventUsesService demo:education-service .
+
+demo:enrolment a icare:ParticipantEnrolment,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional enrolment"@en ;
+    icare:participantEnrolmentAssignedToArm demo:study-arm ;
+    icare:participantEnrolmentAtSite demo:pilot-site ;
+    icare:participantEnrolmentForPerson demo:participant ;
+    icare:participantEnrolmentHasStatus icare:ActiveEnrolmentStatus ;
+    icare:participantEnrolmentInPhase demo:pilot-phase ;
+    icare:participantEnrolmentInStudy demo:study ;
+    icare:participantEnrolmentValidDuring demo:enrolment-period .
+
+demo:health-hub a icare:HealthHub,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional Spanish Health Hub deployment"@en ;
+    icare:healthHubIncludesDevice demo:blood-pressure-monitor,
+        demo:scale,
+        demo:smart-mirror ;
+    icare:healthHubProvidesService demo:dialogue-service,
+        demo:education-service,
+        demo:monitoring-service .
+
+demo:model-execution a icare:ModelExecution,
+        owl:NamedIndividual ;
+    rdfs:label "Authored example of a model execution"@en ;
+    icare:modelExecutionExecutedAt demo:time-followup ;
+    icare:modelExecutionExecutes demo:demo-model ;
+    icare:modelExecutionGeneratesRiskProfile demo:risk-profile ;
+    icare:modelExecutionUsesInput demo:model-input ;
+    rdfs:comment "This authored test fixture did not run a predictive algorithm. The score has no calibrated scale, horizon or clinical interpretation."@en .
+
+demo:resource-late-effects-en a icare:HealthLiteracyResource,
+        owl:NamedIndividual ;
+    rdfs:label "Demo English late-effects explainer"@en ;
+    icare:healthLiteracyResourceAddressesNeed icare:InformationComprehensionSupportNeed ;
+    icare:knowledgeResourceHasAccessibilityFeature icare:PlainLanguage ;
+    icare:knowledgeResourceHasAudience icare:AYASurvivorAudience ;
+    icare:knowledgeResourceHasComplexityLevel icare:FoundationalComplexity ;
+    icare:knowledgeResourceHasFormat icare:WrittenText ;
+    icare:knowledgeResourceHasPurpose icare:ExplainHealthTopic ;
+    icare:knowledgeResourceHasTopic icare:CardiovascularLateEffects ;
+    dcterms:description "Fictional catalogue metadata only; no real document or approved health guidance exists."@en ;
+    dcterms:identifier "resource-late-effects-en" ;
+    dcterms:language "en-GB"^^xsd:language .
+
+demo:resource-nutrition-es a icare:EducationalResource,
+        owl:NamedIndividual ;
+    rdfs:label "Demo Spanish nutrition leaflet"@en ;
+    icare:knowledgeResourceContainsRecommendation demo:recommendation-nutrition ;
+    icare:knowledgeResourceHasAccessibilityFeature icare:PlainLanguage ;
+    icare:knowledgeResourceHasAudience icare:AYASurvivorAudience ;
+    icare:knowledgeResourceHasComplexityLevel icare:FoundationalComplexity ;
+    icare:knowledgeResourceHasFormat icare:WrittenText ;
+    icare:knowledgeResourceHasPurpose icare:SupportSelfManagement ;
+    icare:knowledgeResourceHasTopic icare:Nutrition ;
+    icare:knowledgeResourceSupportsRecommendation demo:recommendation-nutrition ;
+    dcterms:description "Fictional catalogue metadata only; no real document or approved health guidance exists."@en ;
+    dcterms:identifier "resource-nutrition-es" ;
+    dcterms:language "es-ES"^^xsd:language .
+
+demo:resource-walking-es a icare:EducationalResource,
+        owl:NamedIndividual ;
+    rdfs:label "Demo Spanish activity-support leaflet"@en ;
+    icare:knowledgeResourceContainsRecommendation demo:recommendation-walking ;
+    icare:knowledgeResourceHasAccessibilityFeature icare:PlainLanguage ;
+    icare:knowledgeResourceHasAudience icare:AYASurvivorAudience ;
+    icare:knowledgeResourceHasComplexityLevel icare:FoundationalComplexity ;
+    icare:knowledgeResourceHasFormat icare:WrittenText ;
+    icare:knowledgeResourceHasPurpose icare:SupportBehaviourChange ;
+    icare:knowledgeResourceHasTopic icare:PhysicalActivity ;
+    icare:knowledgeResourceSupportsRecommendation demo:recommendation-walking ;
+    dcterms:description "Fictional catalogue metadata only; no real document or approved health guidance exists."@en ;
+    dcterms:identifier "resource-walking-es" ;
+    dcterms:language "es-ES"^^xsd:language .
+
+demo:symptom-recommendation a icare:Recommendation,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional recommendation to discuss a reported concern"@en ;
+    icare:recommendationAppliesToSymptom demo:fatigue ;
+    icare:recommendationRecommendsActivity demo:clinical-review .
+
+demo:activity-behaviour a icare:PhysicalActivityBehaviour,
+        owl:NamedIndividual ;
+    rdfs:label "Irregular physical activity — fictional self-report"@en ;
+    icare:behaviourInfluencesRiskFactor demo:low-activity-risk-factor .
+
+demo:activity-behaviour-record a icare:BehaviourRecord,
+        owl:NamedIndividual ;
+    rdfs:label "Activity self-report record"@en ;
+    icare:behaviourHasChangeStage icare:PreparationStage ;
+    icare:behaviourRecordHasMetric demo:activity-metric ;
+    icare:behaviourRecordHasSource demo:source-participant ;
+    icare:behaviourRecordRecordedAt demo:time-baseline ;
+    icare:behaviourRecordRecordsBehaviour demo:activity-behaviour ;
+    icare:behaviourRecordRelatesToActivity demo:exercise-intervention ;
+    icare:behaviourRecordRelatesToGoal demo:walking-goal .
+
+demo:activity-metric a icare:BehaviourMetric,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional weekly activity metric"@en ;
+    icare:behaviourMetricHasType icare:PhysicalActivityDuration ;
+    icare:behaviourMetricNumericValue 60.0 ;
+    icare:behaviourMetricUnit "minutes/week"^^xsd:string .
+
+demo:adverse-cardiac-event a icare:AdverseCardiacEvent,
+        owl:NamedIndividual ;
+    rdfs:label "Generic adverse cardiac event — demonstration target"@en .
+
+demo:baseline-dbp-event a icare:MeasurementEvent,
+        owl:NamedIndividual ;
+    rdfs:label "baseline dbp event"@en ;
+    icare:activityExecutionHasSource demo:source-device ;
+    icare:activityExecutionOccursAt demo:time-baseline ;
+    icare:activityExecutionUsesDevice demo:blood-pressure-monitor ;
+    icare:activityExecutionUsesService demo:monitoring-service ;
+    icare:measurementEventFollowsProtocol demo:bp-protocol ;
+    icare:measurementEventHasContext demo:home-context ;
+    icare:measurementEventHasOutput demo:baseline-dbp-result ;
+    icare:measurementEventHasQuality icare:ValidMeasurement ;
+    icare:measurementEventMeasures demo:diastolic-bp ;
+    icare:measurementEventUsesInstrument demo:blood-pressure-monitor .
+
+demo:baseline-dbp-quantity a icare:QuantityValue,
+        owl:NamedIndividual ;
+    rdfs:label "baseline dbp quantity"@en ;
+    icare:quantityNumericValue 82.0 ;
+    icare:quantityValueHasUnit demo:unit-mmhg .
+
+demo:baseline-dbp-result a icare:ObservationResult,
+        owl:NamedIndividual ;
+    rdfs:label "baseline dbp result"@en ;
+    icare:observationAssociatedWithStudyTimepoint demo:baseline-study-timepoint ;
+    icare:observationHasQuantityValue demo:baseline-dbp-quantity .
+
+demo:baseline-height-event a icare:MeasurementEvent,
+        owl:NamedIndividual ;
+    rdfs:label "baseline height event"@en ;
+    icare:activityExecutionHasSource demo:source-device ;
+    icare:activityExecutionOccursAt demo:time-baseline ;
+    icare:activityExecutionUsesDevice demo:height-instrument ;
+    icare:activityExecutionUsesService demo:monitoring-service ;
+    icare:measurementEventFollowsProtocol demo:body-protocol ;
+    icare:measurementEventHasContext demo:home-context ;
+    icare:measurementEventHasOutput demo:baseline-height-result ;
+    icare:measurementEventHasQuality icare:ValidMeasurement ;
+    icare:measurementEventMeasures demo:height ;
+    icare:measurementEventUsesInstrument demo:height-instrument .
+
+demo:baseline-height-quantity a icare:QuantityValue,
+        owl:NamedIndividual ;
+    rdfs:label "baseline height quantity"@en ;
+    icare:quantityNumericValue 1.68 ;
+    icare:quantityValueHasUnit demo:unit-m .
+
+demo:baseline-sbp-event a icare:MeasurementEvent,
+        owl:NamedIndividual ;
+    rdfs:label "baseline sbp event"@en ;
+    icare:activityExecutionHasSource demo:source-device ;
+    icare:activityExecutionOccursAt demo:time-baseline ;
+    icare:activityExecutionUsesDevice demo:blood-pressure-monitor ;
+    icare:activityExecutionUsesService demo:monitoring-service ;
+    icare:measurementEventFollowsProtocol demo:bp-protocol ;
+    icare:measurementEventHasContext demo:home-context ;
+    icare:measurementEventHasOutput demo:baseline-sbp-result ;
+    icare:measurementEventHasQuality icare:ValidMeasurement ;
+    icare:measurementEventMeasures demo:systolic-bp ;
+    icare:measurementEventUsesInstrument demo:blood-pressure-monitor .
+
+demo:baseline-sbp-quantity a icare:QuantityValue,
+        owl:NamedIndividual ;
+    rdfs:label "baseline sbp quantity"@en ;
+    icare:quantityNumericValue 128.0 ;
+    icare:quantityValueHasUnit demo:unit-mmhg .
+
+demo:baseline-sbp-result a icare:ObservationResult,
+        owl:NamedIndividual ;
+    rdfs:label "baseline sbp result"@en ;
+    icare:observationAssociatedWithStudyTimepoint demo:baseline-study-timepoint ;
+    icare:observationHasQuantityValue demo:baseline-sbp-quantity .
+
+demo:baseline-weight-event a icare:MeasurementEvent,
+        owl:NamedIndividual ;
+    rdfs:label "baseline weight event"@en ;
+    icare:activityExecutionHasSource demo:source-device ;
+    icare:activityExecutionOccursAt demo:time-baseline ;
+    icare:activityExecutionUsesDevice demo:scale ;
+    icare:activityExecutionUsesService demo:monitoring-service ;
+    icare:measurementEventFollowsProtocol demo:body-protocol ;
+    icare:measurementEventHasContext demo:home-context ;
+    icare:measurementEventHasOutput demo:baseline-weight-result ;
+    icare:measurementEventHasQuality icare:ValidMeasurement ;
+    icare:measurementEventMeasures demo:weight ;
+    icare:measurementEventUsesInstrument demo:scale .
+
+demo:baseline-weight-quantity a icare:QuantityValue,
+        owl:NamedIndividual ;
+    rdfs:label "baseline weight quantity"@en ;
+    icare:quantityNumericValue 74.0 ;
+    icare:quantityValueHasUnit demo:unit-kg .
+
+demo:bmi a icare:DerivedParameter,
+        owl:NamedIndividual ;
+    rdfs:label "Body mass index"@en ;
+    icare:derivedParameterDerivedFrom demo:height,
+        demo:weight ;
+    icare:parameterCode "DEMO-BMI"^^xsd:string ;
+    icare:parameterCodeSystem "https://example.org/maya/demo/codes/parameters"^^xsd:anyURI ;
+    icare:parameterName "Body mass index"^^xsd:string .
+
+demo:bmi-derivation-event a icare:MeasurementEvent,
+        owl:NamedIndividual ;
+    rdfs:label "Derived BMI calculation"@en ;
+    icare:activityExecutionHasSource demo:source-device ;
+    icare:activityExecutionOccursAt demo:time-baseline ;
+    icare:measurementEventHasOutput demo:bmi-result ;
+    icare:measurementEventMeasures demo:bmi .
+
+demo:bmi-quantity a icare:QuantityValue,
+        owl:NamedIndividual ;
+    rdfs:label "Synthetic BMI quantity"@en ;
+    icare:quantityNumericValue 26.22 ;
+    icare:quantityValueHasUnit demo:unit-bmi .
+
+demo:bmi-result a icare:ObservationResult,
+        owl:NamedIndividual ;
+    rdfs:label "Synthetic derived BMI result"@en ;
+    icare:observationDerivedFromObservation demo:baseline-height-result,
+        demo:baseline-weight-result ;
+    icare:observationHasQuantityValue demo:bmi-quantity .
+
+demo:bp-method a icare:MeasurementMethod,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional oscillometric measurement method"@en .
+
+demo:cancer-history a icare:CancerTreatmentHistory,
+        owl:NamedIndividual ;
+    rdfs:label "Historical cancer treatment summary"@en ;
+    icare:cancerTreatmentHistoryHasRecord demo:treatment-record .
+
+demo:care-plan-participation a icare:CarePlanParticipation,
+        owl:NamedIndividual ;
+    rdfs:label "Participant involvement in the support plan"@en ;
+    icare:participationHasParticipant demo:participant ;
+    icare:participationHasRole demo:participant-role .
+
+demo:clinical-profile a icare:ClinicalProfile,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional survivorship clinical profile"@en ;
+    icare:clinicalProfileHasCurrentStatus icare:RemissionClinicalStatus ;
+    icare:clinicalProfileIncludesRecord demo:symptom-record .
+
+demo:communication-preference a icare:CommunicationPreference,
+        owl:NamedIndividual ;
+    rdfs:label "Smart mirror communication preference"@en ;
+    icare:preferenceRecordedAt demo:time-enrolment ;
+    icare:preferredCommunicationChannel icare:SmartMirrorChannel .
+
+demo:contact-preference a icare:ContactPreference,
+        owl:NamedIndividual ;
+    rdfs:label "Evening contact preference"@en ;
+    icare:preferenceRecordedAt demo:time-enrolment ;
+    icare:preferredContactTime icare:EveningTimeOfDay .
+
+demo:demo-model a icare:PredictionModel,
+        owl:NamedIndividual ;
+    rdfs:label "DEMO ONLY — unvalidated illustrative model"@en ;
+    icare:modelIdentifier "DEMO-NOT-A-CLINICAL-MODEL"^^xsd:string ;
+    icare:modelVersion "0.1-synthetic"^^xsd:string .
+
+demo:dialogue-context a icare:DialogueContext,
+        owl:NamedIndividual ;
+    rdfs:label "Context for the fictional explanation"@en ;
+    icare:dialogueContextAddressesIntent icare:RequestExplanation ;
+    icare:dialogueContextIncludesEntity demo:health-literacy-record,
+        demo:information-preference,
+        demo:language-preference,
+        demo:literacy-intervention,
+        demo:risk-profile,
+        demo:symptom-record .
+
+demo:digital-literacy a icare:DigitalLiteracy,
+        owl:NamedIndividual ;
+    rdfs:label "Comfortable with everyday digital services"@en ;
+    icare:digitalLiteracyHasLevel icare:AdequateLiteracy .
+
+demo:digital-literacy-record a icare:SocialContextRecord,
+        owl:NamedIndividual ;
+    rdfs:label "digital literacy record"@en ;
+    icare:socialContextRecordHasSource demo:source-questionnaire ;
+    icare:socialContextRecordRecordedAt demo:time-baseline ;
+    icare:socialContextRecordRecordsFactor demo:digital-literacy .
+
+demo:evidence-rule a icare:SafetyRule,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional evidence-grounding rule"@en ;
+    icare:safetyRuleHasType icare:EvidenceGroundingRule ;
+    icare:safetyRuleText "Demonstration responses refer to a labelled fictional resource and do not diagnose or recommend treatment."^^xsd:string .
+
+demo:fatigue-severity a icare:Severity,
+        owl:NamedIndividual ;
+    rdfs:label "Illustrative mild reported symptom severity"@en ;
+    icare:severityHasSeverityLevel icare:MildSeverity .
+
+demo:followup-dbp-event a icare:MeasurementEvent,
+        owl:NamedIndividual ;
+    rdfs:label "followup dbp event"@en ;
+    icare:activityExecutionHasSource demo:source-device ;
+    icare:activityExecutionOccursAt demo:time-followup ;
+    icare:activityExecutionUsesDevice demo:blood-pressure-monitor ;
+    icare:activityExecutionUsesService demo:monitoring-service ;
+    icare:measurementEventFollowsProtocol demo:bp-protocol ;
+    icare:measurementEventHasContext demo:home-context ;
+    icare:measurementEventHasOutput demo:followup-dbp-result ;
+    icare:measurementEventHasQuality icare:ValidMeasurement ;
+    icare:measurementEventMeasures demo:diastolic-bp ;
+    icare:measurementEventUsesInstrument demo:blood-pressure-monitor .
+
+demo:followup-dbp-quantity a icare:QuantityValue,
+        owl:NamedIndividual ;
+    rdfs:label "followup dbp quantity"@en ;
+    icare:quantityNumericValue 78.0 ;
+    icare:quantityValueHasUnit demo:unit-mmhg .
+
+demo:followup-dbp-result a icare:ObservationResult,
+        owl:NamedIndividual ;
+    rdfs:label "followup dbp result"@en ;
+    icare:observationAssociatedWithStudyTimepoint demo:followup-study-timepoint ;
+    icare:observationHasQuantityValue demo:followup-dbp-quantity .
+
+demo:followup-sbp-event a icare:MeasurementEvent,
+        owl:NamedIndividual ;
+    rdfs:label "followup sbp event"@en ;
+    icare:activityExecutionHasSource demo:source-device ;
+    icare:activityExecutionOccursAt demo:time-followup ;
+    icare:activityExecutionUsesDevice demo:blood-pressure-monitor ;
+    icare:activityExecutionUsesService demo:monitoring-service ;
+    icare:measurementEventFollowsProtocol demo:bp-protocol ;
+    icare:measurementEventHasContext demo:home-context ;
+    icare:measurementEventHasOutput demo:followup-sbp-result ;
+    icare:measurementEventHasQuality icare:ValidMeasurement ;
+    icare:measurementEventMeasures demo:systolic-bp ;
+    icare:measurementEventUsesInstrument demo:blood-pressure-monitor .
+
+demo:followup-sbp-quantity a icare:QuantityValue,
+        owl:NamedIndividual ;
+    rdfs:label "followup sbp quantity"@en ;
+    icare:quantityNumericValue 122.0 ;
+    icare:quantityValueHasUnit demo:unit-mmhg .
+
+demo:health-literacy a icare:HealthLiteracy,
+        owl:NamedIndividual ;
+    rdfs:label "Needs support understanding health information"@en ;
+    icare:healthLiteracyHasLevel icare:LimitedLiteracy .
+
+demo:historical-treatment-agent a icare:TreatmentAgent,
+        owl:NamedIndividual ;
+    rdfs:label "Doxorubicin — fictional historical exposure"@en ;
+    icare:treatmentAgentName "Doxorubicin (synthetic historical record)"^^xsd:string .
+
+demo:lifestyle-profile a icare:LifestyleProfile,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional lifestyle profile"@en ;
+    icare:lifestyleProfileIncludesBehaviourRecord demo:activity-behaviour-record,
+        demo:smoking-record .
+
+demo:literacy-measurement a icare:MeasurementEvent,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional support-needs assessment event"@en ;
+    icare:activityExecutionHasSource demo:source-questionnaire ;
+    icare:activityExecutionOccursAt demo:time-baseline ;
+    icare:measurementEventFollowsProtocol demo:literacy-questionnaire-protocol ;
+    icare:measurementEventHasOutput demo:literacy-result ;
+    icare:measurementEventMeasures demo:literacy-parameter ;
+    icare:measurementEventUsesInstrument demo:literacy-questionnaire .
+
+demo:literacy-questionnaire a icare:Questionnaire,
+        owl:NamedIndividual ;
+    rdfs:label "Synthetic health-literacy support-needs questionnaire"@en ;
+    icare:instrumentName "DEMO-HL-NEEDS; not a validated questionnaire"^^xsd:string ;
+    icare:instrumentVersion "0.1-fictional"^^xsd:string ;
+    rdfs:comment "No licensed instrument or real psychometric validation is claimed."@en .
+
+demo:literacy-questionnaire-protocol a icare:QuestionnaireProtocol,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional support-needs questionnaire protocol"@en ;
+    icare:protocolSpecifiesParameter demo:literacy-parameter .
+
+demo:literacy-result a icare:ObservationResult,
+        owl:NamedIndividual ;
+    rdfs:label "Needs assessment result"@en ;
+    icare:healthLiteracyResultIdentifiesNeed icare:InformationAccessSupportNeed,
+        icare:InformationComprehensionSupportNeed ;
+    icare:observationTextValue "Prefers brief Spanish explanations and help understanding cardiovascular follow-up information."^^xsd:string .
+
+demo:locale a icare:Locale,
+        owl:NamedIndividual ;
+    rdfs:label "Spanish demonstration locale"@en ;
+    icare:localeCountryCode "ES"^^xsd:string ;
+    icare:localeTag "es-ES"^^xsd:language ;
+    icare:localeTimeZoneIdentifier "Europe/Madrid"^^xsd:string .
+
+demo:model-input a icare:ModelInput,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional model input record"@en ;
+    icare:modelInputDerivedFromObservation demo:followup-sbp-result ;
+    icare:modelInputIncludesExposure demo:anthracycline-exposure .
+
+demo:nutrition-instruction a icare:NutritionInstruction,
+        owl:NamedIndividual ;
+    rdfs:label "Illustrative instruction to discuss dietary choices"@en ;
+    icare:nutritionInstructionHasActionType icare:Increase ;
+    icare:nutritionInstructionTargetsComponent icare:FruitAndVegetables ;
+    icare:nutritionInstructionText "Fictional discussion example about including fruit and vegetables; no clinical dietary target is prescribed."^^xsd:string .
+
+demo:participant-knowledge-graph a icare:ParticipantKnowledgeGraph,
+        owl:NamedIndividual ;
+    rdfs:label "Logical collection about demo participant"@en ;
+    icare:participantKnowledgeGraphAboutPerson demo:participant .
+
+demo:performed-walking-activity a icare:ExerciseActivity,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional 18-minute completed walk"@en ;
+    icare:durationMinutes 18.0 ;
+    icare:exerciseActivityHasActivityType icare:Walking .
+
+demo:performed-walking-session a icare:PerformedExerciseSession,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional completed walk"@en ;
+    icare:activityExecutionHasSource demo:source-participant ;
+    icare:activityExecutionOccursAt demo:time-followup ;
+    icare:performedSessionIncludesActivity demo:performed-walking-activity ;
+    icare:performedSessionRealises demo:planned-walking-session .
+
+demo:planned-walking-session a icare:PlannedExerciseSession,
+        owl:NamedIndividual ;
+    rdfs:label "Illustrative planned walk"@en ;
+    icare:plannedSessionFollowsPrescription demo:exercise-prescription ;
+    icare:plannedSessionHasStatus icare:CompletedActivity ;
+    icare:plannedSessionScheduledAt demo:time-followup .
+
+demo:recommendation-criterion a icare:ApplicabilityCriterion,
+        owl:NamedIndividual ;
+    rdfs:label "Illustrative applicability condition"@en ;
+    icare:criterionText "Use only in the fictional scenario after review by the fictional clinician."^^xsd:string .
+
+demo:referral a icare:ReferralActivity,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional professional signposting after a reported concern"@en ;
+    icare:activityHasPriority icare:RoutinePriority ;
+    icare:activityHasStatus icare:PlannedActivity ;
+    icare:activityHasTrigger demo:symptom-trigger ;
+    icare:activityRequiresReviewBy demo:clinician-role ;
+    icare:carePlanActivityAdaptedToSocialContext demo:health-literacy-record .
+
+demo:response a icare:AgentResponse,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional grounded response"@en ;
+    icare:agentResponseGeneratedBy demo:avatar ;
+    icare:agentResponseGroundedInResource demo:resource-late-effects-es ;
+    icare:agentResponseRespondsTo demo:utterance ;
+    icare:agentResponseUsesContext demo:dialogue-context ;
+    icare:dialogueTurnOccursAt demo:time-dialogue ;
+    icare:turnSequenceNumber "2"^^xsd:nonNegativeInteger ;
+    icare:turnText "En esta demostración puedo mostrarte un recurso ficticio en español. Las dudas sobre tu situación las revisa tu equipo sanitario."^^xsd:string .
+
+demo:review-schedule a icare:Schedule,
+        owl:NamedIndividual ;
+    rdfs:label "Illustrative review schedule"@en ;
+    icare:scheduleNextDueAt demo:time-review-due .
+
+demo:risk-estimate a icare:RiskEstimate,
+        owl:NamedIndividual ;
+    rdfs:label "Unvalidated illustrative score; not a probability"@en ;
+    icare:riskEstimateEstimatesEventRisk demo:adverse-cardiac-event ;
+    icare:riskEstimateHasCategory icare:UnknownRisk ;
+    icare:riskEstimateHasInterpretation demo:risk-interpretation ;
+    icare:riskScore 2.0 .
+
+demo:risk-interpretation a icare:RiskInterpretation,
+        owl:NamedIndividual ;
+    rdfs:label "No validated clinical interpretation"@en ;
+    icare:riskInterpretationValue "Synthetic fixture score only; clinical risk remains unclassified."^^xsd:string .
+
+demo:safety-policy a icare:SafetyPolicy,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional demonstration safety policy"@en ;
+    icare:safetyPolicyHasRule demo:evidence-rule ;
+    icare:safetyPolicyVersion "DEMO-0.1"^^xsd:string .
+
+demo:smart-mirror a icare:SmartMirror,
+        owl:NamedIndividual ;
+    rdfs:label "Demo smart mirror"@en ;
+    icare:deviceProvidesAccessTo demo:dialogue-service,
+        demo:education-service,
+        demo:monitoring-service .
+
+demo:smoking-behaviour a icare:SmokingBehaviour,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional smoking history"@en .
+
+demo:smoking-record a icare:BehaviourRecord,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional never-smoker record"@en ;
+    icare:behaviourRecordHasSmokingStatus icare:NeverSmoker ;
+    icare:behaviourRecordHasSource demo:source-participant ;
+    icare:behaviourRecordRecordedAt demo:time-baseline ;
+    icare:behaviourRecordRecordsBehaviour demo:smoking-behaviour .
+
+demo:social-profile a icare:SocialContextProfile,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional social context"@en ;
+    icare:socialProfileIncludesRecord demo:digital-literacy-record,
+        demo:health-literacy-record .
+
+demo:study a icare:PilotStudy,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional MAYA technical demonstration study"@en ;
+    icare:pilotStudyHasArm demo:study-arm ;
+    icare:pilotStudyHasPhase demo:pilot-phase ;
+    icare:pilotStudyHasPilotSite demo:pilot-site .
+
+demo:survivor-role a icare:AYACancerSurvivorRole,
+        owl:NamedIndividual ;
+    rdfs:label "AYA survivor role"@en .
+
+demo:time-diagnosis a icare:Timepoint,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional diagnosis record time"@en ;
+    icare:timepointDateTime "2022-03-14T10:00:00+01:00"^^xsd:dateTime .
+
+demo:time-review-due a icare:Timepoint,
+        owl:NamedIndividual ;
+    rdfs:label "Illustrative review appointment"@en ;
+    icare:timepointDateTime "2026-11-03T10:00:00+01:00"^^xsd:dateTime .
+
+demo:time-treatment-start a icare:Timepoint,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional treatment start"@en ;
+    icare:timepointDateTime "2022-04-04T09:00:00+02:00"^^xsd:dateTime .
+
+demo:treatment-record a icare:CancerTreatmentRecord,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional systemic treatment record"@en ;
+    icare:treatmentRecordHasIntent icare:CurativeTreatmentIntent ;
+    icare:treatmentRecordHasRegimen demo:treatment-regimen ;
+    icare:treatmentRecordHasSetting icare:TreatmentAloneSetting ;
+    icare:treatmentRecordHasSource demo:source-clinical-record ;
+    icare:treatmentRecordHasTreatmentPeriod demo:treatment-period ;
+    icare:treatmentRecordIndicatesExposure demo:anthracycline-exposure ;
+    icare:treatmentRecordRecordedAt demo:time-treatment-end ;
+    icare:treatmentRecordRecordsTreatmentType icare:ChemotherapyTreatment ;
+    icare:treatmentRecordTreatsDiagnosis demo:cancer-diagnosis .
+
+demo:treatment-regimen a icare:TreatmentRegimen,
+        owl:NamedIndividual ;
+    rdfs:label "Unspecified fictional systemic regimen"@en ;
+    icare:treatmentRegimenName "DEMO-HISTORICAL-REGIMEN; illustrative, not a treatment protocol"^^xsd:string .
+
+demo:treatment-related-risk a icare:CardiotoxicityRisk,
+        owl:NamedIndividual ;
+    rdfs:label "Historical exposure relevance to late-effect follow-up"@en ;
+    icare:cardiotoxicityRiskValue "Not clinically graded; fictional historical exposure"^^xsd:string .
+
+demo:unit-bmi a icare:Unit,
+        owl:NamedIndividual ;
+    rdfs:label "Demo unit: kg/m²"@en ;
+    icare:unitCode "kg/m2"^^xsd:string ;
+    icare:unitCodeSystem "http://unitsofmeasure.org"^^xsd:anyURI ;
+    icare:unitSymbol "kg/m²"^^xsd:string .
+
+demo:unit-kg a icare:Unit,
+        owl:NamedIndividual ;
+    rdfs:label "Demo unit: kg"@en ;
+    icare:unitCode "kg"^^xsd:string ;
+    icare:unitCodeSystem "http://unitsofmeasure.org"^^xsd:anyURI ;
+    icare:unitSymbol "kg"^^xsd:string .
+
+demo:unit-m a icare:Unit,
+        owl:NamedIndividual ;
+    rdfs:label "Demo unit: m"@en ;
+    icare:unitCode "m"^^xsd:string ;
+    icare:unitCodeSystem "http://unitsofmeasure.org"^^xsd:anyURI ;
+    icare:unitSymbol "m"^^xsd:string .
+
+demo:walking-activity a icare:ExerciseActivity,
+        owl:NamedIndividual ;
+    rdfs:label "Illustrative 20-minute walking activity"@en ;
+    icare:durationMinutes 20.0 ;
+    icare:exerciseActivityHasActivityType icare:Walking .
+
+demo:anthracycline-exposure a icare:AnthracyclineExposure,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional prior anthracycline exposure"@en ;
+    icare:cumulativeDrugDose 200.0 ;
+    icare:cumulativeDrugDoseUnit "mg/m2"^^xsd:string ;
+    icare:treatmentExposureHasAgent demo:historical-treatment-agent ;
+    icare:treatmentExposureHasPeriod demo:treatment-period ;
+    icare:treatmentExposureIsRiskFactorOf demo:treatment-related-risk .
+
+demo:avatar a icare:ConversationAgent,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional Spanish conversational avatar"@en ;
+    icare:agentGovernedBySafetyPolicy demo:safety-policy ;
+    icare:agentHasCapability icare:HealthLiteracySupportCapability,
+        icare:ResourceRecommendationCapability ;
+    icare:agentVersion "DEMO-0.1"^^xsd:string ;
+    icare:conversationAgentEscalatesTo demo:clinician ;
+    icare:conversationAgentOverseenBy demo:clinician .
+
+demo:baseline-height-result a icare:ObservationResult,
+        owl:NamedIndividual ;
+    rdfs:label "baseline height result"@en ;
+    icare:observationAssociatedWithStudyTimepoint demo:baseline-study-timepoint ;
+    icare:observationHasQuantityValue demo:baseline-height-quantity .
+
+demo:baseline-weight-result a icare:ObservationResult,
+        owl:NamedIndividual ;
+    rdfs:label "baseline weight result"@en ;
+    icare:observationAssociatedWithStudyTimepoint demo:baseline-study-timepoint ;
+    icare:observationHasQuantityValue demo:baseline-weight-quantity .
+
+demo:body-protocol a icare:BodyCompositionProtocol,
+        owl:NamedIndividual ;
+    rdfs:label "Demo anthropometric recording protocol"@en .
+
+demo:cancer-diagnosis a icare:CancerDiagnosis,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional historical Hodgkin lymphoma diagnosis"@en ;
+    icare:ageAtCancerDiagnosis 23.0 ;
+    icare:cancerDiagnosisHasSource demo:source-clinical-record ;
+    icare:cancerDiagnosisRecordedAt demo:time-diagnosis ;
+    icare:cancerTypeName "Hodgkin lymphoma — synthetic historical record"^^xsd:string .
+
+demo:clinical-review a icare:MedicalCheckUpActivity,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional non-urgent survivorship review"@en ;
+    icare:activityHasPriority icare:RoutinePriority ;
+    icare:activityHasSchedule demo:review-schedule ;
+    icare:activityHasStatus icare:ScheduledActivity ;
+    icare:activityHasTrigger demo:symptom-trigger ;
+    icare:activityRequiresReviewBy demo:clinician-role ;
+    icare:carePlanActivityAdaptedToSocialContext demo:health-literacy-record .
+
+demo:clinician a icare:Person,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional clinician ES-CLINICIAN-001"@en ;
+    icare:personHasRole demo:clinician-role .
+
+demo:enrolment-period a icare:TimeInterval,
+        owl:NamedIndividual ;
+    rdfs:label "Enrolment validity interval, open ended"@en ;
+    icare:intervalStartsAt demo:time-enrolment .
+
+demo:exercise-prescription a icare:ExercisePrescription,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional activity specification, not a clinical prescription"@en ;
+    icare:exercisePrescriptionIncludesActivity demo:walking-activity ;
+    icare:prescriptionIdentifier "DEMO-WALK-001"^^xsd:string .
+
+demo:fatigue a icare:Symptom,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional intermittent fatigue"@en ;
+    icare:symptomName "Intermittent fatigue after a busy working day"^^xsd:string .
+
+demo:followup-sbp-result a icare:ObservationResult,
+        owl:NamedIndividual ;
+    rdfs:label "followup sbp result"@en ;
+    icare:observationAssociatedWithStudyTimepoint demo:followup-study-timepoint ;
+    icare:observationHasQuantityValue demo:followup-sbp-quantity .
+
+demo:followup-study-timepoint a icare:StudyTimepoint,
+        owl:NamedIndividual ;
+    rdfs:label "Demonstration follow-up assessment point"@en ;
+    icare:studyTimepointHasType icare:FollowUpTimepointType .
+
+demo:height a icare:AnthropometricParameter,
+        owl:NamedIndividual ;
+    rdfs:label "Height"@en ;
+    icare:parameterCode "DEMO-HEIGHT"^^xsd:string ;
+    icare:parameterCodeSystem "https://example.org/maya/demo/codes/parameters"^^xsd:anyURI ;
+    icare:parameterName "Height"^^xsd:string .
+
+demo:height-instrument a icare:Device,
+        icare:MeasurementInstrument,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional height-measurement instrument"@en .
+
+demo:information-preference a icare:InformationPreference,
+        owl:NamedIndividual ;
+    rdfs:label "Preference for brief explanations"@en ;
+    icare:informationPreferenceHasDetailLevel icare:BriefInformation ;
+    icare:preferenceRecordedAt demo:time-enrolment .
+
+demo:language-preference a icare:LanguagePreference,
+        owl:NamedIndividual ;
+    rdfs:label "Spanish language preference"@en ;
+    icare:preferenceRecordedAt demo:time-enrolment ;
+    icare:preferredLanguageTag "es-ES"^^xsd:language .
+
+demo:literacy-parameter a icare:PatientReportedOutcome,
+        owl:NamedIndividual ;
+    rdfs:label "Self-reported health-information support needs"@en .
+
+demo:low-activity-risk-factor a icare:ModifiableRiskFactor,
+        owl:NamedIndividual ;
+    rdfs:label "Low physical activity — illustrative modifiable factor"@en .
+
+demo:nutrition-goal a icare:Goal,
+        owl:NamedIndividual ;
+    rdfs:label "Illustrative participant goal: review dietary habits"@en ;
+    icare:goalDescriptionText "Discuss dietary habits using a fictional Spanish information resource."^^xsd:string ;
+    icare:goalHasAchievementStatus icare:InProgressGoalAchievementStatus ;
+    icare:goalHasLifecycleStatus icare:ActiveGoalLifecycleStatus .
+
+demo:nutrition-intervention a icare:NutritionIntervention,
+        owl:NamedIndividual ;
+    rdfs:label "Illustrative nutrition-information intervention"@en ;
+    icare:activityContributesToGoal demo:nutrition-goal ;
+    icare:activityHasPriority icare:RoutinePriority ;
+    icare:activityHasStatus icare:PlannedActivity ;
+    icare:activityRequiresReviewBy demo:clinician-role ;
+    icare:carePlanActivityAdaptedToSocialContext demo:health-literacy-record ;
+    icare:nutritionInterventionSpecifiesInstruction demo:nutrition-instruction .
+
+demo:participant-role a icare:StudyParticipantRole,
+        owl:NamedIndividual ;
+    rdfs:label "Demonstration study participant role"@en .
+
+demo:pilot-phase a icare:PilotPhase,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional feasibility phase"@en .
+
+demo:pilot-site a icare:PilotSite,
+        owl:NamedIndividual ;
+    rdfs:label "ES-DEMO-01 — fictional site in Castilla-La Mancha, Spain"@en ;
+    icare:pilotSiteHasLocale demo:locale .
+
+demo:recommendation-literacy a icare:Recommendation,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional recommendation-literacy"@en ;
+    icare:recommendationRecommendsActivity demo:literacy-intervention ;
+    icare:recommendationText "Technical fixture linking a resource to a fictional care activity; not medical guidance."^^xsd:string .
+
+demo:recommendation-nutrition a icare:Recommendation,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional recommendation-nutrition"@en ;
+    icare:recommendationRecommendsActivity demo:nutrition-intervention ;
+    icare:recommendationText "Technical fixture linking a resource to a fictional care activity; not medical guidance."^^xsd:string .
+
+demo:recommendation-walking a icare:Recommendation,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional recommendation-walking"@en ;
+    icare:recommendationHasApplicabilityCriterion demo:recommendation-criterion ;
+    icare:recommendationRecommendsActivity demo:exercise-intervention ;
+    icare:recommendationText "Technical fixture linking a resource to a fictional care activity; not medical guidance."^^xsd:string .
+
+demo:resource-late-effects-es a icare:HealthLiteracyResource,
+        owl:NamedIndividual ;
+    rdfs:label "Demo Spanish late-effects explainer video"@en ;
+    icare:healthLiteracyResourceAddressesNeed icare:InformationComprehensionSupportNeed ;
+    icare:knowledgeResourceContainsRecommendation demo:recommendation-literacy ;
+    icare:knowledgeResourceHasAccessibilityFeature icare:Captions,
+        icare:PlainLanguage ;
+    icare:knowledgeResourceHasAudience icare:AYASurvivorAudience ;
+    icare:knowledgeResourceHasComplexityLevel icare:FoundationalComplexity ;
+    icare:knowledgeResourceHasFormat icare:Video ;
+    icare:knowledgeResourceHasPurpose icare:ExplainHealthTopic ;
+    icare:knowledgeResourceHasTopic icare:CardiovascularLateEffects ;
+    icare:knowledgeResourceSupportsRecommendation demo:recommendation-literacy ;
+    dcterms:description "Fictional catalogue metadata only; no real document or approved health guidance exists."@en ;
+    dcterms:identifier "resource-late-effects-es" ;
+    dcterms:language "es-ES"^^xsd:language .
+
+demo:source-clinical-record a icare:ClinicalRecordDataSource,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional imported survivorship summary"@en ;
+    icare:dataSourceDescription "Synthetic fixture source; no real underlying record."^^xsd:string ;
+    icare:dataSourceName "Demo clinical summary"^^xsd:string .
+
+demo:study-arm a icare:StudyArm,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional intervention arm"@en .
+
+demo:symptom-trigger a icare:SymptomBasedTrigger,
+        owl:NamedIndividual ;
+    rdfs:label "Authored demonstration trigger linked to reported fatigue"@en ;
+    icare:symptomBasedTriggerUsesSymptomRecord demo:symptom-record ;
+    rdfs:comment "An authored example association, not a clinical warning rule or inference that this symptom requires referral."@en .
+
+demo:time-treatment-end a icare:Timepoint,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional treatment end"@en ;
+    icare:timepointDateTime "2022-09-19T09:00:00+02:00"^^xsd:dateTime .
+
+demo:treatment-period a icare:TimeInterval,
+        owl:NamedIndividual ;
+    rdfs:label "Historical treatment interval"@en ;
+    icare:intervalEndsAt demo:time-treatment-end ;
+    icare:intervalStartsAt demo:time-treatment-start .
+
+demo:utterance a icare:UserUtterance,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional participant question"@en ;
+    icare:dialogueTurnOccursAt demo:time-dialogue ;
+    icare:turnSequenceNumber "1"^^xsd:nonNegativeInteger ;
+    icare:turnText "¿Puedes explicarme con palabras sencillas para qué sirve el seguimiento del corazón?"^^xsd:string ;
+    icare:userUtteranceExpressesIntent icare:RequestExplanation .
+
+demo:weight a icare:AnthropometricParameter,
+        owl:NamedIndividual ;
+    rdfs:label "Body weight"@en ;
+    icare:parameterCode "DEMO-WEIGHT"^^xsd:string ;
+    icare:parameterCodeSystem "https://example.org/maya/demo/codes/parameters"^^xsd:anyURI ;
+    icare:parameterName "Body weight"^^xsd:string .
+
+demo:dialogue-service a icare:DigitalService,
+        owl:NamedIndividual ;
+    rdfs:label "Demo Spanish conversational service"@en ;
+    icare:digitalServiceHasType icare:DialogueServiceType .
+
+demo:diastolic-bp a icare:VitalSign,
+        owl:NamedIndividual ;
+    rdfs:label "Diastolic blood pressure"@en ;
+    icare:parameterCode "DEMO-DBP"^^xsd:string ;
+    icare:parameterCodeSystem "https://example.org/maya/demo/codes/parameters"^^xsd:anyURI ;
+    icare:parameterName "Diastolic blood pressure"^^xsd:string .
+
+demo:exercise-intervention a icare:ExerciseIntervention,
+        owl:NamedIndividual ;
+    rdfs:label "Illustrative walking-support intervention"@en ;
+    icare:activityContributesToGoal demo:walking-goal ;
+    icare:activityHasPriority icare:RoutinePriority ;
+    icare:activityHasStatus icare:InProgressActivity ;
+    icare:activityRealisedBy demo:performed-walking-session ;
+    icare:activityRequiresReviewBy demo:clinician-role ;
+    icare:carePlanActivityAdaptedToSocialContext demo:health-literacy-record ;
+    icare:exerciseInterventionHasPrescription demo:exercise-prescription ;
+    icare:interventionTargetsRiskFactor demo:low-activity-risk-factor .
+
+demo:risk-profile a icare:RiskProfile,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional cardiovascular risk profile"@en ;
+    icare:riskProfileAssessedAt demo:time-followup ;
+    icare:riskProfileIncludesRiskEstimate demo:risk-estimate .
+
+demo:scale a icare:Device,
+        icare:MeasurementDevice,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional home scale"@en .
+
+demo:source-questionnaire a icare:QuestionnaireDataSource,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional questionnaire response source"@en ;
+    icare:dataSourceDescription "Synthetic fixture source; no real underlying record."^^xsd:string ;
+    icare:dataSourceName "Demo questionnaire response"^^xsd:string .
+
+demo:symptom-record a icare:SymptomRecord,
+        owl:NamedIndividual ;
+    rdfs:label "Participant-reported fatigue record"@en ;
+    icare:clinicalRecordHasSource demo:source-participant ;
+    icare:clinicalRecordRecordedAt demo:time-followup ;
+    icare:symptomRecordHasSeverity demo:fatigue-severity ;
+    icare:symptomRecordRecordsSymptom demo:fatigue .
+
+demo:systolic-bp a icare:VitalSign,
+        owl:NamedIndividual ;
+    rdfs:label "Systolic blood pressure"@en ;
+    icare:parameterCode "DEMO-SBP"^^xsd:string ;
+    icare:parameterCodeSystem "https://example.org/maya/demo/codes/parameters"^^xsd:anyURI ;
+    icare:parameterName "Systolic blood pressure"^^xsd:string .
+
+demo:walking-goal a icare:Goal,
+        owl:NamedIndividual ;
+    rdfs:label "Illustrative participant goal: establish a walking routine"@en ;
+    icare:goalDescriptionText "Try a manageable walking routine, with fictional clinician review."^^xsd:string ;
+    icare:goalHasAchievementStatus icare:InProgressGoalAchievementStatus ;
+    icare:goalHasLifecycleStatus icare:ActiveGoalLifecycleStatus .
+
+demo:baseline-study-timepoint a icare:StudyTimepoint,
+        owl:NamedIndividual ;
+    rdfs:label "Baseline assessment point"@en ;
+    icare:studyTimepointHasType icare:BaselineTimepointType .
+
+demo:bp-protocol a icare:BloodPressureMeasurementProtocol,
+        owl:NamedIndividual ;
+    rdfs:label "Demo blood-pressure recording protocol"@en ;
+    icare:protocolSpecifiesMethod demo:bp-method ;
+    icare:protocolSpecifiesParameter demo:diastolic-bp,
+        demo:systolic-bp .
+
+demo:education-service a icare:DigitalService,
+        owl:NamedIndividual ;
+    rdfs:label "Demo educational-content service"@en ;
+    icare:digitalServiceHasType icare:HealthLiteracyServiceType .
+
+demo:literacy-intervention a icare:HealthLiteracyIntervention,
+        owl:NamedIndividual ;
+    rdfs:label "Illustrative explanation and teach-back activity"@en ;
+    icare:activityDeliveredThroughService demo:education-service ;
+    icare:activityHasPriority icare:RoutinePriority ;
+    icare:activityHasStatus icare:InProgressActivity ;
+    icare:activityRequiresReviewBy demo:clinician-role ;
+    icare:carePlanActivityAdaptedToSocialContext demo:health-literacy-record ;
+    icare:healthLiteracyInterventionAddressesNeed icare:InformationComprehensionSupportNeed ;
+    icare:healthLiteracyInterventionUsesResource demo:resource-late-effects-es .
+
+demo:time-dialogue a icare:Timepoint,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional avatar interaction time"@en ;
+    icare:timepointDateTime "2026-10-27T18:00:00+01:00"^^xsd:dateTime .
+
+demo:unit-mmhg a icare:Unit,
+        owl:NamedIndividual ;
+    rdfs:label "Demo unit: mmHg"@en ;
+    icare:unitCode "mm[Hg]"^^xsd:string ;
+    icare:unitCodeSystem "http://unitsofmeasure.org"^^xsd:anyURI ;
+    icare:unitSymbol "mmHg"^^xsd:string .
+
+demo:time-enrolment a icare:Timepoint,
+        owl:NamedIndividual ;
+    rdfs:label "Enrolment time"@en ;
+    icare:timepointDateTime "2026-10-15T10:00:00+02:00"^^xsd:dateTime .
+
+demo:clinician-role a icare:ClinicianRole,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional clinical reviewer role"@en .
+
+demo:home-context a icare:HomeMonitoringContext,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional home measurement context"@en .
+
+demo:source-participant a icare:SelfReportedDataSource,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional participant-reported information"@en ;
+    icare:dataSourceDescription "Synthetic fixture source; no real underlying record."^^xsd:string ;
+    icare:dataSourceName "Demo self-report"^^xsd:string .
+
+demo:health-literacy-record a icare:SocialContextRecord,
+        owl:NamedIndividual ;
+    rdfs:label "health literacy record"@en ;
+    icare:socialContextRecordHasSource demo:source-questionnaire ;
+    icare:socialContextRecordRecordedAt demo:time-baseline ;
+    icare:socialContextRecordRecordsFactor demo:health-literacy .
+
+demo:participant a icare:Person,
+        owl:NamedIndividual ;
+    rdfs:label "Demo survivor ES-AYA-001"@en ;
+    icare:ageInYears 27.0 ;
+    icare:hasCancerDiagnosis demo:cancer-diagnosis ;
+    icare:personHasCancerTreatmentHistory demo:cancer-history ;
+    icare:personHasClinicalProfile demo:clinical-profile ;
+    icare:personHasLifestyleProfile demo:lifestyle-profile ;
+    icare:personHasPreference demo:communication-preference,
+        demo:contact-preference,
+        demo:information-preference,
+        demo:language-preference ;
+    icare:personHasRiskProfile demo:risk-profile ;
+    icare:personHasRole demo:participant-role,
+        demo:survivor-role ;
+    icare:personHasSocialContextProfile demo:social-profile ;
+    icare:personIdentifier "DEMO-ES-AYA-001"^^xsd:string ;
+    icare:personParticipatesInMeasurement demo:baseline-dbp-event,
+        demo:baseline-height-event,
+        demo:baseline-sbp-event,
+        demo:baseline-weight-event,
+        demo:bmi-derivation-event,
+        demo:followup-dbp-event,
+        demo:followup-sbp-event,
+        demo:literacy-measurement ;
+    rdfs:comment "Fictional 27-year-old cancer survivor; age is an enrolment snapshot. No real identity or birth date is represented."@en .
+
+demo:source-device a icare:DeviceDataSource,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional device feed"@en ;
+    icare:dataSourceDescription "Synthetic fixture source; no real underlying record."^^xsd:string ;
+    icare:dataSourceName "Demo home-monitoring feed"^^xsd:string .
+
+demo:monitoring-service a icare:DigitalService,
+        owl:NamedIndividual ;
+    rdfs:label "Demo remote-monitoring service"@en ;
+    icare:digitalServiceHasType icare:RemoteMonitoringServiceType .
+
+demo:time-followup a icare:Timepoint,
+        owl:NamedIndividual ;
+    rdfs:label "Second home-monitoring time"@en ;
+    icare:timepointDateTime "2026-10-27T08:30:00+01:00"^^xsd:dateTime .
+
+demo:blood-pressure-monitor a icare:Device,
+        icare:MeasurementDevice,
+        owl:NamedIndividual ;
+    rdfs:label "Fictional home blood-pressure monitor"@en .
+
+demo:time-baseline a icare:Timepoint,
+        owl:NamedIndividual ;
+    rdfs:label "First home-monitoring time"@en ;
+    icare:timepointDateTime "2026-10-20T08:30:00+02:00"^^xsd:dateTime .
+

@@ -1,0 +1,4 @@
+mapping_id	source_iri	relation	target_iri	source_workbook	source_row
+MAP-ONT-001	http://maya-project.eu/icareonto/Agent	http://www.w3.org/2000/01/rdf-schema#subClassOf	http://www.w3.org/ns/prov#Agent	icareonto_alignment_mapping_workbook_v301026_4.xlsx	5
+MAP-ONT-002	http://maya-project.eu/icareonto/ParticipantKnowledgeGraph	http://www.w3.org/2000/01/rdf-schema#subClassOf	http://www.w3.org/ns/prov#Collection	icareonto_alignment_mapping_workbook_v301026_4.xlsx	6
+MAP-ONT-003	http://maya-project.eu/icareonto/ConsentRecord	http://www.w3.org/2000/01/rdf-schema#subClassOf	http://www.w3.org/ns/prov#Entity	icareonto_alignment_mapping_workbook_v301026_4.xlsx	7

@@ -1,0 +1,21 @@
+{
+  "snapshot_date": "2026-11-05",
+  "files": {
+    "icareonto_review_workbook_v021126.xlsx": {
+      "sha256": "2fcbe6cf9b887615c08184d223e6fb8b3ad30a903cbc3cbf5156f25182d3e5cf",
+      "bytes": 143930
+    },
+    "icareonto_alignment_mapping_workbook_v301026_4.xlsx": {
+      "sha256": "615925bdf3a9e44404c06129220a2b6818694081e1fb15e41daa6bb664bbb771",
+      "bytes": 38107
+    },
+    "icareonto_final_consolidated_competency_questions_v5.xlsx": {
+      "sha256": "e46f6ffc5a42bf46d1e1f64ee515f76e2e499665341b883afe98aa6ea3dd42c0",
+      "bytes": 23942
+    },
+    "MAYA_consolidated_educational_resources_v20261101.xlsx": {
+      "sha256": "4d13cbe6cc2a0c21781197ba522d380246c136e848d09ef6dbc1909f53e23c08",
+      "bytes": 34519
+    }
+  }
+}

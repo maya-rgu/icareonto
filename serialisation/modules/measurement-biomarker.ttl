@@ -1,0 +1,737 @@
+@prefix icare: <http://maya-project.eu/icareonto/> .
+@prefix meta: <http://maya-project.eu/icareonto/metadata#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+icare:AnthropometricParameter a owl:Class ;
+    rdfs:label "Anthropometric Parameter"@en ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    rdfs:subClassOf icare:PhysiologicalParameter ;
+    skos:definition "A body-size or body-composition parameter, such as weight, height, BMI, waist circumference, or body fat percentage."@en .
+
+icare:BehaviouralParameter a owl:Class ;
+    rdfs:label "Behavioural Parameter"@en ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    rdfs:subClassOf icare:MeasurableParameter ;
+    skos:definition "A measurable parameter describing behaviour relevant to health, monitoring, adherence, or lifestyle risk."@en .
+
+icare:BloodPressureMeasurementProtocol a owl:Class ;
+    rdfs:label "Blood Pressure Measurement Protocol"@en ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    rdfs:subClassOf icare:MeasurementProtocol ;
+    skos:definition "A protocol specifying how an activity, measurement, assessment, or clinical process should be performed."@en .
+
+icare:BodyCompositionProtocol a owl:Class ;
+    rdfs:label "Body Composition Protocol"@en ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    rdfs:subClassOf icare:MeasurementProtocol ;
+    skos:definition "A protocol specifying how an activity, measurement, assessment, or clinical process should be performed."@en .
+
+icare:CardiacBiomarker a owl:Class ;
+    rdfs:label "Cardiac Biomarker"@en ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    rdfs:subClassOf icare:Biomarker ;
+    skos:definition "A biomarker relevant to cardiac function, injury, or cardiovascular risk monitoring."@en .
+
+icare:ClinicalRecordDataSource a owl:Class ;
+    rdfs:label "Clinical Record Data Source"@en ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    rdfs:subClassOf icare:DataSource ;
+    skos:definition "A data source in which information was obtained from a clinical record or electronic health record."@en .
+
+icare:ClinicalVisitContext a owl:Class ;
+    rdfs:label "Clinical Visit Context"@en ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    rdfs:subClassOf icare:MeasurementContext ;
+    skos:definition "A measurement context in which a measurement is performed as part of a scheduled or unscheduled clinical visit or assessment."@en .
+
+icare:DeviceDataSource a owl:Class ;
+    rdfs:label "Device Data Source"@en ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    rdfs:subClassOf icare:DataSource ;
+    skos:definition "A data source in which information was produced, captured or transmitted by a measurement or monitoring device."@en .
+
+icare:ECGMonitoringProtocol a owl:Class ;
+    rdfs:label "ECG Monitoring Protocol"@en ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    rdfs:subClassOf icare:MeasurementProtocol ;
+    skos:definition "A protocol specifying how an activity, measurement, assessment, or clinical process should be performed."@en .
+
+icare:EngagementParameter a owl:Class ;
+    rdfs:label "Engagement Parameter"@en ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    rdfs:subClassOf icare:MeasurableParameter ;
+    skos:definition "A measurable parameter describing interaction with services, adherence to monitoring, app use, session participation, or user engagement."@en .
+
+icare:HomeMonitoringContext a owl:Class ;
+    rdfs:label "Home Monitoring Context"@en ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    rdfs:subClassOf icare:MeasurementContext ;
+    skos:definition "A measurement context in which a measurement is performed outside a clinical setting as part of home-based or self-monitoring."@en .
+
+icare:LaboratoryProtocol a owl:Class ;
+    rdfs:label "Laboratory Protocol"@en ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    rdfs:subClassOf icare:MeasurementProtocol ;
+    skos:definition "A protocol specifying how an activity, measurement, assessment, or clinical process should be performed."@en .
+
+icare:MeasurementDevice a owl:Class ;
+    rdfs:label "Measurement Device"@en ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    rdfs:subClassOf icare:MeasurementInstrument ;
+    skos:definition "A device used to collect data, support interaction, or deliver a digital service."@en .
+
+icare:PatientReportedOutcome a owl:Class ;
+    rdfs:label "Patient Reported Outcome"@en ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    rdfs:subClassOf icare:MeasurableParameter ;
+    skos:definition "A measurable outcome reported directly by a person, such as symptoms, quality of life, fatigue, distress, function, or wellbeing."@en .
+
+icare:PhysicalPerformanceParameter a owl:Class ;
+    rdfs:label "Physical Performance Parameter"@en ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    rdfs:subClassOf icare:MeasurableParameter ;
+    skos:definition "A measurable parameter describing physical function, exercise capacity, strength, mobility, endurance, or activity tolerance."@en .
+
+icare:PhysicalPerformanceProtocol a owl:Class ;
+    rdfs:label "Physical Performance Protocol"@en ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    rdfs:subClassOf icare:MeasurementProtocol ;
+    skos:definition "A protocol specifying how an activity, measurement, assessment, or clinical process should be performed."@en .
+
+icare:PsychologicalParameter a owl:Class ;
+    rdfs:label "Psychological Parameter"@en ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    rdfs:subClassOf icare:MeasurableParameter ;
+    skos:definition "A measurable parameter describing mental health, emotional wellbeing, cognition, distress, or psychological symptoms."@en .
+
+icare:Questionnaire a owl:Class ;
+    rdfs:label "Questionnaire"@en ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    rdfs:subClassOf icare:MeasurementInstrument ;
+    skos:definition "A structured instrument containing questions or scales used to collect patient-reported outcomes, symptoms, behaviours, or psychosocial measures."@en .
+
+icare:QuestionnaireDataSource a owl:Class ;
+    rdfs:label "Questionnaire Data Source"@en ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    rdfs:subClassOf icare:DataSource ;
+    skos:definition "A data source in which information was obtained from responses to, or scores calculated from, a questionnaire."@en .
+
+icare:QuestionnaireProtocol a owl:Class ;
+    rdfs:label "Questionnaire Protocol"@en ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    rdfs:subClassOf icare:MeasurementProtocol ;
+    skos:definition "A protocol specifying how an activity, measurement, assessment, or clinical process should be performed."@en .
+
+icare:SelfReportedDataSource a owl:Class ;
+    rdfs:label "Self Reported Data Source"@en ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    rdfs:subClassOf icare:DataSource ;
+    skos:definition "A data source in which information was reported directly by the person to whom it relates, rather than obtained from a device or clinical record."@en .
+
+icare:SymptomTriggeredContext a owl:Class ;
+    rdfs:label "Symptom Triggered Context"@en ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    rdfs:subClassOf icare:MeasurementContext ;
+    skos:definition "A measurement context in which a measurement is initiated in response to a reported, observed or detected symptom."@en .
+
+icare:VitalSign a owl:Class ;
+    rdfs:label "Vital Sign"@en ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    rdfs:subClassOf icare:MeasurableParameter ;
+    skos:definition "A routinely monitored physiological parameter such as blood pressure, heart rate, respiratory rate, oxygen saturation, or temperature."@en .
+
+icare:derivedParameterDerivedFrom a owl:ObjectProperty ;
+    rdfs:label "derived from"@en ;
+    rdfs:domain icare:DerivedParameter ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    rdfs:range icare:MeasurableParameter ;
+    skos:definition "Relates a derived parameter to source parameters used to calculate it."@en .
+
+icare:instrumentName a owl:DatatypeProperty ;
+    rdfs:label "instrument name"@en ;
+    rdfs:domain icare:MeasurementInstrument ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    rdfs:range xsd:string ;
+    skos:definition "Records the name of a measurement instrument."@en .
+
+icare:instrumentVersion a owl:DatatypeProperty ;
+    rdfs:label "instrument version"@en ;
+    rdfs:domain icare:MeasurementInstrument ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    rdfs:range xsd:string ;
+    skos:definition "Records the version, edition, or release identifier of a measurement instrument or questionnaire, supporting identification of validated forms and reproducibility of measurements."@en .
+
+icare:interpretationText a owl:DatatypeProperty ;
+    rdfs:label "interpretation text"@en ;
+    rdfs:domain icare:MeasurementInterpretation ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    rdfs:range xsd:string ;
+    skos:definition "Records textual interpretation of a measurement or observation."@en .
+
+icare:measurementEventFollowsProtocol a owl:ObjectProperty ;
+    rdfs:label "follows protocol"@en ;
+    rdfs:domain icare:MeasurementEvent ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    rdfs:range icare:MeasurementProtocol ;
+    skos:definition "Relates Measurement Event to Measurement Protocol."@en .
+
+icare:measurementEventFollowsSamplingProcedure a owl:ObjectProperty ;
+    rdfs:label "follows sampling procedure"@en ;
+    rdfs:domain icare:MeasurementEvent ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    rdfs:range icare:SamplingProcedure ;
+    skos:definition "Relates a measurement event to its sampling or collection procedure."@en .
+
+icare:measurementEventHasContext a owl:ObjectProperty ;
+    rdfs:label "has context"@en ;
+    rdfs:domain icare:MeasurementEvent ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    rdfs:range icare:MeasurementContext ;
+    skos:definition "Identifies the circumstances or setting in which a measurement event occurred."@en .
+
+icare:measurementEventHasOutput a owl:ObjectProperty ;
+    rdfs:label "has output"@en ;
+    rdfs:domain icare:MeasurementEvent ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    rdfs:range icare:ObservationResult ;
+    skos:definition "Relates Measurement Event to Observation Result."@en .
+
+icare:measurementEventHasQuality a owl:ObjectProperty ;
+    rdfs:label "has quality"@en ;
+    rdfs:domain icare:MeasurementEvent ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    rdfs:range icare:MeasurementQuality ;
+    skos:definition "Relates a measurement event to an assessment of measurement quality."@en .
+
+icare:measurementEventMeasures a owl:ObjectProperty ;
+    rdfs:label "measures"@en ;
+    rdfs:domain icare:MeasurementEvent ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    rdfs:range icare:MeasurableParameter ;
+    skos:definition "Relates Measurement Event to Measurable Parameter."@en .
+
+icare:measurementEventPartOfPanel a owl:ObjectProperty ;
+    rdfs:label "part of panel"@en ;
+    rdfs:domain icare:MeasurementEvent ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    rdfs:range icare:MeasurementPanel ;
+    skos:definition "Relates a measurement event to a grouped panel of measurements."@en .
+
+icare:measurementEventUsesInstrument a owl:ObjectProperty ;
+    rdfs:label "uses instrument"@en ;
+    rdfs:domain icare:MeasurementEvent ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    rdfs:range icare:MeasurementInstrument ;
+    skos:definition "Relates Measurement Event to Measurement Instrument."@en .
+
+icare:measurementEventUsesMethod a owl:ObjectProperty ;
+    rdfs:label "uses method"@en ;
+    rdfs:domain icare:MeasurementEvent ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    rdfs:range icare:MeasurementMethod ;
+    skos:definition "Relates a measurement event to the method used to perform it."@en .
+
+icare:measurementEventUsesSpecimen a owl:ObjectProperty ;
+    rdfs:label "uses specimen"@en ;
+    rdfs:domain icare:MeasurementEvent ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    rdfs:range icare:Specimen ;
+    skos:definition "Relates a laboratory measurement event to the specimen used."@en .
+
+icare:measurementInstructionText a owl:DatatypeProperty ;
+    rdfs:label "measurement instruction text"@en ;
+    rdfs:domain icare:MeasurementInstrument ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    rdfs:range xsd:string ;
+    skos:definition "Records the user-facing text describing an action or step required by a measurement protocol."@en .
+
+icare:measurementInstrumentHasValidationEvidence a owl:ObjectProperty ;
+    rdfs:label "has validation evidence"@en ;
+    rdfs:domain icare:MeasurementInstrument ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    rdfs:range icare:EvidenceSource ;
+    skos:definition "Links a measurement instrument to an evidence source reporting a validation study or evaluation of that instrument."@en .
+
+icare:measurementPanelCode a owl:DatatypeProperty ;
+    rdfs:label "measurement panel code"@en ;
+    rdfs:domain icare:MeasurementPanel ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    rdfs:range xsd:string ;
+    skos:definition "Records an optional code for the panel from a coding system or local catalogue."@en .
+
+icare:measurementPanelDescription a owl:DatatypeProperty ;
+    rdfs:label "measurement panel description"@en ;
+    rdfs:domain icare:MeasurementPanel ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    rdfs:range xsd:string ;
+    skos:definition "Records a textual description of the measurement panel and its intended monitoring use."@en .
+
+icare:measurementPanelIncludesParameter a owl:ObjectProperty ;
+    rdfs:label "includes parameter"@en ;
+    rdfs:domain icare:MeasurementPanel ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    rdfs:range icare:MeasurableParameter ;
+    skos:definition "Relates a panel to the parameters it includes."@en .
+
+icare:measurementPanelName a owl:DatatypeProperty ;
+    rdfs:label "measurement panel name"@en ;
+    rdfs:domain icare:MeasurementPanel ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    rdfs:range xsd:string ;
+    skos:definition "Records the name of a grouped measurement panel, such as lipid panel, cardiac biomarker panel, body composition panel, or physical performance battery."@en .
+
+icare:methodName a owl:DatatypeProperty ;
+    rdfs:label "measurement method name"@en ;
+    rdfs:domain icare:MeasurementMethod ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    rdfs:range xsd:string ;
+    skos:definition "Records the name of a measurement method."@en .
+
+icare:observationComparedAgainst a owl:ObjectProperty ;
+    rdfs:label "compared against"@en ;
+    rdfs:domain icare:ObservationResult ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    rdfs:range icare:AlertThreshold ;
+    skos:definition "Relates Observation Result to Alert Threshold."@en .
+
+icare:observationDerivedFromObservation a owl:ObjectProperty ;
+    rdfs:label "derived from observation"@en ;
+    rdfs:domain icare:ObservationResult ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    rdfs:range icare:ObservationResult ;
+    skos:definition "Relates a derived observation result to one or more source observation results used to calculate, infer, or summarise it."@en .
+
+icare:observationHasInterpretation a owl:ObjectProperty ;
+    rdfs:label "has interpretation"@en ;
+    rdfs:domain icare:ObservationResult ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    rdfs:range icare:MeasurementInterpretation ;
+    skos:definition "Relates an observation result to its interpretation."@en .
+
+icare:observationHasQuantityValue a owl:ObjectProperty ;
+    rdfs:label "has quantity value"@en ;
+    rdfs:domain icare:ObservationResult ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    rdfs:range icare:QuantityValue ;
+    skos:definition "Relates Observation Result to Quantity Value."@en .
+
+icare:observationHasReferenceRange a owl:ObjectProperty ;
+    rdfs:label "has reference range"@en ;
+    rdfs:domain icare:ObservationResult ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    rdfs:range icare:ReferenceRange ;
+    skos:definition "Relates an observation result to the reference range used for interpretation."@en .
+
+icare:observationHasScoreValue a owl:ObjectProperty ;
+    rdfs:label "has score value"@en ;
+    rdfs:domain icare:ObservationResult ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    rdfs:range icare:ScoreValue ;
+    skos:definition "Relates Observation Result to Score Value."@en .
+
+icare:observationHasThresholdCategory a owl:ObjectProperty ;
+    rdfs:label "has threshold category"@en ;
+    rdfs:domain icare:ObservationResult ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    rdfs:range icare:ThresholdCategory ;
+    skos:definition "Relates an observation result to an interpreted threshold category."@en .
+
+icare:observationTextValue a owl:DatatypeProperty ;
+    rdfs:label "observation text value"@en ;
+    rdfs:domain icare:ObservationResult ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    rdfs:range xsd:string ;
+    skos:definition "Records the observation text value for Observation Result."@en .
+
+icare:parameterCode a owl:DatatypeProperty ;
+    rdfs:label "parameter code"@en ;
+    rdfs:domain icare:MeasurableParameter ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    rdfs:range xsd:string ;
+    skos:definition "Records an optional code for a measurable parameter."@en .
+
+icare:parameterCodeSystem a owl:DatatypeProperty ;
+    rdfs:label "parameter code system"@en ;
+    rdfs:domain icare:MeasurableParameter ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    rdfs:range xsd:anyURI ;
+    skos:definition "Identifies the terminology or code system that defines the parameter code."@en .
+
+icare:parameterCodeVersion a owl:DatatypeProperty ;
+    rdfs:label "parameter code version"@en ;
+    rdfs:domain icare:MeasurableParameter ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    rdfs:range xsd:string ;
+    skos:definition "Identifies the version of the terminology from which the parameter code was selected."@en .
+
+icare:parameterName a owl:DatatypeProperty ;
+    rdfs:label "parameter name"@en ;
+    rdfs:domain icare:MeasurableParameter ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    rdfs:range xsd:string ;
+    skos:definition "Records the display name of a measurable parameter."@en .
+
+icare:personParticipatesInMeasurement a owl:ObjectProperty ;
+    rdfs:label "participates in"@en ;
+    rdfs:domain icare:Person ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    rdfs:range icare:MeasurementEvent ;
+    skos:definition "Relates Person to Measurement Event."@en .
+
+icare:protocolHasInstruction a owl:ObjectProperty ;
+    rdfs:label "has instruction"@en ;
+    rdfs:domain icare:MeasurementProtocol ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    rdfs:range icare:MeasurementInstruction ;
+    skos:definition "Relates Measurement Protocol to Measurement Instruction."@en .
+
+icare:protocolHasSchedule a owl:ObjectProperty ;
+    rdfs:label "has schedule"@en ;
+    rdfs:domain icare:MeasurementProtocol ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    rdfs:range icare:Schedule ;
+    skos:definition "Relates Measurement Protocol to Schedule."@en .
+
+icare:protocolSpecifiesMethod a owl:ObjectProperty ;
+    rdfs:label "specifies method"@en ;
+    rdfs:domain icare:MeasurementProtocol ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    rdfs:range icare:MeasurementMethod ;
+    skos:definition "Identifies the measurement method prescribed or recommended by a protocol."@en .
+
+icare:protocolSpecifiesParameter a owl:ObjectProperty ;
+    rdfs:label "specifies parameter"@en ;
+    rdfs:domain icare:MeasurementProtocol ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    rdfs:range icare:MeasurableParameter ;
+    skos:definition "Identifies the parameter that the protocol is designed to measure."@en .
+
+icare:quantityNumericValue a owl:DatatypeProperty ;
+    rdfs:label "quantity numeric value"@en ;
+    rdfs:domain icare:QuantityValue ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    rdfs:range xsd:decimal ;
+    skos:definition "Records the quantity numeric value for Quantity Value."@en .
+
+icare:quantityValueHasUnit a owl:ObjectProperty ;
+    rdfs:label "has unit"@en ;
+    rdfs:domain icare:QuantityValue ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    rdfs:range icare:Unit ;
+    skos:definition "Associates a quantitative value with the unit in which it is expressed."@en .
+
+icare:referenceRangeLowerBound a owl:DatatypeProperty ;
+    rdfs:label "threshold lower bound"@en ;
+    rdfs:domain icare:ReferenceRange ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    rdfs:range xsd:decimal ;
+    skos:definition "Records the lower bound of a reference range."@en .
+
+icare:referenceRangeUpperBound a owl:DatatypeProperty ;
+    rdfs:label "threshold upper bound"@en ;
+    rdfs:domain icare:ReferenceRange ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    rdfs:range xsd:decimal ;
+    skos:definition "Records the upper bound of a reference range."@en .
+
+icare:scoreNumericValue a owl:DatatypeProperty ;
+    rdfs:label "score numeric value"@en ;
+    rdfs:domain icare:ScoreValue ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    rdfs:range xsd:decimal ;
+    skos:definition "Records the score numeric value for Score Value."@en .
+
+icare:thresholdCategoryValue a owl:DatatypeProperty ;
+    rdfs:label "threshold category value"@en ;
+    rdfs:domain icare:ThresholdCategory ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    rdfs:range xsd:string ;
+    skos:definition "Records the interpreted threshold category."@en .
+
+icare:thresholdNumericValue a owl:DatatypeProperty ;
+    rdfs:label "threshold numeric value"@en ;
+    rdfs:domain icare:AlertThreshold ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    rdfs:range xsd:decimal ;
+    skos:definition "Records the threshold numeric value for Alert Threshold."@en .
+
+icare:unitCode a owl:DatatypeProperty ;
+    rdfs:label "unit code"@en ;
+    rdfs:domain icare:Unit ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    rdfs:range xsd:string ;
+    skos:definition "Records the machine-readable code identifying the unit within a unit code system."@en .
+
+icare:unitCodeSystem a owl:DatatypeProperty ;
+    rdfs:label "unit code system"@en ;
+    rdfs:domain icare:Unit ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    rdfs:range xsd:anyURI ;
+    skos:definition "Identifies the code system that defines the unit code."@en .
+
+icare:unitSymbol a owl:DatatypeProperty ;
+    rdfs:label "unit symbol"@en ;
+    rdfs:domain icare:Unit ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    rdfs:range xsd:string ;
+    skos:definition "Records the human-readable symbol used to display the unit."@en .
+
+icare:AboveReferenceRange a icare:ThresholdCategory,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Above reference range"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    skos:definition "A threshold category indicating that the observed value is above the applicable reference range."@en ;
+    skos:inScheme icare:ThresholdCategoryScheme ;
+    skos:prefLabel "Above reference range"@en ;
+    skos:topConceptOf icare:ThresholdCategoryScheme .
+
+icare:BelowReferenceRange a icare:ThresholdCategory,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Below reference range"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    skos:definition "A threshold category indicating that the observed value is below the applicable reference range."@en ;
+    skos:inScheme icare:ThresholdCategoryScheme ;
+    skos:prefLabel "Below reference range"@en ;
+    skos:topConceptOf icare:ThresholdCategoryScheme .
+
+icare:Biomarker a owl:Class ;
+    rdfs:label "Biomarker"@en ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    rdfs:subClassOf icare:MeasurableParameter ;
+    skos:definition "A measurable biological indicator used to assess health status, disease process, treatment effect, organ function, or late-effect risk."@en .
+
+icare:CriticalResult a icare:ThresholdCategory,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Critical result"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    skos:definition "A threshold category indicating a result that meets a defined critical threshold and may require prompt review."@en ;
+    skos:inScheme icare:ThresholdCategoryScheme ;
+    skos:prefLabel "Critical result"@en ;
+    skos:topConceptOf icare:ThresholdCategoryScheme .
+
+icare:DerivedParameter a owl:Class ;
+    rdfs:label "Derived Parameter"@en ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    rdfs:subClassOf icare:MeasurableParameter ;
+    skos:definition "A measurable parameter calculated from other observations, such as BMI, average heart rate, heart-rate variability, or risk-relevant summary metrics."@en .
+
+icare:IncompleteMeasurement a icare:MeasurementQuality,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Incomplete measurement"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    skos:definition "A measurement-quality value indicating that required measurement information or steps are missing."@en ;
+    skos:inScheme icare:MeasurementQualityScheme ;
+    skos:prefLabel "Incomplete measurement"@en ;
+    skos:topConceptOf icare:MeasurementQualityScheme .
+
+icare:IndeterminateResult a icare:ThresholdCategory,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Indeterminate result"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    skos:definition "A threshold category indicating that the result cannot be reliably classified against the applicable range or threshold."@en ;
+    skos:inScheme icare:ThresholdCategoryScheme ;
+    skos:prefLabel "Indeterminate result"@en ;
+    skos:topConceptOf icare:ThresholdCategoryScheme .
+
+icare:InvalidMeasurement a icare:MeasurementQuality,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Invalid measurement"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    skos:definition "A measurement-quality value indicating that the measurement should not be used as a valid result."@en ;
+    skos:inScheme icare:MeasurementQualityScheme ;
+    skos:prefLabel "Invalid measurement"@en ;
+    skos:topConceptOf icare:MeasurementQualityScheme .
+
+icare:MeasurementInstruction a owl:Class ;
+    rdfs:label "Measurement Instruction"@en ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    skos:definition "An instruction associated with a protocol, activity, or user-facing task."@en .
+
+icare:PhysiologicalParameter a owl:Class ;
+    rdfs:label "Physiological Parameter"@en ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    rdfs:subClassOf icare:MeasurableParameter ;
+    skos:definition "A measurable parameter describing bodily function, physical state, or biological status."@en .
+
+icare:QualityNotAssessed a icare:MeasurementQuality,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Quality not assessed"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    skos:definition "A measurement-quality value indicating that quality has not been evaluated."@en ;
+    skos:inScheme icare:MeasurementQualityScheme ;
+    skos:prefLabel "Quality not assessed"@en ;
+    skos:topConceptOf icare:MeasurementQualityScheme .
+
+icare:SamplingProcedure a owl:Class ;
+    rdfs:label "Sampling Procedure"@en ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    skos:definition "A procedure describing how a sample or reading was obtained, especially for laboratory or repeated home measurements."@en .
+
+icare:Specimen a owl:Class ;
+    rdfs:label "Specimen"@en ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    skos:definition "A biological specimen used in a laboratory measurement, such as blood, serum, plasma, urine, or saliva."@en .
+
+icare:SuspectMeasurement a icare:MeasurementQuality,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Suspect measurement"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    skos:definition "A measurement-quality value indicating possible error or uncertainty requiring review."@en ;
+    skos:inScheme icare:MeasurementQualityScheme ;
+    skos:prefLabel "Suspect measurement"@en ;
+    skos:topConceptOf icare:MeasurementQualityScheme .
+
+icare:ValidMeasurement a icare:MeasurementQuality,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Valid measurement"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    skos:definition "A measurement-quality value indicating that the measurement meets the applicable validity or quality requirements."@en ;
+    skos:inScheme icare:MeasurementQualityScheme ;
+    skos:prefLabel "Valid measurement"@en ;
+    skos:topConceptOf icare:MeasurementQualityScheme .
+
+icare:WithinReferenceRange a icare:ThresholdCategory,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Within reference range"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    skos:definition "A threshold category indicating that the observed value falls within the applicable reference range."@en ;
+    skos:inScheme icare:ThresholdCategoryScheme ;
+    skos:prefLabel "Within reference range"@en ;
+    skos:topConceptOf icare:ThresholdCategoryScheme .
+
+icare:AlertThreshold a owl:Class ;
+    rdfs:label "Alert Threshold"@en ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    skos:definition "A threshold used to identify values requiring attention, review, warning, escalation, or clinical interpretation."@en .
+
+icare:MeasurementInterpretation a owl:Class ;
+    rdfs:label "Measurement Interpretation"@en ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    skos:definition "An interpretation derived from one or more observation results, thresholds, reference ranges, or clinical context."@en .
+
+icare:ScoreValue a owl:Class ;
+    rdfs:label "Score Value"@en ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    skos:definition "A value object representing a recorded quantity, score, unit, category, or textual value."@en .
+
+icare:MeasurementMethod a owl:Class ;
+    rdfs:label "Measurement Method"@en ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    skos:definition "The method used to produce a measurement, such as resting blood pressure, 12-lead ECG, wearable PPG, blood test, questionnaire, or performance test."@en .
+
+icare:QuantityValue a owl:Class ;
+    rdfs:label "Quantity Value"@en ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    skos:definition "A value object representing a recorded quantity, score, unit, category, or textual value."@en .
+
+icare:ReferenceRange a owl:Class ;
+    rdfs:label "Reference Range"@en ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    skos:definition "A normal, expected, or clinically relevant value range used to interpret an observation result."@en .
+
+icare:MeasurementContext a owl:Class ;
+    rdfs:label "Measurement Context"@en ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    skos:definition "Circumstantial information relevant to understanding or interpreting a measurement event, including its setting, trigger or monitoring situation."@en .
+
+icare:Unit a owl:Class ;
+    rdfs:label "Unit"@en ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    skos:definition "A unit of measurement used to qualify a numeric observation value."@en .
+
+icare:MeasurementPanel a owl:Class ;
+    rdfs:label "Measurement Panel"@en ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    skos:definition "A grouped set of related measurable parameters or biomarkers measured together, such as a lipid panel, cardiac biomarker panel, or body composition panel."@en .
+
+icare:MeasurementQuality a owl:Class ;
+    rdfs:label "Measurement Quality"@en ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    rdfs:subClassOf skos:Concept ;
+    skos:definition "A controlled concept representing an assessment of the validity, reliability or usability of a measurement or observation result, such as valid, suspect, incomplete or invalid."@en .
+
+icare:MeasurementInstrument a owl:Class ;
+    rdfs:label "Measurement Instrument"@en ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    skos:definition "A device, questionnaire, tool, protocol, or assessment instrument used to collect or produce a measurement."@en .
+
+icare:ThresholdCategory a owl:Class ;
+    rdfs:label "Threshold Category"@en ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    rdfs:subClassOf skos:Concept ;
+    skos:definition "A controlled concept classifying an observation result according to its relationship with an applicable threshold or reference range, such as below range, within range, above range or critical."@en .
+
+icare:MeasurementQualityScheme a owl:NamedIndividual,
+        skos:ConceptScheme ;
+    rdfs:label "Measurement Quality scheme"@en ;
+    skos:hasTopConcept icare:IncompleteMeasurement,
+        icare:InvalidMeasurement,
+        icare:QualityNotAssessed,
+        icare:SuspectMeasurement,
+        icare:ValidMeasurement .
+
+icare:ObservationResult a owl:Class ;
+    rdfs:label "Observation Result"@en ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    skos:definition "The result produced by a measurement event, including numeric, categorical, score, textual, unit, threshold, and interpretation information."@en .
+
+icare:ThresholdCategoryScheme a owl:NamedIndividual,
+        skos:ConceptScheme ;
+    rdfs:label "Threshold Category scheme"@en ;
+    skos:hasTopConcept icare:AboveReferenceRange,
+        icare:BelowReferenceRange,
+        icare:CriticalResult,
+        icare:IndeterminateResult,
+        icare:WithinReferenceRange .
+
+icare:MeasurementEvent a owl:Class ;
+    rdfs:label "Measurement Event"@en ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    rdfs:subClassOf icare:ActivityExecution ;
+    skos:definition "Event in which a physiological, behavioural, psychological, performance, engagement or reported parameter is measured."@en .
+
+icare:MeasurementProtocol a owl:Class ;
+    rdfs:label "Measurement Protocol"@en ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    skos:definition "A protocol specifying how an activity, measurement, assessment, or clinical process should be performed."@en .
+
+icare:MeasurableParameter a owl:Class ;
+    rdfs:label "Measurable Parameter"@en ;
+    rdfs:isDefinedBy icare:measurement-biomarker ;
+    skos:definition "A clinical, physiological, behavioural, psychological, performance, engagement, or reported variable that can be measured or observed."@en .
+
+icare:measurement-biomarker a owl:Ontology ;
+    rdfs:label "Measurement and Biomarker"@en ;
+    meta:reviewStatus "Draft" ;
+    rdfs:comment "Represents measurement events and results, measurable parameters and biomarkers, instruments, protocols, methods, contexts, sources, specimens, quality, thresholds and reference ranges."@en ;
+    owl:imports icare:core,
+        <http://maya-project.eu/icareonto/imports/skos-reference>,
+        icare:knowledge-resource,
+        icare:metadata,
+        icare:person-role ;
+    owl:versionIRI <http://maya-project.eu/icareonto/releases/0.1.0-draft/measurement-biomarker> ;
+    owl:versionInfo "0.1.0-draft" .
+

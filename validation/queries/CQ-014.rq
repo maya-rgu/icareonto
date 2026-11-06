@@ -1,0 +1,5 @@
+PREFIX icare: <http://maya-project.eu/icareonto/>
+PREFIX demo: <https://example.org/maya/demo/es/>
+SELECT ?resource WHERE {
+  ?resource icare:knowledgeResourceSupportsRecommendation demo:recommendation-walking .
+}

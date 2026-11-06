@@ -1,0 +1,130 @@
+{
+  "cases": [
+    {
+      "name": "test_all_deployed_datatypes_are_supported_without_loss_of_type",
+      "status": "PASS"
+    },
+    {
+      "name": "test_cancer_diagnosis_and_exposure_remain_connected",
+      "status": "PASS"
+    },
+    {
+      "name": "test_changed_ontology_rebuilds_unchanged_json_in_both_formats",
+      "status": "PASS"
+    },
+    {
+      "name": "test_clinical_comparison_text_is_not_mistaken_for_a_placeholder",
+      "status": "PASS"
+    },
+    {
+      "name": "test_clinical_profile_is_queryable_from_the_participant",
+      "status": "PASS"
+    },
+    {
+      "name": "test_duplicate_record_ids_across_groups_are_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "test_forward_and_cross_section_references_are_resolved",
+      "status": "PASS"
+    },
+    {
+      "name": "test_invalid_date_and_numeric_value_are_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "test_jsonld_preserves_exact_named_graphs",
+      "status": "PASS"
+    },
+    {
+      "name": "test_jsonld_preserves_the_exact_participant_graph",
+      "status": "PASS"
+    },
+    {
+      "name": "test_manually_altered_jsonld_is_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "test_new_observation_is_added_without_losing_history",
+      "status": "PASS"
+    },
+    {
+      "name": "test_new_sections_can_be_added_later_without_changing_existing_record_ids",
+      "status": "PASS"
+    },
+    {
+      "name": "test_performed_update_does_not_rewrite_prescription",
+      "status": "PASS"
+    },
+    {
+      "name": "test_pilot_can_instantiate_additional_typed_records",
+      "status": "PASS"
+    },
+    {
+      "name": "test_prescribed_and_performed_exercise_have_separate_expected_values",
+      "status": "PASS"
+    },
+    {
+      "name": "test_property_on_wrong_subject_type_is_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "test_published_query_files_return_the_specified_answers",
+      "status": "PASS"
+    },
+    {
+      "name": "test_query_files_exclude_another_participants_similar_records",
+      "status": "PASS"
+    },
+    {
+      "name": "test_reference_covers_every_deployed_local_class_and_property",
+      "status": "PASS"
+    },
+    {
+      "name": "test_removing_a_still_referenced_record_is_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "test_repeated_processing_is_stable_in_turtle_and_jsonld",
+      "status": "PASS"
+    },
+    {
+      "name": "test_risk_input_connects_to_exposure_and_measurement",
+      "status": "PASS"
+    },
+    {
+      "name": "test_unknown_class_is_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "test_unknown_controlled_value_is_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "test_unknown_property_is_rejected_even_when_null",
+      "status": "PASS"
+    },
+    {
+      "name": "test_unknown_valid_property_value_remains_unasserted",
+      "status": "PASS"
+    },
+    {
+      "name": "test_unresolved_reference_does_not_replace_existing_graph",
+      "status": "PASS"
+    },
+    {
+      "name": "test_wrong_controlled_value_category_is_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "test_wrong_reference_type_is_rejected",
+      "status": "PASS"
+    }
+  ],
+  "checks": 30,
+  "errors": 0,
+  "failures": 0,
+  "run_date": "2026-11-06",
+  "scope": "Fictional clinical inputs and temporary outputs. Expected query answers are independently specified. No clinical efficacy or predictive validity is established.",
+  "status": "PASS"
+}

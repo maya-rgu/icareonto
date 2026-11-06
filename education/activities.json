@@ -1,0 +1,62 @@
+[
+  {
+    "id": "EDU-CV-FOLLOWUP",
+    "status": "Draft",
+    "title": "Understanding cardiovascular follow-up",
+    "learning_objective": "Identify the purpose of cardiovascular follow-up and formulate a question for the care team about the participant's own follow-up.",
+    "topics": ["CardiovascularLateEffects"],
+    "needs": ["InformationComprehensionSupportNeed", "CareTeamCommunicationSupportNeed"],
+    "audiences": ["AYASurvivorAudience"],
+    "journey_stages": ["After treatment / survivorship"],
+    "steps": [
+      "Introduce the topic using the participant's stated question and identified support need.",
+      "Offer a suitable reviewed resource in the participant's language and explain its access conditions.",
+      "Invite the participant to explain the main message in their own words and identify any unclear information.",
+      "Help the participant prepare a question for their care team; personal monitoring decisions remain with the care team."
+    ],
+    "reflection_prompts": [
+      "In your own words, what is the main reason for the follow-up described in this resource?",
+      "What would you like your care team to explain about your own follow-up?"
+    ]
+  },
+  {
+    "id": "EDU-HEALTHY-CHOICES",
+    "status": "Draft",
+    "title": "Making manageable everyday health choices",
+    "learning_objective": "Identify one practical nutrition or activity question or action relevant to the participant's interests and circumstances.",
+    "topics": ["PhysicalActivity", "Nutrition"],
+    "needs": ["InformationApplicationSupportNeed", "SelfManagementSupportNeed"],
+    "audiences": ["AYASurvivorAudience"],
+    "journey_stages": ["After treatment / survivorship"],
+    "steps": [
+      "Ask whether the participant wants information about food choices or physical activity.",
+      "Select a resource matching that topic, the identified support need and the participant's preferences.",
+      "Invite the participant to identify one manageable idea and any barriers or questions.",
+      "Distinguish general educational information from an individual dietary or exercise prescription."
+    ],
+    "reflection_prompts": [
+      "Which idea from the resource would you like to explore?",
+      "What support or advice would you need before trying it?"
+    ]
+  },
+  {
+    "id": "EDU-AFTER-TREATMENT",
+    "status": "Draft",
+    "title": "Adjusting to life after treatment",
+    "learning_objective": "Recognise an information or support need concerning life after treatment and identify a suitable source of support.",
+    "topics": ["MentalHealthAndEmotionalWellbeing"],
+    "needs": ["InformationComprehensionSupportNeed", "SelfManagementSupportNeed", "SocialSupportNeed"],
+    "audiences": ["AYASurvivorAudience"],
+    "journey_stages": ["After treatment / survivorship"],
+    "steps": [
+      "Ask which aspect of adjustment the participant wishes to discuss, without inferring a literacy need from emotional distress alone.",
+      "Offer a reviewed resource matching the recorded need, topic and language.",
+      "Invite reflection on what feels relevant and what remains unclear.",
+      "Identify a person or service the participant may choose to approach; follow the avatar's operational support and escalation arrangements."
+    ],
+    "reflection_prompts": [
+      "Which part of this information feels relevant to your situation?",
+      "Who could you talk to, or what further information would help?"
+    ]
+  }
+]

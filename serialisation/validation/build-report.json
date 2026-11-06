@@ -1,0 +1,65 @@
+{
+  "release": "2026-11-03",
+  "ontology_version": "0.1.0-draft",
+  "review_status": "Draft",
+  "target_release": "iCARE Onto v1",
+  "runtime_provenance_policy": "Development filenames, sheet references and mapping-register identifiers are retained only in validation sidecars, not in the ontology graphs.",
+  "sources_sha256": {
+    "icareonto_review_workbook_v021126.xlsx": "2fcbe6cf9b887615c08184d223e6fb8b3ad30a903cbc3cbf5156f25182d3e5cf",
+    "icareonto_alignment_mapping_workbook_v301026_4.xlsx": "615925bdf3a9e44404c06129220a2b6818694081e1fb15e41daa6bb664bbb771",
+    "icareonto_final_consolidated_competency_questions_v5.xlsx": "e46f6ffc5a42bf46d1e1f64ee515f76e2e499665341b883afe98aa6ea3dd42c0"
+  },
+  "external_sources": [
+    {
+      "file": "imports/skos.rdf",
+      "source_url": "https://www.w3.org/2009/08/skos-reference/skos.rdf",
+      "retrieved": "2026-10-30",
+      "sha256": "e79633b8d0564816cee8a99f5c9acf9a0e6fc7257c7209acd684ecad53a89dd6"
+    },
+    {
+      "file": "imports/prov-o.ttl",
+      "source_url": "https://www.w3.org/ns/prov-o.ttl",
+      "retrieved": "2026-10-30",
+      "sha256": "7d203989f67b38bca572253942acc5a1bf24ce3ccfece16f072dcb4be2b79a96"
+    }
+  ],
+  "module_count": 17,
+  "schema_counts": {
+    "Class": 283,
+    "ObjectProperty": 284,
+    "DatatypeProperty": 137
+  },
+  "controlled_values": 304,
+  "concept_schemes": 62,
+  "approved_alignments": [
+    "MAP-ONT-001",
+    "MAP-ONT-002",
+    "MAP-ONT-003"
+  ],
+  "excluded_alignment_count": 28,
+  "cq_terms_checked": 78,
+  "rdf_files_parsed": 22,
+  "unresolved_references": 0,
+  "normalised_references": [],
+  "warnings": [],
+  "external_reference_policy": "Imports use labelled, source-derived SKOS and PROV-O reference subsets. Full downloaded sources are retained unmodified but are not imported.",
+  "source_datatypes_preserved": [
+    "http://www.w3.org/2001/XMLSchema#anyURI",
+    "http://www.w3.org/2001/XMLSchema#boolean",
+    "http://www.w3.org/2001/XMLSchema#date",
+    "http://www.w3.org/2001/XMLSchema#dateTime",
+    "http://www.w3.org/2001/XMLSchema#decimal",
+    "http://www.w3.org/2001/XMLSchema#duration",
+    "http://www.w3.org/2001/XMLSchema#language",
+    "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "http://www.w3.org/2001/XMLSchema#positiveInteger",
+    "http://www.w3.org/2001/XMLSchema#string"
+  ],
+  "limitations": [
+    "CQ paths checked for term presence only; no participant instances or CQ query execution.",
+    "OWL domains/ranges are inference axioms, not required-field validation rules.",
+    "Workbook xsd:date and xsd:duration datatypes are preserved; check reasoner support.",
+    "Dublin Core metadata properties are locally declared as OWL annotation properties; dcterms:source can hold an evidence-resource IRI.",
+    "No unapproved cardinalities, disjointness, equivalence, enumeration closure or distinct-value axioms were added."
+  ]
+}

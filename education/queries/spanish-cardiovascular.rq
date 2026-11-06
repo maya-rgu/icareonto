@@ -1,0 +1,15 @@
+PREFIX icare: <http://maya-project.eu/icareonto/>
+PREFIX edu: <http://maya-project.eu/icareonto/education/metadata#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+
+SELECT DISTINCT ?id ?title ?url WHERE {
+  ?resource a icare:HealthLiteracyResource ;
+      dcterms:identifier ?id ; dcterms:title ?title ; dcterms:source ?url ;
+      dcterms:language ?language ;
+      edu:journeyStage "After treatment / survivorship" ;
+      icare:knowledgeResourceHasAudience icare:AYASurvivorAudience ;
+      icare:knowledgeResourceHasTopic icare:CardiovascularLateEffects ;
+      icare:healthLiteracyResourceAddressesNeed icare:InformationComprehensionSupportNeed .
+  FILTER(STR(?language) = "es")
+}
+ORDER BY ?id

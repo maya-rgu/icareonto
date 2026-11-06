@@ -1,0 +1,361 @@
+@prefix icare: <http://maya-project.eu/icareonto/> .
+@prefix meta: <http://maya-project.eu/icareonto/metadata#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+icare:observationAssociatedWithStudyTimepoint a owl:ObjectProperty ;
+    rdfs:label "associated with study timepoint"@en ;
+    rdfs:domain icare:ObservationResult ;
+    rdfs:isDefinedBy icare:pilot ;
+    rdfs:range icare:StudyTimepoint ;
+    skos:definition "Identifies the study timepoint at which an observation was obtained."@en .
+
+icare:participantEnrolmentAssignedToArm a owl:ObjectProperty ;
+    rdfs:label "assigned to study arm"@en ;
+    rdfs:domain icare:ParticipantEnrolment ;
+    rdfs:isDefinedBy icare:pilot ;
+    rdfs:range icare:StudyArm ;
+    skos:definition "Identifies the participant's assigned study arm."@en .
+
+icare:participantEnrolmentAtSite a owl:ObjectProperty ;
+    rdfs:label "enrolment at site"@en ;
+    rdfs:domain icare:ParticipantEnrolment ;
+    rdfs:isDefinedBy icare:pilot ;
+    rdfs:range icare:PilotSite ;
+    skos:definition "Identifies the site responsible for the participant's enrolment."@en .
+
+icare:participantEnrolmentForPerson a owl:ObjectProperty ;
+    rdfs:label "enrolment for"@en ;
+    rdfs:domain icare:ParticipantEnrolment ;
+    rdfs:isDefinedBy icare:pilot ;
+    rdfs:range icare:Person ;
+    skos:definition "Identifies the person represented by the enrolment."@en .
+
+icare:participantEnrolmentHasStatus a owl:ObjectProperty ;
+    rdfs:label "enrolment has status"@en ;
+    rdfs:domain icare:ParticipantEnrolment ;
+    rdfs:isDefinedBy icare:pilot ;
+    rdfs:range icare:EnrolmentStatusValue ;
+    skos:definition "Identifies the current enrolment status."@en .
+
+icare:participantEnrolmentInPhase a owl:ObjectProperty ;
+    rdfs:label "enrolment has phase"@en ;
+    rdfs:domain icare:ParticipantEnrolment ;
+    rdfs:isDefinedBy icare:pilot ;
+    rdfs:range icare:PilotPhase ;
+    skos:definition "Identifies a pilot phase in which the participant takes part."@en .
+
+icare:participantEnrolmentInStudy a owl:ObjectProperty ;
+    rdfs:label "enrolment in study"@en ;
+    rdfs:domain icare:ParticipantEnrolment ;
+    rdfs:isDefinedBy icare:pilot ;
+    rdfs:range icare:PilotStudy ;
+    skos:definition "Identifies the study in which the person is enrolled."@en .
+
+icare:participantEnrolmentValidDuring a owl:ObjectProperty ;
+    rdfs:label "valid during"@en ;
+    rdfs:domain icare:ParticipantEnrolment ;
+    rdfs:isDefinedBy icare:pilot ;
+    rdfs:range icare:TimeInterval ;
+    skos:definition "Identifies the interval during which a person's enrolment in a pilot study is effective."@en .
+
+icare:pilotPhaseHasVisit a owl:ObjectProperty ;
+    rdfs:label "has visit"@en ;
+    rdfs:domain icare:PilotPhase ;
+    rdfs:isDefinedBy icare:pilot ;
+    rdfs:range icare:StudyVisit ;
+    skos:definition "Identifies a study visit associated with a pilot phase."@en .
+
+icare:pilotSiteHasLocale a owl:ObjectProperty ;
+    rdfs:label "has locale"@en ;
+    rdfs:domain icare:PilotSite ;
+    rdfs:isDefinedBy icare:pilot ;
+    rdfs:range icare:Locale ;
+    skos:definition "Identifies a locale supported by the site."@en .
+
+icare:pilotStudyHasArm a owl:ObjectProperty ;
+    rdfs:label "has arm"@en ;
+    rdfs:domain icare:PilotStudy ;
+    rdfs:isDefinedBy icare:pilot ;
+    rdfs:range icare:StudyArm ;
+    skos:definition "Identifies an intervention or comparator arm."@en .
+
+icare:pilotStudyHasPhase a owl:ObjectProperty ;
+    rdfs:label "has phase"@en ;
+    rdfs:domain icare:PilotStudy ;
+    rdfs:isDefinedBy icare:pilot ;
+    rdfs:range icare:PilotPhase ;
+    skos:definition "Identifies an operational phase of the study."@en .
+
+icare:pilotStudyHasPilotSite a owl:ObjectProperty ;
+    rdfs:label "has pilot site"@en ;
+    rdfs:domain icare:PilotStudy ;
+    rdfs:isDefinedBy icare:pilot ;
+    rdfs:range icare:PilotSite ;
+    skos:definition "Identifies a site participating in the pilot study."@en .
+
+icare:studyTimepointHasType a owl:ObjectProperty ;
+    rdfs:label "study timepoint has type"@en ;
+    rdfs:domain icare:StudyTimepoint ;
+    rdfs:isDefinedBy icare:pilot ;
+    rdfs:range icare:StudyTimepointType ;
+    skos:definition "Classifies a study timepoint as baseline, end of intervention, follow-up, or another controlled study-timepoint type."@en .
+
+icare:ActiveEnrolmentStatus a icare:EnrolmentStatusValue,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Active enrolment status"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:pilot ;
+    skos:definition "An enrolment status indicating that the person's participation is currently active."@en ;
+    skos:inScheme icare:EnrolmentStatusValueScheme ;
+    skos:prefLabel "Active enrolment status"@en ;
+    skos:topConceptOf icare:EnrolmentStatusValueScheme .
+
+icare:BaselineTimepointType a icare:StudyTimepointType,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Baseline timepoint"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:pilot ;
+    skos:definition "A study-timepoint type representing baseline."@en ;
+    skos:inScheme icare:StudyTimepointTypeScheme ;
+    skos:prefLabel "Baseline timepoint"@en ;
+    skos:topConceptOf icare:StudyTimepointTypeScheme .
+
+icare:CompletedEnrolmentStatus a icare:EnrolmentStatusValue,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Completed enrolment status"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:pilot ;
+    skos:definition "An enrolment status indicating that the person completed the expected participation period or activities."@en ;
+    skos:inScheme icare:EnrolmentStatusValueScheme ;
+    skos:prefLabel "Completed enrolment status"@en ;
+    skos:topConceptOf icare:EnrolmentStatusValueScheme .
+
+icare:ControlArmType a icare:StudyArmType,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Control arm"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:pilot ;
+    skos:definition "A study-arm type identifying a participant group assigned to a comparator or control condition."@en ;
+    skos:inScheme icare:StudyArmTypeScheme ;
+    skos:prefLabel "Control arm"@en ;
+    skos:topConceptOf icare:StudyArmTypeScheme .
+
+icare:EndOfInterventionTimepointType a icare:StudyTimepointType,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "End of intervention timepoint"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:pilot ;
+    skos:definition "A study-timepoint type representing end of intervention."@en ;
+    skos:inScheme icare:StudyTimepointTypeScheme ;
+    skos:prefLabel "End of intervention timepoint"@en ;
+    skos:topConceptOf icare:StudyTimepointTypeScheme .
+
+icare:EnrolledStatus a icare:EnrolmentStatusValue,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Enrolled status"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:pilot ;
+    skos:definition "An enrolment status indicating that the person has been enrolled in the study or pilot."@en ;
+    skos:inScheme icare:EnrolmentStatusValueScheme ;
+    skos:prefLabel "Enrolled status"@en ;
+    skos:topConceptOf icare:EnrolmentStatusValueScheme .
+
+icare:EvaluationPhaseType a icare:PilotPhaseType,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Evaluation phase"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:pilot ;
+    skos:definition "A pilot-phase type representing evaluation."@en ;
+    skos:inScheme icare:PilotPhaseTypeScheme ;
+    skos:prefLabel "Evaluation phase"@en ;
+    skos:topConceptOf icare:PilotPhaseTypeScheme .
+
+icare:FeasibilityPhaseType a icare:PilotPhaseType,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Feasibility phase"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:pilot ;
+    skos:definition "A pilot-phase type representing feasibility."@en ;
+    skos:inScheme icare:PilotPhaseTypeScheme ;
+    skos:prefLabel "Feasibility phase"@en ;
+    skos:topConceptOf icare:PilotPhaseTypeScheme .
+
+icare:FollowUpTimepointType a icare:StudyTimepointType,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Follow up timepoint"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:pilot ;
+    skos:definition "A study-timepoint type representing follow up."@en ;
+    skos:inScheme icare:StudyTimepointTypeScheme ;
+    skos:prefLabel "Follow up timepoint"@en ;
+    skos:topConceptOf icare:StudyTimepointTypeScheme .
+
+icare:InterventionArmType a icare:StudyArmType,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Intervention arm"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:pilot ;
+    skos:definition "A study-arm type identifying a participant group assigned to receive the intervention under evaluation."@en ;
+    skos:inScheme icare:StudyArmTypeScheme ;
+    skos:prefLabel "Intervention arm"@en ;
+    skos:topConceptOf icare:StudyArmTypeScheme .
+
+icare:MidInterventionTimepointType a icare:StudyTimepointType,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Mid intervention timepoint"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:pilot ;
+    skos:definition "A study-timepoint type representing mid intervention."@en ;
+    skos:inScheme icare:StudyTimepointTypeScheme ;
+    skos:prefLabel "Mid intervention timepoint"@en ;
+    skos:topConceptOf icare:StudyTimepointTypeScheme .
+
+icare:NeedsAssessmentPhaseType a icare:PilotPhaseType,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Needs assessment phase"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:pilot ;
+    skos:definition "A pilot-phase type representing needs assessment."@en ;
+    skos:inScheme icare:PilotPhaseTypeScheme ;
+    skos:prefLabel "Needs assessment phase"@en ;
+    skos:topConceptOf icare:PilotPhaseTypeScheme .
+
+icare:ScreeningEnrolmentStatus a icare:EnrolmentStatusValue,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Screening enrolment status"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:pilot ;
+    skos:definition "An enrolment status indicating that the person is undergoing eligibility screening and is not yet enrolled."@en ;
+    skos:inScheme icare:EnrolmentStatusValueScheme ;
+    skos:prefLabel "Screening enrolment status"@en ;
+    skos:topConceptOf icare:EnrolmentStatusValueScheme .
+
+icare:StudyVisit a owl:Class ;
+    rdfs:label "Study Visit"@en ;
+    rdfs:isDefinedBy icare:pilot ;
+    rdfs:subClassOf icare:ActivityExecution ;
+    skos:definition "A planned or completed participant contact undertaken as part of a pilot study."@en .
+
+icare:WithdrawnEnrolmentStatus a icare:EnrolmentStatusValue,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Withdrawn enrolment status"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:pilot ;
+    skos:definition "An enrolment status indicating that the person withdrew or was withdrawn before completing participation."@en ;
+    skos:inScheme icare:EnrolmentStatusValueScheme ;
+    skos:prefLabel "Withdrawn enrolment status"@en ;
+    skos:topConceptOf icare:EnrolmentStatusValueScheme .
+
+icare:StudyArm a owl:Class ;
+    rdfs:label "Study Arm"@en ;
+    rdfs:isDefinedBy icare:pilot ;
+    skos:definition "A study-specific participant group receiving a defined intervention or comparator condition."@en .
+
+icare:StudyArmType a owl:Class ;
+    rdfs:label "Study Arm Type"@en ;
+    rdfs:isDefinedBy icare:pilot ;
+    rdfs:subClassOf skos:Concept ;
+    skos:definition "A controlled concept classifying the role of a participant group within a study design, such as intervention or control."@en .
+
+icare:StudyTimepoint a owl:Class ;
+    rdfs:label "Study Timepoint"@en ;
+    rdfs:isDefinedBy icare:pilot ;
+    rdfs:subClassOf icare:Timepoint ;
+    skos:definition "A protocol-defined assessment point such as baseline, end of intervention or follow-up."@en .
+
+icare:PilotPhase a owl:Class ;
+    rdfs:label "Pilot Phase"@en ;
+    rdfs:isDefinedBy icare:pilot ;
+    skos:definition "A bounded stage of a pilot study, such as needs assessment, feasibility testing or evaluation."@en .
+
+icare:PilotPhaseType a owl:Class ;
+    rdfs:label "Pilot Phase Type"@en ;
+    rdfs:isDefinedBy icare:pilot ;
+    rdfs:subClassOf skos:Concept ;
+    skos:definition "A controlled concept classifying the purpose or stage of a phase within a pilot study, such as needs assessment, feasibility or evaluation."@en .
+
+icare:PilotSite a owl:Class ;
+    rdfs:label "Pilot Site"@en ;
+    rdfs:isDefinedBy icare:pilot ;
+    skos:definition "A clinical, research or living-lab site responsible for recruitment, intervention delivery or study assessment."@en .
+
+icare:PilotStudy a owl:Class ;
+    rdfs:label "Pilot Study"@en ;
+    rdfs:isDefinedBy icare:pilot ;
+    skos:definition "An operational representation of a pilot or evaluation, including its sites, phases, participant enrolments and study arms."@en .
+
+icare:StudyArmTypeScheme a owl:NamedIndividual,
+        skos:ConceptScheme ;
+    rdfs:label "Study Arm Type scheme"@en ;
+    skos:hasTopConcept icare:ControlArmType,
+        icare:InterventionArmType .
+
+icare:StudyTimepointType a owl:Class ;
+    rdfs:label "Study Timepoint Type"@en ;
+    rdfs:isDefinedBy icare:pilot ;
+    rdfs:subClassOf skos:Concept ;
+    skos:definition "A controlled concept classifying a protocol-defined point at which study activities or assessments are scheduled, such as baseline, end of intervention or follow-up."@en .
+
+icare:EnrolmentStatusValue a owl:Class ;
+    rdfs:label "Enrolment Status Value"@en ;
+    rdfs:isDefinedBy icare:pilot ;
+    rdfs:subClassOf skos:Concept ;
+    skos:definition "A controlled concept representing the current participation status of a person’s enrolment in a pilot study, such as enrolled, active, completed or withdrawn."@en .
+
+icare:PilotPhaseTypeScheme a owl:NamedIndividual,
+        skos:ConceptScheme ;
+    rdfs:label "Pilot Phase Type scheme"@en ;
+    skos:hasTopConcept icare:EvaluationPhaseType,
+        icare:FeasibilityPhaseType,
+        icare:NeedsAssessmentPhaseType .
+
+icare:ParticipantEnrolment a owl:Class ;
+    rdfs:label "Participant Enrolment"@en ;
+    rdfs:isDefinedBy icare:pilot ;
+    skos:definition "A contextual record connecting a person to a pilot study, site and phase and, where applicable, to a study arm, participation status and participation period."@en .
+
+icare:StudyTimepointTypeScheme a owl:NamedIndividual,
+        skos:ConceptScheme ;
+    rdfs:label "Study Timepoint Type scheme"@en ;
+    skos:hasTopConcept icare:BaselineTimepointType,
+        icare:EndOfInterventionTimepointType,
+        icare:FollowUpTimepointType,
+        icare:MidInterventionTimepointType .
+
+icare:EnrolmentStatusValueScheme a owl:NamedIndividual,
+        skos:ConceptScheme ;
+    rdfs:label "Enrolment Status Value scheme"@en ;
+    skos:hasTopConcept icare:ActiveEnrolmentStatus,
+        icare:CompletedEnrolmentStatus,
+        icare:EnrolledStatus,
+        icare:ScreeningEnrolmentStatus,
+        icare:WithdrawnEnrolmentStatus .
+
+icare:pilot a owl:Ontology ;
+    rdfs:label "Pilot Structure and Operational Study Context"@en ;
+    meta:reviewStatus "Draft" ;
+    rdfs:comment "Represents operational pilot-study context, including studies, sites and locales, phases, study arms, enrolments, visits, study timepoints and participation statuses."@en ;
+    owl:imports icare:core,
+        <http://maya-project.eu/icareonto/imports/skos-reference>,
+        icare:measurement-biomarker,
+        icare:metadata,
+        icare:person-role ;
+    owl:versionIRI <http://maya-project.eu/icareonto/releases/0.1.0-draft/pilot> ;
+    owl:versionInfo "0.1.0-draft" .
+

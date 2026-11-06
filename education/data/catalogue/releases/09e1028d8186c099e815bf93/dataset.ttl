@@ -1,0 +1,39 @@
+@prefix edu: <http://maya-project.eu/icareonto/education/metadata#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://maya-project.eu/icareonto/education/dataset> a owl:Ontology ;
+    rdfs:label "MAYA educational resources and draft learning activities"@en ;
+    owl:imports <http://maya-project.eu/icareonto/education/graphs/activities>,
+        <http://maya-project.eu/icareonto/education/graphs/resources> .
+
+edu:accessConditions a owl:AnnotationProperty .
+
+edu:applicabilityNotes a owl:AnnotationProperty .
+
+edu:completionStatus a owl:AnnotationProperty .
+
+edu:curationStatus a owl:AnnotationProperty .
+
+edu:identificationMethod a owl:AnnotationProperty .
+
+edu:isSynthetic a owl:AnnotationProperty .
+
+edu:journeyStage a owl:AnnotationProperty .
+
+edu:learningObjective a owl:AnnotationProperty .
+
+edu:learningStep a owl:AnnotationProperty .
+
+edu:reflectionPrompt a owl:AnnotationProperty .
+
+edu:resourceDateText a owl:AnnotationProperty .
+
+edu:resourceRole a owl:AnnotationProperty .
+
+edu:reviewedBy a owl:AnnotationProperty .
+
+edu:reviewedOn a owl:AnnotationProperty .
+
+edu:templateStatus a owl:AnnotationProperty .
+

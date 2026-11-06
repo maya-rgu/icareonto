@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.1",
+  "recorded_at": "<YYYY-MM-DDThh:mm:ss+hh:mm>",
+  "source": "<source of the site setup information>",
+  "study": {
+    "id": "<study-id>", "name": "<study display name>",
+    "phases": null,
+    "arms": null
+  },
+  "site": {
+    "id": "<site-id>", "name": "<site display name>",
+    "locale": {"language_tag": "<e.g. es-ES>", "country_code": "<e.g. ES>", "time_zone": "<e.g. Europe/Madrid>"}
+  },
+  "sections": {
+    "pilot_context": null,
+    "common": null,
+    "education": null,
+    "digital_services": null,
+    "governance": null
+  }
+}

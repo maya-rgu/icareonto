@@ -1,0 +1,415 @@
+@prefix icare: <http://maya-project.eu/icareonto/> .
+@prefix meta: <http://maya-project.eu/icareonto/metadata#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+icare:ModifiableRiskFactor a owl:Class ;
+    rdfs:label "Modifiable Risk Factor"@en ;
+    rdfs:isDefinedBy icare:cv-risk ;
+    rdfs:subClassOf icare:RiskFactor ;
+    skos:definition "A risk factor that may be changed or managed through lifestyle, clinical intervention, monitoring, education, medication, or care planning."@en .
+
+icare:NonModifiableRiskFactor a owl:Class ;
+    rdfs:label "Non Modifiable Risk Factor"@en ;
+    rdfs:isDefinedBy icare:cv-risk ;
+    rdfs:subClassOf icare:RiskFactor ;
+    skos:definition "A risk factor that cannot usually be changed through behaviour or intervention, such as age, prior treatment exposure, diagnosis history, or inherited predisposition."@en .
+
+icare:assessmentMethodName a owl:DatatypeProperty ;
+    rdfs:label "assessment method name"@en ;
+    rdfs:domain icare:RiskAssessmentMethod ;
+    rdfs:isDefinedBy icare:cv-risk ;
+    rdfs:range xsd:string ;
+    skos:definition "Records the name of the risk assessment method."@en .
+
+icare:contributionMetricType a owl:DatatypeProperty ;
+    rdfs:label "contribution metric type"@en ;
+    rdfs:domain icare:RiskFactorContribution ;
+    rdfs:isDefinedBy icare:cv-risk ;
+    rdfs:range xsd:string ;
+    skos:definition "Records the type or scale of contribution, such as coefficient, odds ratio, hazard ratio, SHAP value, relative importance, percentage contribution, or points."@en .
+
+icare:contributionValue a owl:DatatypeProperty ;
+    rdfs:label "contribution value"@en ;
+    rdfs:domain icare:RiskFactorContribution ;
+    rdfs:isDefinedBy icare:cv-risk ;
+    rdfs:range xsd:decimal ;
+    skos:definition "Records a numeric contribution, weight, coefficient, or importance score."@en .
+
+icare:modelExecutionExecutedAt a owl:ObjectProperty ;
+    rdfs:label "executed at"@en ;
+    rdfs:domain icare:ModelExecution ;
+    rdfs:isDefinedBy icare:cv-risk ;
+    rdfs:range icare:Timepoint ;
+    skos:definition "Relates Model Execution to Timepoint."@en .
+
+icare:modelExecutionExecutes a owl:ObjectProperty ;
+    rdfs:label "executes"@en ;
+    rdfs:domain icare:ModelExecution ;
+    rdfs:isDefinedBy icare:cv-risk ;
+    rdfs:range icare:PredictionModel ;
+    skos:definition "Relates Model Execution to Prediction Model."@en .
+
+icare:modelExecutionGeneratesRiskProfile a owl:ObjectProperty ;
+    rdfs:label "generates"@en ;
+    rdfs:domain icare:ModelExecution ;
+    rdfs:isDefinedBy icare:cv-risk ;
+    rdfs:range icare:RiskProfile ;
+    skos:definition "Relates Model Execution to Risk Profile."@en .
+
+icare:modelExecutionHasOutput a owl:ObjectProperty ;
+    rdfs:label "has output"@en ;
+    rdfs:domain icare:ModelExecution ;
+    rdfs:isDefinedBy icare:cv-risk ;
+    rdfs:range icare:ModelOutput ;
+    skos:definition "Relates a model execution to its direct output."@en .
+
+icare:modelExecutionUsesInput a owl:ObjectProperty ;
+    rdfs:label "uses input"@en ;
+    rdfs:domain icare:ModelExecution ;
+    rdfs:isDefinedBy icare:cv-risk ;
+    rdfs:range icare:ModelInput ;
+    skos:definition "Relates Model Execution to Model Input."@en .
+
+icare:modelIdentifier a owl:DatatypeProperty ;
+    rdfs:label "model identifier"@en ;
+    rdfs:domain icare:PredictionModel ;
+    rdfs:isDefinedBy icare:cv-risk ;
+    rdfs:range xsd:string ;
+    skos:definition "Records the model identifier for Prediction Model."@en .
+
+icare:modelInputDerivedFromObservation a owl:ObjectProperty ;
+    rdfs:label "derived from"@en ;
+    rdfs:domain icare:ModelInput ;
+    rdfs:isDefinedBy icare:cv-risk ;
+    rdfs:range icare:ObservationResult ;
+    skos:definition "Relates Model Input to Observation Result."@en .
+
+icare:modelInputIncludesClinicalRecord a owl:ObjectProperty ;
+    rdfs:label "includes clinical record"@en ;
+    rdfs:domain icare:ModelInput ;
+    rdfs:isDefinedBy icare:cv-risk ;
+    rdfs:range icare:ClinicalConditionRecord ;
+    skos:definition "Relates Model Input to Clinical Condition Record."@en .
+
+icare:modelInputIncludesExposure a owl:ObjectProperty ;
+    rdfs:label "includes exposure"@en ;
+    rdfs:domain icare:ModelInput ;
+    rdfs:isDefinedBy icare:cv-risk ;
+    rdfs:range icare:TreatmentExposure ;
+    skos:definition "Relates Model Input to Treatment Exposure."@en .
+
+icare:modelInputIncludesPersonAttribute a owl:ObjectProperty ;
+    rdfs:label "includes person attribute"@en ;
+    rdfs:domain icare:ModelInput ;
+    rdfs:isDefinedBy icare:cv-risk ;
+    rdfs:range icare:PersonAttribute ;
+    skos:definition "Relates Model Input to Person Attribute."@en .
+
+icare:modelOutputIncludesRiskEstimate a owl:ObjectProperty ;
+    rdfs:label "includes risk estimate"@en ;
+    rdfs:domain icare:ModelOutput ;
+    rdfs:isDefinedBy icare:cv-risk ;
+    rdfs:range icare:RiskEstimate ;
+    skos:definition "Relates a model output to one or more risk estimates."@en .
+
+icare:modelOutputValue a owl:DatatypeProperty ;
+    rdfs:label "model output value"@en ;
+    rdfs:domain icare:ModelOutput ;
+    rdfs:isDefinedBy icare:cv-risk ;
+    rdfs:range xsd:string ;
+    skos:definition "Records a raw or textual model output value."@en .
+
+icare:modelVersion a owl:DatatypeProperty ;
+    rdfs:label "model version"@en ;
+    rdfs:domain icare:PredictionModel ;
+    rdfs:isDefinedBy icare:cv-risk ;
+    rdfs:range xsd:string ;
+    skos:definition "Records the model version for Prediction Model."@en .
+
+icare:performanceMetricName a owl:DatatypeProperty ;
+    rdfs:label "performance metric name"@en ;
+    rdfs:domain icare:ModelPerformanceMetric ;
+    rdfs:isDefinedBy icare:cv-risk ;
+    rdfs:range xsd:string ;
+    skos:definition "Records the name of a model performance metric."@en .
+
+icare:performanceMetricValue a owl:DatatypeProperty ;
+    rdfs:label "performance metric value"@en ;
+    rdfs:domain icare:ModelPerformanceMetric ;
+    rdfs:isDefinedBy icare:cv-risk ;
+    rdfs:range xsd:decimal ;
+    skos:definition "Records the numeric value of a model performance metric."@en .
+
+icare:personHasRiskProfile a owl:ObjectProperty ;
+    rdfs:label "has risk profile"@en ;
+    rdfs:domain icare:Person ;
+    rdfs:isDefinedBy icare:cv-risk ;
+    rdfs:range icare:RiskProfile ;
+    skos:definition "Relates Person to Risk Profile."@en .
+
+icare:predictionModelHasPerformanceMetric a owl:ObjectProperty ;
+    rdfs:label "has performance metric"@en ;
+    rdfs:domain icare:PredictionModel ;
+    rdfs:isDefinedBy icare:cv-risk ;
+    rdfs:range icare:ModelPerformanceMetric ;
+    skos:definition "Relates a prediction model to a validation or performance metric."@en .
+
+icare:riskEstimateEstimatesConditionRisk a owl:ObjectProperty ;
+    rdfs:label "estimates condition risk"@en ;
+    rdfs:domain icare:RiskEstimate ;
+    rdfs:isDefinedBy icare:cv-risk ;
+    rdfs:range icare:ClinicalCondition ;
+    skos:definition "Relates Risk Estimate to Clinical Condition."@en .
+
+icare:riskEstimateEstimatesEventRisk a owl:ObjectProperty ;
+    rdfs:label "estimates event risk"@en ;
+    rdfs:domain icare:RiskEstimate ;
+    rdfs:isDefinedBy icare:cv-risk ;
+    rdfs:range icare:AdverseCardiacEvent ;
+    skos:definition "Relates Risk Estimate to Adverse Cardiac Event."@en .
+
+icare:riskEstimateHasCategory a owl:ObjectProperty ;
+    rdfs:label "has category"@en ;
+    rdfs:domain icare:RiskEstimate ;
+    rdfs:isDefinedBy icare:cv-risk ;
+    rdfs:range icare:RiskCategoryValue ;
+    skos:definition "A controlled concept representing a qualitative category assigned to a risk estimate, such as low, moderate, high or very high risk."@en .
+
+icare:riskEstimateHasContribution a owl:ObjectProperty ;
+    rdfs:label "has contribution"@en ;
+    rdfs:domain icare:RiskEstimate ;
+    rdfs:isDefinedBy icare:cv-risk ;
+    rdfs:range icare:RiskFactorContribution ;
+    skos:definition "Relates a risk estimate to a contribution made by a risk factor or model input."@en .
+
+icare:riskEstimateHasInterpretation a owl:ObjectProperty ;
+    rdfs:label "has interpretation"@en ;
+    rdfs:domain icare:RiskEstimate ;
+    rdfs:isDefinedBy icare:cv-risk ;
+    rdfs:range icare:RiskInterpretation ;
+    skos:definition "Relates a risk estimate to its interpretation for monitoring or management."@en .
+
+icare:riskEstimateHasTimeHorizon a owl:ObjectProperty ;
+    rdfs:label "has time horizon"@en ;
+    rdfs:domain icare:RiskEstimate ;
+    rdfs:isDefinedBy icare:cv-risk ;
+    rdfs:range icare:RiskTimeHorizon ;
+    skos:definition "Relates a risk estimate to the time horizon over which the estimate applies."@en .
+
+icare:riskFactorContributionForInput a owl:ObjectProperty ;
+    rdfs:label "contribution for input"@en ;
+    rdfs:domain icare:RiskFactorContribution ;
+    rdfs:isDefinedBy icare:cv-risk ;
+    rdfs:range icare:ModelInput ;
+    skos:definition "Relates a contribution to the model input or factor it describes."@en .
+
+icare:riskFactorContributionForRiskFactor a owl:ObjectProperty ;
+    rdfs:label "contribution for risk factor"@en ;
+    rdfs:domain icare:RiskFactorContribution ;
+    rdfs:isDefinedBy icare:cv-risk ;
+    rdfs:range icare:RiskFactor ;
+    skos:definition "Relates a risk-factor contribution to the risk factor it represents."@en .
+
+icare:riskInterpretationValue a owl:DatatypeProperty ;
+    rdfs:label "risk interpretation text"@en ;
+    rdfs:domain icare:RiskInterpretation ;
+    rdfs:isDefinedBy icare:cv-risk ;
+    rdfs:range xsd:string ;
+    skos:definition "Records a human-readable interpretation of a risk estimate, explaining what the estimated risk or assigned risk category means within its stated time horizon and assessment context."@en .
+
+icare:riskProfileAssessedAt a owl:ObjectProperty ;
+    rdfs:label "assessed at"@en ;
+    rdfs:domain icare:RiskProfile ;
+    rdfs:isDefinedBy icare:cv-risk ;
+    rdfs:range icare:Timepoint ;
+    skos:definition "Relates Risk Profile to Timepoint."@en .
+
+icare:riskProfileHasAssessmentMethod a owl:ObjectProperty ;
+    rdfs:label "has assessment method"@en ;
+    rdfs:domain icare:RiskProfile ;
+    rdfs:isDefinedBy icare:cv-risk ;
+    rdfs:range icare:RiskAssessmentMethod ;
+    skos:definition "Relates a risk profile to the method used to assess or derive it."@en .
+
+icare:riskProfileIncludesRiskEstimate a owl:ObjectProperty ;
+    rdfs:label "includes risk estimate"@en ;
+    rdfs:domain icare:RiskProfile ;
+    rdfs:isDefinedBy icare:cv-risk ;
+    rdfs:range icare:RiskEstimate ;
+    skos:definition "Relates Risk Profile to Risk Estimate."@en .
+
+icare:riskProfileValidDuring a owl:ObjectProperty ;
+    rdfs:label "valid during"@en ;
+    rdfs:domain icare:RiskProfile ;
+    rdfs:isDefinedBy icare:cv-risk ;
+    rdfs:range icare:TimeInterval ;
+    skos:definition "Relates Risk Profile to Time Interval."@en .
+
+icare:riskScore a owl:DatatypeProperty ;
+    rdfs:label "risk score"@en ;
+    rdfs:domain icare:RiskEstimate ;
+    rdfs:isDefinedBy icare:cv-risk ;
+    rdfs:range xsd:decimal ;
+    skos:definition "Records the risk score for Risk Estimate."@en .
+
+icare:riskTimeHorizonValue a owl:DatatypeProperty ;
+    rdfs:label "risk time horizon value"@en ;
+    rdfs:domain icare:RiskTimeHorizon ;
+    rdfs:isDefinedBy icare:cv-risk ;
+    rdfs:range xsd:string ;
+    skos:definition "Records the time horizon value, such as 1-year, 5-year, 10-year, or lifetime."@en .
+
+icare:AdverseCardiacEvent a owl:Class ;
+    rdfs:label "Adverse Cardiac Event"@en ;
+    rdfs:isDefinedBy icare:cv-risk ;
+    skos:definition "A cardiovascular event of concern for monitoring or prediction, such as heart failure, cardiomyopathy, arrhythmia, myocardial infarction, or hypertension-related complication."@en .
+
+icare:HighRisk a icare:RiskCategoryValue,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "High risk"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:cv-risk ;
+    skos:definition "A risk-category value indicating high risk."@en ;
+    skos:inScheme icare:RiskCategoryValueScheme ;
+    skos:prefLabel "High risk"@en ;
+    skos:topConceptOf icare:RiskCategoryValueScheme .
+
+icare:LowRisk a icare:RiskCategoryValue,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Low risk"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:cv-risk ;
+    skos:definition "A risk-category value indicating low risk."@en ;
+    skos:inScheme icare:RiskCategoryValueScheme ;
+    skos:prefLabel "Low risk"@en ;
+    skos:topConceptOf icare:RiskCategoryValueScheme .
+
+icare:ModerateRisk a icare:RiskCategoryValue,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Moderate risk"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:cv-risk ;
+    skos:definition "A risk-category value indicating moderate risk."@en ;
+    skos:inScheme icare:RiskCategoryValueScheme ;
+    skos:prefLabel "Moderate risk"@en ;
+    skos:topConceptOf icare:RiskCategoryValueScheme .
+
+icare:UnknownRisk a icare:RiskCategoryValue,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Unknown risk"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:cv-risk ;
+    skos:definition "A risk-category value indicating unknown risk."@en ;
+    skos:inScheme icare:RiskCategoryValueScheme ;
+    skos:prefLabel "Unknown risk"@en ;
+    skos:topConceptOf icare:RiskCategoryValueScheme .
+
+icare:VeryHighRisk a icare:RiskCategoryValue,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Very high risk"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:cv-risk ;
+    skos:definition "A risk-category value indicating very high risk."@en ;
+    skos:inScheme icare:RiskCategoryValueScheme ;
+    skos:prefLabel "Very high risk"@en ;
+    skos:topConceptOf icare:RiskCategoryValueScheme .
+
+icare:RiskAssessmentMethod a owl:Class ;
+    rdfs:label "Risk Assessment Method"@en ;
+    rdfs:isDefinedBy icare:cv-risk ;
+    skos:definition "The method used to assess risk, such as prediction model, rule-based stratification, clinician assessment, or guideline-based classification."@en .
+
+icare:RiskInterpretation a owl:Class ;
+    rdfs:label "Risk Interpretation"@en ;
+    rdfs:isDefinedBy icare:cv-risk ;
+    skos:definition "A clinical or operational interpretation of a risk estimate, such as low concern, monitor routinely, review soon, or escalate."@en .
+
+icare:RiskTimeHorizon a owl:Class ;
+    rdfs:label "Risk Time Horizon"@en ;
+    rdfs:isDefinedBy icare:cv-risk ;
+    skos:definition "The future period over which a risk estimate applies, such as 1-year, 5-year, 10-year, or lifetime risk."@en .
+
+icare:ModelOutput a owl:Class ;
+    rdfs:label "Model Output"@en ;
+    rdfs:isDefinedBy icare:cv-risk ;
+    skos:definition "The direct output of a model execution, before or alongside conversion into a risk profile or risk estimate."@en .
+
+icare:ModelPerformanceMetric a owl:Class ;
+    rdfs:label "Model Performance Metric"@en ;
+    rdfs:isDefinedBy icare:cv-risk ;
+    skos:definition "A metric describing model performance, validation, calibration, discrimination, or reliability."@en .
+
+icare:RiskFactor a owl:Class ;
+    rdfs:label "Risk Factor"@en ;
+    rdfs:isDefinedBy icare:cv-risk ;
+    skos:definition "A factor that may increase, reduce, or modify a person's cardiovascular or late-effect risk."@en .
+
+icare:PredictionModel a owl:Class ;
+    rdfs:label "Prediction Model"@en ;
+    rdfs:isDefinedBy icare:cv-risk ;
+    skos:definition "A computational, statistical, rule-based, or machine-learning model used to estimate cardiovascular risk or support monitoring decisions."@en .
+
+icare:ModelExecution a owl:Class ;
+    rdfs:label "Model Execution"@en ;
+    rdfs:isDefinedBy icare:cv-risk ;
+    skos:definition "A specific run of a prediction model using defined inputs at a given time to generate a risk profile or risk estimate."@en .
+
+icare:RiskFactorContribution a owl:Class ;
+    rdfs:label "Risk Factor Contribution"@en ;
+    rdfs:isDefinedBy icare:cv-risk ;
+    skos:definition "A representation of how much a specific factor contributes to a risk estimate or risk profile."@en .
+
+icare:ModelInput a owl:Class ;
+    rdfs:label "Model Input"@en ;
+    rdfs:isDefinedBy icare:cv-risk ;
+    skos:definition "A structured input used by a prediction model execution, derived from person attributes, clinical records, treatment exposures, or observations."@en .
+
+icare:RiskCategoryValue a owl:Class ;
+    rdfs:label "Risk Category Value"@en ;
+    rdfs:isDefinedBy icare:cv-risk ;
+    rdfs:subClassOf skos:Concept ;
+    skos:definition "A controlled concept representing a qualitative category assigned to a risk estimate, such as low, moderate, high or very high risk."@en .
+
+icare:RiskProfile a owl:Class ;
+    rdfs:label "Risk Profile"@en ;
+    rdfs:isDefinedBy icare:cv-risk ;
+    skos:altLabel "CV risk profile"@en,
+        "Cardiovascular risk profile"@en ;
+    skos:definition "A person-specific cardiovascular risk summary derived from cancer treatment exposures, clinical records, observations, lifestyle factors, and model outputs."@en .
+
+icare:RiskEstimate a owl:Class ;
+    rdfs:label "Risk Estimate"@en ;
+    rdfs:isDefinedBy icare:cv-risk ;
+    skos:definition "A quantitative or categorical estimate of the likelihood, severity, or level of cardiovascular risk for a condition or adverse event."@en .
+
+icare:RiskCategoryValueScheme a owl:NamedIndividual,
+        skos:ConceptScheme ;
+    rdfs:label "Risk Category Value scheme"@en ;
+    skos:hasTopConcept icare:HighRisk,
+        icare:LowRisk,
+        icare:ModerateRisk,
+        icare:UnknownRisk,
+        icare:VeryHighRisk .
+
+icare:cv-risk a owl:Ontology ;
+    rdfs:label "Cardiovascular Risk and Prediction"@en ;
+    meta:reviewStatus "Draft" ;
+    rdfs:comment "Represents cardiovascular risk profiles, estimates, factors, contributions, prediction models and executions, time horizons, interpretations, performance metrics and recommendation triggers."@en ;
+    owl:imports icare:cancer-history,
+        icare:clinical-profile,
+        icare:core,
+        <http://maya-project.eu/icareonto/imports/skos-reference>,
+        icare:measurement-biomarker,
+        icare:metadata,
+        icare:person-role ;
+    owl:versionIRI <http://maya-project.eu/icareonto/releases/0.1.0-draft/cv-risk> ;
+    owl:versionInfo "0.1.0-draft" .
+

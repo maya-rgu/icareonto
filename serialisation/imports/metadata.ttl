@@ -1,0 +1,68 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix icare: <http://maya-project.eu/icareonto/> .
+@prefix meta: <http://maya-project.eu/icareonto/metadata#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+icare:metadata a owl:Ontology ;
+    rdfs:label "iCARE Onto metadata"@en ;
+    meta:reviewStatus "Draft" ;
+    rdfs:comment "Annotation vocabulary for ontology review status and descriptive, bibliographic, language and rights metadata for knowledge resources."@en ;
+    rdfs:seeAlso <https://www.dublincore.org/specifications/dublin-core/dcmi-terms/> ;
+    owl:versionIRI <http://maya-project.eu/icareonto/releases/0.1.0-draft/metadata> ;
+    owl:versionInfo "0.1.0-draft" .
+
+meta:reviewStatus a owl:AnnotationProperty ;
+    rdfs:label "review status"@en .
+
+dcterms:bibliographicCitation a owl:AnnotationProperty ;
+    rdfs:label "bibliographicCitation"@en .
+
+dcterms:contributor a owl:AnnotationProperty ;
+    rdfs:label "contributor"@en .
+
+dcterms:creator a owl:AnnotationProperty ;
+    rdfs:label "creator"@en .
+
+dcterms:description a owl:AnnotationProperty ;
+    rdfs:label "description"@en .
+
+dcterms:identifier a owl:AnnotationProperty ;
+    rdfs:label "identifier"@en .
+
+dcterms:issued a owl:AnnotationProperty ;
+    rdfs:label "issued"@en .
+
+dcterms:language a owl:AnnotationProperty ;
+    rdfs:label "language"@en .
+
+dcterms:license a owl:AnnotationProperty ;
+    rdfs:label "license"@en .
+
+dcterms:modified a owl:AnnotationProperty ;
+    rdfs:label "modified"@en .
+
+dcterms:publisher a owl:AnnotationProperty ;
+    rdfs:label "publisher"@en .
+
+dcterms:rights a owl:AnnotationProperty ;
+    rdfs:label "rights"@en .
+
+dcterms:source a owl:AnnotationProperty ;
+    rdfs:label "source"@en .
+
+dcterms:title a owl:AnnotationProperty ;
+    rdfs:label "title"@en .
+
+xsd:date a rdfs:Datatype .
+
+xsd:duration a rdfs:Datatype .
+
+skos:altLabel a owl:AnnotationProperty .
+
+skos:definition a owl:AnnotationProperty .
+
+skos:prefLabel a owl:AnnotationProperty .
+

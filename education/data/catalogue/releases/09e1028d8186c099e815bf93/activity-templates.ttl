@@ -1,0 +1,119 @@
+@prefix edu: <http://maya-project.eu/icareonto/education/metadata#> .
+@prefix icare: <http://maya-project.eu/icareonto/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://maya-project.eu/icareonto/education/activity-templates/EDU-AFTER-TREATMENT> a icare:EducationActivity,
+        icare:HealthLiteracyIntervention,
+        owl:NamedIndividual ;
+    rdfs:label "Adjusting to life after treatment" ;
+    icare:activityContributesToGoal <http://maya-project.eu/icareonto/education/activity-templates/EDU-AFTER-TREATMENT/goal> ;
+    edu:learningObjective "Recognise an information or support need concerning life after treatment and identify a suitable source of support." ;
+    edu:learningStep "1. Ask which aspect of adjustment the participant wishes to discuss, without inferring a literacy need from emotional distress alone.",
+        "2. Offer a reviewed resource matching the recorded need, topic and language.",
+        "3. Invite reflection on what feels relevant and what remains unclear.",
+        "4. Identify a person or service the participant may choose to approach; follow the avatar's operational support and escalation arrangements." ;
+    edu:reflectionPrompt "1. Which part of this information feels relevant to your situation?",
+        "2. Who could you talk to, or what further information would help?" ;
+    edu:templateStatus "Draft" ;
+    icare:healthLiteracyInterventionAddressesNeed icare:InformationComprehensionSupportNeed,
+        icare:SelfManagementSupportNeed,
+        icare:SocialSupportNeed ;
+    icare:healthLiteracyInterventionUsesResource <http://maya-project.eu/icareonto/education/resources/MAYA-EDU-0009>,
+        <http://maya-project.eu/icareonto/education/resources/MAYA-EDU-0010>,
+        <http://maya-project.eu/icareonto/education/resources/MAYA-EDU-0011>,
+        <http://maya-project.eu/icareonto/education/resources/MAYA-EDU-0013>,
+        <http://maya-project.eu/icareonto/education/resources/MAYA-EDU-0019>,
+        <http://maya-project.eu/icareonto/education/resources/MAYA-EDU-0020>,
+        <http://maya-project.eu/icareonto/education/resources/MAYA-EDU-0021>,
+        <http://maya-project.eu/icareonto/education/resources/MAYA-EDU-0030> .
+
+<http://maya-project.eu/icareonto/education/activity-templates/EDU-CV-FOLLOWUP> a icare:EducationActivity,
+        icare:HealthLiteracyIntervention,
+        owl:NamedIndividual ;
+    rdfs:label "Understanding cardiovascular follow-up" ;
+    icare:activityContributesToGoal <http://maya-project.eu/icareonto/education/activity-templates/EDU-CV-FOLLOWUP/goal> ;
+    edu:learningObjective "Identify the purpose of cardiovascular follow-up and formulate a question for the care team about the participant's own follow-up." ;
+    edu:learningStep "1. Introduce the topic using the participant's stated question and identified support need.",
+        "2. Offer a suitable reviewed resource in the participant's language and explain its access conditions.",
+        "3. Invite the participant to explain the main message in their own words and identify any unclear information.",
+        "4. Help the participant prepare a question for their care team; personal monitoring decisions remain with the care team." ;
+    edu:reflectionPrompt "1. In your own words, what is the main reason for the follow-up described in this resource?",
+        "2. What would you like your care team to explain about your own follow-up?" ;
+    edu:templateStatus "Draft" ;
+    icare:healthLiteracyInterventionAddressesNeed icare:CareTeamCommunicationSupportNeed,
+        icare:InformationComprehensionSupportNeed ;
+    icare:healthLiteracyInterventionUsesResource <http://maya-project.eu/icareonto/education/resources/MAYA-EDU-0004>,
+        <http://maya-project.eu/icareonto/education/resources/MAYA-EDU-0017>,
+        <http://maya-project.eu/icareonto/education/resources/MAYA-EDU-0018> .
+
+<http://maya-project.eu/icareonto/education/activity-templates/EDU-HEALTHY-CHOICES> a icare:EducationActivity,
+        icare:HealthLiteracyIntervention,
+        owl:NamedIndividual ;
+    rdfs:label "Making manageable everyday health choices" ;
+    icare:activityContributesToGoal <http://maya-project.eu/icareonto/education/activity-templates/EDU-HEALTHY-CHOICES/goal> ;
+    edu:learningObjective "Identify one practical nutrition or activity question or action relevant to the participant's interests and circumstances." ;
+    edu:learningStep "1. Ask whether the participant wants information about food choices or physical activity.",
+        "2. Select a resource matching that topic, the identified support need and the participant's preferences.",
+        "3. Invite the participant to identify one manageable idea and any barriers or questions.",
+        "4. Distinguish general educational information from an individual dietary or exercise prescription." ;
+    edu:reflectionPrompt "1. Which idea from the resource would you like to explore?",
+        "2. What support or advice would you need before trying it?" ;
+    edu:templateStatus "Draft" ;
+    icare:healthLiteracyInterventionAddressesNeed icare:InformationApplicationSupportNeed,
+        icare:SelfManagementSupportNeed ;
+    icare:healthLiteracyInterventionUsesResource <http://maya-project.eu/icareonto/education/resources/MAYA-EDU-0005>,
+        <http://maya-project.eu/icareonto/education/resources/MAYA-EDU-0007>,
+        <http://maya-project.eu/icareonto/education/resources/MAYA-EDU-0008>,
+        <http://maya-project.eu/icareonto/education/resources/MAYA-EDU-0023> .
+
+<http://maya-project.eu/icareonto/education/graphs/activities> a owl:Ontology ;
+    rdfs:label "MAYA draft educational activity templates"@en ;
+    owl:imports <http://maya-project.eu/icareonto/education/graphs/resources> .
+
+edu:accessConditions a owl:AnnotationProperty .
+
+edu:applicabilityNotes a owl:AnnotationProperty .
+
+edu:completionStatus a owl:AnnotationProperty .
+
+edu:curationStatus a owl:AnnotationProperty .
+
+edu:identificationMethod a owl:AnnotationProperty .
+
+edu:isSynthetic a owl:AnnotationProperty .
+
+edu:journeyStage a owl:AnnotationProperty .
+
+edu:learningObjective a owl:AnnotationProperty .
+
+edu:learningStep a owl:AnnotationProperty .
+
+edu:reflectionPrompt a owl:AnnotationProperty .
+
+edu:resourceDateText a owl:AnnotationProperty .
+
+edu:resourceRole a owl:AnnotationProperty .
+
+edu:reviewedBy a owl:AnnotationProperty .
+
+edu:reviewedOn a owl:AnnotationProperty .
+
+edu:templateStatus a owl:AnnotationProperty .
+
+<http://maya-project.eu/icareonto/education/activity-templates/EDU-AFTER-TREATMENT/goal> a icare:Goal,
+        owl:NamedIndividual ;
+    rdfs:label "Recognise an information or support need concerning life after treatment and identify a suitable source of support." ;
+    icare:goalDescriptionText "Recognise an information or support need concerning life after treatment and identify a suitable source of support."^^xsd:string .
+
+<http://maya-project.eu/icareonto/education/activity-templates/EDU-CV-FOLLOWUP/goal> a icare:Goal,
+        owl:NamedIndividual ;
+    rdfs:label "Identify the purpose of cardiovascular follow-up and formulate a question for the care team about the participant's own follow-up." ;
+    icare:goalDescriptionText "Identify the purpose of cardiovascular follow-up and formulate a question for the care team about the participant's own follow-up."^^xsd:string .
+
+<http://maya-project.eu/icareonto/education/activity-templates/EDU-HEALTHY-CHOICES/goal> a icare:Goal,
+        owl:NamedIndividual ;
+    rdfs:label "Identify one practical nutrition or activity question or action relevant to the participant's interests and circumstances." ;
+    icare:goalDescriptionText "Identify one practical nutrition or activity question or action relevant to the participant's interests and circumstances."^^xsd:string .
+

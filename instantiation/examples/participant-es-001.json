@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0",
+  "recorded_at": "2026-10-15T10:00:00+02:00",
+  "source": "Fictional participant-confirmed enrolment interview",
+  "participant_id": "es-demo-aya-001", "study_id": "maya-demo", "site_id": "es-demo-01",
+  "enrolment": {"id": "enrolment-001", "enrolled_at": "2026-10-15T10:00:00+02:00", "status": "active", "phase_id": "feasibility", "arm_id": "intervention"},
+  "age_years": 27,
+  "survivor_role": "aya_cancer_survivor",
+  "preferences": {"language_tag": "es-ES", "detail_level": "brief", "communication_channel": "smart_mirror", "contact_time": "evening"},
+  "attributes": [{"id": "access", "name": "Information access context", "value": "Fictional participant requests explanations of unfamiliar terms"}],
+  "consent": {"id": "consent-001", "status": "granted", "valid_from": "2026-10-15T10:00:00+02:00"}
+}

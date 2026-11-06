@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Pilot concept mapping review",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "pilot_id", "study_id", "review_status", "reviewer", "decisions"],
+  "properties": {
+    "schema_version": {"enum": ["1.0", "1.1"]},
+    "pilot_id": {"type": "string", "minLength": 1},
+    "study_id": {"type": "string", "minLength": 1},
+    "review_status": {"enum": ["draft", "reviewed", "demonstration_annotation_not_site_approval"], "description": "Draft profiles may be inspected; operational KG generation uses reviewed profiles."},
+    "reviewer": {"type": "string", "minLength": 1, "description": "Actual reviewer identity/role or the explicitly identified demonstration annotation source."},
+    "reviewed_at": {"type": "string", "format": "date-time", "description": "Review time with an explicit UTC offset or Z."},
+    "needs_sha256": {"$ref": "#/$defs/hash"},
+    "ranking_sha256": {"$ref": "#/$defs/hash"},
+    "decisions": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["requirement_id", "decision", "classes", "rationale"],
+        "properties": {
+          "requirement_id": {"type": "string", "minLength": 1},
+          "decision": {"enum": ["accepted", "rejected", "needs_review", "no_match"]},
+          "classes": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}, "description": "Accepted local class identifiers or IRIs. Other decisions use an empty array."},
+          "rationale": {"type": "string", "minLength": 1}
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"review_status": {"enum": ["draft", "reviewed"]}}, "required": ["review_status"]},
+      "then": {"required": ["needs_sha256", "ranking_sha256"], "properties": {"schema_version": {"const": "1.1"}}}
+    },
+    {
+      "if": {"properties": {"review_status": {"const": "reviewed"}}, "required": ["review_status"]},
+      "then": {"required": ["reviewed_at"]}
+    }
+  ],
+  "$defs": {"hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"}}
+}

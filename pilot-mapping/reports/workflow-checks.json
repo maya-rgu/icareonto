@@ -1,0 +1,162 @@
+{
+  "cases": [
+    {
+      "detail": "Every requirement ranks all 283 local classes without an oracle shortlist",
+      "id": "FULL-CANDIDATES",
+      "status": "PASS"
+    },
+    {
+      "detail": "No encoded requirement or ontology description was truncated",
+      "id": "NO-TRUNCATION",
+      "status": "PASS"
+    },
+    {
+      "detail": "Report identifies local model weights, runtime and 384-dimensional sentence vectors",
+      "id": "REAL-MODEL-PROVENANCE",
+      "status": "PASS"
+    },
+    {
+      "detail": "Metric handles vector scale, orthogonality and opposite directions",
+      "id": "COSINE-NORMALISATION",
+      "status": "PASS"
+    },
+    {
+      "detail": "Even the highest ranked candidates remain unaccepted in the generated template",
+      "id": "NO-AUTOMATIC-ACCEPTANCE",
+      "status": "PASS"
+    },
+    {
+      "detail": "Rejected: reviewer",
+      "id": "UNNAMED-REVIEW",
+      "status": "PASS"
+    },
+    {
+      "detail": "Pending decisions never enter the accepted mapping set",
+      "id": "PENDING-PROFILE",
+      "status": "PASS"
+    },
+    {
+      "detail": "Core participant, site and governance scope remains available regardless of ranking",
+      "id": "FOUNDATION-RETAINED",
+      "status": "PASS"
+    },
+    {
+      "detail": "Stored profile reproduces exactly from its bound ranking, needs and review decisions",
+      "id": "PROFILE-REPRODUCTION",
+      "status": "PASS"
+    },
+    {
+      "detail": "A pending mapping decision remains separate from the ontology update that resolved its earlier representation gap",
+      "id": "REVIEW-BOUNDARIES",
+      "status": "PASS"
+    },
+    {
+      "detail": "Accepted decisions preserve actual ranks and scores, including lower-ranked reference concepts",
+      "id": "DECISION-SCORES",
+      "status": "PASS"
+    },
+    {
+      "detail": "Review decisions are separate from score rank; the control does not alter shipped mappings",
+      "id": "EXPLICIT-OVERRIDE",
+      "status": "PASS"
+    },
+    {
+      "detail": "Rejected: Needs input changed",
+      "id": "STALE-NEEDS",
+      "status": "PASS"
+    },
+    {
+      "detail": "Rejected: Ontology changed",
+      "id": "STALE-ONTOLOGY",
+      "status": "PASS"
+    },
+    {
+      "detail": "Rejected: Invalid ranking scores",
+      "id": "NONFINITE-SCORE",
+      "status": "PASS"
+    },
+    {
+      "detail": "Rejected: duplicate",
+      "id": "DUPLICATE-NEED",
+      "status": "PASS"
+    },
+    {
+      "detail": "Rejected: English",
+      "id": "UNTESTED-LANGUAGE",
+      "status": "PASS"
+    },
+    {
+      "detail": "Rejected: undeclared",
+      "id": "UNKNOWN-CLASS",
+      "status": "PASS"
+    },
+    {
+      "detail": "Rejected: non-class",
+      "id": "PROPERTY-AS-CLASS",
+      "status": "PASS"
+    },
+    {
+      "detail": "Rejected: Exactly one decision",
+      "id": "DUPLICATE-REVIEW",
+      "status": "PASS"
+    },
+    {
+      "detail": "Rejected: Only accepted",
+      "id": "PENDING-SELECTION",
+      "status": "PASS"
+    },
+    {
+      "detail": "Adjacent relationships retain the ontology's existing domain/range definitions rather than creating new axioms",
+      "id": "SUPPORTING-RELATIONSHIPS",
+      "status": "PASS"
+    },
+    {
+      "detail": "Evaluation covers all references without changing saved rankings or imposing a 100-percent retrieval expectation",
+      "id": "REFERENCE-EVALUATION",
+      "status": "PASS"
+    },
+    {
+      "detail": "Rejected: stale or edited",
+      "id": "EDITED-PROFILE",
+      "status": "PASS"
+    },
+    {
+      "detail": "Rejected profile does not start a generation run",
+      "id": "NO-OUTPUT-ON-EDITED-PROFILE",
+      "status": "PASS"
+    },
+    {
+      "detail": "Rejected: does not match",
+      "id": "WRONG-SITE",
+      "status": "PASS"
+    },
+    {
+      "detail": "Rejected: does not belong",
+      "id": "WRONG-PARTICIPANT",
+      "status": "PASS"
+    },
+    {
+      "detail": "Existing generator validates one pilot and two participants against the bound concept profile",
+      "id": "PROFILE-BOUND-GENERATION",
+      "status": "PASS"
+    },
+    {
+      "detail": "Five selected concepts have instances; nine are reported as requiring more data/profiles",
+      "id": "HONEST-COVERAGE",
+      "status": "PASS"
+    },
+    {
+      "detail": "Selecting clinical concepts does not fabricate treatment history or an exercise prescription",
+      "id": "NO-INVENTED-CLINICAL-FACTS",
+      "status": "PASS"
+    },
+    {
+      "detail": "Generated package contains the exact concept profile and its coverage record",
+      "id": "TRACEABILITY-FILES",
+      "status": "PASS"
+    }
+  ],
+  "checks": 31,
+  "scope": "Technical controls and separately specified demonstration references; no claim of expert mapping approval or real-pilot validity",
+  "status": "PASS"
+}

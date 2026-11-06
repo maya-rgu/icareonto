@@ -1,0 +1,193 @@
+@prefix icare: <http://maya-project.eu/icareonto/> .
+@prefix meta: <http://maya-project.eu/icareonto/metadata#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+icare:SmartMirror a owl:Class ;
+    rdfs:label "Smart Mirror"@en ;
+    rdfs:isDefinedBy icare:healthhub-service ;
+    rdfs:subClassOf icare:Device ;
+    skos:definition "A participant-facing device providing access to MAYA services and its conversational agent through a mirror-based interface."@en .
+
+icare:activityDeliveredThroughService a owl:ObjectProperty ;
+    rdfs:label "delivered through"@en ;
+    rdfs:domain icare:CarePlanActivity ;
+    rdfs:isDefinedBy icare:healthhub-service ;
+    rdfs:range icare:DigitalService ;
+    skos:definition "Identifies the digital service intended to deliver or support a care-plan activity."@en .
+
+icare:activityExecutionUsesService a owl:ObjectProperty ;
+    rdfs:label "uses service"@en ;
+    rdfs:domain icare:ActivityExecution ;
+    rdfs:isDefinedBy icare:healthhub-service ;
+    rdfs:range icare:DigitalService ;
+    skos:definition "Relates an activity execution to the digital service through which it was performed or supported."@en .
+
+icare:deviceProvidesAccessTo a owl:ObjectProperty ;
+    rdfs:label "provides access to"@en ;
+    rdfs:domain icare:Device ;
+    rdfs:isDefinedBy icare:healthhub-service ;
+    rdfs:range icare:DigitalService ;
+    skos:definition "Relates a device to a digital service that users can access through it."@en .
+
+icare:digitalServiceHasType a owl:ObjectProperty ;
+    rdfs:label "has type"@en ;
+    rdfs:domain icare:DigitalService ;
+    rdfs:isDefinedBy icare:healthhub-service ;
+    rdfs:range icare:DigitalServiceType ;
+    skos:definition "Classifies the principal function of a digital service."@en .
+
+icare:healthHubIncludesDevice a owl:ObjectProperty ;
+    rdfs:label "includes device"@en ;
+    rdfs:domain icare:HealthHub ;
+    rdfs:isDefinedBy icare:healthhub-service ;
+    rdfs:range icare:Device ;
+    skos:definition "Relates a HealthHub deployment to a device that forms part of that deployment."@en .
+
+icare:healthHubProvidesService a owl:ObjectProperty ;
+    rdfs:label "provides service"@en ;
+    rdfs:domain icare:HealthHub ;
+    rdfs:isDefinedBy icare:healthhub-service ;
+    rdfs:range icare:DigitalService ;
+    skos:definition "Identifies a digital service made available through the health hub."@en .
+
+icare:serviceUseDuration a owl:DatatypeProperty ;
+    rdfs:label "service use duration"@en ;
+    rdfs:domain icare:ServiceUseEvent ;
+    rdfs:isDefinedBy icare:healthhub-service ;
+    rdfs:range xsd:duration ;
+    skos:definition "Supports pilot engagement analysis when duration is required."@en .
+
+icare:serviceUseEventHasUser a owl:ObjectProperty ;
+    rdfs:label "has user"@en ;
+    rdfs:domain icare:ServiceUseEvent ;
+    rdfs:isDefinedBy icare:healthhub-service ;
+    rdfs:range icare:Person ;
+    skos:definition "Identifies the person who used the service."@en .
+
+icare:serviceUseEventSupportsActivity a owl:ObjectProperty ;
+    rdfs:label "supports activity"@en ;
+    rdfs:domain icare:ServiceUseEvent ;
+    rdfs:isDefinedBy icare:healthhub-service ;
+    rdfs:range icare:CarePlanActivity ;
+    skos:definition "Identifies a care-plan activity supported during the service-use event."@en .
+
+icare:serviceUseEventUsesService a owl:ObjectProperty ;
+    rdfs:label "uses service"@en ;
+    rdfs:domain icare:ServiceUseEvent ;
+    rdfs:isDefinedBy icare:healthhub-service ;
+    rdfs:range icare:DigitalService ;
+    skos:definition "Identifies the service accessed during the event."@en .
+
+icare:DialogueServiceType a icare:DigitalServiceType,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Dialogue service"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:healthhub-service ;
+    skos:definition "A digital-service type providing dialogue."@en ;
+    skos:inScheme icare:DigitalServiceTypeScheme ;
+    skos:prefLabel "Dialogue service"@en ;
+    skos:topConceptOf icare:DigitalServiceTypeScheme .
+
+icare:ExerciseGuidanceServiceType a icare:DigitalServiceType,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Exercise guidance service"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:healthhub-service ;
+    skos:definition "A digital-service type providing exercise guidance."@en ;
+    skos:inScheme icare:DigitalServiceTypeScheme ;
+    skos:prefLabel "Exercise guidance service"@en ;
+    skos:topConceptOf icare:DigitalServiceTypeScheme .
+
+icare:HealthLiteracyServiceType a icare:DigitalServiceType,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Health literacy service"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:healthhub-service ;
+    skos:definition "A digital-service type providing health literacy."@en ;
+    skos:inScheme icare:DigitalServiceTypeScheme ;
+    skos:prefLabel "Health literacy service"@en ;
+    skos:topConceptOf icare:DigitalServiceTypeScheme .
+
+icare:NutritionCoachingServiceType a icare:DigitalServiceType,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Nutrition coaching service"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:healthhub-service ;
+    skos:definition "A digital-service type providing nutrition coaching."@en ;
+    skos:inScheme icare:DigitalServiceTypeScheme ;
+    skos:prefLabel "Nutrition coaching service"@en ;
+    skos:topConceptOf icare:DigitalServiceTypeScheme .
+
+icare:RemoteMonitoringServiceType a icare:DigitalServiceType,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Remote monitoring service"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:healthhub-service ;
+    skos:definition "A digital-service type providing remote monitoring."@en ;
+    skos:inScheme icare:DigitalServiceTypeScheme ;
+    skos:prefLabel "Remote monitoring service"@en ;
+    skos:topConceptOf icare:DigitalServiceTypeScheme .
+
+icare:VideoConsultationServiceType a icare:DigitalServiceType,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Video consultation service"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:healthhub-service ;
+    skos:definition "A digital-service type providing video consultation."@en ;
+    skos:inScheme icare:DigitalServiceTypeScheme ;
+    skos:prefLabel "Video consultation service"@en ;
+    skos:topConceptOf icare:DigitalServiceTypeScheme .
+
+icare:HealthHub a owl:Class ;
+    rdfs:label "Health Hub"@en ;
+    rdfs:isDefinedBy icare:healthhub-service ;
+    skos:definition "An integrated digital-health platform through which MAYA provides participant-facing services and connects supported devices."@en .
+
+icare:ServiceUseEvent a owl:Class ;
+    rdfs:label "Service Use Event"@en ;
+    rdfs:isDefinedBy icare:healthhub-service ;
+    rdfs:subClassOf icare:ActivityExecution ;
+    skos:definition "An occurrence in which a person accesses or uses a digital service, retained when service engagement needs to be recorded."@en .
+
+icare:DigitalService a owl:Class ;
+    rdfs:label "Digital Service"@en ;
+    rdfs:isDefinedBy icare:healthhub-service ;
+    skos:definition "A digitally delivered function that supports monitoring, communication, education, coaching or care-plan activities."@en .
+
+icare:DigitalServiceType a owl:Class ;
+    rdfs:label "Digital Service Type"@en ;
+    rdfs:isDefinedBy icare:healthhub-service ;
+    rdfs:subClassOf skos:Concept ;
+    skos:definition "A controlled concept classifying the principal function of a digital service."@en .
+
+icare:DigitalServiceTypeScheme a owl:NamedIndividual,
+        skos:ConceptScheme ;
+    rdfs:label "Digital Service Type scheme"@en ;
+    skos:hasTopConcept icare:DialogueServiceType,
+        icare:ExerciseGuidanceServiceType,
+        icare:HealthLiteracyServiceType,
+        icare:NutritionCoachingServiceType,
+        icare:RemoteMonitoringServiceType,
+        icare:VideoConsultationServiceType .
+
+icare:healthhub-service a owl:Ontology ;
+    rdfs:label "Digital Service and iCARE Health Hub"@en ;
+    meta:reviewStatus "Draft" ;
+    rdfs:comment "Represents HealthHub deployments, supported devices including smart mirrors, digital services and service types, service access and recorded service-use events."@en ;
+    owl:imports icare:core,
+        <http://maya-project.eu/icareonto/imports/skos-reference>,
+        icare:intervention-careplan,
+        icare:metadata,
+        icare:person-role ;
+    owl:versionIRI <http://maya-project.eu/icareonto/releases/0.1.0-draft/healthhub-service> ;
+    owl:versionInfo "0.1.0-draft" .
+

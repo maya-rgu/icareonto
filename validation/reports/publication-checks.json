@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "checks": 635,
+  "catalogue_resources": 16,
+  "scope": "Release-source hashes, required import paths and packaged catalogue; local ignored runs are excluded.",
+  "public_file_audit": "PASS",
+  "licence_status": "Project licence not yet selected"
+}

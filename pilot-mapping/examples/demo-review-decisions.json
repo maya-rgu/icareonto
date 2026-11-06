@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "pilot_id": "es-demo-01",
+  "study_id": "maya-demo",
+  "review_status": "demonstration_annotation_not_site_approval",
+  "reviewer": "Agent-authored fictional mapping decisions; independent pilot/expert review is pending",
+  "decisions": [
+    {"requirement_id": "DEMO-KR01", "decision": "accepted", "classes": ["LanguagePreference"], "rationale": "Represents the participant's own language preference."},
+    {"requirement_id": "DEMO-KR02", "decision": "accepted", "classes": ["InformationPreference"], "rationale": "Represents preferred explanation detail."},
+    {"requirement_id": "DEMO-KR03", "decision": "accepted", "classes": ["ParticipantEnrolment"], "rationale": "Connects person, study, site and enrolment context."},
+    {"requirement_id": "DEMO-KR04", "decision": "accepted", "classes": ["BloodPressureMeasurementProtocol"], "rationale": "Specific measurement protocol; values and operational procedure still need their own data input."},
+    {"requirement_id": "DEMO-KR05", "decision": "accepted", "classes": ["Questionnaire"], "rationale": "Identifies the instrument; does not assert instrument validation."},
+    {"requirement_id": "DEMO-KR06", "decision": "accepted", "classes": ["HealthLiteracyNeedType"], "rationale": "Identifies a support need, distinct from an assessed literacy level."},
+    {"requirement_id": "DEMO-KR07", "decision": "accepted", "classes": ["AccessibilityFeature"], "rationale": "Resource accessibility metadata."},
+    {"requirement_id": "DEMO-KR08", "decision": "accepted", "classes": ["PerformedExerciseSession"], "rationale": "Keeps actual and scheduled sessions distinct."},
+    {"requirement_id": "DEMO-KR09", "decision": "accepted", "classes": ["ExercisePrescription"], "rationale": "Specification of prescribed exercise."},
+    {"requirement_id": "DEMO-KR10", "decision": "accepted", "classes": ["CancerTreatmentHistory"], "rationale": "Organises historical treatment records."},
+    {"requirement_id": "DEMO-KR11", "decision": "accepted", "classes": ["ConsentRecord"], "rationale": "Records consent metadata without enforcing authorisation."},
+    {"requirement_id": "DEMO-KR12", "decision": "accepted", "classes": ["EvidenceSource"], "rationale": "Represents the source of supporting evidence."},
+    {"requirement_id": "DEMO-KR13", "decision": "accepted", "classes": ["NutritionInstruction"], "rationale": "Represents the requested change to dietary intake."},
+    {"requirement_id": "DEMO-KR14", "decision": "accepted", "classes": ["Locale"], "rationale": "Represents site country, regional language and time zone."},
+    {"requirement_id": "DEMO-KR16", "decision": "needs_review", "classes": [], "rationale": "The ontology now provides measurementInstrumentHasValidationEvidence, resolving the earlier CQ-051 distinction. The prior pending mapping decision is retained for explicit review of the selected classes and source-data mapping; a schema update alone does not approve a pilot mapping."}
+  ]
+}

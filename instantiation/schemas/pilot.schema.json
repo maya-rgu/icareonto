@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "iCARE pilot site setup",
+  "description": "One site's shared study context. Complete before enrolling participants. Requirements are for this initialisation profile, not universal ontology restrictions.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "recorded_at", "source", "study", "site"],
+  "properties": {
+    "schema_version": {"enum": ["1.0", "1.1"], "description": "Input profile version; independent of the ontology version."},
+    "sections": {"$ref": "sections.schema.json"},
+    "recorded_at": {"type": "string", "format": "date-time", "description": "When these setup details were recorded; include Z or a UTC offset."},
+    "source": {"type": "string", "minLength": 1, "description": "Who or what supplied the setup information, expressed as a short source description."},
+    "study": {
+      "type": "object", "additionalProperties": false, "required": ["id", "name"],
+      "properties": {
+        "id": {"$ref": "#/$defs/id", "description": "Study identifier, shared by its sites."},
+        "name": {"type": "string", "minLength": 1, "description": "Study display name."},
+        "phases": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/namedItem"}, "description": "Optional study phases available for enrolment."},
+        "arms": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/namedItem"}, "description": "Optional study arms available for enrolment; listing an arm does not assign a participant."}
+      }
+    },
+    "site": {
+      "type": "object", "additionalProperties": false, "required": ["id", "name", "locale"],
+      "properties": {
+        "id": {"$ref": "#/$defs/id", "description": "Site identifier, unique within this output deployment."},
+        "name": {"type": "string", "minLength": 1, "description": "Site display name."},
+        "locale": {
+          "type": "object", "additionalProperties": false, "required": ["language_tag", "country_code", "time_zone"],
+          "properties": {
+            "language_tag": {"type": "string", "pattern": "^[a-z]{2,3}-[A-Z]{2}$", "description": "Site locale, e.g. es-ES. This profile accepts a language and country pair; it is not a participant preference."},
+            "country_code": {"type": "string", "pattern": "^[A-Z]{2}$", "description": "Country code in ISO 3166-1 alpha-2 form, e.g. ES. Format is checked; no live ISO registry lookup is performed."},
+            "time_zone": {"type": "string", "minLength": 1, "description": "IANA time zone, e.g. Europe/Madrid; checked against the runtime time-zone database."}
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,79}$"},
+    "namedItem": {
+      "type": "object", "additionalProperties": false, "required": ["id", "name"],
+      "properties": {"id": {"$ref": "#/$defs/id"}, "name": {"type": "string", "minLength": 1}}
+    }
+  }
+}

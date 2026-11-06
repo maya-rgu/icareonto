@@ -1,0 +1,557 @@
+{
+  "accepted_mappings": [
+    {
+      "class_iri": "http://maya-project.eu/icareonto/LanguagePreference",
+      "cosine_similarity": 0.43439117525049326,
+      "decision": "accepted_for_demonstration",
+      "label": "Language Preference",
+      "module": "person-role",
+      "rank": 2,
+      "rationale": "Represents the participant's own language preference.",
+      "requirement_id": "DEMO-KR01",
+      "source_refs": []
+    },
+    {
+      "class_iri": "http://maya-project.eu/icareonto/InformationPreference",
+      "cosine_similarity": 0.2081693862265165,
+      "decision": "accepted_for_demonstration",
+      "label": "Information Preference",
+      "module": "person-role",
+      "rank": 82,
+      "rationale": "Represents preferred explanation detail.",
+      "requirement_id": "DEMO-KR02",
+      "source_refs": []
+    },
+    {
+      "class_iri": "http://maya-project.eu/icareonto/ParticipantEnrolment",
+      "cosine_similarity": 0.515210552200553,
+      "decision": "accepted_for_demonstration",
+      "label": "Participant Enrolment",
+      "module": "pilot",
+      "rank": 2,
+      "rationale": "Connects person, study, site and enrolment context.",
+      "requirement_id": "DEMO-KR03",
+      "source_refs": []
+    },
+    {
+      "class_iri": "http://maya-project.eu/icareonto/BloodPressureMeasurementProtocol",
+      "cosine_similarity": 0.5116500706395157,
+      "decision": "accepted_for_demonstration",
+      "label": "Blood Pressure Measurement Protocol",
+      "module": "measurement-biomarker",
+      "rank": 1,
+      "rationale": "Specific measurement protocol; values and operational procedure still need their own data input.",
+      "requirement_id": "DEMO-KR04",
+      "source_refs": []
+    },
+    {
+      "class_iri": "http://maya-project.eu/icareonto/Questionnaire",
+      "cosine_similarity": 0.651231727343833,
+      "decision": "accepted_for_demonstration",
+      "label": "Questionnaire",
+      "module": "measurement-biomarker",
+      "rank": 1,
+      "rationale": "Identifies the instrument; does not assert instrument validation.",
+      "requirement_id": "DEMO-KR05",
+      "source_refs": []
+    },
+    {
+      "class_iri": "http://maya-project.eu/icareonto/HealthLiteracyNeedType",
+      "cosine_similarity": 0.4376508699612605,
+      "decision": "accepted_for_demonstration",
+      "label": "Health Literacy Need Type",
+      "module": "social-context",
+      "rank": 8,
+      "rationale": "Identifies a support need, distinct from an assessed literacy level.",
+      "requirement_id": "DEMO-KR06",
+      "source_refs": []
+    },
+    {
+      "class_iri": "http://maya-project.eu/icareonto/AccessibilityFeature",
+      "cosine_similarity": 0.4998182482781146,
+      "decision": "accepted_for_demonstration",
+      "label": "Accessibility Feature",
+      "module": "knowledge-resource",
+      "rank": 1,
+      "rationale": "Resource accessibility metadata.",
+      "requirement_id": "DEMO-KR07",
+      "source_refs": []
+    },
+    {
+      "class_iri": "http://maya-project.eu/icareonto/PerformedExerciseSession",
+      "cosine_similarity": 0.5769906101818747,
+      "decision": "accepted_for_demonstration",
+      "label": "Performed Exercise Session",
+      "module": "exercise",
+      "rank": 2,
+      "rationale": "Keeps actual and scheduled sessions distinct.",
+      "requirement_id": "DEMO-KR08",
+      "source_refs": []
+    },
+    {
+      "class_iri": "http://maya-project.eu/icareonto/ExercisePrescription",
+      "cosine_similarity": 0.7190424399322731,
+      "decision": "accepted_for_demonstration",
+      "label": "Exercise Prescription",
+      "module": "exercise",
+      "rank": 1,
+      "rationale": "Specification of prescribed exercise.",
+      "requirement_id": "DEMO-KR09",
+      "source_refs": []
+    },
+    {
+      "class_iri": "http://maya-project.eu/icareonto/CancerTreatmentHistory",
+      "cosine_similarity": 0.6751299039616528,
+      "decision": "accepted_for_demonstration",
+      "label": "Cancer Treatment History",
+      "module": "cancer-history",
+      "rank": 1,
+      "rationale": "Organises historical treatment records.",
+      "requirement_id": "DEMO-KR10",
+      "source_refs": []
+    },
+    {
+      "class_iri": "http://maya-project.eu/icareonto/ConsentRecord",
+      "cosine_similarity": 0.5690816308915508,
+      "decision": "accepted_for_demonstration",
+      "label": "Consent Record",
+      "module": "provenance-governance",
+      "rank": 1,
+      "rationale": "Records consent metadata without enforcing authorisation.",
+      "requirement_id": "DEMO-KR11",
+      "source_refs": []
+    },
+    {
+      "class_iri": "http://maya-project.eu/icareonto/EvidenceSource",
+      "cosine_similarity": 0.560795161542188,
+      "decision": "accepted_for_demonstration",
+      "label": "Evidence Source",
+      "module": "knowledge-resource",
+      "rank": 1,
+      "rationale": "Represents the source of supporting evidence.",
+      "requirement_id": "DEMO-KR12",
+      "source_refs": []
+    },
+    {
+      "class_iri": "http://maya-project.eu/icareonto/NutritionInstruction",
+      "cosine_similarity": 0.5939244788035232,
+      "decision": "accepted_for_demonstration",
+      "label": "Nutrition Instruction",
+      "module": "nutrition",
+      "rank": 1,
+      "rationale": "Represents the requested change to dietary intake.",
+      "requirement_id": "DEMO-KR13",
+      "source_refs": []
+    },
+    {
+      "class_iri": "http://maya-project.eu/icareonto/Locale",
+      "cosine_similarity": 0.41384616373559097,
+      "decision": "accepted_for_demonstration",
+      "label": "Locale",
+      "module": "core",
+      "rank": 1,
+      "rationale": "Represents site country, regional language and time zone.",
+      "requirement_id": "DEMO-KR14",
+      "source_refs": []
+    }
+  ],
+  "foundation_modules_retained": [
+    "core",
+    "person-role",
+    "pilot",
+    "provenance-governance"
+  ],
+  "needs_sha256": "d37d4a62f3355efcebf5ec9d68743eed6aedebbd8a6b4392f8dea7c024970e15",
+  "ontology_sha256": "7b22cbc0575ed20207f9040847b26593a38f4a5ad70378e5639270689c8e6b44",
+  "pilot_id": "es-demo-01",
+  "ranking_sha256": "c2f41ed2395f76e938b84bb8d24156f8a0162ff182099fe3492154118bfa88fd",
+  "relevant_modules": [
+    "cancer-history",
+    "core",
+    "exercise",
+    "knowledge-resource",
+    "measurement-biomarker",
+    "nutrition",
+    "person-role",
+    "pilot",
+    "provenance-governance",
+    "social-context"
+  ],
+  "requirement_sources": {
+    "DEMO-KR01": [],
+    "DEMO-KR02": [],
+    "DEMO-KR03": [],
+    "DEMO-KR04": [],
+    "DEMO-KR05": [],
+    "DEMO-KR06": [],
+    "DEMO-KR07": [],
+    "DEMO-KR08": [],
+    "DEMO-KR09": [],
+    "DEMO-KR10": [],
+    "DEMO-KR11": [],
+    "DEMO-KR12": [],
+    "DEMO-KR13": [],
+    "DEMO-KR14": [],
+    "DEMO-KR16": []
+  },
+  "requirements_owner": null,
+  "review_sha256": "4665f5767bdfcc576548bb7196bea781dac322e10b2000dd95511581089da2a2",
+  "review_status": "demonstration_annotation_not_site_approval",
+  "reviewed_at": null,
+  "reviewer": "Agent-authored fictional mapping decisions; independent pilot/expert review is pending",
+  "schema_version": "1.1",
+  "scope": "A concept-relevance manifest with explicit input and review status. The shared ontology is not pruned; relevance does not supply clinical values or create factual instances.",
+  "source_status": "synthetic_demonstration",
+  "status": "DEMONSTRATION_PROFILE_WITH_OPEN_ITEMS",
+  "study_id": "maya-demo",
+  "supporting_relationships": [
+    {
+      "domains": [
+        "http://maya-project.eu/icareonto/ExerciseAdherenceAssessment"
+      ],
+      "property_iri": "http://maya-project.eu/icareonto/adherenceAssessmentEvaluatesPrescription",
+      "ranges": [
+        "http://maya-project.eu/icareonto/ExercisePrescription"
+      ],
+      "status": "adjacent_relation_for_profile_design_not_independently_reviewed"
+    },
+    {
+      "domains": [
+        "http://maya-project.eu/icareonto/ExerciseAdherenceAssessment"
+      ],
+      "property_iri": "http://maya-project.eu/icareonto/adherenceAssessmentUsesPerformedSession",
+      "ranges": [
+        "http://maya-project.eu/icareonto/PerformedExerciseSession"
+      ],
+      "status": "adjacent_relation_for_profile_design_not_independently_reviewed"
+    },
+    {
+      "domains": [
+        "http://maya-project.eu/icareonto/CancerTreatmentHistory"
+      ],
+      "property_iri": "http://maya-project.eu/icareonto/cancerTreatmentHistoryHasRecord",
+      "ranges": [
+        "http://maya-project.eu/icareonto/CancerTreatmentRecord"
+      ],
+      "status": "adjacent_relation_for_profile_design_not_independently_reviewed"
+    },
+    {
+      "domains": [
+        "http://maya-project.eu/icareonto/ConsentRecord"
+      ],
+      "property_iri": "http://maya-project.eu/icareonto/consentRecordAppliesToKnowledgeGraph",
+      "ranges": [
+        "http://maya-project.eu/icareonto/ParticipantKnowledgeGraph"
+      ],
+      "status": "adjacent_relation_for_profile_design_not_independently_reviewed"
+    },
+    {
+      "domains": [
+        "http://maya-project.eu/icareonto/ConsentRecord"
+      ],
+      "property_iri": "http://maya-project.eu/icareonto/consentRecordGrantedBy",
+      "ranges": [
+        "http://maya-project.eu/icareonto/Person"
+      ],
+      "status": "adjacent_relation_for_profile_design_not_independently_reviewed"
+    },
+    {
+      "domains": [
+        "http://maya-project.eu/icareonto/ConsentRecord"
+      ],
+      "property_iri": "http://maya-project.eu/icareonto/consentRecordHasStatus",
+      "ranges": [
+        "http://maya-project.eu/icareonto/ConsentStatusValue"
+      ],
+      "status": "adjacent_relation_for_profile_design_not_independently_reviewed"
+    },
+    {
+      "domains": [
+        "http://maya-project.eu/icareonto/ConsentRecord"
+      ],
+      "property_iri": "http://maya-project.eu/icareonto/consentRecordValidDuring",
+      "ranges": [
+        "http://maya-project.eu/icareonto/TimeInterval"
+      ],
+      "status": "adjacent_relation_for_profile_design_not_independently_reviewed"
+    },
+    {
+      "domains": [
+        "http://maya-project.eu/icareonto/ExerciseIntervention"
+      ],
+      "property_iri": "http://maya-project.eu/icareonto/exerciseInterventionHasPrescription",
+      "ranges": [
+        "http://maya-project.eu/icareonto/ExercisePrescription"
+      ],
+      "status": "adjacent_relation_for_profile_design_not_independently_reviewed"
+    },
+    {
+      "domains": [
+        "http://maya-project.eu/icareonto/ExercisePrescription"
+      ],
+      "property_iri": "http://maya-project.eu/icareonto/exercisePrescriptionIncludesActivity",
+      "ranges": [
+        "http://maya-project.eu/icareonto/ExerciseActivity"
+      ],
+      "status": "adjacent_relation_for_profile_design_not_independently_reviewed"
+    },
+    {
+      "domains": [
+        "http://maya-project.eu/icareonto/ExercisePrescription"
+      ],
+      "property_iri": "http://maya-project.eu/icareonto/exercisePrescriptionSpecifiesActivity",
+      "ranges": [
+        "http://maya-project.eu/icareonto/ExerciseActivity"
+      ],
+      "status": "adjacent_relation_for_profile_design_not_independently_reviewed"
+    },
+    {
+      "domains": [
+        "http://maya-project.eu/icareonto/HealthLiteracyIntervention"
+      ],
+      "property_iri": "http://maya-project.eu/icareonto/healthLiteracyInterventionAddressesNeed",
+      "ranges": [
+        "http://maya-project.eu/icareonto/HealthLiteracyNeedType"
+      ],
+      "status": "adjacent_relation_for_profile_design_not_independently_reviewed"
+    },
+    {
+      "domains": [
+        "http://maya-project.eu/icareonto/HealthLiteracyResource"
+      ],
+      "property_iri": "http://maya-project.eu/icareonto/healthLiteracyResourceAddressesNeed",
+      "ranges": [
+        "http://maya-project.eu/icareonto/HealthLiteracyNeedType"
+      ],
+      "status": "adjacent_relation_for_profile_design_not_independently_reviewed"
+    },
+    {
+      "domains": [
+        "http://maya-project.eu/icareonto/ObservationResult"
+      ],
+      "property_iri": "http://maya-project.eu/icareonto/healthLiteracyResultIdentifiesNeed",
+      "ranges": [
+        "http://maya-project.eu/icareonto/HealthLiteracyNeedType"
+      ],
+      "status": "adjacent_relation_for_profile_design_not_independently_reviewed"
+    },
+    {
+      "domains": [
+        "http://maya-project.eu/icareonto/InformationPreference"
+      ],
+      "property_iri": "http://maya-project.eu/icareonto/informationPreferenceHasDetailLevel",
+      "ranges": [
+        "http://maya-project.eu/icareonto/InformationDetailLevelValue"
+      ],
+      "status": "adjacent_relation_for_profile_design_not_independently_reviewed"
+    },
+    {
+      "domains": [
+        "http://maya-project.eu/icareonto/KnowledgeResource"
+      ],
+      "property_iri": "http://maya-project.eu/icareonto/knowledgeResourceHasAccessibilityFeature",
+      "ranges": [
+        "http://maya-project.eu/icareonto/AccessibilityFeature"
+      ],
+      "status": "adjacent_relation_for_profile_design_not_independently_reviewed"
+    },
+    {
+      "domains": [
+        "http://maya-project.eu/icareonto/MeasurementEvent"
+      ],
+      "property_iri": "http://maya-project.eu/icareonto/measurementEventOccursDuringPerformedSession",
+      "ranges": [
+        "http://maya-project.eu/icareonto/PerformedExerciseSession"
+      ],
+      "status": "adjacent_relation_for_profile_design_not_independently_reviewed"
+    },
+    {
+      "domains": [
+        "http://maya-project.eu/icareonto/MeasurementInstrument"
+      ],
+      "property_iri": "http://maya-project.eu/icareonto/measurementInstrumentHasValidationEvidence",
+      "ranges": [
+        "http://maya-project.eu/icareonto/EvidenceSource"
+      ],
+      "status": "adjacent_relation_for_profile_design_not_independently_reviewed"
+    },
+    {
+      "domains": [
+        "http://maya-project.eu/icareonto/NutritionInstruction"
+      ],
+      "property_iri": "http://maya-project.eu/icareonto/nutritionInstructionHasActionType",
+      "ranges": [
+        "http://maya-project.eu/icareonto/NutritionActionType"
+      ],
+      "status": "adjacent_relation_for_profile_design_not_independently_reviewed"
+    },
+    {
+      "domains": [
+        "http://maya-project.eu/icareonto/NutritionInstruction"
+      ],
+      "property_iri": "http://maya-project.eu/icareonto/nutritionInstructionHasSchedule",
+      "ranges": [
+        "http://maya-project.eu/icareonto/Schedule"
+      ],
+      "status": "adjacent_relation_for_profile_design_not_independently_reviewed"
+    },
+    {
+      "domains": [
+        "http://maya-project.eu/icareonto/NutritionInstruction"
+      ],
+      "property_iri": "http://maya-project.eu/icareonto/nutritionInstructionTargetsComponent",
+      "ranges": [
+        "http://maya-project.eu/icareonto/DietaryComponent"
+      ],
+      "status": "adjacent_relation_for_profile_design_not_independently_reviewed"
+    },
+    {
+      "domains": [
+        "http://maya-project.eu/icareonto/NutritionIntervention"
+      ],
+      "property_iri": "http://maya-project.eu/icareonto/nutritionInterventionSpecifiesInstruction",
+      "ranges": [
+        "http://maya-project.eu/icareonto/NutritionInstruction"
+      ],
+      "status": "adjacent_relation_for_profile_design_not_independently_reviewed"
+    },
+    {
+      "domains": [
+        "http://maya-project.eu/icareonto/ParticipantEnrolment"
+      ],
+      "property_iri": "http://maya-project.eu/icareonto/participantEnrolmentAssignedToArm",
+      "ranges": [
+        "http://maya-project.eu/icareonto/StudyArm"
+      ],
+      "status": "adjacent_relation_for_profile_design_not_independently_reviewed"
+    },
+    {
+      "domains": [
+        "http://maya-project.eu/icareonto/ParticipantEnrolment"
+      ],
+      "property_iri": "http://maya-project.eu/icareonto/participantEnrolmentAtSite",
+      "ranges": [
+        "http://maya-project.eu/icareonto/PilotSite"
+      ],
+      "status": "adjacent_relation_for_profile_design_not_independently_reviewed"
+    },
+    {
+      "domains": [
+        "http://maya-project.eu/icareonto/ParticipantEnrolment"
+      ],
+      "property_iri": "http://maya-project.eu/icareonto/participantEnrolmentForPerson",
+      "ranges": [
+        "http://maya-project.eu/icareonto/Person"
+      ],
+      "status": "adjacent_relation_for_profile_design_not_independently_reviewed"
+    },
+    {
+      "domains": [
+        "http://maya-project.eu/icareonto/ParticipantEnrolment"
+      ],
+      "property_iri": "http://maya-project.eu/icareonto/participantEnrolmentHasStatus",
+      "ranges": [
+        "http://maya-project.eu/icareonto/EnrolmentStatusValue"
+      ],
+      "status": "adjacent_relation_for_profile_design_not_independently_reviewed"
+    },
+    {
+      "domains": [
+        "http://maya-project.eu/icareonto/ParticipantEnrolment"
+      ],
+      "property_iri": "http://maya-project.eu/icareonto/participantEnrolmentInPhase",
+      "ranges": [
+        "http://maya-project.eu/icareonto/PilotPhase"
+      ],
+      "status": "adjacent_relation_for_profile_design_not_independently_reviewed"
+    },
+    {
+      "domains": [
+        "http://maya-project.eu/icareonto/ParticipantEnrolment"
+      ],
+      "property_iri": "http://maya-project.eu/icareonto/participantEnrolmentInStudy",
+      "ranges": [
+        "http://maya-project.eu/icareonto/PilotStudy"
+      ],
+      "status": "adjacent_relation_for_profile_design_not_independently_reviewed"
+    },
+    {
+      "domains": [
+        "http://maya-project.eu/icareonto/ParticipantEnrolment"
+      ],
+      "property_iri": "http://maya-project.eu/icareonto/participantEnrolmentValidDuring",
+      "ranges": [
+        "http://maya-project.eu/icareonto/TimeInterval"
+      ],
+      "status": "adjacent_relation_for_profile_design_not_independently_reviewed"
+    },
+    {
+      "domains": [
+        "http://maya-project.eu/icareonto/PerformedExerciseSession"
+      ],
+      "property_iri": "http://maya-project.eu/icareonto/performedSessionIncludesActivity",
+      "ranges": [
+        "http://maya-project.eu/icareonto/ExerciseActivity"
+      ],
+      "status": "adjacent_relation_for_profile_design_not_independently_reviewed"
+    },
+    {
+      "domains": [
+        "http://maya-project.eu/icareonto/PerformedExerciseSession"
+      ],
+      "property_iri": "http://maya-project.eu/icareonto/performedSessionMonitoredBy",
+      "ranges": [
+        "http://maya-project.eu/icareonto/Device"
+      ],
+      "status": "adjacent_relation_for_profile_design_not_independently_reviewed"
+    },
+    {
+      "domains": [
+        "http://maya-project.eu/icareonto/PerformedExerciseSession"
+      ],
+      "property_iri": "http://maya-project.eu/icareonto/performedSessionRealises",
+      "ranges": [
+        "http://maya-project.eu/icareonto/PlannedExerciseSession"
+      ],
+      "status": "adjacent_relation_for_profile_design_not_independently_reviewed"
+    },
+    {
+      "domains": [
+        "http://maya-project.eu/icareonto/Person"
+      ],
+      "property_iri": "http://maya-project.eu/icareonto/personHasCancerTreatmentHistory",
+      "ranges": [
+        "http://maya-project.eu/icareonto/CancerTreatmentHistory"
+      ],
+      "status": "adjacent_relation_for_profile_design_not_independently_reviewed"
+    },
+    {
+      "domains": [
+        "http://maya-project.eu/icareonto/PilotSite"
+      ],
+      "property_iri": "http://maya-project.eu/icareonto/pilotSiteHasLocale",
+      "ranges": [
+        "http://maya-project.eu/icareonto/Locale"
+      ],
+      "status": "adjacent_relation_for_profile_design_not_independently_reviewed"
+    },
+    {
+      "domains": [
+        "http://maya-project.eu/icareonto/PlannedExerciseSession"
+      ],
+      "property_iri": "http://maya-project.eu/icareonto/plannedSessionFollowsPrescription",
+      "ranges": [
+        "http://maya-project.eu/icareonto/ExercisePrescription"
+      ],
+      "status": "adjacent_relation_for_profile_design_not_independently_reviewed"
+    }
+  ],
+  "unresolved_requirements": [
+    {
+      "classes": [],
+      "decision": "needs_review",
+      "rationale": "The ontology now provides measurementInstrumentHasValidationEvidence, resolving the earlier CQ-051 distinction. The prior pending mapping decision is retained for explicit review of the selected classes and source-data mapping; a schema update alone does not approve a pilot mapping.",
+      "requirement_id": "DEMO-KR16"
+    }
+  ]
+}

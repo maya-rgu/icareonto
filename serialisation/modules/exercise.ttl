@@ -1,0 +1,650 @@
+@prefix icare: <http://maya-project.eu/icareonto/> .
+@prefix meta: <http://maya-project.eu/icareonto/metadata#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+icare:activityInstructionText a owl:DatatypeProperty ;
+    rdfs:label "activity instruction text"@en ;
+    rdfs:domain icare:ExerciseActivity ;
+    rdfs:isDefinedBy icare:exercise ;
+    rdfs:range xsd:string ;
+    skos:definition "Instructions explaining how the activity should be performed."@en .
+
+icare:activityTypeHasModality a owl:ObjectProperty ;
+    rdfs:label "has modality"@en ;
+    rdfs:domain icare:ExerciseActivityType ;
+    rdfs:isDefinedBy icare:exercise ;
+    rdfs:range icare:ExerciseModality ;
+    skos:definition "Relates Exercise Activity Type to Exercise Modality."@en .
+
+icare:adherenceAssessmentEvaluatesPrescription a owl:ObjectProperty ;
+    rdfs:label "evaluates prescription"@en ;
+    rdfs:domain icare:ExerciseAdherenceAssessment ;
+    rdfs:isDefinedBy icare:exercise ;
+    rdfs:range icare:ExercisePrescription ;
+    skos:definition "Identifies the prescription whose adherence is being assessed."@en .
+
+icare:adherenceAssessmentHasResult a owl:ObjectProperty ;
+    rdfs:label "has adherence result"@en ;
+    rdfs:domain icare:ExerciseAdherenceAssessment ;
+    rdfs:isDefinedBy icare:exercise ;
+    rdfs:range icare:ExerciseAdherenceResult ;
+    skos:definition "Relates Exercise Adherence Assessment to Exercise Adherence Result."@en .
+
+icare:adherenceAssessmentUsesPerformedSession a owl:ObjectProperty ;
+    rdfs:label "uses performed session"@en ;
+    rdfs:domain icare:ExerciseAdherenceAssessment ;
+    rdfs:isDefinedBy icare:exercise ;
+    rdfs:range icare:PerformedExerciseSession ;
+    skos:definition "Identifies performed sessions used as adherence evidence."@en .
+
+icare:adherencePercent a owl:DatatypeProperty ;
+    rdfs:label "adherence percent"@en ;
+    rdfs:domain icare:ExerciseAdherenceResult ;
+    rdfs:isDefinedBy icare:exercise ;
+    rdfs:range xsd:decimal ;
+    skos:definition "Percentage adherence, normally constrained to 0-100."@en .
+
+icare:distanceUnit a owl:DatatypeProperty ;
+    rdfs:label "distance unit"@en ;
+    rdfs:domain icare:ExerciseActivity ;
+    rdfs:isDefinedBy icare:exercise ;
+    rdfs:range xsd:string ;
+    skos:definition "Unit for distance, such as metres or kilometres."@en .
+
+icare:distanceValue a owl:DatatypeProperty ;
+    rdfs:label "distance value"@en ;
+    rdfs:domain icare:ExerciseActivity ;
+    rdfs:isDefinedBy icare:exercise ;
+    rdfs:range xsd:decimal ;
+    skos:definition "Intended or actual distance when relevant."@en .
+
+icare:durationMinutes a owl:DatatypeProperty ;
+    rdfs:label "duration in minutes"@en ;
+    rdfs:domain icare:ExerciseActivity ;
+    rdfs:isDefinedBy icare:exercise ;
+    rdfs:range xsd:decimal ;
+    skos:definition "Intended or actual duration; interpretation comes from prescription or performed-session context."@en .
+
+icare:exerciseActivityHasActivityType a owl:ObjectProperty ;
+    rdfs:label "has activity type"@en ;
+    rdfs:domain icare:ExerciseActivity ;
+    rdfs:isDefinedBy icare:exercise ;
+    rdfs:range icare:ExerciseActivityType ;
+    skos:definition "Classifies the activity as walking, cycling, squat, etc."@en .
+
+icare:exerciseActivityHasIntensity a owl:ObjectProperty ;
+    rdfs:label "has intensity"@en ;
+    rdfs:domain icare:ExerciseActivity ;
+    rdfs:isDefinedBy icare:exercise ;
+    rdfs:range icare:ExerciseIntensity ;
+    skos:definition "Associates an activity with prescribed or reported intensity."@en .
+
+icare:exerciseActivityHasSet a owl:ObjectProperty ;
+    rdfs:label "has set"@en ;
+    rdfs:domain icare:ExerciseActivity ;
+    rdfs:isDefinedBy icare:exercise ;
+    rdfs:range icare:ExerciseSet ;
+    skos:definition "Associates an activity with set, repetition, load, and rest information."@en .
+
+icare:exerciseActivityHasTrainingPattern a owl:ObjectProperty ;
+    rdfs:label "has training pattern"@en ;
+    rdfs:domain icare:ExerciseActivity ;
+    rdfs:isDefinedBy icare:exercise ;
+    rdfs:range icare:ExerciseTrainingPattern ;
+    skos:definition "Identifies continuous, interval, HIIT, circuit, or another pattern."@en .
+
+icare:exerciseActivityName a owl:DatatypeProperty ;
+    rdfs:label "exercise activity name"@en ;
+    rdfs:domain icare:ExerciseActivity ;
+    rdfs:isDefinedBy icare:exercise ;
+    rdfs:range xsd:string ;
+    skos:definition "Human-readable exercise activity name."@en .
+
+icare:exerciseIntensityHasLevel a owl:ObjectProperty ;
+    rdfs:label "has level"@en ;
+    rdfs:domain icare:ExerciseIntensity ;
+    rdfs:isDefinedBy icare:exercise ;
+    rdfs:range icare:ExerciseIntensityLevel ;
+    skos:definition "Identifies the level of intensity."@en .
+
+icare:exerciseInterventionHasPrescription a owl:ObjectProperty ;
+    rdfs:label "has prescription"@en ;
+    rdfs:domain icare:ExerciseIntervention ;
+    rdfs:isDefinedBy icare:exercise ;
+    rdfs:range icare:ExercisePrescription ;
+    skos:definition "Associates the intervention with one or more operational prescriptions."@en .
+
+icare:exercisePrescriptionIncludesActivity a owl:ObjectProperty ;
+    rdfs:label "includes activity"@en ;
+    rdfs:domain icare:ExercisePrescription ;
+    rdfs:isDefinedBy icare:exercise ;
+    rdfs:range icare:ExerciseActivity ;
+    skos:definition "Relates a prescription to the exercise activity it prescribes."@en .
+
+icare:exercisePrescriptionSpecifiesActivity a owl:ObjectProperty ;
+    rdfs:label "specifies activity"@en ;
+    rdfs:domain icare:ExercisePrescription ;
+    rdfs:isDefinedBy icare:exercise ;
+    rdfs:range icare:ExerciseActivity ;
+    skos:definition "Identifies activities prescribed by the specification."@en .
+
+icare:intensityAssessmentMethod a owl:DatatypeProperty ;
+    rdfs:label "intensity assessment method"@en ;
+    rdfs:domain icare:ExerciseIntensity ;
+    rdfs:isDefinedBy icare:exercise ;
+    rdfs:range xsd:string ;
+    skos:definition "Method such as RPE, heart-rate reserve, %HRmax, MET, or %1RM."@en .
+
+icare:intensityLowerBound a owl:DatatypeProperty ;
+    rdfs:label "intensity lower bound"@en ;
+    rdfs:domain icare:ExerciseIntensity ;
+    rdfs:isDefinedBy icare:exercise ;
+    rdfs:range xsd:decimal ;
+    skos:definition "Lower bound of an intensity range."@en .
+
+icare:intensityUnit a owl:DatatypeProperty ;
+    rdfs:label "intensity unit"@en ;
+    rdfs:domain icare:ExerciseIntensity ;
+    rdfs:isDefinedBy icare:exercise ;
+    rdfs:range xsd:string ;
+    skos:definition "Unit or scale associated with the numeric bounds."@en .
+
+icare:intensityUpperBound a owl:DatatypeProperty ;
+    rdfs:label "intensity upper bound"@en ;
+    rdfs:domain icare:ExerciseIntensity ;
+    rdfs:isDefinedBy icare:exercise ;
+    rdfs:range xsd:decimal ;
+    skos:definition "Upper bound of an intensity range."@en .
+
+icare:isSupervised a owl:DatatypeProperty ;
+    rdfs:label "is supervised"@en ;
+    rdfs:domain icare:ExerciseIntervention ;
+    rdfs:isDefinedBy icare:exercise ;
+    rdfs:range xsd:boolean ;
+    skos:definition "Indicates whether exercise is intended to be supervised."@en .
+
+icare:maximumRepetitionCount a owl:DatatypeProperty ;
+    rdfs:label "maximum repetition count"@en ;
+    rdfs:domain icare:ExerciseSet ;
+    rdfs:isDefinedBy icare:exercise ;
+    rdfs:range xsd:nonNegativeInteger ;
+    skos:definition "Upper bound when a repetition range is used."@en .
+
+icare:measurementEventOccursDuringPerformedSession a owl:ObjectProperty ;
+    rdfs:label "occurs during"@en ;
+    rdfs:domain icare:MeasurementEvent ;
+    rdfs:isDefinedBy icare:exercise ;
+    rdfs:range icare:PerformedExerciseSession ;
+    skos:definition "Associates physiological or performance measurements with the session."@en .
+
+icare:minimumRepetitionCount a owl:DatatypeProperty ;
+    rdfs:label "minimum repetition count"@en ;
+    rdfs:domain icare:ExerciseSet ;
+    rdfs:isDefinedBy icare:exercise ;
+    rdfs:range xsd:nonNegativeInteger ;
+    skos:definition "Lower bound when a repetition range is used."@en .
+
+icare:performedSessionIdentifier a owl:DatatypeProperty ;
+    rdfs:label "performed session identifier"@en ;
+    rdfs:domain icare:PerformedExerciseSession ;
+    rdfs:isDefinedBy icare:exercise ;
+    rdfs:range xsd:string ;
+    skos:definition "Identifier for a performed session."@en .
+
+icare:performedSessionIncludesActivity a owl:ObjectProperty ;
+    rdfs:label "includes activity"@en ;
+    rdfs:domain icare:PerformedExerciseSession ;
+    rdfs:isDefinedBy icare:exercise ;
+    rdfs:range icare:ExerciseActivity ;
+    skos:definition "Relates Performed Exercise Session to Exercise Activity."@en .
+
+icare:performedSessionMonitoredBy a owl:ObjectProperty ;
+    rdfs:label "monitored by"@en ;
+    rdfs:domain icare:PerformedExerciseSession ;
+    rdfs:isDefinedBy icare:exercise ;
+    rdfs:range icare:Device ;
+    skos:definition "Relates Performed Exercise Session to Device."@en .
+
+icare:performedSessionRealises a owl:ObjectProperty ;
+    rdfs:label "realises"@en ;
+    rdfs:domain icare:PerformedExerciseSession ;
+    rdfs:isDefinedBy icare:exercise ;
+    rdfs:range icare:PlannedExerciseSession ;
+    skos:definition "Connects a performed session to its planned occurrence, when one exists."@en .
+
+icare:plannedSessionFollowsPrescription a owl:ObjectProperty ;
+    rdfs:label "follows prescription"@en ;
+    rdfs:domain icare:PlannedExerciseSession ;
+    rdfs:isDefinedBy icare:exercise ;
+    rdfs:range icare:ExercisePrescription ;
+    skos:definition "Identifies the prescription applicable to a planned session."@en .
+
+icare:plannedSessionHasStatus a owl:ObjectProperty ;
+    rdfs:label "has status"@en ;
+    rdfs:domain icare:PlannedExerciseSession ;
+    rdfs:isDefinedBy icare:exercise ;
+    rdfs:range icare:ActivityStatus ;
+    skos:definition "Records states such as scheduled, cancelled, missed, or rescheduled."@en .
+
+icare:plannedSessionIdentifier a owl:DatatypeProperty ;
+    rdfs:label "planned session identifier"@en ;
+    rdfs:domain icare:PlannedExerciseSession ;
+    rdfs:isDefinedBy icare:exercise ;
+    rdfs:range xsd:string ;
+    skos:definition "Identifier for a planned session."@en .
+
+icare:plannedSessionScheduledAt a owl:ObjectProperty ;
+    rdfs:label "scheduled at"@en ;
+    rdfs:domain icare:PlannedExerciseSession ;
+    rdfs:isDefinedBy icare:exercise ;
+    rdfs:range icare:Timepoint ;
+    skos:definition "Gives an individual planned session a specific scheduled time."@en .
+
+icare:prescriptionIdentifier a owl:DatatypeProperty ;
+    rdfs:label "prescription identifier"@en ;
+    rdfs:domain icare:ExercisePrescription ;
+    rdfs:isDefinedBy icare:exercise ;
+    rdfs:range xsd:string ;
+    skos:definition "Identifier for the prescription."@en .
+
+icare:prescriptionIssuedAt a owl:DatatypeProperty ;
+    rdfs:label "prescription issued at"@en ;
+    rdfs:domain icare:ExercisePrescription ;
+    rdfs:isDefinedBy icare:exercise ;
+    rdfs:range xsd:dateTime ;
+    skos:definition "Date and time the prescription was issued."@en .
+
+icare:prescriptionVersion a owl:DatatypeProperty ;
+    rdfs:label "prescription version"@en ;
+    rdfs:domain icare:ExercisePrescription ;
+    rdfs:isDefinedBy icare:exercise ;
+    rdfs:range xsd:string ;
+    skos:definition "Version of the prescription."@en .
+
+icare:progressionInstructionText a owl:DatatypeProperty ;
+    rdfs:label "progression instruction text"@en ;
+    rdfs:domain icare:ExercisePrescription ;
+    rdfs:isDefinedBy icare:exercise ;
+    rdfs:range xsd:string ;
+    skos:definition "Human-readable instructions describing when and how exercise should progress."@en .
+
+icare:repetitionCount a owl:DatatypeProperty ;
+    rdfs:label "repetition count"@en ;
+    rdfs:domain icare:ExerciseSet ;
+    rdfs:isDefinedBy icare:exercise ;
+    rdfs:range xsd:nonNegativeInteger ;
+    skos:definition "Exact repetitions prescribed or performed per set."@en .
+
+icare:resistanceLoadUnit a owl:DatatypeProperty ;
+    rdfs:label "resistance load unit"@en ;
+    rdfs:domain icare:ExerciseSet ;
+    rdfs:isDefinedBy icare:exercise ;
+    rdfs:range xsd:string ;
+    skos:definition "Load unit or basis, such as kg, lb, resistance-band level, or %1RM."@en .
+
+icare:resistanceLoadValue a owl:DatatypeProperty ;
+    rdfs:label "resistance load value"@en ;
+    rdfs:domain icare:ExerciseSet ;
+    rdfs:isDefinedBy icare:exercise ;
+    rdfs:range xsd:decimal ;
+    skos:definition "Numeric resistance load prescribed or reported."@en .
+
+icare:restIntervalSeconds a owl:DatatypeProperty ;
+    rdfs:label "rest interval seconds"@en ;
+    rdfs:domain icare:ExerciseSet ;
+    rdfs:isDefinedBy icare:exercise ;
+    rdfs:range xsd:decimal ;
+    skos:definition "Rest duration between sets."@en .
+
+icare:sessionNotes a owl:DatatypeProperty ;
+    rdfs:label "session notes"@en ;
+    rdfs:domain icare:PerformedExerciseSession ;
+    rdfs:isDefinedBy icare:exercise ;
+    rdfs:range xsd:string ;
+    skos:definition "Free-text report about the performed session."@en .
+
+icare:setCount a owl:DatatypeProperty ;
+    rdfs:label "set count"@en ;
+    rdfs:domain icare:ExerciseSet ;
+    rdfs:isDefinedBy icare:exercise ;
+    rdfs:range xsd:positiveInteger ;
+    skos:definition "Number of equivalent sets prescribed or performed."@en .
+
+icare:AerobicExercise a icare:ExerciseModality,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Aerobic exercise"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:exercise ;
+    skos:definition "An exercise modality primarily involving sustained activity that increases cardiorespiratory demand."@en ;
+    skos:inScheme icare:ExerciseModalityScheme ;
+    skos:prefLabel "Aerobic exercise"@en ;
+    skos:topConceptOf icare:ExerciseModalityScheme .
+
+icare:BalanceTraining a icare:ExerciseModality,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Balance training"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:exercise ;
+    skos:definition "An exercise modality intended to maintain or improve balance and postural control."@en ;
+    skos:inScheme icare:ExerciseModalityScheme ;
+    skos:prefLabel "Balance training"@en ;
+    skos:topConceptOf icare:ExerciseModalityScheme .
+
+icare:CircuitTraining a icare:ExerciseTrainingPattern,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Circuit training"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:exercise ;
+    skos:definition "An exercise-training pattern involving a sequence of different exercises or stations."@en ;
+    skos:inScheme icare:ExerciseTrainingPatternScheme ;
+    skos:prefLabel "Circuit training"@en ;
+    skos:topConceptOf icare:ExerciseTrainingPatternScheme .
+
+icare:CombinedTraining a icare:ExerciseModality,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Combined training"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:exercise ;
+    skos:definition "An exercise modality combining two or more distinct exercise modalities within a programme or session."@en ;
+    skos:inScheme icare:ExerciseModalityScheme ;
+    skos:prefLabel "Combined training"@en ;
+    skos:topConceptOf icare:ExerciseModalityScheme .
+
+icare:ContinuousTraining a icare:ExerciseTrainingPattern,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Continuous training"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:exercise ;
+    skos:definition "An exercise-training pattern involving sustained activity without planned recovery intervals."@en ;
+    skos:inScheme icare:ExerciseTrainingPatternScheme ;
+    skos:prefLabel "Continuous training"@en ;
+    skos:topConceptOf icare:ExerciseTrainingPatternScheme .
+
+icare:Cycling a icare:ExerciseActivityType,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Cycling"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:exercise ;
+    skos:definition "An exercise-activity type involving cycling on a bicycle or stationary cycle."@en ;
+    skos:inScheme icare:ExerciseActivityTypeScheme ;
+    skos:prefLabel "Cycling"@en ;
+    skos:topConceptOf icare:ExerciseActivityTypeScheme .
+
+icare:FlexibilityExercise a icare:ExerciseModality,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Flexibility exercise"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:exercise ;
+    skos:definition "An exercise modality intended to maintain or improve range of motion and flexibility."@en ;
+    skos:inScheme icare:ExerciseModalityScheme ;
+    skos:prefLabel "Flexibility exercise"@en ;
+    skos:topConceptOf icare:ExerciseModalityScheme .
+
+icare:HighIntensityIntervalTraining a icare:ExerciseTrainingPattern,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "High-intensity interval training"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:exercise ;
+    skos:definition "An interval-training pattern using repeated high-intensity work periods separated by recovery periods."@en ;
+    skos:inScheme icare:ExerciseTrainingPatternScheme ;
+    skos:prefLabel "High-intensity interval training"@en ;
+    skos:topConceptOf icare:ExerciseTrainingPatternScheme .
+
+icare:IntervalTraining a icare:ExerciseTrainingPattern,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Interval training"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:exercise ;
+    skos:definition "An exercise-training pattern alternating work periods with recovery or lower-intensity periods."@en ;
+    skos:inScheme icare:ExerciseTrainingPatternScheme ;
+    skos:prefLabel "Interval training"@en ;
+    skos:topConceptOf icare:ExerciseTrainingPatternScheme .
+
+icare:LightIntensity a icare:ExerciseIntensityLevel,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Light intensity"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:exercise ;
+    skos:definition "An exercise-intensity level representing light physical effort."@en ;
+    skos:inScheme icare:ExerciseIntensityLevelScheme ;
+    skos:prefLabel "Light intensity"@en ;
+    skos:topConceptOf icare:ExerciseIntensityLevelScheme .
+
+icare:MaximalIntensity a icare:ExerciseIntensityLevel,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Maximal intensity"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:exercise ;
+    skos:definition "An exercise-intensity level representing effort at or near a person's maximum capacity."@en ;
+    skos:inScheme icare:ExerciseIntensityLevelScheme ;
+    skos:prefLabel "Maximal intensity"@en ;
+    skos:topConceptOf icare:ExerciseIntensityLevelScheme .
+
+icare:ModerateIntensity a icare:ExerciseIntensityLevel,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Moderate intensity"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:exercise ;
+    skos:definition "An exercise-intensity level representing moderate physical effort."@en ;
+    skos:inScheme icare:ExerciseIntensityLevelScheme ;
+    skos:prefLabel "Moderate intensity"@en ;
+    skos:topConceptOf icare:ExerciseIntensityLevelScheme .
+
+icare:PressUp a icare:ExerciseActivityType,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Press-up"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:exercise ;
+    skos:definition "An exercise-activity type involving performance of a press-up movement."@en ;
+    skos:inScheme icare:ExerciseActivityTypeScheme ;
+    skos:prefLabel "Press-up"@en ;
+    skos:topConceptOf icare:ExerciseActivityTypeScheme .
+
+icare:ResistanceBandRow a icare:ExerciseActivityType,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Resistance band row"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:exercise ;
+    skos:definition "An exercise-activity type involving a rowing movement performed with a resistance band."@en ;
+    skos:inScheme icare:ExerciseActivityTypeScheme ;
+    skos:prefLabel "Resistance band row"@en ;
+    skos:topConceptOf icare:ExerciseActivityTypeScheme .
+
+icare:ResistanceTraining a icare:ExerciseModality,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Resistance training"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:exercise ;
+    skos:definition "An exercise modality using resistance to improve muscular strength, endurance or function."@en ;
+    skos:inScheme icare:ExerciseModalityScheme ;
+    skos:prefLabel "Resistance training"@en ;
+    skos:topConceptOf icare:ExerciseModalityScheme .
+
+icare:Running a icare:ExerciseActivityType,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Running"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:exercise ;
+    skos:definition "An exercise-activity type involving running on a suitable surface or route."@en ;
+    skos:inScheme icare:ExerciseActivityTypeScheme ;
+    skos:prefLabel "Running"@en ;
+    skos:topConceptOf icare:ExerciseActivityTypeScheme .
+
+icare:Squat a icare:ExerciseActivityType,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Squat"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:exercise ;
+    skos:definition "An exercise-activity type involving performance of a squat movement."@en ;
+    skos:inScheme icare:ExerciseActivityTypeScheme ;
+    skos:prefLabel "Squat"@en ;
+    skos:topConceptOf icare:ExerciseActivityTypeScheme .
+
+icare:TreadmillWalking a icare:ExerciseActivityType,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Treadmill walking"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:exercise ;
+    skos:definition "An exercise-activity type involving walking on a treadmill."@en ;
+    skos:inScheme icare:ExerciseActivityTypeScheme ;
+    skos:prefLabel "Treadmill walking"@en ;
+    skos:topConceptOf icare:ExerciseActivityTypeScheme .
+
+icare:VigorousIntensity a icare:ExerciseIntensityLevel,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Vigorous intensity"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:exercise ;
+    skos:definition "An exercise-intensity level representing vigorous physical effort."@en ;
+    skos:inScheme icare:ExerciseIntensityLevelScheme ;
+    skos:prefLabel "Vigorous intensity"@en ;
+    skos:topConceptOf icare:ExerciseIntensityLevelScheme .
+
+icare:Walking a icare:ExerciseActivityType,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Walking"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:exercise ;
+    skos:definition "An exercise-activity type involving walking on a suitable surface or route."@en ;
+    skos:inScheme icare:ExerciseActivityTypeScheme ;
+    skos:prefLabel "Walking"@en ;
+    skos:topConceptOf icare:ExerciseActivityTypeScheme .
+
+icare:ExerciseAdherenceResult a owl:Class ;
+    rdfs:label "Exercise Adherence Result"@en ;
+    rdfs:isDefinedBy icare:exercise ;
+    rdfs:subClassOf icare:ObservationResult ;
+    skos:definition "The result of an exercise adherence assessment, such as adherence percentage, completion status, missed session, partial completion, or exceeded target."@en .
+
+icare:ExerciseAdherenceAssessment a owl:Class ;
+    rdfs:label "Exercise Adherence Assessment"@en ;
+    rdfs:isDefinedBy icare:exercise ;
+    rdfs:subClassOf icare:ActivityExecution ;
+    skos:definition "An assessment comparing planned exercise with performed exercise to determine completion, adherence, deviation, or barriers."@en .
+
+icare:ExerciseIntensityLevel a owl:Class ;
+    rdfs:label "Exercise Intensity Level"@en ;
+    rdfs:isDefinedBy icare:exercise ;
+    rdfs:subClassOf skos:Concept ;
+    skos:definition "A controlled concept representing a qualitative band of intended or performed exercise effort, such as light, moderate, vigorous or maximal intensity."@en .
+
+icare:ExerciseTrainingPattern a owl:Class ;
+    rdfs:label "Exercise Training Pattern"@en ;
+    rdfs:isDefinedBy icare:exercise ;
+    rdfs:subClassOf skos:Concept ;
+    skos:definition "A controlled concept representing the organisational pattern through which an exercise activity is performed, such as continuous, interval, high-intensity interval or circuit training."@en .
+
+icare:PlannedExerciseSession a owl:Class ;
+    rdfs:label "Planned Exercise Session"@en ;
+    rdfs:isDefinedBy icare:exercise ;
+    skos:definition "A scheduled occurrence of exercise that follows a particular prescription. It represents intention, not actual performance."@en .
+
+icare:ExerciseIntensity a owl:Class ;
+    rdfs:label "Intensity"@en ;
+    rdfs:isDefinedBy icare:exercise ;
+    skos:definition "A value object representing planned or actual exercise intensity, such as light, moderate, vigorous, RPE, target heart-rate zone, or workload."@en .
+
+icare:ExerciseModality a owl:Class ;
+    rdfs:label "Exercise Modality"@en ;
+    rdfs:isDefinedBy icare:exercise ;
+    rdfs:subClassOf skos:Concept ;
+    skos:definition "A controlled concept representing the broad physiological or training mode of an exercise activity, such as aerobic, resistance, flexibility or balance exercise."@en .
+
+icare:PerformedExerciseSession a owl:Class ;
+    rdfs:label "Performed Exercise Session"@en ;
+    rdfs:isDefinedBy icare:exercise ;
+    rdfs:subClassOf icare:ActivityExecution ;
+    skos:definition "An exercise session that was actually performed by a person, including completed activities, actual duration, intensity, monitoring data, and adherence evidence."@en .
+
+icare:ExerciseIntensityLevelScheme a owl:NamedIndividual,
+        skos:ConceptScheme ;
+    rdfs:label "Exercise Intensity Level scheme"@en ;
+    skos:hasTopConcept icare:LightIntensity,
+        icare:MaximalIntensity,
+        icare:ModerateIntensity,
+        icare:VigorousIntensity .
+
+icare:ExerciseSet a owl:Class ;
+    rdfs:label "Exercise Set"@en ;
+    rdfs:isDefinedBy icare:exercise ;
+    skos:definition "A set within an exercise prescription or performed session, grouping repeated executions of an activity."@en .
+
+icare:ExerciseTrainingPatternScheme a owl:NamedIndividual,
+        skos:ConceptScheme ;
+    rdfs:label "Exercise Training Pattern scheme"@en ;
+    skos:hasTopConcept icare:CircuitTraining,
+        icare:ContinuousTraining,
+        icare:HighIntensityIntervalTraining,
+        icare:IntervalTraining .
+
+icare:ExerciseActivityType a owl:Class ;
+    rdfs:label "Exercise Activity Type"@en ;
+    rdfs:isDefinedBy icare:exercise ;
+    rdfs:subClassOf skos:Concept ;
+    skos:definition "A controlled concept representing a specific named exercise activity or movement, such as walking, cycling, squatting or resistance-band rowing."@en .
+
+icare:ExercisePrescription a owl:Class ;
+    rdfs:label "Exercise Prescription"@en ;
+    rdfs:isDefinedBy icare:exercise ;
+    skos:definition "A person-specific information specification defining intended exercise activities and their frequency, intensity, duration, sets, repetitions, load, rest, and progression."@en .
+
+icare:ExerciseModalityScheme a owl:NamedIndividual,
+        skos:ConceptScheme ;
+    rdfs:label "Exercise Modality scheme"@en ;
+    skos:hasTopConcept icare:AerobicExercise,
+        icare:BalanceTraining,
+        icare:CombinedTraining,
+        icare:FlexibilityExercise,
+        icare:ResistanceTraining .
+
+icare:ExerciseActivity a owl:Class ;
+    rdfs:label "Exercise Activity"@en ;
+    rdfs:isDefinedBy icare:exercise ;
+    skos:definition "A specific exercise activity included in a planned or performed session, such as walking, cycling, squats, sit-ups, stretching, or resistance exercise."@en .
+
+icare:ExerciseActivityTypeScheme a owl:NamedIndividual,
+        skos:ConceptScheme ;
+    rdfs:label "Exercise Activity Type scheme"@en ;
+    skos:hasTopConcept icare:Cycling,
+        icare:PressUp,
+        icare:ResistanceBandRow,
+        icare:Running,
+        icare:Squat,
+        icare:TreadmillWalking,
+        icare:Walking .
+
+icare:exercise a owl:Ontology ;
+    rdfs:label "Exercise and Physical Activity"@en ;
+    meta:reviewStatus "Draft" ;
+    rdfs:comment "Represents exercise prescriptions, planned and performed sessions, activities, sets, activity types, modalities, training patterns, intensity and adherence assessment."@en ;
+    owl:imports icare:core,
+        <http://maya-project.eu/icareonto/imports/skos-reference>,
+        icare:intervention-careplan,
+        icare:measurement-biomarker,
+        icare:metadata ;
+    owl:versionIRI <http://maya-project.eu/icareonto/releases/0.1.0-draft/exercise> ;
+    owl:versionInfo "0.1.0-draft" .
+

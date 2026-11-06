@@ -1,0 +1,224 @@
+@prefix icare: <http://maya-project.eu/icareonto/> .
+@prefix meta: <http://maya-project.eu/icareonto/metadata#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+icare:nutritionInstructionHasActionType a owl:ObjectProperty ;
+    rdfs:label "has action type"@en ;
+    rdfs:domain icare:NutritionInstruction ;
+    rdfs:isDefinedBy icare:nutrition ;
+    rdfs:range icare:NutritionActionType ;
+    skos:definition "Identifies the intended change to the targeted dietary component."@en .
+
+icare:nutritionInstructionHasSchedule a owl:ObjectProperty ;
+    rdfs:label "has schedule"@en ;
+    rdfs:domain icare:NutritionInstruction ;
+    rdfs:isDefinedBy icare:nutrition ;
+    rdfs:range icare:Schedule ;
+    skos:definition "Specifies when or how frequently the instruction should be followed."@en .
+
+icare:nutritionInstructionTargetsComponent a owl:ObjectProperty ;
+    rdfs:label "targets component"@en ;
+    rdfs:domain icare:NutritionInstruction ;
+    rdfs:isDefinedBy icare:nutrition ;
+    rdfs:range icare:DietaryComponent ;
+    skos:definition "Identifies the dietary component addressed by the instruction."@en .
+
+icare:nutritionInstructionText a owl:DatatypeProperty ;
+    rdfs:label "nutrition instruction text"@en ;
+    rdfs:domain icare:NutritionInstruction ;
+    rdfs:isDefinedBy icare:nutrition ;
+    rdfs:range xsd:string ;
+    skos:definition "Records the instruction in human-readable form."@en .
+
+icare:nutritionInterventionSpecifiesInstruction a owl:ObjectProperty ;
+    rdfs:label "specifies instruction"@en ;
+    rdfs:domain icare:NutritionIntervention ;
+    rdfs:isDefinedBy icare:nutrition ;
+    rdfs:range icare:NutritionInstruction ;
+    skos:definition "Relates a nutrition intervention to a nutrition instruction included in it."@en .
+
+icare:nutritionTargetAmount a owl:DatatypeProperty ;
+    rdfs:label "nutrition target amount"@en ;
+    rdfs:domain icare:NutritionInstruction ;
+    rdfs:isDefinedBy icare:nutrition ;
+    rdfs:range xsd:decimal ;
+    skos:definition "Records an optional numerical target for the instruction."@en .
+
+icare:nutritionTargetUnitText a owl:DatatypeProperty ;
+    rdfs:label "nutrition target unit text"@en ;
+    rdfs:domain icare:NutritionInstruction ;
+    rdfs:isDefinedBy icare:nutrition ;
+    rdfs:range xsd:string ;
+    skos:definition "Records the unit associated with the target, such as portions, grams, or millilitres."@en .
+
+icare:AddedSugar a icare:DietaryComponent,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Added sugar"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:nutrition ;
+    skos:definition "A dietary component representing added sugar as a target of nutrition guidance."@en ;
+    skos:inScheme icare:DietaryComponentScheme ;
+    skos:prefLabel "Added sugar"@en ;
+    skos:topConceptOf icare:DietaryComponentScheme .
+
+icare:Avoid a icare:NutritionActionType,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Avoid"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:nutrition ;
+    skos:definition "A nutrition action indicating that the targeted dietary component should be avoided."@en ;
+    skos:inScheme icare:NutritionActionTypeScheme ;
+    skos:prefLabel "Avoid"@en ;
+    skos:topConceptOf icare:NutritionActionTypeScheme .
+
+icare:FruitAndVegetables a icare:DietaryComponent,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Fruit and vegetables"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:nutrition ;
+    skos:definition "A dietary component representing fruit and vegetables as a target of nutrition guidance."@en ;
+    skos:inScheme icare:DietaryComponentScheme ;
+    skos:prefLabel "Fruit and vegetables"@en ;
+    skos:topConceptOf icare:DietaryComponentScheme .
+
+icare:Increase a icare:NutritionActionType,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Increase"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:nutrition ;
+    skos:definition "A nutrition action indicating that the targeted dietary component should be increased."@en ;
+    skos:inScheme icare:NutritionActionTypeScheme ;
+    skos:prefLabel "Increase"@en ;
+    skos:topConceptOf icare:NutritionActionTypeScheme .
+
+icare:Maintain a icare:NutritionActionType,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Maintain"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:nutrition ;
+    skos:definition "A nutrition action indicating that the current intake of the targeted dietary component should be maintained."@en ;
+    skos:inScheme icare:NutritionActionTypeScheme ;
+    skos:prefLabel "Maintain"@en ;
+    skos:topConceptOf icare:NutritionActionTypeScheme .
+
+icare:Reduce a icare:NutritionActionType,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Reduce"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:nutrition ;
+    skos:definition "A nutrition action indicating that the targeted dietary component should be reduced."@en ;
+    skos:inScheme icare:NutritionActionTypeScheme ;
+    skos:prefLabel "Reduce"@en ;
+    skos:topConceptOf icare:NutritionActionTypeScheme .
+
+icare:Replace a icare:NutritionActionType,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Replace"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:nutrition ;
+    skos:definition "A nutrition action indicating that the targeted dietary component should be replaced with an identified alternative."@en ;
+    skos:inScheme icare:NutritionActionTypeScheme ;
+    skos:prefLabel "Replace"@en ;
+    skos:topConceptOf icare:NutritionActionTypeScheme .
+
+icare:SaturatedFat a icare:DietaryComponent,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Saturated fat"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:nutrition ;
+    skos:definition "A dietary component representing saturated fat as a target of nutrition guidance."@en ;
+    skos:inScheme icare:DietaryComponentScheme ;
+    skos:prefLabel "Saturated fat"@en ;
+    skos:topConceptOf icare:DietaryComponentScheme .
+
+icare:Sodium a icare:DietaryComponent,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Sodium"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:nutrition ;
+    skos:definition "A dietary component representing sodium as a target of nutrition guidance."@en ;
+    skos:inScheme icare:DietaryComponentScheme ;
+    skos:prefLabel "Sodium"@en ;
+    skos:topConceptOf icare:DietaryComponentScheme .
+
+icare:Water a icare:DietaryComponent,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Water"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:nutrition ;
+    skos:definition "A dietary component representing water as a target of nutrition guidance."@en ;
+    skos:inScheme icare:DietaryComponentScheme ;
+    skos:prefLabel "Water"@en ;
+    skos:topConceptOf icare:DietaryComponentScheme .
+
+icare:WholeGrains a icare:DietaryComponent,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Whole grains"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:nutrition ;
+    skos:definition "A dietary component representing whole grains as a target of nutrition guidance."@en ;
+    skos:inScheme icare:DietaryComponentScheme ;
+    skos:prefLabel "Whole grains"@en ;
+    skos:topConceptOf icare:DietaryComponentScheme .
+
+icare:NutritionActionType a owl:Class ;
+    rdfs:label "Nutrition Action Type"@en ;
+    rdfs:isDefinedBy icare:nutrition ;
+    rdfs:subClassOf skos:Concept ;
+    skos:definition "A controlled concept representing the intended change to a dietary component, such as increase, reduce, maintain, avoid, or replace."@en .
+
+icare:DietaryComponent a owl:Class ;
+    rdfs:label "Dietary Component"@en ;
+    rdfs:isDefinedBy icare:nutrition ;
+    rdfs:subClassOf skos:Concept ;
+    skos:definition "A controlled concept representing the food group, nutrient, beverage, or dietary feature addressed by a nutrition recommendation."@en .
+
+icare:NutritionInstruction a owl:Class ;
+    rdfs:label "Nutrition Instruction"@en ;
+    rdfs:isDefinedBy icare:nutrition ;
+    skos:definition "A person-specific instruction or target forming part of a nutrition intervention, such as increasing vegetable intake or reducing salt consumption."@en .
+
+icare:NutritionActionTypeScheme a owl:NamedIndividual,
+        skos:ConceptScheme ;
+    rdfs:label "Nutrition Action Type scheme"@en ;
+    skos:hasTopConcept icare:Avoid,
+        icare:Increase,
+        icare:Maintain,
+        icare:Reduce,
+        icare:Replace .
+
+icare:DietaryComponentScheme a owl:NamedIndividual,
+        skos:ConceptScheme ;
+    rdfs:label "Dietary Component scheme"@en ;
+    skos:hasTopConcept icare:AddedSugar,
+        icare:FruitAndVegetables,
+        icare:SaturatedFat,
+        icare:Sodium,
+        icare:Water,
+        icare:WholeGrains .
+
+icare:nutrition a owl:Ontology ;
+    rdfs:label "Nutrition"@en ;
+    meta:reviewStatus "Draft" ;
+    rdfs:comment "Represents person-specific nutrition instructions specified by nutrition interventions, including targeted dietary components, intended actions, quantities and schedules."@en ;
+    owl:imports icare:core,
+        <http://maya-project.eu/icareonto/imports/skos-reference>,
+        icare:intervention-careplan,
+        icare:metadata ;
+    owl:versionIRI <http://maya-project.eu/icareonto/releases/0.1.0-draft/nutrition> ;
+    owl:versionInfo "0.1.0-draft" .
+

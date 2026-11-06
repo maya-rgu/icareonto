@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "pilot_id": "es-demo-01",
+  "study_id": "maya-demo",
+  "language": "en",
+  "status": "synthetic_demonstration",
+  "source": "Agent-authored fictional knowledge needs for the Spanish technical example. These are not requirements endorsed by a MAYA site or attributed to actual workshops.",
+  "requirements": [
+    {"id": "DEMO-KR01", "text": "Remember which language each survivor wants to use for conversations and educational information, independently of the site's usual language."},
+    {"id": "DEMO-KR02", "text": "Record whether a person wants short explanations or more detailed information when receiving support."},
+    {"id": "DEMO-KR03", "text": "Keep the registration linking a participant to the study site, study phase, assigned arm and participation period."},
+    {"id": "DEMO-KR04", "text": "Specify a consistent procedure for obtaining systolic and diastolic blood pressure readings at home."},
+    {"id": "DEMO-KR05", "text": "Identify the instrument made up of questions that a participant answers to obtain an assessment score."},
+    {"id": "DEMO-KR06", "text": "Represent the particular support a survivor needs to access or understand health information."},
+    {"id": "DEMO-KR07", "text": "Describe features such as captions or an audio alternative that make educational content accessible."},
+    {"id": "DEMO-KR08", "text": "Keep a record of the exercise session that actually took place, distinct from the session scheduled in advance."},
+    {"id": "DEMO-KR09", "text": "Represent the prescribed exercise activities, duration and intensity that a participant is asked to follow."},
+    {"id": "DEMO-KR10", "text": "Maintain an organised history of the oncology treatments received by a survivor."},
+    {"id": "DEMO-KR11", "text": "Keep the participant's consent decision, its current status and the period during which that record applies."},
+    {"id": "DEMO-KR12", "text": "Identify the publication or study that provides evidence supporting health information."},
+    {"id": "DEMO-KR13", "text": "Represent an instruction to change intake of a particular food component, including its target amount and unit."},
+    {"id": "DEMO-KR14", "text": "Describe the site's regional language setting, country and time zone."},
+    {"id": "DEMO-KR16", "text": "Distinguish publications that validate an assessment instrument from publications that merely provide background information about it."}
+  ]
+}

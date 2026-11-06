@@ -1,0 +1,524 @@
+@prefix icare: <http://maya-project.eu/icareonto/> .
+@prefix meta: <http://maya-project.eu/icareonto/metadata#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+icare:AlcoholUseBehaviour a owl:Class ;
+    rdfs:label "Alcohol Use Behaviour"@en ;
+    rdfs:isDefinedBy icare:lifestyle-behaviour ;
+    rdfs:subClassOf icare:LifestyleBehaviour ;
+    skos:definition "A behaviour describing alcohol consumption frequency, quantity, or risk level."@en .
+
+icare:CarePlanAdherenceBehaviour a owl:Class ;
+    rdfs:label "Care Plan Adherence Behaviour"@en ;
+    rdfs:isDefinedBy icare:lifestyle-behaviour ;
+    rdfs:subClassOf icare:AdherenceBehaviour ;
+    skos:definition "Adherence behaviour specific to planned care-plan activities."@en .
+
+icare:DietaryPattern a owl:Class ;
+    rdfs:label "Dietary Pattern"@en ;
+    rdfs:isDefinedBy icare:lifestyle-behaviour ;
+    rdfs:subClassOf icare:NutritionBehaviour ;
+    skos:definition "A nutrition behaviour representing an overall dietary pattern, such as Mediterranean diet, high-salt diet, or low-fibre diet."@en .
+
+icare:MedicationAdherenceBehaviour a owl:Class ;
+    rdfs:label "Medication Adherence Behaviour"@en ;
+    rdfs:isDefinedBy icare:lifestyle-behaviour ;
+    rdfs:subClassOf icare:AdherenceBehaviour ;
+    skos:definition "Adherence behaviour specific to medication use."@en .
+
+icare:MonitoringAdherenceBehaviour a owl:Class ;
+    rdfs:label "Monitoring Adherence Behaviour"@en ;
+    rdfs:isDefinedBy icare:lifestyle-behaviour ;
+    rdfs:subClassOf icare:AdherenceBehaviour ;
+    skos:definition "Adherence behaviour specific to home monitoring, check-ins, measurements, or follow-up tasks."@en .
+
+icare:PhysicalActivityBehaviour a owl:Class ;
+    rdfs:label "Physical Activity Behaviour"@en ;
+    rdfs:isDefinedBy icare:lifestyle-behaviour ;
+    rdfs:subClassOf icare:LifestyleBehaviour ;
+    skos:definition "A lifestyle behaviour describing daily movement, activity level, exercise participation, or physical activity pattern."@en .
+
+icare:SedentaryBehaviour a owl:Class ;
+    rdfs:label "Sedentary Behaviour"@en ;
+    rdfs:isDefinedBy icare:lifestyle-behaviour ;
+    rdfs:subClassOf icare:LifestyleBehaviour ;
+    skos:definition "A lifestyle behaviour describing low-energy sitting, reclining, screen time, or prolonged inactivity."@en .
+
+icare:SleepBehaviour a owl:Class ;
+    rdfs:label "Sleep Behaviour"@en ;
+    rdfs:isDefinedBy icare:lifestyle-behaviour ;
+    rdfs:subClassOf icare:LifestyleBehaviour ;
+    skos:definition "A lifestyle behaviour describing sleep duration, timing, quality, regularity, or sleep-related habits."@en .
+
+icare:SmokingBehaviour a owl:Class ;
+    rdfs:label "Smoking Behaviour"@en ;
+    rdfs:isDefinedBy icare:lifestyle-behaviour ;
+    rdfs:subClassOf icare:LifestyleBehaviour ;
+    skos:definition "A lifestyle behaviour describing current, past, or never smoking status, tobacco exposure, vaping, or cessation behaviour."@en .
+
+icare:SubstanceUseBehaviour a owl:Class ;
+    rdfs:label "Substance Use Behaviour"@en ;
+    rdfs:isDefinedBy icare:lifestyle-behaviour ;
+    rdfs:subClassOf icare:LifestyleBehaviour ;
+    skos:definition "A behaviour describing non-tobacco substance use where relevant to clinical or psychosocial monitoring."@en .
+
+icare:barrierDescription a owl:DatatypeProperty ;
+    rdfs:label "barrier description"@en ;
+    rdfs:domain icare:LifestyleBarrier ;
+    rdfs:isDefinedBy icare:lifestyle-behaviour ;
+    rdfs:range xsd:string ;
+    skos:definition "Records a textual description of a lifestyle barrier."@en .
+
+icare:behaviourHasChangeStage a owl:ObjectProperty ;
+    rdfs:label "has change stage"@en ;
+    rdfs:domain icare:BehaviourRecord ;
+    rdfs:isDefinedBy icare:lifestyle-behaviour ;
+    rdfs:range icare:BehaviourChangeStage ;
+    skos:definition "Relates a behaviour record to a readiness or behaviour-change stage."@en .
+
+icare:behaviourInfluencesRiskFactor a owl:ObjectProperty ;
+    rdfs:label "influences risk factor"@en ;
+    rdfs:domain icare:LifestyleBehaviour ;
+    rdfs:isDefinedBy icare:lifestyle-behaviour ;
+    rdfs:range icare:ModifiableRiskFactor ;
+    skos:definition "Relates Lifestyle Behaviour to Modifiable Risk Factor."@en .
+
+icare:behaviourMetricHasType a owl:ObjectProperty ;
+    rdfs:label "has type"@en ;
+    rdfs:domain icare:BehaviourMetric ;
+    rdfs:isDefinedBy icare:lifestyle-behaviour ;
+    rdfs:range icare:BehaviourMetricType ;
+    skos:definition "Identifies what the metric represents."@en .
+
+icare:behaviourMetricNumericValue a owl:DatatypeProperty ;
+    rdfs:label "behaviour metric numeric value"@en ;
+    rdfs:domain icare:BehaviourMetric ;
+    rdfs:isDefinedBy icare:lifestyle-behaviour ;
+    rdfs:range xsd:decimal ;
+    skos:definition "Records the numeric metric value."@en .
+
+icare:behaviourMetricTextValue a owl:DatatypeProperty ;
+    rdfs:label "behaviour metric text value"@en ;
+    rdfs:domain icare:BehaviourMetric ;
+    rdfs:isDefinedBy icare:lifestyle-behaviour ;
+    rdfs:range xsd:string ;
+    skos:definition "Records qualitative text value such as \"poor sleep quality\"."@en .
+
+icare:behaviourMetricUnit a owl:DatatypeProperty ;
+    rdfs:label "behaviour metric unit"@en ;
+    rdfs:domain icare:BehaviourMetric ;
+    rdfs:isDefinedBy icare:lifestyle-behaviour ;
+    rdfs:range xsd:string ;
+    skos:definition "Records the metric unit, such as steps/day, minutes/day, hours/night, cigarettes/day, or servings/day."@en .
+
+icare:behaviourRecordDerivedFromObservation a owl:ObjectProperty ;
+    rdfs:label "derived from observation"@en ;
+    rdfs:domain icare:BehaviourRecord ;
+    rdfs:isDefinedBy icare:lifestyle-behaviour ;
+    rdfs:range icare:ObservationResult ;
+    skos:definition "Relates a behaviour record to measurement evidence used to derive it."@en .
+
+icare:behaviourRecordHasBarrier a owl:ObjectProperty ;
+    rdfs:label "has barrier"@en ;
+    rdfs:domain icare:BehaviourRecord ;
+    rdfs:isDefinedBy icare:lifestyle-behaviour ;
+    rdfs:range icare:LifestyleBarrier ;
+    skos:definition "Relates a behaviour record to a barrier affecting the behaviour."@en .
+
+icare:behaviourRecordHasFacilitator a owl:ObjectProperty ;
+    rdfs:label "has facilitator"@en ;
+    rdfs:domain icare:BehaviourRecord ;
+    rdfs:isDefinedBy icare:lifestyle-behaviour ;
+    rdfs:range icare:LifestyleFacilitator ;
+    skos:definition "Relates a behaviour record to a facilitator supporting the behaviour."@en .
+
+icare:behaviourRecordHasMetric a owl:ObjectProperty ;
+    rdfs:label "has metric"@en ;
+    rdfs:domain icare:BehaviourRecord ;
+    rdfs:isDefinedBy icare:lifestyle-behaviour ;
+    rdfs:range icare:BehaviourMetric ;
+    skos:definition "Relates a behaviour record to a measured or reported behaviour metric."@en .
+
+icare:behaviourRecordHasSmokingStatus a owl:ObjectProperty ;
+    rdfs:label "has smoking status"@en ;
+    rdfs:domain icare:BehaviourRecord ;
+    rdfs:isDefinedBy icare:lifestyle-behaviour ;
+    rdfs:range icare:SmokingStatusValue ;
+    skos:definition "Identifies the smoking-status category reported or determined for a behaviour record."@en .
+
+icare:behaviourRecordHasSource a owl:ObjectProperty ;
+    rdfs:label "has source"@en ;
+    rdfs:domain icare:BehaviourRecord ;
+    rdfs:isDefinedBy icare:lifestyle-behaviour ;
+    rdfs:range icare:DataSource ;
+    skos:definition "Relates a behaviour record to its source, such as self-report, device, questionnaire, or clinical record."@en .
+
+icare:behaviourRecordHasStatus a owl:ObjectProperty ;
+    rdfs:label "has behaviour status"@en ;
+    rdfs:domain icare:BehaviourRecord ;
+    rdfs:isDefinedBy icare:lifestyle-behaviour ;
+    rdfs:range icare:BehaviourStatus ;
+    skos:definition "Relates Behaviour Record to Behaviour Status."@en .
+
+icare:behaviourRecordRecordedAt a owl:ObjectProperty ;
+    rdfs:label "recorded at"@en ;
+    rdfs:domain icare:BehaviourRecord ;
+    rdfs:isDefinedBy icare:lifestyle-behaviour ;
+    rdfs:range icare:Timepoint ;
+    skos:definition "Relates Behaviour Record to Timepoint."@en .
+
+icare:behaviourRecordRecordsBehaviour a owl:ObjectProperty ;
+    rdfs:label "records behaviour"@en ;
+    rdfs:domain icare:BehaviourRecord ;
+    rdfs:isDefinedBy icare:lifestyle-behaviour ;
+    rdfs:range icare:LifestyleBehaviour ;
+    skos:definition "Relates Behaviour Record to Lifestyle Behaviour."@en .
+
+icare:behaviourRecordRelatesToActivity a owl:ObjectProperty ;
+    rdfs:label "relates to activity"@en ;
+    rdfs:domain icare:BehaviourRecord ;
+    rdfs:isDefinedBy icare:lifestyle-behaviour ;
+    rdfs:range icare:CarePlanActivity ;
+    skos:definition "Relates Behaviour Record to Care Plan Activity."@en .
+
+icare:behaviourRecordRelatesToGoal a owl:ObjectProperty ;
+    rdfs:label "relates to goal"@en ;
+    rdfs:domain icare:BehaviourRecord ;
+    rdfs:isDefinedBy icare:lifestyle-behaviour ;
+    rdfs:range icare:Goal ;
+    skos:definition "Relates a behaviour record to a goal that the behaviour supports, tracks, or evaluates."@en .
+
+icare:behaviourRecordValidDuring a owl:ObjectProperty ;
+    rdfs:label "valid during"@en ;
+    rdfs:domain icare:BehaviourRecord ;
+    rdfs:isDefinedBy icare:lifestyle-behaviour ;
+    rdfs:range icare:TimeInterval ;
+    skos:definition "Relates a behaviour record to the interval during which the behaviour summary applies."@en .
+
+icare:facilitatorDescription a owl:DatatypeProperty ;
+    rdfs:label "facilitator description"@en ;
+    rdfs:domain icare:LifestyleFacilitator ;
+    rdfs:isDefinedBy icare:lifestyle-behaviour ;
+    rdfs:range xsd:string ;
+    skos:definition "Records a textual description of a lifestyle facilitator."@en .
+
+icare:lifestyleProfileIncludesBehaviourRecord a owl:ObjectProperty ;
+    rdfs:label "includes behaviour record"@en ;
+    rdfs:domain icare:LifestyleProfile ;
+    rdfs:isDefinedBy icare:lifestyle-behaviour ;
+    rdfs:range icare:BehaviourRecord ;
+    skos:definition "Relates Lifestyle Profile to Behaviour Record."@en .
+
+icare:personHasLifestyleProfile a owl:ObjectProperty ;
+    rdfs:label "has lifestyle profile"@en ;
+    rdfs:domain icare:Person ;
+    rdfs:isDefinedBy icare:lifestyle-behaviour ;
+    rdfs:range icare:LifestyleProfile ;
+    skos:definition "Relates Person to Lifestyle Profile."@en .
+
+icare:socialContextRecordRelatesToBehaviourRecord a owl:ObjectProperty ;
+    rdfs:label "relates to"@en ;
+    rdfs:domain icare:SocialContextRecord ;
+    rdfs:isDefinedBy icare:lifestyle-behaviour ;
+    rdfs:range icare:BehaviourRecord ;
+    skos:definition "Relates contextual information to a relevant behaviour record without asserting an unsupported causal direction."@en .
+
+icare:ActionStage a icare:BehaviourChangeStage,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Action stage"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:lifestyle-behaviour ;
+    skos:definition "A behaviour-change stage in which the person is actively making the relevant change."@en ;
+    skos:inScheme icare:BehaviourChangeStageScheme ;
+    skos:prefLabel "Action stage"@en ;
+    skos:topConceptOf icare:BehaviourChangeStageScheme .
+
+icare:AdherencePercentage a icare:BehaviourMetricType,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Adherence percentage"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:lifestyle-behaviour ;
+    skos:definition "A behaviour metric representing adherence as a percentage of expected or prescribed activity."@en ;
+    skos:inScheme icare:BehaviourMetricTypeScheme ;
+    skos:prefLabel "Adherence percentage"@en ;
+    skos:topConceptOf icare:BehaviourMetricTypeScheme .
+
+icare:AlcoholUnitsPerWeek a icare:BehaviourMetricType,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Alcohol units per week"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:lifestyle-behaviour ;
+    skos:definition "A behaviour metric representing alcohol consumption expressed as units per week."@en ;
+    skos:inScheme icare:BehaviourMetricTypeScheme ;
+    skos:prefLabel "Alcohol units per week"@en ;
+    skos:topConceptOf icare:BehaviourMetricTypeScheme .
+
+icare:BehaviourStatus a owl:Class ;
+    rdfs:label "Behaviour Status"@en ;
+    rdfs:isDefinedBy icare:lifestyle-behaviour ;
+    skos:definition "A status describing whether a behaviour is current, historical, improved, worsening, stable, target met, or target not met."@en .
+
+icare:CigarettesPerDay a icare:BehaviourMetricType,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Cigarettes per day"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:lifestyle-behaviour ;
+    skos:definition "A behaviour metric representing the number of cigarettes smoked per day."@en ;
+    skos:inScheme icare:BehaviourMetricTypeScheme ;
+    skos:prefLabel "Cigarettes per day"@en ;
+    skos:topConceptOf icare:BehaviourMetricTypeScheme .
+
+icare:ContemplationStage a icare:BehaviourChangeStage,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Contemplation stage"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:lifestyle-behaviour ;
+    skos:definition "A behaviour-change stage in which the person is considering making the relevant change."@en ;
+    skos:inScheme icare:BehaviourChangeStageScheme ;
+    skos:prefLabel "Contemplation stage"@en ;
+    skos:topConceptOf icare:BehaviourChangeStageScheme .
+
+icare:CurrentSmoker a icare:SmokingStatusValue,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Current smoker"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:lifestyle-behaviour ;
+    skos:definition "A smoking-status value indicating current smoking."@en ;
+    skos:inScheme icare:SmokingStatusValueScheme ;
+    skos:prefLabel "Current smoker"@en ;
+    skos:topConceptOf icare:SmokingStatusValueScheme .
+
+icare:DailyStepCount a icare:BehaviourMetricType,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Daily step count"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:lifestyle-behaviour ;
+    skos:definition "A behaviour metric representing the number of steps recorded during a day."@en ;
+    skos:inScheme icare:BehaviourMetricTypeScheme ;
+    skos:prefLabel "Daily step count"@en ;
+    skos:topConceptOf icare:BehaviourMetricTypeScheme .
+
+icare:FormerSmoker a icare:SmokingStatusValue,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Former smoker"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:lifestyle-behaviour ;
+    skos:definition "A smoking-status value indicating previous smoking but no current smoking."@en ;
+    skos:inScheme icare:SmokingStatusValueScheme ;
+    skos:prefLabel "Former smoker"@en ;
+    skos:topConceptOf icare:SmokingStatusValueScheme .
+
+icare:MaintenanceStage a icare:BehaviourChangeStage,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Maintenance stage"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:lifestyle-behaviour ;
+    skos:definition "A behaviour-change stage in which the person is working to sustain a change already made."@en ;
+    skos:inScheme icare:BehaviourChangeStageScheme ;
+    skos:prefLabel "Maintenance stage"@en ;
+    skos:topConceptOf icare:BehaviourChangeStageScheme .
+
+icare:NeverSmoker a icare:SmokingStatusValue,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Never smoker"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:lifestyle-behaviour ;
+    skos:definition "A smoking-status value indicating that the person has never smoked according to the adopted definition."@en ;
+    skos:inScheme icare:SmokingStatusValueScheme ;
+    skos:prefLabel "Never smoker"@en ;
+    skos:topConceptOf icare:SmokingStatusValueScheme .
+
+icare:NutritionBehaviour a owl:Class ;
+    rdfs:label "Nutrition Behaviour"@en ;
+    rdfs:isDefinedBy icare:lifestyle-behaviour ;
+    rdfs:subClassOf icare:LifestyleBehaviour ;
+    skos:definition "A lifestyle behaviour related to diet, food intake, dietary pattern, nutrition quality, or nutrition-related risk."@en .
+
+icare:PhysicalActivityDuration a icare:BehaviourMetricType,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Physical activity duration"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:lifestyle-behaviour ;
+    skos:definition "A behaviour metric representing time spent performing physical activity during a defined period."@en ;
+    skos:inScheme icare:BehaviourMetricTypeScheme ;
+    skos:prefLabel "Physical activity duration"@en ;
+    skos:topConceptOf icare:BehaviourMetricTypeScheme .
+
+icare:PrecontemplationStage a icare:BehaviourChangeStage,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Precontemplation stage"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:lifestyle-behaviour ;
+    skos:definition "A behaviour-change stage in which the person is not currently intending to make the relevant change."@en ;
+    skos:inScheme icare:BehaviourChangeStageScheme ;
+    skos:prefLabel "Precontemplation stage"@en ;
+    skos:topConceptOf icare:BehaviourChangeStageScheme .
+
+icare:PreparationStage a icare:BehaviourChangeStage,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Preparation stage"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:lifestyle-behaviour ;
+    skos:definition "A behaviour-change stage in which the person is preparing or planning to make the relevant change."@en ;
+    skos:inScheme icare:BehaviourChangeStageScheme ;
+    skos:prefLabel "Preparation stage"@en ;
+    skos:topConceptOf icare:BehaviourChangeStageScheme .
+
+icare:SedentaryDuration a icare:BehaviourMetricType,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Sedentary duration"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:lifestyle-behaviour ;
+    skos:definition "A behaviour metric representing time spent in sedentary behaviour during a defined period."@en ;
+    skos:inScheme icare:BehaviourMetricTypeScheme ;
+    skos:prefLabel "Sedentary duration"@en ;
+    skos:topConceptOf icare:BehaviourMetricTypeScheme .
+
+icare:SleepDuration a icare:BehaviourMetricType,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Sleep duration"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:lifestyle-behaviour ;
+    skos:definition "A behaviour metric representing the amount of time a person sleeps during a defined period."@en ;
+    skos:inScheme icare:BehaviourMetricTypeScheme ;
+    skos:prefLabel "Sleep duration"@en ;
+    skos:topConceptOf icare:BehaviourMetricTypeScheme .
+
+icare:SleepQuality a icare:BehaviourMetricType,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Sleep quality"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:lifestyle-behaviour ;
+    skos:definition "A behaviour metric representing the perceived or measured quality of a person's sleep."@en ;
+    skos:inScheme icare:BehaviourMetricTypeScheme ;
+    skos:prefLabel "Sleep quality"@en ;
+    skos:topConceptOf icare:BehaviourMetricTypeScheme .
+
+icare:UnknownSmokingStatus a icare:SmokingStatusValue,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Unknown smoking status"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:lifestyle-behaviour ;
+    skos:definition "A smoking-status value indicating that current and historical smoking status is unknown."@en ;
+    skos:inScheme icare:SmokingStatusValueScheme ;
+    skos:prefLabel "Unknown smoking status"@en ;
+    skos:topConceptOf icare:SmokingStatusValueScheme .
+
+icare:LifestyleBarrier a owl:Class ;
+    rdfs:label "Lifestyle Barrier"@en ;
+    rdfs:isDefinedBy icare:lifestyle-behaviour ;
+    skos:definition "A barrier affecting lifestyle behaviour change, such as time, fatigue, cost, symptoms, access, confidence, or social support."@en .
+
+icare:LifestyleFacilitator a owl:Class ;
+    rdfs:label "Lifestyle Facilitator"@en ;
+    rdfs:isDefinedBy icare:lifestyle-behaviour ;
+    skos:definition "A factor that supports positive lifestyle behaviour change or adherence."@en .
+
+icare:LifestyleProfile a owl:Class ;
+    rdfs:label "Lifestyle Profile"@en ;
+    rdfs:isDefinedBy icare:lifestyle-behaviour ;
+    skos:definition "A person-specific profile grouping lifestyle and behaviour records relevant to cardiovascular risk, late-effect monitoring, self-management, and care planning."@en .
+
+icare:AdherenceBehaviour a owl:Class ;
+    rdfs:label "Adherence Behaviour"@en ;
+    rdfs:isDefinedBy icare:lifestyle-behaviour ;
+    rdfs:subClassOf icare:LifestyleBehaviour ;
+    skos:definition "A lifestyle behaviour describing whether a person follows planned monitoring, medication, intervention, or care-plan activities."@en .
+
+icare:BehaviourMetric a owl:Class ;
+    rdfs:label "Behaviour Metric"@en ;
+    rdfs:isDefinedBy icare:lifestyle-behaviour ;
+    skos:definition "A measurable quantity or descriptor used to characterise a behaviour record."@en .
+
+icare:SmokingStatusValue a owl:Class ;
+    rdfs:label "Smoking Status Value"@en ;
+    rdfs:isDefinedBy icare:lifestyle-behaviour ;
+    rdfs:subClassOf skos:Concept ;
+    skos:definition "A controlled concept representing a person’s current or historical tobacco-smoking status, such as never smoked, former smoker, current smoker or unknown."@en .
+
+icare:BehaviourChangeStage a owl:Class ;
+    rdfs:label "Behaviour Change Stage"@en ;
+    rdfs:isDefinedBy icare:lifestyle-behaviour ;
+    rdfs:subClassOf skos:Concept ;
+    skos:definition "A controlled concept representing a person's stage of readiness or action in relation to changing a behaviour, according to an identified behaviour-change model (transtheoretical model)."@en .
+
+icare:SmokingStatusValueScheme a owl:NamedIndividual,
+        skos:ConceptScheme ;
+    rdfs:label "Smoking Status Value scheme"@en ;
+    skos:hasTopConcept icare:CurrentSmoker,
+        icare:FormerSmoker,
+        icare:NeverSmoker,
+        icare:UnknownSmokingStatus .
+
+icare:BehaviourMetricType a owl:Class ;
+    rdfs:label "Behaviour Metric Type"@en ;
+    rdfs:isDefinedBy icare:lifestyle-behaviour ;
+    rdfs:subClassOf skos:Concept ;
+    skos:definition "A controlled concept classifying the aspect of a lifestyle behaviour represented by a behaviour metric, such as sleep duration, daily step count or sedentary duration."@en .
+
+icare:BehaviourChangeStageScheme a owl:NamedIndividual,
+        skos:ConceptScheme ;
+    rdfs:label "Behaviour Change Stage scheme"@en ;
+    skos:hasTopConcept icare:ActionStage,
+        icare:ContemplationStage,
+        icare:MaintenanceStage,
+        icare:PrecontemplationStage,
+        icare:PreparationStage .
+
+icare:LifestyleBehaviour a owl:Class ;
+    rdfs:label "Lifestyle Behaviour"@en ;
+    rdfs:isDefinedBy icare:lifestyle-behaviour ;
+    skos:definition "A behaviour pattern or activity relevant to health, survivorship, cardiovascular risk, or care-plan adherence."@en .
+
+icare:BehaviourRecord a owl:Class ;
+    rdfs:label "Behaviour Record"@en ;
+    rdfs:isDefinedBy icare:lifestyle-behaviour ;
+    skos:definition "A dated record describing a reported, observed, measured, or inferred lifestyle behaviour."@en .
+
+icare:BehaviourMetricTypeScheme a owl:NamedIndividual,
+        skos:ConceptScheme ;
+    rdfs:label "Behaviour Metric Type scheme"@en ;
+    skos:hasTopConcept icare:AdherencePercentage,
+        icare:AlcoholUnitsPerWeek,
+        icare:CigarettesPerDay,
+        icare:DailyStepCount,
+        icare:PhysicalActivityDuration,
+        icare:SedentaryDuration,
+        icare:SleepDuration,
+        icare:SleepQuality .
+
+icare:lifestyle-behaviour a owl:Ontology ;
+    rdfs:label "Lifestyle and Behaviour"@en ;
+    meta:reviewStatus "Draft" ;
+    rdfs:comment "Represents person-level lifestyle profiles and behaviour records for nutrition, activity, sedentary behaviour, sleep, smoking, substance use and adherence, including metrics, change stages, barriers and facilitators."@en ;
+    owl:imports icare:core,
+        icare:cv-risk,
+        <http://maya-project.eu/icareonto/imports/skos-reference>,
+        icare:intervention-careplan,
+        icare:measurement-biomarker,
+        icare:metadata,
+        icare:person-role,
+        icare:social-context ;
+    owl:versionIRI <http://maya-project.eu/icareonto/releases/0.1.0-draft/lifestyle-behaviour> ;
+    owl:versionInfo "0.1.0-draft" .
+

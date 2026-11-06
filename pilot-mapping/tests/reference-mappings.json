@@ -1,0 +1,21 @@
+{
+  "status": "demonstration_reference_not_expert_gold_standard",
+  "scope": "Specified separately from the ranking code and before executing the scorer. Ranking code never reads this file. References are not changed to fit returned ranks.",
+  "cases": [
+    {"requirement_id": "DEMO-KR01", "relevant_classes": ["LanguagePreference"], "rationale": "Individual preference, not a site's Locale."},
+    {"requirement_id": "DEMO-KR02", "relevant_classes": ["InformationPreference"], "rationale": "Desired level of detail."},
+    {"requirement_id": "DEMO-KR03", "relevant_classes": ["ParticipantEnrolment"], "rationale": "Contextual participation record."},
+    {"requirement_id": "DEMO-KR04", "relevant_classes": ["BloodPressureMeasurementProtocol"], "rationale": "Specific blood-pressure procedure."},
+    {"requirement_id": "DEMO-KR05", "relevant_classes": ["Questionnaire"], "rationale": "Question-based instrument."},
+    {"requirement_id": "DEMO-KR06", "relevant_classes": ["HealthLiteracyNeedType"], "rationale": "An identified need, rather than a resource or intervention addressing it."},
+    {"requirement_id": "DEMO-KR07", "relevant_classes": ["AccessibilityFeature"], "rationale": "Content accessibility characteristics."},
+    {"requirement_id": "DEMO-KR08", "relevant_classes": ["PerformedExerciseSession"], "rationale": "Actual rather than planned session."},
+    {"requirement_id": "DEMO-KR09", "relevant_classes": ["ExercisePrescription"], "rationale": "Prescribed exercise specification."},
+    {"requirement_id": "DEMO-KR10", "relevant_classes": ["CancerTreatmentHistory"], "rationale": "Collection of treatment records."},
+    {"requirement_id": "DEMO-KR11", "relevant_classes": ["ConsentRecord"], "rationale": "Recorded decision and validity context."},
+    {"requirement_id": "DEMO-KR12", "relevant_classes": ["EvidenceSource"], "rationale": "Underlying evidence source."},
+    {"requirement_id": "DEMO-KR13", "relevant_classes": ["NutritionInstruction"], "rationale": "Structured dietary instruction."},
+    {"requirement_id": "DEMO-KR14", "relevant_classes": ["Locale"], "rationale": "Shared regional context, not a participant preference."},
+    {"requirement_id": "DEMO-KR16", "relevant_classes": [], "expected_review": "needs_review", "rationale": "The earlier CQ-051 representation gap is resolved by measurementInstrumentHasValidationEvidence. This case remains outside the original 14 positive retrieval references and retains its pending mapping decision until separately reviewed; no new target is inferred from returned ranks."}
+  ]
+}

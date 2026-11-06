@@ -1,0 +1,46 @@
+@prefix icare: <http://maya-project.eu/icareonto/> .
+@prefix meta: <http://maya-project.eu/icareonto/metadata#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<http://maya-project.eu/icareonto/imports/prov-reference> a owl:Ontology ;
+    rdfs:label "PROV-O reference subset"@en ;
+    meta:reviewStatus "Draft" ;
+    rdfs:comment "Reference subset of W3C terms used by iCARE Onto. Term IRIs retain their external identity; this ontology provides the selected supporting axioms."@en ;
+    rdfs:seeAlso <https://www.w3.org/ns/prov-o.ttl> ;
+    owl:imports icare:metadata ;
+    owl:versionIRI <http://maya-project.eu/icareonto/releases/0.1.0-draft/imports/prov-reference> ;
+    owl:versionInfo "0.1.0-draft" .
+
+skos:altLabel a owl:AnnotationProperty .
+
+skos:definition a owl:AnnotationProperty .
+
+skos:note a owl:AnnotationProperty .
+
+skos:prefLabel a owl:AnnotationProperty .
+
+skos:scopeNote a owl:AnnotationProperty .
+
+prov:Agent a owl:Class ;
+    rdfs:label "Agent" ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
+    owl:disjointWith prov:InstantaneousEvent .
+
+prov:Collection a owl:Class ;
+    rdfs:label "Collection" ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
+    rdfs:subClassOf prov:Entity .
+
+prov:Entity a owl:Class ;
+    rdfs:label "Entity" ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
+    owl:disjointWith prov:InstantaneousEvent .
+
+prov:InstantaneousEvent a owl:Class ;
+    rdfs:label "InstantaneousEvent" ;
+    rdfs:comment "An instantaneous event, or event for short, happens in the world and marks a change in the world, in its activities and in its entities. The term 'event' is commonly used in process algebra with a similar meaning. Events represent communications or interactions; they are assumed to be atomic and instantaneous."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> .
+

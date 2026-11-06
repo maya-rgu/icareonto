@@ -1,0 +1,19 @@
+PREFIX icare: <http://maya-project.eu/icareonto/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+# Run over the union of the instance graphs. Preferred language is optional
+# and comes from the person; site locale is supplied separately.
+SELECT ?participantId ?siteName ?siteLocale ?preferredLanguage ?status
+WHERE {
+  ?enrolment icare:participantEnrolmentForPerson ?person ;
+             icare:participantEnrolmentAtSite ?site ;
+             icare:participantEnrolmentHasStatus ?status .
+  ?person icare:personIdentifier ?participantId .
+  ?site rdfs:label ?siteName ; icare:pilotSiteHasLocale ?locale .
+  ?locale icare:localeTag ?siteLocale .
+  OPTIONAL {
+    ?person icare:personHasPreference ?preference .
+    ?preference icare:preferredLanguageTag ?preferredLanguage .
+  }
+}
+ORDER BY ?participantId

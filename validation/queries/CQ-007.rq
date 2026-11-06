@@ -1,0 +1,5 @@
+PREFIX icare: <http://maya-project.eu/icareonto/>
+PREFIX demo: <https://example.org/maya/demo/es/>
+SELECT ?diagnosis WHERE {
+  demo:participant icare:hasCancerDiagnosis ?diagnosis .
+}

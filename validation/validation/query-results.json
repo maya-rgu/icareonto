@@ -1,0 +1,257 @@
+{
+  "term_and_explicit_type_errors": [],
+  "query_mode": "SPARQL over explicit schema + fixture triples, without inference",
+  "cq_cases_tested": 15,
+  "additional_scenario_cases": 2,
+  "passed": 17,
+  "failed": 0,
+  "results": [
+    {
+      "id": "CQ-007",
+      "status": "PASS",
+      "expected": [
+        {
+          "diagnosis": "https://example.org/maya/demo/es/cancer-diagnosis"
+        }
+      ],
+      "actual": [
+        {
+          "diagnosis": "https://example.org/maya/demo/es/cancer-diagnosis"
+        }
+      ]
+    },
+    {
+      "id": "CQ-009",
+      "status": "PASS",
+      "expected": [
+        {
+          "exposure": "https://example.org/maya/demo/es/anthracycline-exposure"
+        }
+      ],
+      "actual": [
+        {
+          "exposure": "https://example.org/maya/demo/es/anthracycline-exposure"
+        }
+      ]
+    },
+    {
+      "id": "CQ-014",
+      "status": "PASS",
+      "expected": [
+        {
+          "resource": "https://example.org/maya/demo/es/resource-walking-es"
+        }
+      ],
+      "actual": [
+        {
+          "resource": "https://example.org/maya/demo/es/resource-walking-es"
+        }
+      ]
+    },
+    {
+      "id": "CQ-020",
+      "status": "PASS",
+      "expected": [
+        {
+          "need": "http://maya-project.eu/icareonto/InformationComprehensionSupportNeed"
+        }
+      ],
+      "actual": [
+        {
+          "need": "http://maya-project.eu/icareonto/InformationComprehensionSupportNeed"
+        }
+      ]
+    },
+    {
+      "id": "CQ-021",
+      "status": "PASS",
+      "expected": [
+        {
+          "resource": "https://example.org/maya/demo/es/resource-late-effects-es"
+        }
+      ],
+      "actual": [
+        {
+          "resource": "https://example.org/maya/demo/es/resource-late-effects-es"
+        }
+      ]
+    },
+    {
+      "id": "CQ-025",
+      "status": "PASS",
+      "expected": [
+        {
+          "language": "es-ES"
+        }
+      ],
+      "actual": [
+        {
+          "language": "es-ES"
+        }
+      ]
+    },
+    {
+      "id": "CQ-026",
+      "status": "PASS",
+      "expected": [
+        {
+          "recommendation": "https://example.org/maya/demo/es/symptom-recommendation"
+        }
+      ],
+      "actual": [
+        {
+          "recommendation": "https://example.org/maya/demo/es/symptom-recommendation"
+        }
+      ]
+    },
+    {
+      "id": "CQ-042",
+      "status": "PASS",
+      "expected": [
+        {
+          "time": "https://example.org/maya/demo/es/time-baseline",
+          "datetime": "2026-10-20T08:30:00+02:00"
+        }
+      ],
+      "actual": [
+        {
+          "time": "https://example.org/maya/demo/es/time-baseline",
+          "datetime": "2026-10-20T08:30:00+02:00"
+        }
+      ]
+    },
+    {
+      "id": "CQ-048",
+      "status": "PASS",
+      "expected": [
+        {
+          "instrument": "https://example.org/maya/demo/es/blood-pressure-monitor"
+        }
+      ],
+      "actual": [
+        {
+          "instrument": "https://example.org/maya/demo/es/blood-pressure-monitor"
+        }
+      ]
+    },
+    {
+      "id": "CQ-062",
+      "status": "PASS",
+      "expected": [
+        {
+          "activity": "https://example.org/maya/demo/es/walking-activity"
+        }
+      ],
+      "actual": [
+        {
+          "activity": "https://example.org/maya/demo/es/walking-activity"
+        }
+      ]
+    },
+    {
+      "id": "CQ-064",
+      "status": "PASS",
+      "expected": [
+        {
+          "activity": "https://example.org/maya/demo/es/performed-walking-activity",
+          "minutes": "18"
+        }
+      ],
+      "actual": [
+        {
+          "activity": "https://example.org/maya/demo/es/performed-walking-activity",
+          "minutes": "18.0"
+        }
+      ]
+    },
+    {
+      "id": "CQ-068",
+      "status": "PASS",
+      "expected": [
+        {
+          "planned": "https://example.org/maya/demo/es/planned-walking-session"
+        }
+      ],
+      "actual": [
+        {
+          "planned": "https://example.org/maya/demo/es/planned-walking-session"
+        }
+      ]
+    },
+    {
+      "id": "CQ-070",
+      "status": "PASS",
+      "expected": [
+        {
+          "resource": "https://example.org/maya/demo/es/resource-walking-es"
+        }
+      ],
+      "actual": [
+        {
+          "resource": "https://example.org/maya/demo/es/resource-walking-es"
+        }
+      ]
+    },
+    {
+      "id": "CQ-075",
+      "status": "PASS",
+      "expected": [
+        {
+          "record": "https://example.org/maya/demo/es/symptom-record"
+        }
+      ],
+      "actual": [
+        {
+          "record": "https://example.org/maya/demo/es/symptom-record"
+        }
+      ]
+    },
+    {
+      "id": "CQ-078",
+      "status": "PASS",
+      "expected": [
+        {
+          "activity": "https://example.org/maya/demo/es/referral"
+        }
+      ],
+      "actual": [
+        {
+          "activity": "https://example.org/maya/demo/es/referral"
+        }
+      ]
+    },
+    {
+      "id": "ES-LOCALE",
+      "status": "PASS",
+      "expected": [
+        {
+          "country": "ES",
+          "language": "es-ES",
+          "timezone": "Europe/Madrid"
+        }
+      ],
+      "actual": [
+        {
+          "country": "ES",
+          "language": "es-ES",
+          "timezone": "Europe/Madrid"
+        }
+      ]
+    },
+    {
+      "id": "ES-RESOURCE-SELECTION",
+      "status": "PASS",
+      "expected": [
+        {
+          "resource": "https://example.org/maya/demo/es/resource-late-effects-es"
+        }
+      ],
+      "actual": [
+        {
+          "resource": "https://example.org/maya/demo/es/resource-late-effects-es"
+        }
+      ]
+    }
+  ],
+  "all_78_cqs_tested": false
+}

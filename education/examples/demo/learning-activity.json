@@ -1,0 +1,21 @@
+{
+  "activity_id": "EDU-CV-FOLLOWUP",
+  "activity_status": "Draft",
+  "learning_objective": "Identify the purpose of cardiovascular follow-up and formulate a question for the care team about the participant's own follow-up.",
+  "reflection_prompts": [
+    "In your own words, what is the main reason for the follow-up described in this resource?",
+    "What would you like your care team to explain about your own follow-up?"
+  ],
+  "release_id": "09e1028d8186c099e815bf93",
+  "scope": "Technical demonstration; no intervention delivery, completed learning or improved literacy is asserted.",
+  "selected_resource_ids": [
+    "MAYA-EDU-0004"
+  ],
+  "steps": [
+    "Introduce the topic using the participant's stated question and identified support need.",
+    "Offer a suitable reviewed resource in the participant's language and explain its access conditions.",
+    "Invite the participant to explain the main message in their own words and identify any unclear information.",
+    "Help the participant prepare a question for their care team; personal monitoring decisions remain with the care team."
+  ],
+  "synthetic": true
+}

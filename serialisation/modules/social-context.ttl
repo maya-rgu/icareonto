@@ -1,0 +1,921 @@
+@prefix icare: <http://maya-project.eu/icareonto/> .
+@prefix meta: <http://maya-project.eu/icareonto/metadata#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+icare:CulturalFactor a owl:Class ;
+    rdfs:label "Cultural Factor"@en ;
+    rdfs:isDefinedBy icare:social-context ;
+    rdfs:subClassOf icare:SocialContextFactor ;
+    skos:definition "A person-stated cultural belief, practice, norm, or context relevant to communication, care, or intervention use."@en .
+
+icare:PrivacyConcern a owl:Class ;
+    rdfs:label "Privacy Concern"@en ;
+    rdfs:isDefinedBy icare:social-context ;
+    rdfs:subClassOf icare:AccessOrEngagementBarrier ;
+    skos:definition "A concern about observation, recording, sharing, or unintended disclosure of personal or health information, including use of technology in shared spaces."@en .
+
+icare:TransportationBarrier a owl:Class ;
+    rdfs:label "Transportation Barrier"@en ;
+    rdfs:isDefinedBy icare:social-context ;
+    rdfs:subClassOf icare:AccessOrEngagementBarrier ;
+    skos:definition "Difficulty reaching healthcare or study activities because suitable, affordable, or accessible transport is unavailable."@en .
+
+icare:TrustConcern a owl:Class ;
+    rdfs:label "Trust Concern"@en ;
+    rdfs:isDefinedBy icare:social-context ;
+    rdfs:subClassOf icare:AccessOrEngagementBarrier ;
+    skos:definition "A concern about the credibility, reliability, fairness, or appropriate operation of a healthcare provider or digital health system that may reduce engagement."@en .
+
+icare:contextFactorDescriptionText a owl:DatatypeProperty ;
+    rdfs:label "context factor description text"@en ;
+    rdfs:domain icare:SocialContextFactor ;
+    rdfs:isDefinedBy icare:social-context ;
+    rdfs:range xsd:string ;
+    skos:definition "A person-specific explanation of social context factor."@en .
+
+icare:digitalLiteracyHasLevel a owl:ObjectProperty ;
+    rdfs:label "has level"@en ;
+    rdfs:domain icare:DigitalLiteracy ;
+    rdfs:isDefinedBy icare:social-context ;
+    rdfs:range icare:LiteracyLevelValue ;
+    skos:definition "Summary digital level, such as limited, adequate, high, or unknown."@en .
+
+icare:hasBarrierSeverity a owl:ObjectProperty ;
+    rdfs:label "has barrier severity"@en ;
+    rdfs:domain icare:AccessOrEngagementBarrier ;
+    rdfs:isDefinedBy icare:social-context ;
+    rdfs:range icare:SeverityLevel ;
+    skos:definition "Reported effect of a barrier, such as low, moderate, high, or unknown."@en .
+
+icare:hasContextInfluence a owl:ObjectProperty ;
+    rdfs:label "has context influence"@en ;
+    rdfs:domain icare:SocialContextFactor ;
+    rdfs:isDefinedBy icare:social-context ;
+    rdfs:range icare:ContextInfluenceValue ;
+    skos:definition "Whether the factor currently acts as a barrier, facilitator, mixed influence, or has unknown influence."@en .
+
+icare:hasEducationalAttainment a owl:ObjectProperty ;
+    rdfs:label "has educational attainment"@en ;
+    rdfs:domain icare:EducationalAttainment ;
+    rdfs:isDefinedBy icare:social-context ;
+    rdfs:range icare:EducationalAttainmentValue ;
+    skos:definition "Highest attained or current education level, preferably from a controlled vocabulary."@en .
+
+icare:hasEmploymentStatus a owl:ObjectProperty ;
+    rdfs:label "has employment status"@en ;
+    rdfs:domain icare:EmploymentStatus ;
+    rdfs:isDefinedBy icare:social-context ;
+    rdfs:range icare:EmploymentStatusValue ;
+    skos:definition "Current employment situation, preferably from a controlled vocabulary."@en .
+
+icare:hasFinancialConstraintStatus a owl:ObjectProperty ;
+    rdfs:label "has financial constraint status"@en ;
+    rdfs:domain icare:FinancialConstraint ;
+    rdfs:isDefinedBy icare:social-context ;
+    rdfs:range icare:FinancialConstraintStatusValue ;
+    skos:definition "Whether financial constraints are absent, present, severe, or unknown."@en .
+
+icare:hasLanguageProficiencyLevel a owl:ObjectProperty ;
+    rdfs:label "has language proficiency level"@en ;
+    rdfs:domain icare:LanguageBarrier ;
+    rdfs:isDefinedBy icare:social-context ;
+    rdfs:range icare:LanguageProficiencyLevelValue ;
+    skos:definition "Ability to understand or communicate in the supported language, such as fluent, conversational, limited, or none."@en .
+
+icare:hasLivingSituationType a owl:ObjectProperty ;
+    rdfs:label "has living situation type"@en ;
+    rdfs:domain icare:LivingSituation ;
+    rdfs:isDefinedBy icare:social-context ;
+    rdfs:range icare:LivingSituationType ;
+    skos:definition "Summary such as lives alone, with family, shared accommodation, or temporary housing."@en .
+
+icare:healthLiteracyHasLevel a owl:ObjectProperty ;
+    rdfs:label "has level"@en ;
+    rdfs:domain icare:HealthLiteracy ;
+    rdfs:isDefinedBy icare:social-context ;
+    rdfs:range icare:LiteracyLevelValue ;
+    skos:definition "Summary literacy level, such as limited, adequate, high, or unknown."@en .
+
+icare:healthLiteracyResultIdentifiesNeed a owl:ObjectProperty ;
+    rdfs:label "result identifies need"@en ;
+    rdfs:domain icare:ObservationResult ;
+    rdfs:isDefinedBy icare:social-context ;
+    rdfs:range icare:HealthLiteracyNeedType ;
+    skos:definition "Identifies an actionable support need indicated by the result."@en .
+
+icare:personHasSocialContextProfile a owl:ObjectProperty ;
+    rdfs:label "has social context profile"@en ;
+    rdfs:domain icare:Person ;
+    rdfs:isDefinedBy icare:social-context ;
+    rdfs:range icare:SocialContextProfile ;
+    skos:definition "Relates a person to the profile containing their social-context records."@en .
+
+icare:privateUseSpaceAvailable a owl:DatatypeProperty ;
+    rdfs:label "private use space available"@en ;
+    rdfs:domain icare:LivingSituation ;
+    rdfs:isDefinedBy icare:social-context ;
+    rdfs:range xsd:boolean ;
+    skos:definition "Whether a sufficiently private place is available for interaction with digital solutions, including conversational interaction."@en .
+
+icare:socialContextRecordHasResponseStatus a owl:ObjectProperty ;
+    rdfs:label "has response status"@en ;
+    rdfs:domain icare:SocialContextRecord ;
+    rdfs:isDefinedBy icare:social-context ;
+    rdfs:range icare:ResponseStatus ;
+    skos:definition "Relates a social context record to the status indicating whether the requested contextual information was provided, unknown, not applicable, or declined."@en .
+
+icare:socialContextRecordHasSource a owl:ObjectProperty ;
+    rdfs:label "has source"@en ;
+    rdfs:domain icare:SocialContextRecord ;
+    rdfs:isDefinedBy icare:social-context ;
+    rdfs:range icare:DataSource ;
+    skos:definition "Identifies the source, such as self-report, questionnaire, clinician, caregiver, or clinical record."@en .
+
+icare:socialContextRecordRecordedAt a owl:ObjectProperty ;
+    rdfs:label "recorded at"@en ;
+    rdfs:domain icare:SocialContextRecord ;
+    rdfs:isDefinedBy icare:social-context ;
+    rdfs:range icare:Timepoint ;
+    skos:definition "Identifies when the contextual information was recorded or reported."@en .
+
+icare:socialContextRecordRecordsFactor a owl:ObjectProperty ;
+    rdfs:label "records factor"@en ;
+    rdfs:domain icare:SocialContextRecord ;
+    rdfs:isDefinedBy icare:social-context ;
+    rdfs:range icare:SocialContextFactor ;
+    skos:definition "Identifies the contextual factor described by the record. Prefer one factor per record."@en .
+
+icare:socialContextRecordValidDuring a owl:ObjectProperty ;
+    rdfs:label "valid during"@en ;
+    rdfs:domain icare:SocialContextRecord ;
+    rdfs:isDefinedBy icare:social-context ;
+    rdfs:range icare:TimeInterval ;
+    skos:definition "Identifies the period during which the recorded circumstance is considered applicable."@en .
+
+icare:socialProfileIncludesRecord a owl:ObjectProperty ;
+    rdfs:label "includes record"@en ;
+    rdfs:domain icare:SocialContextProfile ;
+    rdfs:isDefinedBy icare:social-context ;
+    rdfs:range icare:SocialContextRecord ;
+    skos:definition "Includes a time- and source-specific social-context record in a profile."@en .
+
+icare:supportNetworkIncludesPerson a owl:ObjectProperty ;
+    rdfs:label "includes person"@en ;
+    rdfs:domain icare:SupportNetwork ;
+    rdfs:isDefinedBy icare:social-context ;
+    rdfs:range icare:Person ;
+    skos:definition "Identifies a person who belongs to the support network."@en .
+
+icare:AdequateLiteracy a icare:LiteracyLevelValue,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Adequate literacy"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:social-context ;
+    skos:definition "A summary literacy level indicating sufficient capability to access, understand, appraise and use relevant information in common situations."@en ;
+    skos:inScheme icare:LiteracyLevelValueScheme ;
+    skos:prefLabel "Adequate literacy"@en ;
+    skos:topConceptOf icare:LiteracyLevelValueScheme .
+
+icare:Barrier a icare:ContextInfluenceValue,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Barrier"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:social-context ;
+    skos:definition "A context-influence value indicating that the factor impedes access, engagement or participation."@en ;
+    skos:inScheme icare:ContextInfluenceValueScheme ;
+    skos:prefLabel "Barrier"@en ;
+    skos:topConceptOf icare:ContextInfluenceValueScheme .
+
+icare:CareTeamCommunicationSupportNeed a icare:HealthLiteracyNeedType,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Care team communication support need"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:social-context ;
+    skos:definition "An identified need for support communicating questions, concerns or information with healthcare professionals."@en ;
+    skos:inScheme icare:HealthLiteracyNeedTypeScheme ;
+    skos:prefLabel "Care team communication support need"@en ;
+    skos:topConceptOf icare:HealthLiteracyNeedTypeScheme .
+
+icare:ConsistentSupport a icare:SupportAvailabilityValue,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Consistent support"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:social-context ;
+    skos:definition "A support-availability value indicating that dependable support is regularly available."@en ;
+    skos:inScheme icare:SupportAvailabilityValueScheme ;
+    skos:prefLabel "Consistent support"@en ;
+    skos:topConceptOf icare:SupportAvailabilityValueScheme .
+
+icare:DeclinedToAnswer a icare:ResponseStatus,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Declined to answer"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:social-context ;
+    skos:definition "A response status indicating that the person chose not to provide the requested information."@en ;
+    skos:inScheme icare:ResponseStatusScheme ;
+    skos:prefLabel "Declined to answer"@en ;
+    skos:topConceptOf icare:ResponseStatusScheme .
+
+icare:DigitalInteractionSupportNeed a icare:HealthLiteracyNeedType,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Digital interaction support need"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:social-context ;
+    skos:definition "An identified need for support using digital health interfaces, information or services."@en ;
+    skos:inScheme icare:HealthLiteracyNeedTypeScheme ;
+    skos:prefLabel "Digital interaction support need"@en ;
+    skos:topConceptOf icare:HealthLiteracyNeedTypeScheme .
+
+icare:DigitalLiteracy a owl:Class ;
+    rdfs:label "Digital Literacy"@en ;
+    rdfs:isDefinedBy icare:social-context ;
+    rdfs:subClassOf icare:SocialContextFactor ;
+    skos:definition "A person's ability and confidence to access, understand, evaluate, and use digital technologies and digital information."@en .
+
+icare:EducationalAttainment a owl:Class ;
+    rdfs:label "Educational Attainment"@en ;
+    rdfs:isDefinedBy icare:social-context ;
+    rdfs:subClassOf icare:SocioEconomicFactor ;
+    skos:definition "The highest level of formal education completed or currently attained by a person."@en .
+
+icare:Employed a icare:EmploymentStatusValue,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Employed"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:social-context ;
+    skos:definition "An employment-status value indicating that the person is employed."@en ;
+    skos:inScheme icare:EmploymentStatusValueScheme ;
+    skos:prefLabel "Employed"@en ;
+    skos:topConceptOf icare:EmploymentStatusValueScheme .
+
+icare:EmploymentStatus a owl:Class ;
+    rdfs:label "Employment Status"@en ;
+    rdfs:isDefinedBy icare:social-context ;
+    rdfs:subClassOf icare:SocioEconomicFactor ;
+    skos:definition "A person's current employment situation, such as employed, unemployed, self-employed, studying, on leave, retired, or unable to work."@en .
+
+icare:Facilitator a icare:ContextInfluenceValue,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Facilitator"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:social-context ;
+    skos:definition "A context-influence value indicating that the factor helps access, engagement or participation."@en ;
+    skos:inScheme icare:ContextInfluenceValueScheme ;
+    skos:prefLabel "Facilitator"@en ;
+    skos:topConceptOf icare:ContextInfluenceValueScheme .
+
+icare:FinancialConstraint a owl:Class ;
+    rdfs:label "Financial Constraint"@en ;
+    rdfs:isDefinedBy icare:social-context ;
+    rdfs:subClassOf icare:SocioEconomicFactor ;
+    skos:definition "Financial difficulty that limits access to care, transport, connectivity, suitable equipment, healthy living resources, or intervention participation."@en .
+
+icare:Fluent a icare:LanguageProficiencyLevelValue,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Fluent"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:social-context ;
+    skos:definition "A language-proficiency level indicating fluent comprehension and communication in the relevant language."@en ;
+    skos:inScheme icare:LanguageProficiencyLevelValueScheme ;
+    skos:prefLabel "Fluent"@en ;
+    skos:topConceptOf icare:LanguageProficiencyLevelValueScheme .
+
+icare:Functional a icare:LanguageProficiencyLevelValue,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Functional"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:social-context ;
+    skos:definition "A language-proficiency level indicating sufficient ability to manage common communication in the relevant language."@en ;
+    skos:inScheme icare:LanguageProficiencyLevelValueScheme ;
+    skos:prefLabel "Functional"@en ;
+    skos:topConceptOf icare:LanguageProficiencyLevelValueScheme .
+
+icare:HealthLiteracy a owl:Class ;
+    rdfs:label "Health Literacy"@en ;
+    rdfs:isDefinedBy icare:social-context ;
+    rdfs:subClassOf icare:SocialContextFactor ;
+    skos:definition "A person's knowledge and capabilities for accessing, understanding, appraising, and using health information and services."@en .
+
+icare:HealthcareNavigationSupportNeed a icare:HealthLiteracyNeedType,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Healthcare navigation support need"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:social-context ;
+    skos:definition "An identified need for support finding, accessing or navigating appropriate healthcare services."@en ;
+    skos:inScheme icare:HealthLiteracyNeedTypeScheme ;
+    skos:prefLabel "Healthcare navigation support need"@en ;
+    skos:topConceptOf icare:HealthLiteracyNeedTypeScheme .
+
+icare:High a icare:SeverityLevel,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "High"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:social-context ;
+    skos:definition "A controlled severity level indicating a high degree of impact or concern."@en ;
+    skos:inScheme icare:SeverityLevelScheme ;
+    skos:prefLabel "High"@en ;
+    skos:topConceptOf icare:SeverityLevelScheme .
+
+icare:HighLiteracy a icare:LiteracyLevelValue,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "High literacy"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:social-context ;
+    skos:definition "A summary literacy level indicating strong capability and confidence in accessing, understanding, appraising and using relevant information."@en ;
+    skos:inScheme icare:LiteracyLevelValueScheme ;
+    skos:prefLabel "High literacy"@en ;
+    skos:topConceptOf icare:LiteracyLevelValueScheme .
+
+icare:InformationAccessSupportNeed a icare:HealthLiteracyNeedType,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Information access support need"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:social-context ;
+    skos:definition "An identified need for support finding or obtaining relevant and trustworthy health information."@en ;
+    skos:inScheme icare:HealthLiteracyNeedTypeScheme ;
+    skos:prefLabel "Information access support need"@en ;
+    skos:topConceptOf icare:HealthLiteracyNeedTypeScheme .
+
+icare:InformationApplicationSupportNeed a icare:HealthLiteracyNeedType,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Information application support need"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:social-context ;
+    skos:definition "An identified need for support applying health information to decisions, actions or self-management."@en ;
+    skos:inScheme icare:HealthLiteracyNeedTypeScheme ;
+    skos:prefLabel "Information application support need"@en ;
+    skos:topConceptOf icare:HealthLiteracyNeedTypeScheme .
+
+icare:InformationAppraisalSupportNeed a icare:HealthLiteracyNeedType,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Information appraisal support need"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:social-context ;
+    skos:definition "An identified need for support evaluating the reliability, relevance or quality of health information."@en ;
+    skos:inScheme icare:HealthLiteracyNeedTypeScheme ;
+    skos:prefLabel "Information appraisal support need"@en ;
+    skos:topConceptOf icare:HealthLiteracyNeedTypeScheme .
+
+icare:InformationComprehensionSupportNeed a icare:HealthLiteracyNeedType,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Information comprehension support need"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:social-context ;
+    skos:definition "An identified need for support understanding health information, instructions or explanations."@en ;
+    skos:inScheme icare:HealthLiteracyNeedTypeScheme ;
+    skos:prefLabel "Information comprehension support need"@en ;
+    skos:topConceptOf icare:HealthLiteracyNeedTypeScheme .
+
+icare:LanguageBarrier a owl:Class ;
+    rdfs:label "Language Barrier"@en ;
+    rdfs:isDefinedBy icare:social-context ;
+    rdfs:subClassOf icare:AccessOrEngagementBarrier ;
+    skos:definition "Difficulty accessing or using care or digital services because an appropriate spoken or written language is unavailable or insufficiently understood."@en .
+
+icare:LimitedLiteracy a icare:LiteracyLevelValue,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Limited literacy"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:social-context ;
+    skos:definition "A summary literacy level indicating substantial difficulty accessing, understanding, appraising or using relevant information."@en ;
+    skos:inScheme icare:LiteracyLevelValueScheme ;
+    skos:prefLabel "Limited literacy"@en ;
+    skos:topConceptOf icare:LiteracyLevelValueScheme .
+
+icare:LimitedProficiency a icare:LanguageProficiencyLevelValue,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Limited proficiency"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:social-context ;
+    skos:definition "A language-proficiency level indicating difficulty understanding or communicating in the relevant language."@en ;
+    skos:inScheme icare:LanguageProficiencyLevelValueScheme ;
+    skos:prefLabel "Limited proficiency"@en ;
+    skos:topConceptOf icare:LanguageProficiencyLevelValueScheme .
+
+icare:LivesAlone a icare:LivingSituationType,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Lives alone"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:social-context ;
+    skos:definition "A living-situation type indicating that the person lives alone."@en ;
+    skos:inScheme icare:LivingSituationTypeScheme ;
+    skos:prefLabel "Lives alone"@en ;
+    skos:topConceptOf icare:LivingSituationTypeScheme .
+
+icare:LivesWithFamily a icare:LivingSituationType,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Lives with family"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:social-context ;
+    skos:definition "A living-situation type indicating that the person lives with one or more family members."@en ;
+    skos:inScheme icare:LivingSituationTypeScheme ;
+    skos:prefLabel "Lives with family"@en ;
+    skos:topConceptOf icare:LivingSituationTypeScheme .
+
+icare:LivesWithPartner a icare:LivingSituationType,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Lives with partner"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:social-context ;
+    skos:definition "A living-situation type indicating that the person lives with a partner."@en ;
+    skos:inScheme icare:LivingSituationTypeScheme ;
+    skos:prefLabel "Lives with partner"@en ;
+    skos:topConceptOf icare:LivingSituationTypeScheme .
+
+icare:Low a icare:SeverityLevel,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Low"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:social-context ;
+    skos:definition "A controlled severity level indicating a low degree of impact or concern."@en ;
+    skos:inScheme icare:SeverityLevelScheme ;
+    skos:prefLabel "Low"@en ;
+    skos:topConceptOf icare:SeverityLevelScheme .
+
+icare:MixedInfluence a icare:ContextInfluenceValue,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Mixed influence"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:social-context ;
+    skos:definition "A context-influence value indicating that the factor has both facilitating and impeding effects."@en ;
+    skos:inScheme icare:ContextInfluenceValueScheme ;
+    skos:prefLabel "Mixed influence"@en ;
+    skos:topConceptOf icare:ContextInfluenceValueScheme .
+
+icare:Moderate a icare:SeverityLevel,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Moderate"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:social-context ;
+    skos:definition "A controlled severity level indicating a moderate degree of impact or concern."@en ;
+    skos:inScheme icare:SeverityLevelScheme ;
+    skos:prefLabel "Moderate"@en ;
+    skos:topConceptOf icare:SeverityLevelScheme .
+
+icare:NoAvailableSupport a icare:SupportAvailabilityValue,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "No available support"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:social-context ;
+    skos:definition "A support-availability value indicating that no suitable support is currently available."@en ;
+    skos:inScheme icare:SupportAvailabilityValueScheme ;
+    skos:prefLabel "No available support"@en ;
+    skos:topConceptOf icare:SupportAvailabilityValueScheme .
+
+icare:NoFinancialConstraint a icare:FinancialConstraintStatusValue,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "No financial constraint"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:social-context ;
+    skos:definition "A financial-constraint status indicating that no material financial barrier has been identified."@en ;
+    skos:inScheme icare:FinancialConstraintStatusValueScheme ;
+    skos:prefLabel "No financial constraint"@en ;
+    skos:topConceptOf icare:FinancialConstraintStatusValueScheme .
+
+icare:NoProficiency a icare:LanguageProficiencyLevelValue,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "No proficiency"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:social-context ;
+    skos:definition "A language-proficiency level indicating no usable ability in the relevant language."@en ;
+    skos:inScheme icare:LanguageProficiencyLevelValueScheme ;
+    skos:prefLabel "No proficiency"@en ;
+    skos:topConceptOf icare:LanguageProficiencyLevelValueScheme .
+
+icare:NotApplicable a icare:ResponseStatus,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Not applicable"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:social-context ;
+    skos:definition "A response status indicating that the requested information does not apply in the current context."@en ;
+    skos:inScheme icare:ResponseStatusScheme ;
+    skos:prefLabel "Not applicable"@en ;
+    skos:topConceptOf icare:ResponseStatusScheme .
+
+icare:OccasionalSupport a icare:SupportAvailabilityValue,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Occasional support"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:social-context ;
+    skos:definition "A support-availability value indicating that support is available intermittently or only in some situations."@en ;
+    skos:inScheme icare:SupportAvailabilityValueScheme ;
+    skos:prefLabel "Occasional support"@en ;
+    skos:topConceptOf icare:SupportAvailabilityValueScheme .
+
+icare:OnLeave a icare:EmploymentStatusValue,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "On leave"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:social-context ;
+    skos:definition "An employment-status value indicating that the person is on leave."@en ;
+    skos:inScheme icare:EmploymentStatusValueScheme ;
+    skos:prefLabel "On leave"@en ;
+    skos:topConceptOf icare:EmploymentStatusValueScheme .
+
+icare:PrimaryEducation a icare:EducationalAttainmentValue,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Primary education"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:social-context ;
+    skos:definition "An educational-attainment value representing education at primary-school level."@en ;
+    skos:inScheme icare:EducationalAttainmentValueScheme ;
+    skos:prefLabel "Primary education"@en ;
+    skos:topConceptOf icare:EducationalAttainmentValueScheme .
+
+icare:Provided a icare:ResponseStatus,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Provided"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:social-context ;
+    skos:definition "A response status indicating that the requested information was supplied."@en ;
+    skos:inScheme icare:ResponseStatusScheme ;
+    skos:prefLabel "Provided"@en ;
+    skos:topConceptOf icare:ResponseStatusScheme .
+
+icare:Retired a icare:EmploymentStatusValue,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Retired"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:social-context ;
+    skos:definition "An employment-status value indicating that the person is retired."@en ;
+    skos:inScheme icare:EmploymentStatusValueScheme ;
+    skos:prefLabel "Retired"@en ;
+    skos:topConceptOf icare:EmploymentStatusValueScheme .
+
+icare:SecondaryEducation a icare:EducationalAttainmentValue,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Secondary education"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:social-context ;
+    skos:definition "An educational-attainment value representing education at secondary-school level."@en ;
+    skos:inScheme icare:EducationalAttainmentValueScheme ;
+    skos:prefLabel "Secondary education"@en ;
+    skos:topConceptOf icare:EducationalAttainmentValueScheme .
+
+icare:SelfEmployed a icare:EmploymentStatusValue,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Self-employed"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:social-context ;
+    skos:definition "An employment-status value indicating that the person is self-employed."@en ;
+    skos:inScheme icare:EmploymentStatusValueScheme ;
+    skos:prefLabel "Self-employed"@en ;
+    skos:topConceptOf icare:EmploymentStatusValueScheme .
+
+icare:SelfManagementSupportNeed a icare:HealthLiteracyNeedType,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Self management support need"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:social-context ;
+    skos:definition "An identified need for support planning or carrying out activities required to manage health."@en ;
+    skos:inScheme icare:HealthLiteracyNeedTypeScheme ;
+    skos:prefLabel "Self management support need"@en ;
+    skos:topConceptOf icare:HealthLiteracyNeedTypeScheme .
+
+icare:SevereFinancialConstraint a icare:FinancialConstraintStatusValue,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Severe financial constraint"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:social-context ;
+    skos:definition "A financial-constraint status indicating that financial limitations substantially restrict access, participation or health-related choices."@en ;
+    skos:inScheme icare:FinancialConstraintStatusValueScheme ;
+    skos:prefLabel "Severe financial constraint"@en ;
+    skos:topConceptOf icare:FinancialConstraintStatusValueScheme .
+
+icare:SharedAccommodation a icare:LivingSituationType,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Shared accommodation"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:social-context ;
+    skos:definition "A living-situation type indicating that the person lives in accommodation shared with other people."@en ;
+    skos:inScheme icare:LivingSituationTypeScheme ;
+    skos:prefLabel "Shared accommodation"@en ;
+    skos:topConceptOf icare:LivingSituationTypeScheme .
+
+icare:SocialSupportNeed a icare:HealthLiteracyNeedType,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Social support need"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:social-context ;
+    skos:definition "An identified need for practical, informational or emotional support from other people."@en ;
+    skos:inScheme icare:HealthLiteracyNeedTypeScheme ;
+    skos:prefLabel "Social support need"@en ;
+    skos:topConceptOf icare:HealthLiteracyNeedTypeScheme .
+
+icare:SomeFinancialConstraint a icare:FinancialConstraintStatusValue,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Some financial constraint"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:social-context ;
+    skos:definition "A financial-constraint status indicating that financial limitations affect some health-related choices or participation."@en ;
+    skos:inScheme icare:FinancialConstraintStatusValueScheme ;
+    skos:prefLabel "Some financial constraint"@en ;
+    skos:topConceptOf icare:FinancialConstraintStatusValueScheme .
+
+icare:Student a icare:EmploymentStatusValue,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Student"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:social-context ;
+    skos:definition "An employment-status value indicating that the person is a student."@en ;
+    skos:inScheme icare:EmploymentStatusValueScheme ;
+    skos:prefLabel "Student"@en ;
+    skos:topConceptOf icare:EmploymentStatusValueScheme .
+
+icare:SupportNetwork a owl:Class ;
+    rdfs:label "Support Network"@en ;
+    rdfs:isDefinedBy icare:social-context ;
+    rdfs:subClassOf icare:SocialContextFactor ;
+    skos:definition "The people or groups available to provide emotional, informational, practical, or care-related support to a person."@en .
+
+icare:TertiaryEducation a icare:EducationalAttainmentValue,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Tertiary education"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:social-context ;
+    skos:definition "An educational-attainment value representing education provided by a university, college or comparable post-secondary institution."@en ;
+    skos:inScheme icare:EducationalAttainmentValueScheme ;
+    skos:prefLabel "Tertiary education"@en ;
+    skos:topConceptOf icare:EducationalAttainmentValueScheme .
+
+icare:UnableToWork a icare:EmploymentStatusValue,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Unable to work"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:social-context ;
+    skos:definition "An employment-status value indicating that the person is unable to work."@en ;
+    skos:inScheme icare:EmploymentStatusValueScheme ;
+    skos:prefLabel "Unable to work"@en ;
+    skos:topConceptOf icare:EmploymentStatusValueScheme .
+
+icare:Unemployed a icare:EmploymentStatusValue,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Unemployed"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:social-context ;
+    skos:definition "An employment-status value indicating that the person is unemployed."@en ;
+    skos:inScheme icare:EmploymentStatusValueScheme ;
+    skos:prefLabel "Unemployed"@en ;
+    skos:topConceptOf icare:EmploymentStatusValueScheme .
+
+icare:UnknownToPerson a icare:ResponseStatus,
+        owl:NamedIndividual,
+        skos:Concept ;
+    rdfs:label "Unknown to person"@en ;
+    meta:reviewStatus "Proposed" ;
+    rdfs:isDefinedBy icare:social-context ;
+    skos:definition "A response status indicating that the requested information is not known by the person."@en ;
+    skos:inScheme icare:ResponseStatusScheme ;
+    skos:prefLabel "Unknown to person"@en ;
+    skos:topConceptOf icare:ResponseStatusScheme .
+
+icare:LivingSituation a owl:Class ;
+    rdfs:label "Living Situation"@en ;
+    rdfs:isDefinedBy icare:social-context ;
+    rdfs:subClassOf icare:SocialContextFactor ;
+    skos:definition "Household and housing circumstances relevant to support availability, privacy, digital-service use, or access to care."@en .
+
+icare:SocialContextProfile a owl:Class ;
+    rdfs:label "Social Context Profile"@en ;
+    rdfs:isDefinedBy icare:social-context ;
+    skos:definition "A person-specific collection of social context records used to support context-aware dialogue and adaptation of care activities."@en .
+
+icare:SocioEconomicFactor a owl:Class ;
+    rdfs:label "Socio Economic Factor"@en ;
+    rdfs:isDefinedBy icare:social-context ;
+    rdfs:subClassOf icare:SocialContextFactor ;
+    skos:definition "A social or economic circumstance, such as education, employment, or financial resources, that may affect health-related opportunities or participation."@en .
+
+icare:SupportAvailabilityValue a owl:Class ;
+    rdfs:label "Support Availability Value"@en ;
+    rdfs:isDefinedBy icare:social-context ;
+    rdfs:subClassOf skos:Concept ;
+    skos:definition "Permitted levels of available support"@en .
+
+icare:ContextInfluenceValue a owl:Class ;
+    rdfs:label "Context Influence Value"@en ;
+    rdfs:isDefinedBy icare:social-context ;
+    rdfs:subClassOf skos:Concept ;
+    skos:definition "Whether a factor is a barrier, facilitator, or mixed"@en .
+
+icare:EducationalAttainmentValue a owl:Class ;
+    rdfs:label "Educational Attainment Value"@en ;
+    rdfs:isDefinedBy icare:social-context ;
+    rdfs:subClassOf skos:Concept ;
+    skos:definition "Permitted educational attainment values"@en .
+
+icare:FinancialConstraintStatusValue a owl:Class ;
+    rdfs:label "Financial Constraint Status Value"@en ;
+    rdfs:isDefinedBy icare:social-context ;
+    rdfs:subClassOf skos:Concept ;
+    skos:definition "Permitted financial-constraint states"@en .
+
+icare:SeverityLevel a owl:Class ;
+    rdfs:label "Severity Level"@en ;
+    rdfs:isDefinedBy icare:social-context ;
+    rdfs:subClassOf skos:Concept ;
+    skos:definition "Permitted barrier-severity levels"@en .
+
+icare:AccessOrEngagementBarrier a owl:Class ;
+    rdfs:label "Access or Engagement Barrier"@en ;
+    rdfs:isDefinedBy icare:social-context ;
+    rdfs:subClassOf icare:SocialContextFactor ;
+    skos:altLabel "Barrier to Care"@en ;
+    skos:definition "A circumstance reported or assessed as impeding access to care, participation, engagement, or sustained use of an intervention."@en .
+
+icare:LanguageProficiencyLevelValue a owl:Class ;
+    rdfs:label "Language Proficiency Level Value"@en ;
+    rdfs:isDefinedBy icare:social-context ;
+    rdfs:subClassOf skos:Concept ;
+    skos:definition "Permitted language-proficiency levels"@en .
+
+icare:LiteracyLevelValue a owl:Class ;
+    rdfs:label "Literacy Level Value"@en ;
+    rdfs:isDefinedBy icare:social-context ;
+    rdfs:subClassOf skos:Concept ;
+    skos:definition "Permitted summary levels for digital or health literacy"@en .
+
+icare:LivingSituationType a owl:Class ;
+    rdfs:label "Living Situation Type"@en ;
+    rdfs:isDefinedBy icare:social-context ;
+    rdfs:subClassOf skos:Concept ;
+    skos:definition "Permitted living-arrangement values"@en .
+
+icare:ResponseStatus a owl:Class ;
+    rdfs:label "Response Status"@en ;
+    rdfs:isDefinedBy icare:social-context ;
+    rdfs:subClassOf skos:Concept ;
+    skos:definition "Whether information was provided, unknown, inapplicable, or declined"@en .
+
+icare:ContextInfluenceValueScheme a owl:NamedIndividual,
+        skos:ConceptScheme ;
+    rdfs:label "Context Influence Value scheme"@en ;
+    skos:hasTopConcept icare:Barrier,
+        icare:Facilitator,
+        icare:MixedInfluence .
+
+icare:EducationalAttainmentValueScheme a owl:NamedIndividual,
+        skos:ConceptScheme ;
+    rdfs:label "Educational Attainment Value scheme"@en ;
+    skos:hasTopConcept icare:PrimaryEducation,
+        icare:SecondaryEducation,
+        icare:TertiaryEducation .
+
+icare:FinancialConstraintStatusValueScheme a owl:NamedIndividual,
+        skos:ConceptScheme ;
+    rdfs:label "Financial Constraint Status Value scheme"@en ;
+    skos:hasTopConcept icare:NoFinancialConstraint,
+        icare:SevereFinancialConstraint,
+        icare:SomeFinancialConstraint .
+
+icare:LiteracyLevelValueScheme a owl:NamedIndividual,
+        skos:ConceptScheme ;
+    rdfs:label "Literacy Level Value scheme"@en ;
+    skos:hasTopConcept icare:AdequateLiteracy,
+        icare:HighLiteracy,
+        icare:LimitedLiteracy .
+
+icare:SeverityLevelScheme a owl:NamedIndividual,
+        skos:ConceptScheme ;
+    rdfs:label "Severity Level scheme"@en ;
+    skos:hasTopConcept icare:High,
+        icare:Low,
+        icare:Moderate .
+
+icare:SocialContextRecord a owl:Class ;
+    rdfs:label "Social Context Record"@en ;
+    rdfs:isDefinedBy icare:social-context ;
+    skos:definition "A time- and source-qualified statement or observation about a social context factor affecting a person."@en .
+
+icare:SupportAvailabilityValueScheme a owl:NamedIndividual,
+        skos:ConceptScheme ;
+    rdfs:label "Support Availability Value scheme"@en ;
+    skos:hasTopConcept icare:ConsistentSupport,
+        icare:NoAvailableSupport,
+        icare:OccasionalSupport .
+
+icare:EmploymentStatusValue a owl:Class ;
+    rdfs:label "Employment Status Value"@en ;
+    rdfs:isDefinedBy icare:social-context ;
+    rdfs:subClassOf skos:Concept ;
+    skos:definition "Permitted employment-status values"@en .
+
+icare:LanguageProficiencyLevelValueScheme a owl:NamedIndividual,
+        skos:ConceptScheme ;
+    rdfs:label "Language Proficiency Level Value scheme"@en ;
+    skos:hasTopConcept icare:Fluent,
+        icare:Functional,
+        icare:LimitedProficiency,
+        icare:NoProficiency .
+
+icare:LivingSituationTypeScheme a owl:NamedIndividual,
+        skos:ConceptScheme ;
+    rdfs:label "Living Situation Type scheme"@en ;
+    skos:hasTopConcept icare:LivesAlone,
+        icare:LivesWithFamily,
+        icare:LivesWithPartner,
+        icare:SharedAccommodation .
+
+icare:ResponseStatusScheme a owl:NamedIndividual,
+        skos:ConceptScheme ;
+    rdfs:label "Response Status scheme"@en ;
+    skos:hasTopConcept icare:DeclinedToAnswer,
+        icare:NotApplicable,
+        icare:Provided,
+        icare:UnknownToPerson .
+
+icare:HealthLiteracyNeedType a owl:Class ;
+    rdfs:label "Health Literacy Need Type"@en ;
+    rdfs:isDefinedBy icare:social-context ;
+    rdfs:subClassOf skos:Concept ;
+    skos:definition "A controlled concept classifying an actionable health-literacy support need identified through assessment or dialogue."@en .
+
+icare:SocialContextFactor a owl:Class ;
+    rdfs:label "Social Context Factor"@en ;
+    rdfs:isDefinedBy icare:social-context ;
+    skos:definition "A social, economic, cultural, interpersonal, or access-related circumstance that may affect care access, engagement, intervention adoption, support needs, or care-plan delivery."@en .
+
+icare:EmploymentStatusValueScheme a owl:NamedIndividual,
+        skos:ConceptScheme ;
+    rdfs:label "Employment Status Value scheme"@en ;
+    skos:hasTopConcept icare:Employed,
+        icare:OnLeave,
+        icare:Retired,
+        icare:SelfEmployed,
+        icare:Student,
+        icare:UnableToWork,
+        icare:Unemployed .
+
+icare:HealthLiteracyNeedTypeScheme a owl:NamedIndividual,
+        skos:ConceptScheme ;
+    rdfs:label "Health Literacy Need Type scheme"@en ;
+    skos:hasTopConcept icare:CareTeamCommunicationSupportNeed,
+        icare:DigitalInteractionSupportNeed,
+        icare:HealthcareNavigationSupportNeed,
+        icare:InformationAccessSupportNeed,
+        icare:InformationApplicationSupportNeed,
+        icare:InformationAppraisalSupportNeed,
+        icare:InformationComprehensionSupportNeed,
+        icare:SelfManagementSupportNeed,
+        icare:SocialSupportNeed .
+
+icare:social-context a owl:Ontology ;
+    rdfs:label "Social Context"@en ;
+    meta:reviewStatus "Draft" ;
+    rdfs:comment "Represents person-specific social-context profiles and dated records describing literacy, living and support circumstances, socioeconomic and cultural factors, access barriers and contextual influence."@en ;
+    owl:imports icare:core,
+        <http://maya-project.eu/icareonto/imports/skos-reference>,
+        icare:measurement-biomarker,
+        icare:metadata,
+        icare:person-role ;
+    owl:versionIRI <http://maya-project.eu/icareonto/releases/0.1.0-draft/social-context> ;
+    owl:versionInfo "0.1.0-draft" .
+

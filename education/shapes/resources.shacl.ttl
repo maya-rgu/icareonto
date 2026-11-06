@@ -1,0 +1,23 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix icare: <http://maya-project.eu/icareonto/> .
+@prefix edu: <http://maya-project.eu/icareonto/education/metadata#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+edu:ReviewedResourceShape a sh:NodeShape ;
+    sh:targetClass icare:HealthLiteracyResource ;
+    sh:property [ sh:path dcterms:identifier ; sh:minCount 1 ; sh:maxCount 1 ; sh:minLength 1 ] ;
+    sh:property [ sh:path dcterms:title ; sh:minCount 1 ; sh:maxCount 1 ; sh:minLength 1 ] ;
+    sh:property [ sh:path dcterms:source ; sh:minCount 1 ; sh:maxCount 1 ; sh:nodeKind sh:IRI ] ;
+    sh:property [ sh:path dcterms:language ; sh:minCount 1 ; sh:datatype xsd:language ] ;
+    sh:property [ sh:path edu:reviewedOn ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:date ] ;
+    sh:property [ sh:path edu:reviewedBy ; sh:minCount 1 ; sh:minLength 1 ] ;
+    sh:property [ sh:path edu:curationStatus ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue "Approved" ] ;
+    sh:property [ sh:path edu:completionStatus ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue "Complete" ] ;
+    sh:property [ sh:path edu:journeyStage ; sh:minCount 1 ; sh:in ("Before treatment" "During treatment" "After treatment / survivorship") ] ;
+    sh:property [ sh:path icare:knowledgeResourceHasTopic ; sh:minCount 1 ; sh:class icare:ResourceTopic ] ;
+    sh:property [ sh:path icare:healthLiteracyResourceAddressesNeed ; sh:minCount 1 ; sh:class icare:HealthLiteracyNeedType ] ;
+    sh:property [ sh:path icare:knowledgeResourceHasPurpose ; sh:minCount 1 ; sh:class icare:ResourcePurpose ] ;
+    sh:property [ sh:path icare:knowledgeResourceHasAudience ; sh:minCount 1 ; sh:class icare:ResourceAudienceType ] ;
+    sh:property [ sh:path icare:knowledgeResourceHasFormat ; sh:minCount 1 ; sh:class icare:ResourceFormat ] ;
+    sh:property [ sh:path icare:knowledgeResourceHasComplexityLevel ; sh:minCount 1 ; sh:maxCount 1 ; sh:class icare:ContentComplexityLevel ] .
